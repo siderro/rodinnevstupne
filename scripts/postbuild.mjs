@@ -2,9 +2,9 @@
 //
 // 1. dist/404.html = prázdná šablona (SPA fallback pro neznámé adresy, noindex).
 // 2. Statické HTML s obsahem a vlastními meta značkami pro:
-//    dist/index.html, dist/o-projektu/, dist/kraj/<slug>/, dist/misto/<slug>/
+//    dist/index.html, dist/o-projektu/, dist/tip/, dist/novinky/, dist/kraj/<slug>/, dist/misto/<slug>/
 //    (title, description, canonical, robots, OG, schema.org JSON-LD).
-// 3. dist/sitemap.xml a dist/robots.txt.
+// 3. dist/sitemap.xml, dist/robots.txt a dist/rss.xml (novinky ze src/data/novinky.json).
 //
 // Vykresluje se přes SSR balík dist-ssr/entry-server.js (vzniká v `npm run build`).
 // Kanonická doména: env SITE_URL / VITE_SITE_URL, výchozí https://rodinnevstupne.cz.
@@ -18,8 +18,8 @@ const ssrDir = path.join(root, 'dist-ssr')
 
 const ssr = await import(pathToFileURL(path.join(ssrDir, 'entry-server.js')).href)
 const {
-  render, getVenues, getVenuesByKraj, KRAJE, SITE_URL, SITE_NAME,
-  homeMeta, aboutMeta, venueMeta, krajMeta, venueJsonLd, krajJsonLd, homeJsonLd, byTierThenName,
+  render, getVenues, getVenuesByKraj, getVenueBySlug, getNovinky, KRAJE, SITE_URL, SITE_NAME,
+  homeMeta, aboutMeta, tipMeta, novinkyMeta, venueMeta, krajMeta, venueJsonLd, krajJsonLd, homeJsonLd, byTierThenName,
 } = ssr
 
 const template = await readFile(path.join(dist, 'index.html'), 'utf8')
@@ -79,6 +79,13 @@ sitemap.push({ loc: '/', lastmod: today, priority: '1.0' })
 pages.push(await writePage('/o-projektu/', aboutMeta()))
 sitemap.push({ loc: '/o-projektu/', lastmod: today, priority: '0.4' })
 
+const releases = getNovinky()
+pages.push(await writePage('/novinky/', novinkyMeta()))
+sitemap.push({ loc: '/novinky/', lastmod: releases[0]?.date || today, priority: '0.6' })
+
+pages.push(await writePage('/tip/', tipMeta()))
+sitemap.push({ loc: '/tip/', lastmod: today, priority: '0.3' })
+
 for (const kraj of KRAJE) {
   const list = getVenuesByKraj(kraj).slice().sort(byTierThenName)
   const meta = krajMeta(kraj, list)
@@ -110,8 +117,45 @@ Disallow: /admin
 Sitemap: ${SITE_URL}/sitemap.xml
 `)
 
+// RSS 2.0: jedna položka na vydání (nejnovější první)
+const rfc822 = (iso) => new Date(`${iso}T08:00:00Z`).toUTCString()
+const placeName = (slug) => getVenueBySlug(slug)?.name
+const listNames = (slugs, max = 20) => {
+  const names = slugs.map(placeName).filter(Boolean)
+  return names.length > max ? `${names.slice(0, max).join(', ')} a další` : names.join(', ')
+}
+const rssItems = releases.map((r) => {
+  const link = `${SITE_URL}/novinky/#${r.date}`
+  const parts = []
+  if (r.added?.length) parts.push(`${r.type === 'launch' ? 'Na startu' : 'Nově přidáno'}: ${listNames(r.added)}.`)
+  if (r.updated?.length) parts.push(`Opravili jsme: ${listNames(r.updated)}.`)
+  if (r.removed?.length) parts.push(`Vyřadili jsme: ${r.removed.map((s) => r.removed_names?.[s] || s).join(', ')}.`)
+  if (r.total != null) parts.push(`V katalogu je teď ${r.total}\u00a0${r.total === 1 ? 'místo' : r.total <= 4 ? 'místa' : 'míst'}.`)
+  return `    <item>
+      <title>${esc(r.headline)}</title>
+      <link>${esc(link)}</link>
+      <guid isPermaLink="false">${esc(`rodinnevstupne-novinky-${r.date}`)}</guid>
+      <pubDate>${rfc822(r.date)}</pubDate>
+      <description>${esc(parts.join(' '))}</description>
+    </item>`
+})
+const rss = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${esc(`Novinky – ${SITE_NAME}`)}</title>
+    <link>${esc(SITE_URL + '/novinky/')}</link>
+    <atom:link href="${esc(SITE_URL + '/rss.xml')}" rel="self" type="application/rss+xml" />
+    <description>Nová místa a opravy v katalogu výletů, kde rodinné vstupné platí aspoň pro 4 děti.</description>
+    <language>cs</language>
+${releases[0] ? `    <lastBuildDate>${rfc822(releases[0].date)}</lastBuildDate>\n` : ''}${rssItems.join('\n')}
+  </channel>
+</rss>
+`
+await writeFile(path.join(dist, 'rss.xml'), rss)
+
 await rm(ssrDir, { recursive: true, force: true })
 
 console.log(`Prerender: ${pages.length} stránek (${venues.length} × místo${demo ? ' – UKÁZKOVÁ data, noindex' : ''}, ${KRAJE.length} krajů)`)
 console.log(`sitemap.xml: ${sitemap.length} adres, kanonická doména ${SITE_URL}`)
+console.log(`rss.xml: ${releases.length} vydání`)
 console.log('dist/404.html: prázdná šablona pro SPA fallback (noindex)')

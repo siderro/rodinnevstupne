@@ -13,6 +13,9 @@
     <link rel="icon" href="%BASE_URL%favicon-32.png" type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
 
+    <!-- Novinky v katalogu (RSS 2.0 generuje scripts/postbuild.mjs) -->
+    <link rel="alternate" type="application/rss+xml" title="Novinky – Rodinné vstupné" href="%VITE_SITE_URL%/rss.xml" />
+
     <!-- Sdílení (og:image musí být PNG s absolutní adresou; doména z env VITE_SITE_URL, viz vite.config.js).
          Prerender (scripts/postbuild.mjs) tyto značky přepisuje pro každou stránku. -->
     <meta property="og:type" content="website" />

@@ -27,6 +27,22 @@ export function aboutMeta() {
   }
 }
 
+export function tipMeta() {
+  return {
+    title: `Nahlásit místo · ${SITE_NAME}`,
+    description: 'Znáte místo, kde rodinná vstupenka platí pro 4 a více dětí? Pošlete nám tip, ověříme ho a přidáme.',
+    path: '/tip/',
+  }
+}
+
+export function novinkyMeta() {
+  return {
+    title: `Novinky v katalogu – ${SITE_NAME}`,
+    description: 'Která místa jsme do katalogu nově přidali a kde jsme opravili cenu nebo pravidla rodinného vstupného. Přehled podle data.',
+    path: '/novinky/',
+  }
+}
+
 export function venueMeta(v) {
   const t = tierOf(v)
   const price = formatPrice(v.price_family)

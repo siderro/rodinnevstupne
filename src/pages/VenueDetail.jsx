@@ -2,10 +2,11 @@ import { Link, useParams } from 'react-router-dom'
 import { getVenueBySlug } from '../lib/venues'
 import TierBadge from '../components/TierBadge'
 import Calculator from '../components/Calculator'
+import ShareButton from '../components/ShareButton'
 import {
-  CATEGORY_LABEL, BUY_ME_A_COFFEE_URL, reportMailto, formatPrice, formatDate, dataAge, familyTicketSummary, krajFull,
+  CATEGORY_LABEL, BUY_ME_A_COFFEE_URL, SITE_URL, formatPrice, formatDate, dataAge, familyTicketSummary, krajFull,
 } from '../lib/constants'
-import { venueMeta, krajPath } from '../lib/seo'
+import { venueMeta, krajPath, venuePath } from '../lib/seo'
 import { useHead } from '../lib/useHead'
 
 export default function VenueDetail() {
@@ -45,6 +46,10 @@ export default function VenueDetail() {
         <p className="meta">
           {CATEGORY_LABEL[venue.category] || 'Místo'} · {[venue.city, venue.kraj && `${venue.kraj}${venue.kraj === 'Praha' || venue.kraj === 'Vysočina' ? '' : ' kraj'}`].filter(Boolean).join(', ')}
         </p>
+        <div className="detail-share">
+          <ShareButton url={`${SITE_URL}${venuePath(venue)}?utm_source=share`} title={venue.name}
+            text={`${venue.name}: rodinné vstupné ${familyTicketSummary(venue)}`} />
+        </div>
       </header>
 
       <div className="detail-grid">
@@ -71,10 +76,10 @@ export default function VenueDetail() {
                   ? <> z <a href={venue.source_url} target="_blank" rel="noreferrer">oficiálního ceníku<span className="sr-only"> (otevře se v novém okně)</span> ↗</a></>
                   : ' (zdroj zatím chybí)'}
               </p>
-              <a href={reportMailto(`Oprava: ${venue.name}`, `Místo: ${venue.name}\nCo je jinak:\nOdkaz na zdroj:\n`)}>
-                Nahlásit změnu ceny
-              </a>
+              <Link to={`/tip/?oprava=${encodeURIComponent(venue.slug)}`}>Nahlásit chybu</Link>
+              <p className="trust-hint">Víte o změně? Napište nám, opravíme to.</p>
             </div>
+            {venue.tip_credit && <p className="tip-credit">Tip od: {venue.tip_credit}. Děkujeme.</p>}
           </section>
 
           <Calculator venue={venue} />

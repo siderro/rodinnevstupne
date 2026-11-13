@@ -33,6 +33,8 @@ const toInt = (v) => (toNum(v) == null ? null : Math.trunc(Number(v)))
 
 export function computeTier(v) {
   if (v.family_policy === 'unlimited') return 'gold'
+  // Děti zdarma do 15 a více let = libovolný počet dětí, tedy nejvyšší úroveň
+  if (v.family_policy === 'kids_free_age' && (toInt(v.kids_age_limit) ?? 0) >= 15) return 'gold'
   const max = toInt(v.max_children)
   if (max != null && max >= 5) return 'silver'
   if (max === 4) return 'base'
@@ -85,13 +87,20 @@ for (const f of files) {
       notes: raw.notes ?? null,
       source_url: raw.source_url ?? null,
       verified_at: raw.verified_at ?? null,
+      // Poděkování za tip (max 40 znaků, jen se souhlasem odesílatele), viz docs/ops/tipy.md
+      tip_credit: raw.tip_credit ? String(raw.tip_credit).trim().slice(0, 40) : null,
     }
     if (!KRAJE.includes(rec.kraj)) warnings.push(`${f}: „${rec.name}“ má neznámý kraj „${rec.kraj}“`)
     if (!rec.source_url) warnings.push(`${f}: „${rec.name}“ nemá source_url`)
     const tier = computeTier(rec)
     if (!tier) { warnings.push(`${f}: „${rec.name}“ vyřazeno (nesplňuje kritérium 4+ dětí)`); continue }
     rec.tier = tier
-    if (bySlug.has(slug)) warnings.push(`${f}: duplicitní slug „${slug}“, přepisuji starší záznam`)
+    // Při stejném slugu vyhrává novější ověření (při shodě pozdější soubor)
+    const prev = bySlug.get(slug)
+    if (prev) {
+      warnings.push(`${f}: duplicitní slug „${slug}“, ponechávám novější ověření`)
+      if ((prev.verified_at || '') > (rec.verified_at || '')) continue
+    }
     bySlug.set(slug, rec)
   }
 }

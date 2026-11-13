@@ -4,7 +4,8 @@ import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom/server'
 import App from './App'
 
-export { getVenues, getVenuesByKraj } from './lib/venues'
+export { getVenues, getVenuesByKraj, getVenueBySlug } from './lib/venues'
+export { getNovinky } from './lib/novinky'
 export { KRAJE, SITE_URL } from './lib/constants'
 export * from './lib/seo'
 

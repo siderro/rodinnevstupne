@@ -20,6 +20,7 @@
     "notes": "Vstup zdarma pro všechny návštěvníky (Vojenský historický ústav Praha, Ministerstvo obrany).",
     "source_url": "https://www.vhu.cz/zakladni-informace-o-vhu-praha/navstevni-rad-muzei-vhu-praha/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -43,6 +44,7 @@
     "notes": "Provozuje Prague City Tourism. Děti do 5 let zdarma. Prague City Tourism je provozovatel objektu, prague.eu je jeho oficiální web.",
     "source_url": "https://prague.eu/cs/objevujte/astronomicka-vez-a-barokni-knihovna-klementinum/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -66,6 +68,7 @@
     "notes": "Cena na místě; e-vstupenka 640 Kč. Děti do 3 let zdarma. Platí pro venkovní expozice i skleník Fata Morgana.",
     "source_url": "https://www.botanicka.cz/pro-navstevniky/zakladni-informace/vstupne.html",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -89,6 +92,7 @@
     "notes": "Od 29. 6. do 31. 12. 2026 uzavřeno kvůli rekonstrukci (lucerna kopule). Objekt Národního muzea; základní vstupné 140 Kč.",
     "source_url": "https://www.nm.cz/navstivte-nas/objekty/ceske-muzeum-hudby",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -112,6 +116,7 @@
     "notes": "Provozuje Hvězdárna a planetárium hl. m. Prahy. Zdroj: prague.eu (web provozovatele planetum.cz se nepodařilo strojově načíst) – ověřit na planetum.cz.",
     "source_url": "https://prague.eu/cs/objevujte/hvezdarna-dablice/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -135,6 +140,7 @@
     "notes": "Vstup zdarma pro všechny návštěvníky (Vojenský historický ústav Praha, Ministerstvo obrany). Sezónní provoz.",
     "source_url": "https://www.vhu.cz/zakladni-informace-o-vhu-praha/navstevni-rad-muzei-vhu-praha/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -158,6 +164,7 @@
     "notes": "Provozuje Prague City Tourism. Děti do 5 let zdarma. Prague City Tourism je provozovatel objektu, prague.eu je jeho oficiální web.",
     "source_url": "https://prague.eu/cs/objevujte/malostranske-mostecke-veze/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -181,6 +188,7 @@
     "notes": "Objekt Národního muzea v Michnově letohrádku (Vila Amerika).",
     "source_url": "https://www.nm.cz/navstivte-nas/vstupenky",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -204,6 +212,7 @@
     "notes": "Objekt Národního muzea.",
     "source_url": "https://www.nm.cz/navstivte-nas/objekty/naprstkovo-muzeum-asijskych-africkych-a-americkych-kultur",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -227,6 +236,7 @@
     "notes": "Platí ve všech objektech NGP (Veletržní palác, Šternberský palác, Anežský klášter, Schwarzenberský palác, Valdštejnská jízdárna aj.).",
     "source_url": "https://www.ngprague.cz/o-nas/vstupne-a-objednavky-akci",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -250,6 +260,7 @@
     "notes": "Platí pro všechny objekty Národního muzea; Dětské muzeum v Nové budově je zpoplatněné časovou vstupenkou.",
     "source_url": "https://www.nm.cz/navstivte-nas/vstupenky",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -273,6 +284,7 @@
     "notes": "Vstup zdarma pro všechny návštěvníky (Vojenský historický ústav Praha, Ministerstvo obrany).",
     "source_url": "https://www.vhu.cz/zakladni-informace-o-vhu-praha/navstevni-rad-muzei-vhu-praha/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -296,6 +308,7 @@
     "notes": "Vstup zdarma pro všechny návštěvníky (Vojenský historický ústav Praha, Ministerstvo obrany).",
     "source_url": "https://www.vhu.cz/zakladni-informace-o-vhu-praha/navstevni-rad-muzei-vhu-praha/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -319,6 +332,7 @@
     "notes": "Děti do 6 let zdarma; dětské vstupné 6–15 let.",
     "source_url": "https://www.ntm.cz/pro-navstevniky/prehled-vstupneho",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -342,6 +356,7 @@
     "notes": "Rodinná vstupenka není potřeba – děti do 18 let zdarma (neplatí pro speciální akce, tam dítě 50 Kč).",
     "source_url": "https://www.nzm.cz/navstivte-nas/oteviraci-doba/nzm-praha",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -365,6 +380,7 @@
     "notes": "Objekt Národního muzea v Letohrádku Kinských.",
     "source_url": "https://www.nm.cz/navstivte-nas/objekty/narodopisne-muzeum-narodniho-muzea",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -388,6 +404,7 @@
     "notes": "Provozuje Prague City Tourism. Děti do 5 let zdarma. Prague City Tourism je provozovatel objektu, prague.eu je jeho oficiální web.",
     "source_url": "https://prague.eu/cs/objevujte/novomlynska-vodarenska-vez/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -411,6 +428,7 @@
     "notes": "Provozuje Prague City Tourism. Děti do 5 let zdarma. Kombinace se Zrcadlovým bludištěm: rodinné 600 Kč. Prague City Tourism je provozovatel objektu, prague.eu je jeho oficiální web.",
     "source_url": "https://prague.eu/cs/objevujte/petrinska-rozhledna/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -434,6 +452,7 @@
     "notes": "Provozuje Hvězdárna a planetárium hl. m. Prahy. Snížené vstupné děti 3–15 let. Zdroj: prague.eu (web provozovatele planetum.cz se nepodařilo strojově načíst) – ověřit na planetum.cz.",
     "source_url": "https://prague.eu/cs/objevujte/planetarium-praha/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -457,6 +476,7 @@
     "notes": "Pobočka NTM. Děti do 6 let zdarma.",
     "source_url": "https://www.ntm.cz/pro-navstevniky/prehled-vstupneho",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -480,6 +500,7 @@
     "notes": "Provozuje Prague City Tourism. Děti do 5 let zdarma. Prague City Tourism je provozovatel objektu, prague.eu je jeho oficiální web.",
     "source_url": "https://prague.eu/cs/objevujte/prasna-brana/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -503,6 +524,7 @@
     "notes": "Ceny pro hlavní okruh; stálé expozice rodina 700 Kč, Obrazárna a Vyhlídková věž katedrály rodina 500 Kč. Děti do 6 let zdarma. Složení rodinné vstupenky je z oficiálního PDF ceníku (12/2023); cena 950 Kč odpovídá i aktuálnímu údaji na prague.eu (XI/2026).",
     "source_url": "https://www.hrad.cz/file/edee/2023/12/cenik_cj_20.12._23.pdf",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "silver"
   },
   {
@@ -526,6 +548,7 @@
     "notes": "Provozuje Prague City Tourism. Děti do 5 let zdarma. Prague City Tourism je provozovatel objektu, prague.eu je jeho oficiální web.",
     "source_url": "https://prague.eu/cs/objevujte/staromestska-mostecka-vez/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -549,6 +572,7 @@
     "notes": "Provozuje Prague City Tourism. Děti do 5 let zdarma. Prague City Tourism je provozovatel objektu, prague.eu je jeho oficiální web.",
     "source_url": "https://prague.eu/cs/objevujte/staromestska-radnice-s-orlojem/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -572,6 +596,7 @@
     "notes": "Provozuje Prague City Tourism. Děti do 5 let zdarma. Prague City Tourism je provozovatel objektu, prague.eu je jeho oficiální web.",
     "source_url": "https://prague.eu/cs/objevujte/svatomikulasska-mestska-zvonice/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -595,6 +620,7 @@
     "notes": "Provozuje Hvězdárna a planetárium hl. m. Prahy. Zdroj: prague.eu (web provozovatele planetum.cz se nepodařilo strojově načíst) – ověřit na planetum.cz.",
     "source_url": "https://prague.eu/cs/objevujte/stefanikova-hvezdarna/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -618,6 +644,7 @@
     "notes": "Pokladna; online levnější (850 Kč). Každé další dítě nad rámec rodinné vstupenky za plnohodnotné vstupné. Děti do 3 let zdarma.",
     "source_url": "https://www.zoopraha.cz/navsteva/vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -641,6 +668,7 @@
     "notes": "Provozuje Prague City Tourism. Děti do 5 let zdarma. Prague City Tourism je provozovatel objektu, prague.eu je jeho oficiální web.",
     "source_url": "https://prague.eu/cs/objevujte/zrcadlove-bludiste-na-petrine/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -664,6 +692,7 @@
     "notes": "Hornické muzeum Příbram; ceny jsou za jednotlivé trasy (např. Ševčinský důl, Anenský důl, jízda vláčkem).",
     "source_url": "https://www.muzeum-pribram.cz/hornicky-skanzen/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -687,6 +716,7 @@
     "notes": "Pobočka Hornického muzea Příbram. Snížené vstupné pro děti od 3 let.",
     "source_url": "https://www.muzeum-pribram.cz/muzeum-spychar/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -710,6 +740,7 @@
     "notes": "Expozice zemědělské techniky. Společná vstupenka s NZM Kačina pro dospělé 200 Kč.",
     "source_url": "https://www.nzm.cz/navstivte-nas/oteviraci-doba/nzm-caslav",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -733,6 +764,7 @@
     "notes": "Mimopražský objekt Národního muzea, sezónní provoz.",
     "source_url": "https://www.nm.cz/navstivte-nas/objekty/pamatnik-bedricha-smetany",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -756,6 +788,7 @@
     "notes": "Mimopražský objekt Národního muzea.",
     "source_url": "https://www.nm.cz/navstivte-nas/objekty/pamatnik-jana-palacha",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -779,6 +812,7 @@
     "notes": "Mimopražský objekt Národního muzea, sezónní provoz.",
     "source_url": "https://www.nm.cz/navstivte-nas/objekty/pamatnik-josefa-suka",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -802,6 +836,7 @@
     "notes": "Vstupné zahrnuje muzeum, Lidickou galerii, rodinný dům č. p. 116, pietní území a růžový sad.",
     "source_url": "https://www.lidice-memorial.cz/kontakt/oteviraci-doba-a-vstupne/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -825,6 +860,7 @@
     "notes": "Pobočka Hornického muzea Příbram.",
     "source_url": "https://www.muzeum-pribram.cz/pamatnik-vojna/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -848,6 +884,7 @@
     "notes": "Pobočka Hornického muzea Příbram – skanzen lidové architektury.",
     "source_url": "https://www.muzeum-pribram.cz/skanzen-vysoky-chlumec",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -871,6 +908,7 @@
     "notes": "Ceny za zámek; Archevita: 160 / 100 / 400 Kč rodinné. Děti do 6 let zdarma.",
     "source_url": "https://www.stredoceskemuzeum.cz/vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -894,6 +932,7 @@
     "notes": "Vstup zdarma pro všechny návštěvníky (Vojenský historický ústav Praha, Ministerstvo obrany). Sezónní provoz (květen–říjen).",
     "source_url": "https://www.vhu.cz/zakladni-informace-o-vhu-praha/navstevni-rad-muzei-vhu-praha/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -917,6 +956,7 @@
     "notes": "Pobočka Hornického muzea Příbram. Snížené vstupné pro děti od 3 let.",
     "source_url": "https://www.muzeum-pribram.cz/historie-vltavy/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -940,6 +980,7 @@
     "notes": "Mimopražský objekt Národního muzea, sezónní provoz.",
     "source_url": "https://www.nm.cz/navstivte-nas/objekty/zamek-vrchotovy-janovice",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -963,6 +1004,7 @@
     "notes": "Děti do 6 let zdarma. Jedna vstupenka platí na všechny výstavy.",
     "source_url": "https://www.esac.cz/cz/vstupne/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "silver"
   },
   {
@@ -986,6 +1028,7 @@
     "notes": "Děti 6–15 let.",
     "source_url": "https://www.seidel.cz/cz/cenik/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1009,6 +1052,7 @@
     "notes": "Mimopražský objekt Národního muzea.",
     "source_url": "https://www.nm.cz/navstivte-nas/objekty/muzeum-ceske-loutky-a-cirkusu",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1032,6 +1076,7 @@
     "notes": "Lovecký zámek Ohrada; neplatí pro Muzejní pohádkové sklepy.",
     "source_url": "https://www.nzm.cz/navstivte-nas/oteviraci-doba/nzm-ohrada",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1055,6 +1100,7 @@
     "notes": "Pobočka NTM v areálu cisterciáckého kláštera, sezónní provoz.",
     "source_url": "https://www.ntm.cz/pro-navstevniky/prehled-vstupneho",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1078,6 +1124,7 @@
     "notes": "Pobočka NTM v areálu kláštera Plasy (sezónní provoz). Děti do 6 let zdarma.",
     "source_url": "https://www.ntm.cz/pro-navstevniky/prehled-vstupneho",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1101,6 +1148,7 @@
     "notes": "Jednotné vstupné 280 Kč pro dospělé i děti od 4 let. Rodina 6 osob = např. 2 dospělí + 4 děti (příp. 1 + 5).",
     "source_url": "https://techmania.cz/prakticke-informace/vstupne/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1124,6 +1172,7 @@
     "notes": "Pobočka Muzea Karlovy Vary. Cena podle společného ceníku muzea „Vstupné do expozic muzea“ na kvmuz.cz; stránka pobočky vlastní ceník neuvádí. Děti do 6 let zdarma.",
     "source_url": "https://www.kvmuz.cz",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1147,6 +1196,7 @@
     "notes": "Děti do 6 let zdarma. Ceník „Vstupné do expozic muzea“ je společný pro celé muzeum (platba v Karlových Varech i v Jáchymově).",
     "source_url": "https://www.kvmuz.cz",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1170,6 +1220,7 @@
     "notes": "Firemní muzeum lázeňských pramenů; vstupenky v Infocentru. Snížené dětské vstupné na ceníku není uvedeno (individuální vstupné 150 Kč).",
     "source_url": "https://www.muzeumbilinskekyselky.cz/navstevni-rad/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1193,6 +1244,7 @@
     "notes": "Národní muzeum v přírodě. Děti do 6 let zdarma. Okružní vstupenka I.–IV.: dospělí 220 Kč, děti 100 Kč, rodinné 440 Kč.",
     "source_url": "https://www.nmvp.cz/zubrnice/informace-pro-navstevniky/vstupne-slevy",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1216,6 +1268,7 @@
     "notes": "Jen komentované prohlídky v ohlášených termínech (rezervace). Děti 10–16 let 80 Kč. Soukromý majitel (Polesí Střekov a.s.).",
     "source_url": "https://www.zameklibouchec.cz/zamek-libouchec-navstevni-rad/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1239,6 +1292,7 @@
     "notes": "Pobočka Národního technického muzea. Děti do 6 let zdarma. Ceník je společný pro všechny objekty NTM; stejné pravidlo 2+4 platí i v Praze.",
     "source_url": "https://www.ntm.cz/pro-navstevniky/prehled-vstupneho",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1262,6 +1316,7 @@
     "notes": "Pobočka VMG Česká Lípa. S plnou vstupenkou z hlavní budovy sleva 50 % na plné vstupné.",
     "source_url": "https://www.muzeumcl.cz/o-muzeu/oteviraci-doba-a-vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "silver"
   },
   {
@@ -1285,6 +1340,7 @@
     "notes": "Dobrovolné vstupné pro všechny – počet dětí neomezuje cenu. Výstup na věž 100 Kč, děti do 18 let na věž zdarma (dle oficiální stránky vstupného).",
     "source_url": "https://www.muzeumlb.cz/vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1308,6 +1364,7 @@
     "notes": "Pobočka VMG Česká Lípa.",
     "source_url": "https://www.muzeumcl.cz/o-muzeu/oteviraci-doba-a-vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "silver"
   },
   {
@@ -1331,6 +1388,7 @@
     "notes": "Děti od 6 do 15 let poloviční vstupné. Platba kartou není možná. Stříbrná úroveň (5 dětí).",
     "source_url": "https://www.muzeumcl.cz/o-muzeu/oteviraci-doba-a-vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "silver"
   },
   {
@@ -1354,6 +1412,7 @@
     "notes": "Snížené vstupné pro děti 6–18 let; děti do 6 let zdarma. Zvýhodněná vstupenka platí pro Městské muzeum, Galerii plastik a Masarykovu věž samostatnosti.",
     "source_url": "https://muzeum.horice.org/oteviraci-doba-vstupne/ds-51",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1377,6 +1436,7 @@
     "notes": "Ceny platí pro každý ze dvou okruhů zvlášť.",
     "source_url": "https://www.novybydzov.cz/oteviraci-doba-a-vstupne/d-19553",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1400,6 +1460,7 @@
     "notes": "Výstavní prostory muzea a Orlická galerie (II. patro zámku). Základní vstupné platí osoby od 19 let; děti a mládež do 19 let zdarma, takže počet dětí není prakticky omezen. Rodinná vstupenka 2+5 je tím pro rodiny vlastně zbytečná.",
     "source_url": "https://www.moh.cz/vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1423,6 +1484,7 @@
     "notes": "Pobočka MGOH. Děti a mládež do 19 let zdarma.",
     "source_url": "https://www.moh.cz/vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1446,6 +1508,7 @@
     "notes": "Pobočka Muzea východních Čech. Děti a mládež do 19 let zdarma; rozhledna se platí zvlášť. Ceník ke 3. 7. 2026.",
     "source_url": "https://www.muzeumhk.cz/muzeum-valky-1866/oteviraci-doba-a-vstupne.html",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1469,6 +1532,7 @@
     "notes": "Děti a mládež do 19 let zdarma = prakticky neomezeně dětí, platí dospělí (celá historická budova 170 Kč, stálá expozice nebo výstavy 100 Kč). Držitelé Rodinného pasu mají zvýhodněné rodinné vstupné. Ceník platný od 1. 7. 2025.",
     "source_url": "https://www.muzeumhk.cz/navstivte-nas/oteviraci-doba-a-vstupne.html",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1492,6 +1556,7 @@
     "notes": "Pobočka MGOH. Děti a mládež do 19 let zdarma.",
     "source_url": "https://www.moh.cz/vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1515,6 +1580,7 @@
     "notes": "Pobočka MGOH. Děti a mládež do 19 let zdarma.",
     "source_url": "https://www.moh.cz/vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1538,6 +1604,7 @@
     "notes": "Počet vlastních dětí není omezen. Partner NTM – sleva 20 % po předložení vstupenky z NTM.",
     "source_url": "https://www.muzeumremesel.cz/cz/node/53",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1561,6 +1628,7 @@
     "notes": "Národní muzeum v přírodě. Kombinace s Veselým Kopcem v jeden den: rodinné 550 Kč.",
     "source_url": "https://www.nmvp.cz/vysocina/pro-navstevniky/prohlidka-expozicnich-arealu/betlem-hlinsko-remeslnicka-obydli",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1584,6 +1652,7 @@
     "notes": "Národní muzeum v přírodě. Zvýhodněná vstupenka Veselý Kopec + Betlém Hlinsko v jeden den: rodinné 550 Kč.",
     "source_url": "https://www.nmvp.cz/vysocina/pro-navstevniky/prohlidka-expozicnich-arealu/vesely-kopec",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1607,6 +1676,7 @@
     "notes": "Spravuje Regionální muzeum v Litomyšli. Otevřeno duben–říjen.",
     "source_url": "https://www.rml.cz/cs/informace/pro-navstevniky.html",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1630,6 +1700,7 @@
     "notes": "Muzeum v areálu zámku Nové Hrady (stejný ceník).",
     "source_url": "http://zameknovehrady.cz/prohlidky",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1653,6 +1724,7 @@
     "notes": "S Rodinným pasem: neomezený počet dětí 6–15 let zdarma (200 Kč). Děti do 6 let zdarma. Každý čtvrtek žáci a studenti zdarma.",
     "source_url": "https://www.muzeumcr.cz/vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1676,6 +1748,7 @@
     "notes": "Počet dětí není omezen.",
     "source_url": "https://www.rml.cz/cs/informace/pro-navstevniky.html",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1699,6 +1772,7 @@
     "notes": "Spravuje Regionální muzeum v Litomyšli.",
     "source_url": "https://www.rml.cz/cs/informace/pro-navstevniky.html",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1722,6 +1796,7 @@
     "notes": "Soukromý rokokový zámek u Litomyšle. Cena 230 Kč platí podle oficiální stránky pro prohlídku zámku; samostatné vstupné do zahrad oficiální stránka prohlídek neuvádí – před publikací ověřit u provozovatele.",
     "source_url": "http://zameknovehrady.cz/prohlidky",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1745,6 +1820,7 @@
     "notes": "Pobočka Muzea Vysočiny Jihlava. Děti do 6 let zdarma. Otevřeno duben–říjen. Podle oficiální stránky je hrad od 1. 11. 2026 pro veřejnost uzavřen (do jara 2027).",
     "source_url": "https://hrad-rostejn.cz/vstupne/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1768,6 +1844,7 @@
     "notes": "Děti do šesti let zdarma. Otevřeno duben–říjen.",
     "source_url": "https://mvji.cz/stranky/navstivte-nas",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1791,6 +1868,7 @@
     "notes": "Expozice betlémů. Děti do šesti let zdarma. Souřadnice přibližné (centrum Třeště).",
     "source_url": "https://mvji.cz/stranky/navstivte-nas",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1814,6 +1892,7 @@
     "notes": "Městský zámek. Snížené vstupné děti do 15 let; děti do 6 let zdarma. Věková hranice pro rodinné vstupné neuvedena. Listopad–březen zavřeno.",
     "source_url": "https://www.zirovnice.cz/vstupne-zamek-spychar-pivovar/d-99658",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1837,6 +1916,7 @@
     "notes": "Snížené vstupné děti 6–18 let 80 Kč; děti do 6 let zdarma. Spravuje Regionální muzeum v Mikulově.",
     "source_url": "http://www.archeoparkpavlov.cz/vstupne/t1212",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1860,6 +1940,7 @@
     "notes": "Rodina platí 2× plné + 1× snížené vstupné, ostatní děti zdarma. Malý okruh A (expozice Vita Christi) plné 60 Kč, snížené 40 Kč (děti 6–15 let) → rodina 160 Kč; velký okruh F plné 120 Kč. Děti do 6 let zdarma.",
     "source_url": "https://www.dieceznimuzeum.cz/index.php?page=cenik",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -1883,6 +1964,7 @@
     "notes": "Spravuje Regionální muzeum v Mikulově. Děti do 6 let zdarma.",
     "source_url": "https://www.rmm.cz/czech/vstupne.html",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1906,6 +1988,7 @@
     "notes": "Odpolední (od 14 h) rodinné 300 Kč. Snížené vstupné děti 6–15 let 100 Kč, děti do 6 let 50 Kč. Letní koupaliště (sezónní provoz). Provozuje město.",
     "source_url": "https://www.velkeopatovice.cz/koupaliste-1/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1929,6 +2012,7 @@
     "notes": "Sleva 50 % děti 7–15 let; děti do 6 let zdarma. Spravuje Regionální muzeum v Mikulově.",
     "source_url": "https://www.mrstici.cz/oteviraci-doba-a-vstupne/t1235",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1952,6 +2036,7 @@
     "notes": "Děti do 15 let mají vstup zdarma, takže rodina platí jen dospělé (děti do 15 let tedy prakticky neplatí bez ohledu na počet). Děti 16–18 let zlevněné 40 Kč. Spravuje Muzeum romské kultury. Rodinný pas sleva 15 %. Do areálu, expozice a na výstavu bez průvodce je vstup zdarma pro všechny; rodinné vstupné 160 Kč platí pro komentovanou prohlídku.",
     "source_url": "https://www.rommuz.cz/cs/hodonin-u-kunstatu/navstevnici/vstupne-a-otviraci-doba/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1975,6 +2060,7 @@
     "notes": "Kratší okruhy (zámecká knihovna, sklepení s obřím sudem, expozice) 120/60/300 Kč. Sleva 50 % děti 7–15 let; děti do 6 let zdarma.",
     "source_url": "https://www.rmm.cz/czech/vstupne.html",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -1998,6 +2084,7 @@
     "notes": "Mimosezóna (XI–II) 480 Kč. Varianta 2 dospělí + 1–2 děti 450 Kč, malá rodina 1 dospělý + 1–3 děti 320 Kč. Děti do 3 let zdarma.",
     "source_url": "https://www.zoobrno.cz/vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2021,6 +2108,7 @@
     "notes": "Na programy rodinné vstupné 300 Kč. Prohlídka jen s průvodcem. Děti do 6 let zdarma, žáci 6–15 let 70 Kč.",
     "source_url": "https://www.nmvp.cz/prikazy/informace-pro-navstevniky/prohlidka-arealu/kamenickuv-grunt",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2044,6 +2132,7 @@
     "notes": "Varianty 1+1 až 2+4 (1+4 za 690 Kč). Dětské vstupné 3–14,99 let; děti do 3 let zdarma. Mimosezóna (XI–II) levnější.",
     "source_url": "https://www.zoo-olomouc.cz/vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2067,6 +2156,7 @@
     "notes": "Kombinace muzeum + galerie: rodinné 2+4 za 349 Kč. Děti 6–15 let 69 Kč, děti do 6 let zdarma.",
     "source_url": "https://www.muzeum-zlin.cz/14-budova",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2090,6 +2180,7 @@
     "notes": "Počet dětí není omezen (rodiče se svými dětmi); dětské vstupné 6–15 let. Rodinné vstupné jen do stálé expozice. Děti do 6 let zdarma. Ověřit u pokladny výklad „svými dětmi“.",
     "source_url": "https://www.mjakub.cz?idm=134",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -2113,6 +2204,7 @@
     "notes": "Jednotlivé expozice rodinné 95–115 Kč. Snížené vstupné děti 6–15 let; děti do 6 let zdarma.",
     "source_url": "https://www.muzeum-km.cz/vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2136,6 +2228,7 @@
     "notes": "Děti od 6 let 30 Kč, děti do 6 let zdarma. Rodinný pas sleva 20 %. Provozuje město Karolinka. Počet dětí na webu neuveden – ověřit, zda platí bez omezení.",
     "source_url": "https://karolinka.cz/kultura/muzeum-sklarstvi",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "gold"
   },
   {
@@ -2159,6 +2252,7 @@
     "notes": "Spravuje Muzeum Kroměřížska. Oba okruhy (Hejnice + tvrz a náves) 190/120/440 Kč. Děti do 6 let zdarma.",
     "source_url": "https://www.muzeum-km.cz/vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2182,6 +2276,7 @@
     "notes": "Stejné pravidlo platí i pro Valašskou dědinu a Mlýnskou dolinu (vlastní ceny). Děti do 6 let zdarma; žáci 6–15 let 80 Kč. Během kulturních akcí bývá vstupné upraveno. Držitelé Rodinného pasu sleva 20 %.",
     "source_url": "https://www.nmvp.cz/roznov/informace-pro-navstevniky/prohlidkove-okruhy/drevene-mestecko",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2205,6 +2300,7 @@
     "notes": "Spravuje Muzeum Kroměřížska. Snížené vstupné děti 6–15 let; děti do 6 let zdarma.",
     "source_url": "https://www.muzeum-km.cz/vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2228,6 +2324,7 @@
     "notes": "Pobočka Muzea Novojičínska. Snížené vstupné děti 6–15 let; děti do 6 let zdarma.",
     "source_url": "https://www.cetratpribor.cz/oteviraci-doba-a-vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2251,6 +2348,7 @@
     "notes": "Základní okruh s průvodcem: dospělí 180 Kč, snížené 120 Kč, rodinné 540 Kč. Snížené vstupné děti 4–14 let; děti do 3 let zdarma.",
     "source_url": "https://www.hrad-sovinec.cz/vstupne/",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2274,6 +2372,7 @@
     "notes": "Pobočka Muzea Novojičínska. Snížené vstupné děti 6–15 let; děti do 6 let zdarma.",
     "source_url": "https://www.muzeum-frenstat.cz/oteviraci-doba-a-vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2297,6 +2396,7 @@
     "notes": "Pobočka Muzea Novojičínska. Snížené vstupné děti 6–15 let; děti do 6 let zdarma.",
     "source_url": "https://www.muzeumsipka.cz/oteviraci-doba-a-vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2320,6 +2420,7 @@
     "notes": "Pobočka Muzea Novojičínska. Snížené vstupné děti 6–15 let; děti do 6 let zdarma. Další okruhy: 160/120/440 Kč a kombinované 370/270/1000 Kč. Na webu uvedeno „max. 2 dospělí a až 4 děti 6–15 let“.",
     "source_url": "https://www.muzeumtatra.cz/oteviraci-doba-a-vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2343,6 +2444,7 @@
     "notes": "Pobočka Muzea Novojičínska. Snížené vstupné děti 6–15 let; děti do 6 let zdarma.",
     "source_url": "https://www.rodnydumpalackeho.cz/oteviraci-doba-a-vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2366,6 +2468,7 @@
     "notes": "Pobočka Muzea Novojičínska. Snížené vstupné děti 6–15 let; děti do 6 let zdarma.",
     "source_url": "https://www.svetkomenskeho.cz/oteviraci-doba-a-vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2389,6 +2492,7 @@
     "notes": "Pobočka Muzea Novojičínska. Snížené vstupné děti 6–15 let; děti do 6 let zdarma.",
     "source_url": "https://www.zamek-kunin.cz/oteviraci-doba-a-vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2412,6 +2516,7 @@
     "notes": "Pobočka Muzea Novojičínska. Snížené vstupné děti 6–15 let; děti do 6 let zdarma.",
     "source_url": "https://www.zamek-novahorka.cz/oteviraci-doba-a-vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   },
   {
@@ -2435,6 +2540,7 @@
     "notes": "Pobočka Muzea Novojičínska. Snížené vstupné děti 6–15 let; děti do 6 let zdarma. Expozice klobouků a další okruhy; dražší okruh základní 160 / snížené 80 / rodinné 320 Kč.",
     "source_url": "https://www.zerotinskyzamek.cz/oteviraci-doba-a-vstupne",
     "verified_at": "2026-11-13",
+    "tip_credit": null,
     "tier": "base"
   }
 ]

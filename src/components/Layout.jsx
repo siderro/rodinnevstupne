@@ -1,6 +1,6 @@
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
-import { BUY_ME_A_COFFEE_URL, reportMailto } from '../lib/constants'
+import { BUY_ME_A_COFFEE_URL } from '../lib/constants'
 
 export default function Layout() {
   const { pathname } = useLocation()
@@ -22,7 +22,9 @@ export default function Layout() {
             <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="Rodinné vstupné" width="233" height="40" />
           </Link>
           <nav className="header-nav" aria-label="Hlavní">
-            <NavLink to="/o-projektu/">O projektu</NavLink>
+            <NavLink to="/novinky/" className="nav-novinky">Novinky</NavLink>
+            <NavLink to="/tip/">Poslat tip</NavLink>
+            <NavLink to="/o-projektu/" className="nav-about">O projektu</NavLink>
             <a className="btn btn--support btn--sm" href={BUY_ME_A_COFFEE_URL} target="_blank" rel="noreferrer">
               Podpořit
             </a>
@@ -44,8 +46,10 @@ export default function Layout() {
           </div>
           <nav className="footer-col footer-links" aria-label="Patička">
             <Link to="/o-projektu/">O projektu a jak ověřujeme</Link>
-            <a href={reportMailto('Tip na místo', 'Název místa:\nOdkaz na ceník:\n')}>Nahlásit místo</a>
-            <a href={reportMailto('Oprava údaje', 'Které místo:\nCo je jinak:\nOdkaz na zdroj:\n')}>Nahlásit opravu</a>
+            <Link to="/novinky/">Novinky v katalogu</Link>
+            <Link to="/tip/">Nahlásit místo</Link>
+            <Link to="/tip/?oprava=">Nahlásit opravu</Link>
+            <a href={`${import.meta.env.BASE_URL}rss.xml`}>Novinky přes RSS</a>
           </nav>
           <div className="footer-col">
             <p className="meta">Líbí se vám to? Kafe nás drží v chodu.</p>

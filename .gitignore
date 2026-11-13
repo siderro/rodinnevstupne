@@ -7,7 +7,8 @@ scripts/.env
 .DS_Store
 dist-ssr
 dist-ssr
-.claude/
+.claude/*
+!.claude/workflows/
 # Interní podklady (strategie, marketing) – jen v Dropboxu, ne ve veřejném repu
 docs/
 marketing/

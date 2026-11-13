@@ -5,6 +5,8 @@ import Home from './pages/Home'
 import VenueDetail from './pages/VenueDetail'
 import KrajPage from './pages/KrajPage'
 import About from './pages/About'
+import Tip from './pages/Tip'
+import Novinky from './pages/Novinky'
 import NotFound from './pages/NotFound'
 
 // Admin (a s ním Supabase klient) jen jako samostatný chunk – veřejné stránky ho nestahují.
@@ -18,6 +20,8 @@ export default function App() {
         <Route path="/misto/:slug" element={<VenueDetail />} />
         <Route path="/kraj/:krajSlug" element={<KrajPage />} />
         <Route path="/o-projektu" element={<About />} />
+        <Route path="/tip" element={<Tip />} />
+        <Route path="/novinky" element={<Novinky />} />
         <Route path="/admin" element={<Suspense fallback={<p role="status">Načítáme…</p>}><Admin /></Suspense>} />
         <Route path="*" element={<NotFound />} />
       </Route>

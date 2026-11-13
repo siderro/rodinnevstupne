@@ -1,7 +1,7 @@
 import { lazy, Suspense, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getVenuesByKraj, getVenues } from '../lib/venues'
-import { KRAJE, TIERS, krajBySlug, krajFull, krajLocative, reportMailto } from '../lib/constants'
+import { KRAJE, TIERS, krajBySlug, krajFull, krajLocative } from '../lib/constants'
 import { krajMeta, krajPath, byTierThenName } from '../lib/seo'
 import { useHead } from '../lib/useHead'
 import VenueCard from '../components/VenueCard'
@@ -53,7 +53,7 @@ export default function KrajPage() {
       {venues.length === 0 ? (
         <div className="empty-state">
           <div className="empty-actions">
-            <a className="btn" href={reportMailto(`Tip na místo – ${krajFull(kraj)}`, 'Název místa:\nOdkaz na ceník:\n')}>Poslat tip na místo</a>
+            <Link className="btn" to="/tip/">Poslat tip na místo</Link>
             <Link className="btn btn--ghost" to="/">Prohlédnout ostatní kraje</Link>
           </div>
         </div>
@@ -72,6 +72,11 @@ export default function KrajPage() {
             <div className="grid">
               {venues.map((v) => <VenueCard key={v.slug} venue={v} />)}
             </div>
+          )}
+          {venues.length < 3 && (
+            <p className="tip-nudge">
+              V tomhle kraji toho zatím víme málo. <Link to="/tip/">Znáte místo?</Link>
+            </p>
           )}
         </>
       )}

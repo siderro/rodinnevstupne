@@ -1,6 +1,6 @@
 // ── Odkazy a kontakty (jediné místo, kde se mění) ─────────────────────────────
 export const BUY_ME_A_COFFEE_URL = 'https://buymeacoffee.com/siderro'
-export const REPORT_EMAIL = 'info@rodinnevstupne.cz' // schránku/alias založit u hostingu
+export const REPORT_EMAIL = 'tipy@rodinnevstupne.cz' // tipy a opravy (schránka u hostingu, zpracování viz docs/ops/tipy.md)
 // Kanonická adresa webu: env VITE_SITE_URL (nastaví vite.config.js ze SITE_URL), výchozí https://rodinnevstupne.cz
 export const SITE_URL = (import.meta.env?.VITE_SITE_URL || 'https://rodinnevstupne.cz').replace(/\/$/, '')
 

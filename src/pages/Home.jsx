@@ -1,8 +1,9 @@
 import { lazy, Suspense, useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { getVenues } from '../lib/venues'
-import { KRAJE, CATEGORIES, CATEGORY_LABEL, TIERS, TIER_FILTERS, reportMailto, krajFull } from '../lib/constants'
-import { homeMeta, krajPath } from '../lib/seo'
+import { getVenues, getVenueBySlug } from '../lib/venues'
+import { getLatestRelease } from '../lib/novinky'
+import { KRAJE, CATEGORIES, CATEGORY_LABEL, TIERS, TIER_FILTERS, krajFull, formatDate } from '../lib/constants'
+import { homeMeta, krajPath, byTierThenName } from '../lib/seo'
 import { useHead } from '../lib/useHead'
 import VenueCard from '../components/VenueCard'
 import ViewToggle from '../components/ViewToggle'
@@ -23,6 +24,9 @@ export default function Home() {
   const q = params.get('q') || ''
   const view = params.get('zobrazeni') === 'mapa' ? 'mapa' : 'seznam'
   useHead(homeMeta())
+  const latest = getLatestRelease()
+  const latestVenues = useMemo(() => (latest?.added || []).map(getVenueBySlug).filter(Boolean)
+    .sort(byTierThenName).slice(0, 6), [latest])
 
   const update = (patch) => {
     const next = new URLSearchParams(params)
@@ -141,7 +145,7 @@ export default function Home() {
           <div className="empty-actions">
             {kraj && <button className="btn btn--ghost" onClick={() => update({ kraj: '' })}>Zrušit filtr Kraj</button>}
             {uroven && <button className="btn btn--ghost" onClick={() => update({ uroven: '' })}>Zobrazit i místa pro 4 děti</button>}
-            <a className="btn btn--ghost" href={reportMailto('Tip na místo', 'Název místa:\nOdkaz na ceník:\n')}>Poslat tip na místo</a>
+            <Link className="btn btn--ghost" to="/tip/">Poslat tip na místo</Link>
           </div>
         </div>
       ) : view === 'mapa' ? (
@@ -153,6 +157,29 @@ export default function Home() {
           {filtered.map((v) => <VenueCard key={v.slug} venue={v} />)}
         </div>
       )}
+
+      {latest && latestVenues.length > 0 && (
+        <section className="latest" aria-labelledby="latest-h">
+          <div className="latest-head">
+            <h2 id="latest-h" className="h-sm">Naposledy přidáno</h2>
+            <p className="meta">
+              <time dateTime={latest.date}>{formatDate(latest.date)}</time> · {latest.headline}
+            </p>
+            <Link className="link-btn" to="/novinky/">Všechny novinky</Link>
+          </div>
+          <div className="grid">
+            {latestVenues.map((v) => <VenueCard key={v.slug} venue={v} />)}
+          </div>
+        </section>
+      )}
+
+      <section className="tip-cta" aria-labelledby="tip-cta-h">
+        <div>
+          <h2 id="tip-cta-h" className="h-sm">Znáte místo s férovým vstupným?</h2>
+          <p className="meta">Kde rodinná vstupenka platí pro 4 a více dětí. Ověříme to na ceníku a přidáme.</p>
+        </div>
+        <Link className="btn" to="/tip/">Pošlete tip</Link>
+      </section>
 
       <nav className="kraj-links" aria-labelledby="kraje-h">
         <h2 id="kraje-h" className="h-sm">Výlety podle krajů</h2>

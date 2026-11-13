@@ -55,6 +55,8 @@ p { margin: 0 0 .75em; }
 .disclaimer { margin: 24px 0 0; padding-top: 16px; border-top: 1px solid var(--line);
   font-size: var(--fs-xs); color: var(--muted); }
 @media (min-width: 760px) { .footer-inner { grid-template-columns: 1.4fr 1fr 1fr; } }
+@media (max-width: 640px) { .header-nav { gap: 12px; } .header-nav .nav-about { display: none; } }
+@media (max-width: 520px) { .header-nav .nav-novinky { display: none; } }
 @media (max-width: 420px) { .header-nav a:not(.btn) { display: none; } .brand img { height: 30px; } }
 
 /* ── Hero ────────────────────────────────────────────────────────────── */
@@ -243,6 +245,57 @@ form.detail { background: var(--surface); padding: 16px; border-radius: var(--ra
   margin: 0; padding: 0; list-style: none; }
 .kraj-links a { display: inline-block; padding: 8px 0; min-height: 24px; }
 .crumbs a + span { margin: 0 6px; color: var(--muted); }
+
+/* ── Tip a oprava (/tip/) ───────────────────────────────────────────── */
+.tip-page { max-width: 44rem; }
+.tip-tabs { margin: 8px 0 16px; }
+.tip-form { display: grid; gap: 16px; padding: 20px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow); }
+.form-intro { margin: 0; color: var(--muted); }
+.form-field { display: grid; gap: 6px; min-width: 0; }
+.form-field > label, .form-radios legend { font-weight: 600; font-size: var(--fs-sm); }
+.form-field input[type="text"], .form-field input[type="url"], .form-field textarea {
+  width: 100%; min-height: 44px; padding: 8px 12px; border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm); background: var(--surface); color: var(--text); font: inherit; }
+.form-field textarea { resize: vertical; }
+.form-field input:focus-visible, .form-field textarea:focus-visible, .form-radios input:focus-visible {
+  outline: none; box-shadow: var(--focus-ring); }
+.form-field.has-error input, .form-field.has-error textarea { border-color: var(--danger); }
+.form-radios { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.form-radios legend { padding: 0; margin-bottom: 6px; width: 100%; }
+.form-radios label { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; cursor: pointer; }
+.form-radios input { width: 20px; height: 20px; accent-color: var(--primary); margin: 0; }
+.form-hint { margin: 0; font-size: var(--fs-sm); color: var(--muted); }
+.form-hint:empty { display: none; }
+.form-error { margin: 0; font-size: var(--fs-sm); color: var(--danger); font-weight: 600; }
+.tip-send { display: grid; gap: 10px; justify-items: start; padding-top: 8px; border-top: 1px solid var(--line); }
+.tip-fallback { display: flex; flex-wrap: wrap; gap: 8px; }
+.tip-thanks { margin: 0; background: var(--primary-soft); border-color: transparent; }
+.tip-thanks p:last-child { margin: 0; }
+.tip-privacy { margin-top: 32px; font-size: var(--fs-sm); color: var(--muted); }
+.tip-privacy h2 { color: var(--text); }
+.tip-nudge { margin: 20px 0 0; }
+
+/* ── Detail: sdílení, chyba, poděkování ──────────────────────────────── */
+.detail-share { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 12px; }
+.share-status { font-size: var(--fs-sm); color: var(--muted); overflow-wrap: anywhere; }
+.trust-hint { margin: 2px 0 0; color: var(--muted); font-size: var(--fs-xs); }
+.trust.is-stale .trust-hint { color: var(--warn-fg); }
+.tip-credit { margin: 12px 0 0; font-size: var(--fs-sm); color: var(--muted); }
+
+/* ── Novinky a úvod ──────────────────────────────────────────────────── */
+.release { padding: 24px 0; border-top: 1px solid var(--line); }
+.release-date { margin: 0 0 4px; font-size: var(--fs-sm); color: var(--muted); font-weight: 600; }
+.release h3 { margin-top: 16px; }
+.release-list { padding-left: 1.2em; }
+.release-list li { margin-bottom: 6px; }
+.latest { margin-top: 40px; }
+.latest-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-bottom: 12px; }
+.latest-head h2 { margin: 0; }
+.latest-head .meta { color: var(--muted); font-size: var(--fs-sm); flex: 1 1 16rem; }
+.tip-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px;
+  margin-top: 32px; padding: 20px; border-radius: var(--radius); background: var(--primary-soft); }
+.tip-cta h2 { margin: 0 0 4px; }
 
 /* ── Přístupnost: viditelné zaměření i pro odkazy a pole ─────────────── */
 a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 3px; }

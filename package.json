@@ -9,7 +9,8 @@
     "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr",
     "postbuild": "node scripts/postbuild.mjs",
     "preview": "vite preview",
-    "import": "node scripts/import.mjs"
+    "import": "node scripts/import.mjs",
+    "novinky": "node scripts/novinky.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0",

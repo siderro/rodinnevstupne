@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { BUY_ME_A_COFFEE_URL, reportMailto } from '../lib/constants'
+import { BUY_ME_A_COFFEE_URL } from '../lib/constants'
 import { aboutMeta } from '../lib/seo'
 import { useHead } from '../lib/useHead'
 
@@ -35,7 +35,7 @@ export default function About() {
 
       <h2>Pomozte nám</h2>
       <p>
-        Víte o místě, které tu chybí, nebo se změnil ceník? <a href={reportMailto('Tip na místo')}>Napište nám</a>,
+        Víte o místě, které tu chybí, nebo se změnil ceník? <Link to="/tip/">Napište nám</Link>,
         opravíme to. Provoz drží komunita, takže pokud vám web pomohl,{' '}
         <a href={BUY_ME_A_COFFEE_URL} target="_blank" rel="noreferrer">podpořte nás kávou</a>.
       </p>
