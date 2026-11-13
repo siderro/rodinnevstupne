@@ -1,7 +1,8 @@
 # Rodinné vstupné (rodinnevstupne.cz)
 
 Veřejný katalog výletů v ČR (zoo, hrady, aquaparky, muzea, zábavní parky…), kde rodinné
-vstupné platí pro **velké rodiny**. Claim: *Kam na výlet, když dětí máte víc než dvě.*
+vstupné platí pro **velké rodiny**. Claim: *Kam na výlet, když je dětí spousta.*
+Kampaňový claim (sítě, letáky, reklama): *Dětí spousta, vstupenka jedna.* Pravidla v `brand/brand.md`.
 Zdarma, bez registrace, pořadí výsledků nejde koupit. Příjem: Buy Me a Coffee; reklama
 až později a nenásilně. Doména `rodinnevstupne.cz` patří majiteli (zatím míří na původní hosting).
 

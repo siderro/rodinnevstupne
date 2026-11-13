@@ -58,7 +58,7 @@ export default function Layout() {
           <div className="footer-col">
             <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="Rodinné vstupné" width="186" height="32" />
             <p className="meta">
-              Kam na výlet, když dětí máte víc než dvě. Zdarma, bez registrace a pořadí výsledků nejde koupit.
+              Kam na výlet, když je dětí spousta. Zdarma, bez registrace a pořadí výsledků nejde koupit.
             </p>
           </div>
           <nav className="footer-col footer-links" aria-label="Patička">

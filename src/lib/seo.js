@@ -6,7 +6,7 @@ import {
 } from './constants'
 
 export const SITE_NAME = 'Rodinné vstupné'
-export const DEFAULT_TITLE = 'Rodinné vstupné – kam na výlet, když dětí máte víc než dvě'
+export const DEFAULT_TITLE = 'Rodinné vstupné – kam na výlet, když je dětí spousta'
 export const DEFAULT_DESCRIPTION =
   'Katalog výletů po celé ČR, kde rodinné vstupné platí aspoň pro 4 děti. U každého místa ověřená cena pro celou rodinu, zdroj a datum ověření. Zdarma a bez registrace.'
 

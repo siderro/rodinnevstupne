@@ -1,6 +1,6 @@
 # Rodinné vstupné
 
-*Kam na výlet, když dětí máte víc než dvě.*
+*Kam na výlet, když je dětí spousta.*
 
 Bezplatný katalog výletů v ČR, kde rodinné vstupné platí aspoň pro 4 děti. U každého místa
 uvádíme ověřenou cenu pro celou rodinu, zdroj a datum ověření. Budoucí doména:

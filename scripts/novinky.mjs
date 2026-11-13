@@ -263,7 +263,7 @@ function facebook() {
   const lines = []
   if (isLaunch) {
     lines.push(`${HEADLINE}.`, '')
-    lines.push('Rodinné vstupné je katalog výletů pro rodiny, které mají dětí víc než dvě. U každého místa uvádíme, pro kolik dětí platí rodinná vstupenka, kolik stojí, odkud údaj máme a kdy jsme ho ověřili.', '')
+    lines.push('Dětí spousta, vstupenka jedna. Rodinné vstupné je katalog výletů pro velké rodiny. U každého místa uvádíme, pro kolik dětí platí rodinná vstupenka, kolik stojí, odkud údaj máme a kdy jsme ho ověřili.', '')
   } else {
     lines.push(`Dnes ${pribylo(addedV.length)}, kam můžete s dětmi.`.replace(/^Dnes přibylo 0.*$/, 'Aktualizovali jsme katalog.'), '')
   }
@@ -294,7 +294,7 @@ function instagram() {
   const slides = []
   slides.push(isLaunch
     ? [`${pocetMist(current.length)}, kam můžete s dětmi`, '  Kde rodinná vstupenka platí pro 4 a více dětí. Ověřeno, se zdrojem a datem.']
-    : [`Dnes ${pribylo(addedV.length)}`.replace(/^Dnes přibylo 0.*$/, 'Aktualizace katalogu'), '  kam můžete s dětmi, když jich máte víc než dvě'])
+    : [`Dnes ${pribylo(addedV.length)}`.replace(/^Dnes přibylo 0.*$/, 'Aktualizace katalogu'), '  Dětí spousta, vstupenka jedna.'])
   if (addedV.length) {
     const c = tierCounts(addedV)
     slides.push(['Jak čtete odznaky',
@@ -355,7 +355,7 @@ function newsletter() {
   lines.push(`**Náhledový text:** ${addedV.length ? tierSentence(addedV) : 'Aktualizovali jsme ceníky a podmínky.'}`, '')
   lines.push('Dobrý den,', '')
   if (isLaunch) {
-    lines.push(`spustili jsme Rodinné vstupné, katalog výletů pro rodiny, které mají dětí víc než dvě. Na startu v něm je ${pocetMist(current.length)}${krajeCount === 14 ? ' ze všech 14 krajů' : ''}. U každého uvádíme, pro kolik dětí platí rodinná vstupenka, kolik stojí, odkud údaj máme a kdy jsme ho ověřili.`, '')
+    lines.push(`spustili jsme Rodinné vstupné, katalog výletů pro velké rodiny. Na startu v něm je ${pocetMist(current.length)}${krajeCount === 14 ? ' ze všech 14 krajů' : ''}. U každého uvádíme, pro kolik dětí platí rodinná vstupenka, kolik stojí, odkud údaj máme a kdy jsme ho ověřili.`, '')
   } else if (addedV.length) {
     lines.push(`do katalogu ${pribylo(addedV.length)}. Teď v něm je celkem ${pocetMist(current.length)}.`, '')
   } else {

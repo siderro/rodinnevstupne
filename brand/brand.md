@@ -1,16 +1,29 @@
 # Značka Rodinné vstupné
 
-*Verze 1.0, 13. 11. 2026. Podklad pro vývoj, copywriting a sociální sítě. Vychází z `docs/strategy.md` a `docs/research/design.md`.*
+*Verze 1.1, 13. 11. 2026 (nové claimy). Podklad pro vývoj, copywriting a sociální sítě. Vychází z `docs/strategy.md` a `docs/research/design.md`.*
 
 ## 1. Základ
 
 | | |
 |---|---|
 | **Název** | Rodinné vstupné (vždy s diakritikou, dvě slova, velké jen R) |
-| **Claim** | **Kam na výlet, když dětí máte víc než dvě.** |
+| **Hlavní claim** | **Kam na výlet, když je dětí spousta.** |
+| **Kampaňový claim** | **Dětí spousta, vstupenka jedna.** |
 | **Doména** | primární `rodinnevstupne.cz` (vlastní, v `public/CNAME`), `rodinne-vstupne.cz` jako přesměrování, až ji zaregistrujeme. Logo ani OG obrázek doménu neobsahují, takže na výsledku nic nezávisí. |
 | **Pozicování** | Rodinné vstupné je jediný český katalog výletů, který filtruje podle počtu dětí, na které platí rodinné vstupné. Je určený velkým rodinám, které nechtějí přeplácet. Na rozdíl od Kudy z nudy, Cestuj s dětmi a slevových portálů uvádí u každého místa ověřenou cenu pro celou rodinu se zdrojem a datem ověření. Pokrývá celou ČR včetně 4 krajů bez Rodinných pasů. Je zdarma, bez registrace a pořadí výsledků nejde koupit. |
 | **Jednou větou** | Zadejte, kolik máte dětí, a ukážeme vám místa, kde zaplatíte jedno rodinné vstupné. |
+
+### Kdy který claim
+
+| Claim | Kde ho použít | Proč |
+|---|---|---|
+| **Kam na výlet, když je dětí spousta.** (hlavní) | Hlavička a úvod webu, `<title>`, OG náhled, patička, README, dokumenty značky, e-maily organizacím a médiím | Říká, k čemu web slouží a pro koho je. Funguje i bez kontextu, třeba ve výsledcích vyhledávání. |
+| **Dětí spousta, vstupenka jedna.** (kampaňový) | Sociální sítě (příspěvky, karusely, druhý řádek biografie na IG a FB), letáky, plakáty, reklama | Krátký a zapamatovatelný, nese slib jedné vstupenky. Potřebuje vedle sebe logo nebo název, proto ho nedáváme do titulku webu. |
+
+- Hlavní claim sám o vstupném nemluví. Na webu proto pod ním vždy stojí podtitulek s přínosem:
+  „Rodinné vstupné aspoň pro 4 děti, s ověřenou cenou.“
+- Oba claimy na jedné ploše nekombinujeme hned pod sebou, slovo „spousta“ by se opakovalo. Výjimka je bio, kde je kampaňový claim na druhém řádku pod věcným popisem.
+- Claim píšeme vždy s tečkou na konci, v nadpisu webu (`<h1>`) a v titulku stránky bez tečky.
 
 ## 2. Příběh produktu
 
@@ -69,7 +82,7 @@ Krátké věty, konkrétní čísla, česká typografie (nedělitelná mezera v 
 | „Jedno rodinné vstupné pro 2 dospělé a až 5 dětí: 690 Kč.“ | „Super cena! Ušetřete až 50 %!“ | Konkrétní cena místo slevového křiku. |
 | „Ověřili jsme 3. 9. 2026 na webu zoo.“ | „Aktuální ceny.“ | Zdroj a datum jsou náš hlavní slib. |
 | „Pro velké rodiny, které nechtějí přeplácet.“ | „Pro rodiny, které si nemůžou dovolit…“ | Nejsme charita, cílovku nelitujeme. |
-| „Kam na výlet, když dětí máte víc než dvě.“ | „Kam levně s dětmi.“ | „Levně“ je slevový tón. Řešíme férovost, ne lacinost. |
+| „Kam na výlet, když je dětí spousta.“ / „Dětí spousta, vstupenka jedna.“ | „Kam levně s dětmi.“ | „Levně“ je slevový tón. Řešíme férovost, ne lacinost. |
 | „Tady rodinná vstupenka platí jen pro 2 děti, za další se doplácí 120 Kč.“ | „Bohužel tu na velké rodiny kašlou.“ | Popisujeme ceník, provozovatele neodsuzujeme. |
 | „Ceny se mění. Před cestou je radši ověřte, údaj je starší než rok.“ | „POZOR!!! Ceny nemusí platit!“ | Klidné varování, bez vykřičníků. |
 | „Víte o změně? Napište nám, opravíme to.“ | „Pomozte nám, nebo projekt skončí!“ | Komunitu zveme, netlačíme. |
@@ -128,7 +141,7 @@ Pravidla:
 | `brand/icons/tier-*.svg` | Ikony úrovní, barva přes `currentColor`. |
 
 **Význam značky:** vstupenka s výřezy po stranách, na ní celá rodina: dva dospělí a tři děti, prostřední korálově.
-Říká „jedna vstupenka pro všechny“ a „víc než dvě děti“ bez jediného slova.
+Říká „jedna vstupenka pro všechny“ a „dětí je spousta“ bez jediného slova.
 
 Pravidla: kolem loga volné místo aspoň na šířku jedné hlavičky dospělého. Logo nedeformujeme, neotáčíme,
 nedáváme mu stín a neměníme barvy. Na tmavém podkladu se v `logo.svg` samo přepne písmo na světlé, značka zůstává stejná.

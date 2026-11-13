@@ -1,6 +1,6 @@
 # PRD — Rodinné vstupné (rodinnevstupne.cz)
 
-Claim: *Kam na výlet, když dětí máte víc než dvě.* Doména zatím neregistrovaná.
+Claim: *Kam na výlet, když je dětí spousta.* Kampaňový claim (sítě, letáky): *Dětí spousta, vstupenka jedna.* Doména zatím neregistrovaná.
 
 ## 1. Problém
 „Rodinné vstupné" bývá 2+2 (2 dospělí + 2 děti). Velké rodiny (3+ dětí) tím tratí.

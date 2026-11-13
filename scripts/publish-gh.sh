@@ -7,7 +7,7 @@ REPO=siderro/rodinnevstupne
 
 if ! gh repo view "$REPO" >/dev/null 2>&1; then
   gh repo create "$REPO" --public --source . --remote origin \
-    --description "Kam na výlet, když dětí máte víc než dvě."
+    --description "Kam na výlet, když je dětí spousta. Katalog míst s ověřeným rodinným vstupným pro 4 a více dětí."
 fi
 git remote get-url origin >/dev/null 2>&1 || git remote add origin "git@github.com:$REPO.git"
 

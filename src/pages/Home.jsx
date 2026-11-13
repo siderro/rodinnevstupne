@@ -72,12 +72,19 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero">
-        <h1>Kam na výlet, když dětí máte víc než dvě</h1>
-        <p className="lead">
-          Místa po celé ČR, kde rodinné vstupné platí aspoň pro 4 děti. U každého uvádíme cenu
-          pro celou rodinu, odkud ji máme a kdy jsme ji ověřili.
-        </p>
+      <section className="hero hero--home">
+        <div className="hero-text">
+          <h1>Kam na výlet, když je dětí spousta</h1>
+          <p className="hero-sub">Rodinné vstupné aspoň pro 4 děti, s ověřenou cenou.</p>
+          <p className="lead">
+            Místa po celé ČR. U každého uvádíme cenu pro celou rodinu, odkud ji máme a kdy jsme
+            ji ověřili.
+          </p>
+        </div>
+        {/* Kresba jako od dítěte: mapa ČR s výlety a rodina se sedmi dětmi (brand/illustration/gen-hero.py).
+            Vykresluje se maskou v barvě textu, takže sedí i v tmavém režimu. Čistě dekorativní. */}
+        <div className="hero-art" aria-hidden="true"
+          style={{ '--hero-art': `url(${import.meta.env.BASE_URL}hero-cr.svg)` }} />
       </section>
 
       {demo && (
