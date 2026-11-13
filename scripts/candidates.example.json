@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Aquapark Vyškov",
+    "category": "aquapark",
+    "kraj": "Jihomoravský",
+    "city": "Vyškov",
+    "website": "https://www.aqua-park.cz",
+    "family_policy": "unlimited",
+    "family_ticket_desc": "Rodinné vstupné pro 2 dospělé a všechny jejich děti.",
+    "source_url": "https://www.aqua-park.cz"
+  },
+  {
+    "name": "Zoo Dvůr Králové",
+    "category": "zoo",
+    "kraj": "Královéhradecký",
+    "city": "Dvůr Králové nad Labem",
+    "website": "https://www.safaripark.cz",
+    "family_policy": "max_children",
+    "max_children": 3,
+    "price_adult": 349,
+    "price_child": 279,
+    "source_url": "https://www.safaripark.cz"
+  }
+]

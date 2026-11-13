@@ -1,0 +1,119 @@
+/* Rodinné vstupné – barevné tokeny (generováno z palette.json, 13. 11. 2026)
+   Kontrast ověřen výpočtem podle WCAG 2.2 (viz palette.json → contrast).
+   Přepínač režimu: <html data-theme="light|dark">, bez atributu = podle systému. */
+
+:root {
+  color-scheme: light dark;
+  --bg: #FBF8F3;
+  --surface: #FFFFFF;
+  --surface-2: #F3EEE6;
+  --text: #1C1F26;
+  --muted: #5B6170;
+  --line: #E6E0D6;
+  --border-strong: #7C8591;
+  --primary: #0F7B6C;
+  --primary-hover: #0B6357;
+  --on-primary: #FFFFFF;
+  --primary-soft: #E2F3EF;
+  --accent: #FF6B4A;
+  --on-accent: #1C1F26;
+  --accent-text: #B5381A;
+  --focus: #0F7B6C;
+  --tier-gold-fg: #7A5200;
+  --tier-gold-bg: #FFF2C4;
+  --tier-gold-ui: #B07A00;
+  --tier-silver-fg: #4D5670;
+  --tier-silver-bg: #ECEFF5;
+  --tier-silver-ui: #6B7488;
+  --tier-base-fg: #0B6A5D;
+  --tier-base-bg: #E2F3EF;
+  --tier-base-ui: #0F7B6C;
+  --warn-fg: #8F4A00;
+  --warn-bg: #FFF1E0;
+  --danger: #B42318;
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-pill: 999px;
+  --shadow: 0 1px 2px rgba(28, 31, 38, .06), 0 4px 14px rgba(28, 31, 38, .06);
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--focus);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #16181D;
+    --surface: #1F2229;
+    --surface-2: #272B33;
+    --text: #ECEDEF;
+    --muted: #A3A9B6;
+    --line: #2F333C;
+    --border-strong: #757D8C;
+    --primary: #4FD1BC;
+    --primary-hover: #7EE0CF;
+    --on-primary: #0B1F1C;
+    --primary-soft: #123430;
+    --accent: #FF8A70;
+    --on-accent: #16181D;
+    --accent-text: #FF8A70;
+    --focus: #4FD1BC;
+    --tier-gold-fg: #FFD466;
+    --tier-gold-bg: #3A2F10;
+    --tier-gold-ui: #FFD466;
+    --tier-silver-fg: #C9D0DE;
+    --tier-silver-bg: #2A2F3A;
+    --tier-silver-ui: #C9D0DE;
+    --tier-base-fg: #7EE0CF;
+    --tier-base-bg: #123430;
+    --tier-base-ui: #7EE0CF;
+    --warn-fg: #FFB866;
+    --warn-bg: #3A2A12;
+    --danger: #FF8A80;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 4px 14px rgba(0, 0, 0, .3);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #16181D;
+  --surface: #1F2229;
+  --surface-2: #272B33;
+  --text: #ECEDEF;
+  --muted: #A3A9B6;
+  --line: #2F333C;
+  --border-strong: #757D8C;
+  --primary: #4FD1BC;
+  --primary-hover: #7EE0CF;
+  --on-primary: #0B1F1C;
+  --primary-soft: #123430;
+  --accent: #FF8A70;
+  --on-accent: #16181D;
+  --accent-text: #FF8A70;
+  --focus: #4FD1BC;
+  --tier-gold-fg: #FFD466;
+  --tier-gold-bg: #3A2F10;
+  --tier-gold-ui: #FFD466;
+  --tier-silver-fg: #C9D0DE;
+  --tier-silver-bg: #2A2F3A;
+  --tier-silver-ui: #C9D0DE;
+  --tier-base-fg: #7EE0CF;
+  --tier-base-bg: #123430;
+  --tier-base-ui: #7EE0CF;
+  --warn-fg: #FFB866;
+  --warn-bg: #3A2A12;
+  --danger: #FF8A80;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 4px 14px rgba(0, 0, 0, .3);
+}
+:root[data-theme="light"] { color-scheme: light; }
+
+body { background: var(--bg); color: var(--text); }
+a { color: var(--primary); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* Odznak úrovně: vždy ikona + text */
+.tier { display: inline-flex; align-items: center; gap: .4em; padding: .25em .75em;
+  border-radius: var(--radius-pill); font-weight: 650; font-size: .875rem; line-height: 1.4; }
+.tier--gold   { color: var(--tier-gold-fg);   background: var(--tier-gold-bg); }
+.tier--silver { color: var(--tier-silver-fg); background: var(--tier-silver-bg); }
+.tier--base   { color: var(--tier-base-fg);   background: var(--tier-base-bg); }
+.tier--conditional { background: transparent; border: 1.5px dashed currentColor; }
+.tier svg { width: 1.1em; height: 1.1em; flex: none; }

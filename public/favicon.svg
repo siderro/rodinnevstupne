@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<style>.t{fill:#0F7B6C}.h{fill:#FFFFFF}.c{fill:#FF6B4A}
+</style>
+<path class="t" d="M13 12H51A9 9 0 0 1 60 21V26A6 6 0 0 0 60 38V43A9 9 0 0 1 51 52H13A9 9 0 0 1 4 43V38A6 6 0 0 0 4 26V21A9 9 0 0 1 13 12Z"/><circle class="h" cx="20" cy="32" r="6.5"/><circle class="c" cx="32" cy="32" r="6.5"/><circle class="h" cx="44" cy="32" r="6.5"/>
+</svg>

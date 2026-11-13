@@ -1,0 +1,54 @@
+/* Rodinné vstupné – typografie
+   Google Fonts, oba fonty mají subset latin-ext (ověřeno 13. 11. 2026: v CSS z fonts.googleapis.com
+   je blok latin-ext a fonty obsahují všechny glyfy á č ď é ě í ň ó ř š ť ú ů ý ž, „“ – €).
+
+   Do <head> v index.html (latin-ext se načte sám přes unicode-range):
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:ital,wght@0,400..700;1,400&display=swap">
+*/
+
+:root {
+  --font-display: "Bricolage Grotesque", "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Plynulá škála (mobil → desktop) */
+  --fs-xs: 0.8125rem;                                  /* 13 px – jen drobné poznámky */
+  --fs-sm: 0.875rem;                                   /* 14 px – metadata, datum ověření, odznaky */
+  --fs-base: 1.0625rem;                                /* 17 px – běžný text */
+  --fs-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem); /* perex */
+  --fs-h3: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --fs-h2: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --fs-h1: clamp(2rem, 1.5rem + 2.6vw, 3.5rem);
+  --fs-price: clamp(1.375rem, 1.25rem + 0.6vw, 1.75rem);
+
+  --lh-body: 1.5;
+  --lh-heading: 1.12;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  line-height: var(--lh-heading);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+h1 { font-size: var(--fs-h1); font-weight: 800; letter-spacing: -0.025em; }
+h2 { font-size: var(--fs-h2); font-weight: 700; }
+h3 { font-size: var(--fs-h3); font-weight: 700; }
+
+/* Ceny a počty: tabulkové číslice, tučně. Formát „690 Kč“ s nedělitelnou mezerou. */
+.price, .num { font-variant-numeric: tabular-nums; }
+.price { font-family: var(--font-body); font-size: var(--fs-price); font-weight: 700; }
+
+.meta { font-size: var(--fs-sm); color: var(--muted); }
+
+button, input, select, textarea { font: inherit; }

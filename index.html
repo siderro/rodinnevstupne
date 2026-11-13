@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rodinné vstupné – kam na výlet, když dětí máte víc než dvě</title>
+    <meta name="description" content="Katalog výletů po celé ČR, kde rodinné vstupné platí aspoň pro 4 děti. U každého místa ověřená cena pro celou rodinu, zdroj a datum ověření. Zdarma a bez registrace." />
+    <meta name="theme-color" content="#FBF8F3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#16181D" media="(prefers-color-scheme: dark)" />
+
+    <!-- Favicon: SVG pro moderní prohlížeče, PNG pro Safari a starší prohlížeče -->
+    <link rel="icon" href="%BASE_URL%favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="%BASE_URL%favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+
+    <!-- Sdílení (og:image musí být PNG s absolutní adresou; doména z env VITE_SITE_URL, viz vite.config.js).
+         Prerender (scripts/postbuild.mjs) tyto značky přepisuje pro každou stránku. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:site_name" content="Rodinné vstupné" />
+    <meta property="og:title" content="Rodinné vstupné – kam na výlet, když dětí máte víc než dvě" />
+    <meta property="og:description" content="Místa v celé ČR, kde rodinné vstupné platí aspoň pro 4 děti. Ověřená cena, zdroj a datum ověření." />
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
+    <link rel="canonical" href="%VITE_SITE_URL%/" />
+    <meta property="og:image" content="%VITE_SITE_URL%/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Rodinné vstupné – logo se vstupenkou pro celou rodinu" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Písma: Bricolage Grotesque + Figtree, latin-ext se načte přes unicode-range -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:ital,wght@0,400..700;1,400&display=swap" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

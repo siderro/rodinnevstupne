@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="t">
+<title id="t">Rodinné vstupné</title><style>.t{fill:#0F7B6C}.h{fill:#FFFFFF}.c{fill:#FF6B4A}
+</style>
+<path class="t" d="M13 12H51A9 9 0 0 1 60 21V26A6 6 0 0 0 60 38V43A9 9 0 0 1 51 52H13A9 9 0 0 1 4 43V38A6 6 0 0 0 4 26V21A9 9 0 0 1 13 12Z"/><g class="h"><circle cx="15.5" cy="21.5" r="4"/><path d="M11.3 45V31.7A4.2 4.2 0 0 1 19.7 31.7V45Z"/><circle cx="24.5" cy="29.5" r="2.9"/><path d="M21.5 45V37A3 3 0 0 1 27.5 37V45Z"/><circle cx="39.5" cy="29.5" r="2.9"/><path d="M36.5 45V37A3 3 0 0 1 42.5 37V45Z"/><circle cx="48.5" cy="21.5" r="4"/><path d="M44.3 45V31.7A4.2 4.2 0 0 1 52.7 31.7V45Z"/></g><g class="c"><circle cx="32" cy="29.5" r="2.9"/><path d="M29 45V37A3 3 0 0 1 35 37V45Z"/></g>
+</svg>

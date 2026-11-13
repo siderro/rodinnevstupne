@@ -1,0 +1,456 @@
+{
+  "name": "Rodinné vstupné",
+  "version": "1.0",
+  "date": "2026-11-13",
+  "standard": "WCAG 2.2 AA: text 4.5:1, UI prvky a velký text 3:1",
+  "notes": [
+    "Barvy úrovní (tier-*) používáme jen pro odznaky, piny a jejich ikony.",
+    "Úroveň nikdy nevyjadřujeme jen barvou: vždy text + ikona.",
+    "Na žlutém a zlatém pozadí vždy tmavý text.",
+    "Korálový accent jako plocha jen s tmavým textem (on-accent); bílý text na korálové neprojde."
+  ],
+  "tokens": {
+    "light": {
+      "bg": "#FBF8F3",
+      "surface": "#FFFFFF",
+      "surface-2": "#F3EEE6",
+      "text": "#1C1F26",
+      "muted": "#5B6170",
+      "line": "#E6E0D6",
+      "border-strong": "#7C8591",
+      "primary": "#0F7B6C",
+      "primary-hover": "#0B6357",
+      "on-primary": "#FFFFFF",
+      "primary-soft": "#E2F3EF",
+      "accent": "#FF6B4A",
+      "on-accent": "#1C1F26",
+      "accent-text": "#B5381A",
+      "focus": "#0F7B6C",
+      "tier-gold-fg": "#7A5200",
+      "tier-gold-bg": "#FFF2C4",
+      "tier-gold-ui": "#B07A00",
+      "tier-silver-fg": "#4D5670",
+      "tier-silver-bg": "#ECEFF5",
+      "tier-silver-ui": "#6B7488",
+      "tier-base-fg": "#0B6A5D",
+      "tier-base-bg": "#E2F3EF",
+      "tier-base-ui": "#0F7B6C",
+      "warn-fg": "#8F4A00",
+      "warn-bg": "#FFF1E0",
+      "danger": "#B42318"
+    },
+    "dark": {
+      "bg": "#16181D",
+      "surface": "#1F2229",
+      "surface-2": "#272B33",
+      "text": "#ECEDEF",
+      "muted": "#A3A9B6",
+      "line": "#2F333C",
+      "border-strong": "#757D8C",
+      "primary": "#4FD1BC",
+      "primary-hover": "#7EE0CF",
+      "on-primary": "#0B1F1C",
+      "primary-soft": "#123430",
+      "accent": "#FF8A70",
+      "on-accent": "#16181D",
+      "accent-text": "#FF8A70",
+      "focus": "#4FD1BC",
+      "tier-gold-fg": "#FFD466",
+      "tier-gold-bg": "#3A2F10",
+      "tier-gold-ui": "#FFD466",
+      "tier-silver-fg": "#C9D0DE",
+      "tier-silver-bg": "#2A2F3A",
+      "tier-silver-ui": "#C9D0DE",
+      "tier-base-fg": "#7EE0CF",
+      "tier-base-bg": "#123430",
+      "tier-base-ui": "#7EE0CF",
+      "warn-fg": "#FFB866",
+      "warn-bg": "#3A2A12",
+      "danger": "#FF8A80"
+    }
+  },
+  "contrast": {
+    "light": [
+      {
+        "fg": "text",
+        "bg": "bg",
+        "ratio": 15.57,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "text",
+        "bg": "surface",
+        "ratio": 16.49,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "text",
+        "bg": "surface-2",
+        "ratio": 14.28,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "muted",
+        "bg": "bg",
+        "ratio": 5.85,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "muted",
+        "bg": "surface",
+        "ratio": 6.2,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "muted",
+        "bg": "surface-2",
+        "ratio": 5.37,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "primary",
+        "bg": "bg",
+        "ratio": 4.87,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "primary",
+        "bg": "surface",
+        "ratio": 5.16,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "on-primary",
+        "bg": "primary",
+        "ratio": 5.16,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "on-primary",
+        "bg": "primary-hover",
+        "ratio": 7.15,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "primary",
+        "bg": "primary-soft",
+        "ratio": 4.5,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "on-accent",
+        "bg": "accent",
+        "ratio": 5.85,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "accent-text",
+        "bg": "bg",
+        "ratio": 5.59,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "accent-text",
+        "bg": "surface",
+        "ratio": 5.92,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "border-strong",
+        "bg": "surface",
+        "ratio": 3.74,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "border-strong",
+        "bg": "bg",
+        "ratio": 3.53,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "focus",
+        "bg": "bg",
+        "ratio": 4.87,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "focus",
+        "bg": "surface",
+        "ratio": 5.16,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "tier-gold-fg",
+        "bg": "tier-gold-bg",
+        "ratio": 6.18,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "tier-silver-fg",
+        "bg": "tier-silver-bg",
+        "ratio": 6.33,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "tier-base-fg",
+        "bg": "tier-base-bg",
+        "ratio": 5.66,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "tier-gold-ui",
+        "bg": "surface",
+        "ratio": 3.73,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "tier-silver-ui",
+        "bg": "surface",
+        "ratio": 4.69,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "tier-base-ui",
+        "bg": "surface",
+        "ratio": 5.16,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "warn-fg",
+        "bg": "warn-bg",
+        "ratio": 6.01,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "danger",
+        "bg": "surface",
+        "ratio": 6.57,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "danger",
+        "bg": "bg",
+        "ratio": 6.21,
+        "min": 4.5,
+        "pass": true
+      }
+    ],
+    "dark": [
+      {
+        "fg": "text",
+        "bg": "bg",
+        "ratio": 15.16,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "text",
+        "bg": "surface",
+        "ratio": 13.59,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "text",
+        "bg": "surface-2",
+        "ratio": 12.12,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "muted",
+        "bg": "bg",
+        "ratio": 7.53,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "muted",
+        "bg": "surface",
+        "ratio": 6.75,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "muted",
+        "bg": "surface-2",
+        "ratio": 6.02,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "primary",
+        "bg": "bg",
+        "ratio": 9.45,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "primary",
+        "bg": "surface",
+        "ratio": 8.47,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "on-primary",
+        "bg": "primary",
+        "ratio": 9.11,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "on-primary",
+        "bg": "primary-hover",
+        "ratio": 10.96,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "primary",
+        "bg": "primary-soft",
+        "ratio": 7.17,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "on-accent",
+        "bg": "accent",
+        "ratio": 7.71,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "accent-text",
+        "bg": "bg",
+        "ratio": 7.71,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "accent-text",
+        "bg": "surface",
+        "ratio": 6.91,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "border-strong",
+        "bg": "surface",
+        "ratio": 3.84,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "border-strong",
+        "bg": "bg",
+        "ratio": 4.29,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "focus",
+        "bg": "bg",
+        "ratio": 9.45,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "focus",
+        "bg": "surface",
+        "ratio": 8.47,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "tier-gold-fg",
+        "bg": "tier-gold-bg",
+        "ratio": 9.32,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "tier-silver-fg",
+        "bg": "tier-silver-bg",
+        "ratio": 8.66,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "tier-base-fg",
+        "bg": "tier-base-bg",
+        "ratio": 8.62,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "tier-gold-ui",
+        "bg": "surface",
+        "ratio": 11.27,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "tier-silver-ui",
+        "bg": "surface",
+        "ratio": 10.28,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "tier-base-ui",
+        "bg": "surface",
+        "ratio": 10.2,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "warn-fg",
+        "bg": "warn-bg",
+        "ratio": 8.09,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "danger",
+        "bg": "surface",
+        "ratio": 6.97,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "danger",
+        "bg": "bg",
+        "ratio": 7.78,
+        "min": 4.5,
+        "pass": true
+      }
+    ]
+  }
+}

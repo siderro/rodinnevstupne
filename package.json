@@ -1,0 +1,26 @@
+{
+  "name": "rodinnevstupne",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "data": "node scripts/build-data.mjs",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr",
+    "postbuild": "node scripts/postbuild.mjs",
+    "preview": "vite preview",
+    "import": "node scripts/import.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "leaflet": "^1.9.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.26.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.0"
+  }
+}
