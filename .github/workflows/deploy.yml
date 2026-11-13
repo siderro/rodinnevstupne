@@ -26,8 +26,9 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          # Web běží na <user>.github.io/<repo>/. Pro vlastní doménu nastav VITE_BASE: /
-          VITE_BASE: /${{ github.event.repository.name }}/
+          # Vlastní doména rodinnevstupne.cz (custom domain v Pages) → web běží v kořeni.
+          # Pro <user>.github.io/<repo>/ by bylo: /${{ github.event.repository.name }}/
+          VITE_BASE: /
           # Kanonická doména pro canonical, og:url a sitemap (prázdné = https://rodinnevstupne.cz)
           SITE_URL: ${{ vars.SITE_URL }}
           # Supabase je volitelný (jen pro /admin); bez něj web čte statická data ze src/data/venues.json.
