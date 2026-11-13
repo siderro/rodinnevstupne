@@ -1,4 +1,8 @@
-name: Deploy na GitHub Pages
+name: Deploy na Blueboard
+
+# Hosting: Blueboard (rodinnevstupne.cz, certifikát Let's Encrypt spravuje Blueboard).
+# Push hotového webu (dist/) do větve production v gitu Blueboardu ho zveřejní ve složce www.
+# Secrets: BLUEBOARD_SSH_KEY (soukromý deploy klíč), BLUEBOARD_KNOWN_HOSTS (ssh-keyscan locutus.blueboard.cz).
 
 on:
   push:
@@ -7,15 +11,13 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
+  group: deploy
   cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,25 +28,25 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          # Vlastní doména rodinnevstupne.cz (custom domain v Pages) → web běží v kořeni.
-          # Pro <user>.github.io/<repo>/ by bylo: /${{ github.event.repository.name }}/
+          # Web běží v kořeni domény
           VITE_BASE: /
           # Kanonická doména pro canonical, og:url a sitemap (prázdné = https://rodinnevstupne.cz)
           SITE_URL: ${{ vars.SITE_URL }}
           # Supabase je volitelný (jen pro /admin); bez něj web čte statická data ze src/data/venues.json.
-          # Nastav v repo: Settings → Secrets and variables → Actions → Variables
           VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Push do gitu Blueboardu (větev production)
+        env:
+          SSH_KEY: ${{ secrets.BLUEBOARD_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.BLUEBOARD_KNOWN_HOSTS }}
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/blueboard && chmod 600 ~/.ssh/blueboard
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          rm -f dist/CNAME
+          cd dist
+          git init -q -b production
+          git add -A
+          git -c user.name="GitHub Actions" -c user.email="deploy@rodinnevstupne.cz" commit -q -m "Deploy ${GITHUB_SHA::7}"
+          GIT_SSH_COMMAND="ssh -i ~/.ssh/blueboard -o IdentitiesOnly=yes" \
+            git push -f git@locutus.blueboard.cz:rodinnevstupne.cz production:production
