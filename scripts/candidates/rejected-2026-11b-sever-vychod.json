@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Aquacentrum Hradec Králové (Městské lázně + 50m bazén)",
+    "slug": "aquacentrum-hradec-kralove",
+    "kraj": "Královéhradecký",
+    "website": "https://www.snhk.cz/",
+    "reason": "Rodinné vstupné je jen sleva 10 % z osobních cen (každé dítě platí zvlášť) – fakticky platba za dítě (per_child), žádná rodinná vstupenka s pevnou cenou.",
+    "family_ticket_desc": "„Rodinné vstupné – sleva 10 % (2 dosp. + 1–4 děti od 120 cm do 15 let, studenti do 26 let)“; dospělí celodenní 310 Kč, zvýhodněné 240 Kč, děti od 1 roku do 120 cm 55 Kč (ceník platný od 1. 1. 2026).",
+    "source_url": "https://www.snhk.cz/storage/mestskelazne/cenik/2026/cenikPA2026.pdf",
+    "checked_at": "2026-11-13"
+  },
+  {
+    "name": "Krytý plavecký bazén Ústí nad Orlicí",
+    "slug": "kryty-bazen-usti-nad-orlici",
+    "kraj": "Pardubický",
+    "website": "https://rekreacnisluzby-uo.cz/",
+    "reason": "Ceník neaktuální („Ceník je platný od 1. 9. 2023“, starší než 2 roky); navíc rodinný vstup je jen sleva 10 % z osobního vstupného (per_child), ne pevná rodinná cena.",
+    "family_ticket_desc": "„Rodinný vstup do krytého plaveckého bazénu: 1 dospělý + 2 až 3 děti / 2 dospělí + 1 až 5 dětí – sleva 10 % ze základního vstupného / osoba“; dospělý 145 Kč.",
+    "source_url": "https://rekreacnisluzby-uo.cz/kryty-plavecky-bazen/cenik/",
+    "checked_at": "2026-11-13"
+  },
+  {
+    "name": "Muzeum Krkonoš Vrchlabí (Správa KRNAP)",
+    "slug": "muzeum-krkonos-vrchlabi",
+    "kraj": "Královéhradecký",
+    "website": "https://www.muzeumkrkonos.cz/",
+    "reason": "Rodinné vstupné jen pro 2 dospělé a max. 3 děti (2+3). Ceny ze sběru (200/100/400 Kč, leták 2023) jsou zastaralé.",
+    "family_ticket_desc": "„Rodinné: 500 Kč – 2 dospělí a max. 3 děti“; základní 250 Kč, zvýhodněné 100 Kč (děti od 6 do 15 let), děti mladší 6 let zdarma. Společná vstupenka Vrchlabí + Jilemnice + Paseky rodinná 700 Kč.",
+    "source_url": "https://www.muzeumkrkonos.cz/muzea-expozice/muzeum-krkonos",
+    "checked_at": "2026-11-13"
+  },
+  {
+    "name": "Východočeské muzeum v Pardubicích (zámek)",
+    "slug": "vychodoceske-muzeum-pardubice",
+    "kraj": "Pardubický",
+    "website": "https://www.vcm.cz/",
+    "reason": "Složení rodinného vstupného na oficiálním ceníku ani v online prodeji (Colosseum) neuvedeno – nelze ověřit počet dětí. Případně ověřit telefonicky (pokladna 466 799 271).",
+    "family_ticket_desc": "Rodinné vstupné: Muzejní expozice a výstavy 520 Kč (plné 320, snížené 210), Pernštejnská rezidence 480 Kč (plné 240, snížené 130); děti do 5 let zdarma; rodinné pasy −20 %.",
+    "source_url": "https://www.vcm.cz/navstivte-nas/oteviraci-doba-a-vstupne/",
+    "checked_at": "2026-11-13"
+  }
+]

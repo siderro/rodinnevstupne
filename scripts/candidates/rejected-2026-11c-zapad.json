@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Muzeum jižního Plzeňska v Blovicích – zámek Hradiště",
+    "slug": "muzeum-jizniho-plzenska-blovice",
+    "kraj": "Plzeňský",
+    "website": "https://www.muzeum-blovice.cz",
+    "reason": "Ceník uvádí jen „max. dva dospělí a alespoň jedno dítě do 15 let“, horní limit počtu dětí neuveden – nelze doložit pokrytí 4 dětí. Ověřit telefonicky (773 023 840); při potvrzení neomezeného počtu dětí by šlo o zlatou úroveň (základní okruh 60/40/120 Kč, rozšířený 100/70/200 Kč, děti do 5 let zdarma).",
+    "family_ticket_desc": "Rodinné vstupné: max. dva dospělí a alespoň jedno dítě do 15 let.",
+    "source_url": "https://www.muzeum-blovice.cz/navstivte-nas/vstupne/",
+    "checked_at": "2026-11-13"
+  },
+  {
+    "name": "Uměleckoprůmyslové museum v Praze",
+    "slug": "umeleckoprumyslove-museum-praha",
+    "kraj": "Praha",
+    "website": "https://www.upm.cz",
+    "reason": "Duplicita – už v katalogu (verified-2026-11b-zapad.json, stejný slug). Ceník 2026-11-13 znovu ověřen beze změny: děti do 15 let zdarma.",
+    "family_ticket_desc": "Vstup zdarma: děti do 15 let (v Kamenici nad Lipou do 10 let).",
+    "source_url": "https://www.upm.cz/navstivte-nas/vstupne/",
+    "checked_at": "2026-11-13"
+  },
+  {
+    "name": "Muzeum Prahy – Hlavní budova",
+    "slug": "muzeum-prahy-hlavni-budova",
+    "kraj": "Praha",
+    "website": "https://muzeumprahy.cz/",
+    "reason": "Časově omezený volný vstup, ne trvalé pravidlo (už zamítnuto v rejected-2026-11b-zapad.json). Oficiální stránka budovy uvádí jen „Volný vstup“, média „do konce roku 2026“. Přeověřit ceník v lednu 2027.",
+    "family_ticket_desc": "Volný vstup (dočasně).",
+    "source_url": "https://muzeumprahy.cz/muzejni-budovy/hlavni-budova-muzea-prahy-1",
+    "checked_at": "2026-11-13"
+  },
+  {
+    "name": "Muzeum Českého lesa v Tachově",
+    "slug": "muzeum-ceskeho-lesa-tachov",
+    "kraj": "Plzeňský",
+    "website": "https://www.muzeumtachov.cz",
+    "reason": "Ceník uvádí „Rodinné vstupné: 80 Kč“ bez složení (počet dospělých ani dětí) – nelze doložit pokrytí 4 dětí. Základní 40 Kč, děti/studenti/důchodci 20 Kč, předškolní děti zdarma. Případně ověřit e-mailem/telefonem (info@muzeumtachov.cz, 374 722 171).",
+    "family_ticket_desc": "Rodinné vstupné: 80 Kč",
+    "source_url": "https://www.muzeumtachov.cz/navstevni-doba-a-vstupne.html",
+    "checked_at": "2026-11-13"
+  }
+]
