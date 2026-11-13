@@ -1,5 +1,6 @@
-import { useId, useState } from 'react'
+import { useId, useRef, useState } from 'react'
 import { calculate, formatPrice, pluralKids, pluralAdults } from '../lib/constants'
+import { track } from '../lib/track'
 
 function Stepper({ label, value, min, max, onChange, unit }) {
   const id = useId()
@@ -21,6 +22,9 @@ function Stepper({ label, value, min, max, onChange, unit }) {
 export default function Calculator({ venue, initialKids = 4 }) {
   const [adults, setAdults] = useState(Math.min(2, venue.adults_in_family_ticket || 2))
   const [kids, setKids] = useState(initialKids)
+  // Událost „kalkulacka“ jednou na stránku místa (VenueDetail dává komponentě key podle slugu)
+  const tracked = useRef(false)
+  const touched = () => { if (!tracked.current) { tracked.current = true; track('kalkulacka', venue.slug) } }
   const r = calculate(venue, adults, kids)
   const fam = formatPrice(r.family)
   const ind = formatPrice(r.individual)
@@ -29,8 +33,8 @@ export default function Calculator({ venue, initialKids = 4 }) {
     <section className="calc" aria-labelledby="calc-h">
       <h2 id="calc-h">Kolik zaplatíme my?</h2>
       <div className="calc-inputs">
-        <Stepper label="Dospělí" value={adults} min={1} max={6} onChange={setAdults} unit={pluralAdults} />
-        <Stepper label="Děti" value={kids} min={0} max={15} onChange={setKids} unit={pluralKids} />
+        <Stepper label="Dospělí" value={adults} min={1} max={6} onChange={(n) => { touched(); setAdults(n) }} unit={pluralAdults} />
+        <Stepper label="Děti" value={kids} min={0} max={15} onChange={(n) => { touched(); setKids(n) }} unit={pluralKids} />
       </div>
 
       <div className="calc-rows">

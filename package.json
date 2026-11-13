@@ -10,7 +10,10 @@
     "postbuild": "node scripts/postbuild.mjs",
     "preview": "vite preview",
     "import": "node scripts/import.mjs",
-    "novinky": "node scripts/novinky.mjs"
+    "novinky": "node scripts/novinky.mjs",
+    "tips:fetch": "node scripts/tips/fetch-tips.mjs",
+    "tips:replies": "node scripts/tips/reply-drafts.mjs",
+    "tips:close": "node scripts/tips/close-tips.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0",
@@ -22,6 +25,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
+    "imapflow": "^2.11.0",
+    "mailparser": "^3.14.3",
     "vite": "^5.4.0"
   }
 }

@@ -2,6 +2,7 @@ import { useMemo, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { getVenues, getVenueBySlug } from '../lib/venues'
 import { BUY_ME_A_COFFEE_URL, REPORT_EMAIL, reportMailto } from '../lib/constants'
+import { track } from '../lib/track'
 import { tipMeta } from '../lib/seo'
 import { useHead } from '../lib/useHead'
 
@@ -75,8 +76,6 @@ function fitMailto(kind, f) {
   }
   return { href: urlOf(cur), truncated }
 }
-
-const track = (path) => { try { window.goatcounter?.count?.({ path, event: true }) } catch { /* bez měření */ } }
 
 async function copyText(text) {
   try {

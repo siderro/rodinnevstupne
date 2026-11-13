@@ -8,6 +8,7 @@ import {
 } from '../lib/constants'
 import { venueMeta, krajPath, venuePath } from '../lib/seo'
 import { useHead } from '../lib/useHead'
+import { track } from '../lib/track'
 
 export default function VenueDetail() {
   const { slug } = useParams()
@@ -73,7 +74,7 @@ export default function VenueDetail() {
               <p>
                 Ověřeno dne {formatDate(venue.verified_at) || 'neuvedeno'}
                 {venue.source_url
-                  ? <> z <a href={venue.source_url} target="_blank" rel="noreferrer">oficiálního ceníku<span className="sr-only"> (otevře se v novém okně)</span> ↗</a></>
+                  ? <> z <a href={venue.source_url} target="_blank" rel="noreferrer" onClick={() => track('cenik-klik', venue.slug)}>oficiálního ceníku<span className="sr-only"> (otevře se v novém okně)</span> ↗</a></>
                   : ' (zdroj zatím chybí)'}
               </p>
               <Link to={`/tip/?oprava=${encodeURIComponent(venue.slug)}`}>Nahlásit chybu</Link>
@@ -82,7 +83,7 @@ export default function VenueDetail() {
             {venue.tip_credit && <p className="tip-credit">Tip od: {venue.tip_credit}. Děkujeme.</p>}
           </section>
 
-          <Calculator venue={venue} />
+          <Calculator key={venue.slug} venue={venue} />
         </div>
 
         <aside className="detail-side">
@@ -91,7 +92,7 @@ export default function VenueDetail() {
             {venue.address && <p>{venue.address}</p>}
             <div className="side-actions">
               {mapsUrl && <a className="btn btn--ghost" href={mapsUrl} target="_blank" rel="noreferrer">Navigovat<span className="sr-only"> přes Mapy.com (nové okno)</span></a>}
-              {venue.website && <a className="btn" href={venue.website} target="_blank" rel="noreferrer">Web místa<span className="sr-only"> (otevře se v novém okně)</span> ↗</a>}
+              {venue.website && <a className="btn" href={venue.website} target="_blank" rel="noreferrer" onClick={() => track('web-klik', venue.slug)}>Web místa<span className="sr-only"> (otevře se v novém okně)</span> ↗</a>}
             </div>
           </section>}
           <section className="side-box side-box--support">

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { track } from '../lib/track'
 
 // Sdílení: Web Share API (mobil), jinak zkopíruje odkaz. Co je k dispozici, zjišťujeme až při kliknutí,
 // aby se prerenderované HTML shodovalo s hydratací.
@@ -6,10 +7,11 @@ export default function ShareButton({ url, title, text, className = 'btn btn--gh
   const [status, setStatus] = useState('')
 
   async function onClick() {
+    track('sdilet', typeof location !== 'undefined' ? location.pathname : undefined) // záměr; výsledek: share-native / share-copy
     if (navigator.share) {
       try {
         await navigator.share({ title, text, url })
-        window.goatcounter?.count?.({ path: 'share-native', event: true })
+        track('share-native')
         return
       } catch (e) {
         if (e?.name === 'AbortError') return
@@ -27,7 +29,7 @@ export default function ShareButton({ url, title, text, className = 'btn btn--gh
         ok = document.execCommand('copy'); ta.remove()
       } catch { ok = false }
     }
-    if (ok) window.goatcounter?.count?.({ path: 'share-copy', event: true })
+    if (ok) track('share-copy')
     setStatus(ok ? 'Odkaz zkopírován.' : `Zkopírujte si odkaz: ${url}`)
   }
 

@@ -7,6 +7,7 @@ import { homeMeta, krajPath, byTierThenName } from '../lib/seo'
 import { useHead } from '../lib/useHead'
 import VenueCard from '../components/VenueCard'
 import ViewToggle from '../components/ViewToggle'
+import { trackOnce, trackDebounced } from '../lib/track'
 
 // Leaflet se stáhne až po přepnutí na mapu (samostatný chunk)
 const VenueMap = lazy(() => import('../components/VenueMap'))
@@ -35,6 +36,12 @@ export default function Home() {
       else next.set(k, Array.isArray(v) ? v.join(',') : v)
     }
     setParams(next, { replace: 'q' in patch })
+    // Měříme jen, že filtr někdo použil (jednou za relaci), ne jeho hodnotu.
+    for (const [k, v] of Object.entries(patch)) {
+      if (v == null || v === '' || (Array.isArray(v) && v.length === 0)) continue
+      if (k === 'q') trackDebounced('filtr-q', 'filtr-q')
+      else trackOnce(`filtr-${k}`)
+    }
   }
   const toggleKat = (k) => update({ kat: kats.includes(k) ? kats.filter((x) => x !== k) : [...kats, k] })
 

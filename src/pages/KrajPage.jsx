@@ -6,6 +6,7 @@ import { krajMeta, krajPath, byTierThenName } from '../lib/seo'
 import { useHead } from '../lib/useHead'
 import VenueCard from '../components/VenueCard'
 import ViewToggle from '../components/ViewToggle'
+import { trackOnce } from '../lib/track'
 import NotFound from './NotFound'
 
 const VenueMap = lazy(() => import('../components/VenueMap'))
@@ -61,7 +62,7 @@ export default function KrajPage() {
         <>
           <div className="results-head">
             <p className="count">{countPlaces(venues.length)}</p>
-            <ViewToggle value={view} onChange={setView} />
+            <ViewToggle value={view} onChange={(v) => { if (v === 'mapa') trackOnce('filtr-zobrazeni'); setView(v) }} />
             <Link className="link-btn" to={`/?kraj=${encodeURIComponent(kraj)}`}>Filtrovat podrobněji</Link>
           </div>
           {view === 'mapa' ? (
