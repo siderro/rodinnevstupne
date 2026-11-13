@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Zookoutek Bělský les",
+    "slug": "zookoutek-belsky-les-ostrava",
+    "kraj": "Moravskoslezský",
+    "website": "https://www.ostravainfo.cz",
+    "reason": "ceník nenalezen – na oficiálních webech (ovajih.ostrava.cz, ostravainfo.cz) není žádná stránka o zookoutku, provozovateli ani vstupu; volný vstup tvrdí jen agregátory (Kudy z nudy, Mapnook).",
+    "source_url": "https://www.kudyznudy.cz/aktivity/zookoutek-belsky-les",
+    "checked_at": "2026-11-13"
+  },
+  {
+    "name": "Zookoutek Karviná-Fryštát",
+    "slug": "zookoutek-karvina-frystat",
+    "kraj": "Moravskoslezský",
+    "website": "https://www.tsk.cz",
+    "reason": "ceník nenalezen – provozovatel (Technické služby Karviná) o zookoutku v parku Boženy Němcové píše jen v aktualitách (otevřeno denně 9–17), vstupné ani výslovně volný vstup ale neuvádí; „zdarma“ uvádějí jen agregátory (Mapnook, Slevomat). Pokud TSK nebo město Karviná výslovně uvede volný vstup, lze místo zařadit.",
+    "source_url": "https://www.tsk.cz/nova-originalni-socha-ozdobila-karvinsky-zookoutek/",
+    "checked_at": "2026-11-13"
+  },
+  {
+    "name": "Jižanský dvorek",
+    "slug": "jizansky-dvorek-brno",
+    "kraj": "Jihomoravský",
+    "website": "https://biotopbrno.cz/jizansky-dvorek.php",
+    "reason": "ceník nenalezen – oficiální stránka správce (Koupaliště Brno-jih p.o.) popisuje městskou farmu, ale vstupné ani volný vstup neuvádí; „vstupné se neplatí“ tvrdí jen Slevomat. Pokud správce výslovně uvede volný vstup, lze místo zařadit.",
+    "source_url": "https://biotopbrno.cz/jizansky-dvorek.php",
+    "checked_at": "2026-11-13"
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "name": "paraZOO Vlašim",
+    "slug": "parazoo-vlasim",
+    "kraj": "Středočeský",
+    "website": "https://www.csopvlasim.cz/parazoo",
+    "reason": "per_child: rodinná vstupenka 2+3 za 250 Kč, každé další dítě k rodinné vstupence za příplatek 30 Kč – nepokryje 4 děti jednou vstupenkou.",
+    "family_ticket_desc": "Rodinná vstupenka 2+3 250 Kč; každé další dítě k rodinné vstupence 30 Kč (dospělí 100 Kč, děti 3–15 let 60 Kč, do 3 let zdarma).",
+    "source_url": "https://www.csopvlasim.cz/parazoo/vstupne-navstevni-doba-parazoo",
+    "checked_at": "2026-11-13"
+  },
+  {
+    "name": "Pražské lesní středisko PRALES Kbely (Ekocentrum Prales)",
+    "slug": "prales-kbely",
+    "kraj": "Praha",
+    "website": "https://lesypraha.cz/misto/ekocentrum-prales/",
+    "reason": "ceník nenalezen: oficiální stránka Lesů hl. m. Prahy neuvádí vstupné ani veřejný přístup (jen objednávání programů a pronájmy); informace o volném přístupu pochází jen z agregátoru prague.eu. Ekocentrum pro programy, ne celodenní atrakce.",
+    "source_url": "https://lesypraha.cz/misto/ekocentrum-prales/",
+    "checked_at": "2026-11-13"
+  }
+]

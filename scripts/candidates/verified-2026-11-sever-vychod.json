@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Fajnpark Chlumec nad Cidlinou",
+    "slug": "fajnpark-chlumec-nad-cidlinou",
+    "category": "zabavni_park",
+    "kraj": "Královéhradecký",
+    "city": "Chlumec nad Cidlinou",
+    "address": "Kozelkova 898, 503 51 Chlumec nad Cidlinou",
+    "lat": 50.17128,
+    "lng": 15.46002,
+    "website": "https://www.fajnpark.cz",
+    "family_policy": "max_children",
+    "max_children": 4,
+    "adults_in_family_ticket": 2,
+    "kids_age_limit": null,
+    "price_adult": 590,
+    "price_child": 590,
+    "price_family": 3400,
+    "family_ticket_desc": "RODINNÉ 2+4 – 2 dospělí a 4 děti, 3 400 Kč. Platí jakýkoliv otevírací den v sezóně 2027. Děti do 2 let zdarma.",
+    "notes": "Ceník na sezónu 2027. Základní vstupné 590 Kč pro jednu osobu bez rozlišení věku (dítě od 2 let platí jako dospělý, pokud není v rodinném vstupném). Další rodinné varianty: 2+2 za 2 300 Kč, 2+3 za 2 900 Kč; rodinné 2+1 park nenabízí. Horní věková hranice dítěte v rodinném vstupném na webu neuvedena. Vstupenky online i na místě v den návštěvy. Permanentka 2027 (1 osoba) 2 490 Kč. Poukázky Pluxee jen na základní vstupné, ne na rodinné. Součástí areálu Zvířátkov a Dinoprales. Ceny jsou načítány dynamicky z oficiálního API webu.",
+    "source_url": "https://www.fajnpark.cz/vstupne/",
+    "verified_at": "2026-11-13"
+  }
+]

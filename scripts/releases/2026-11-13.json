@@ -1,6 +1,6 @@
 {
   "date": "2026-11-13",
-  "total": 106,
+  "total": 115,
   "venues": [
     {
       "slug": "armadni-muzeum-zizkov",
@@ -64,6 +64,22 @@
       "price_adult": null,
       "price_child": 0,
       "price_family": null,
+      "verified_at": "2026-11-13"
+    },
+    {
+      "slug": "divoka-zahrada-hostivar",
+      "name": "Divoká zahrada Hostivař",
+      "kraj": "Praha",
+      "city": "Praha 15 – Hostivař",
+      "category": "zoo",
+      "tier": "gold",
+      "family_policy": "unlimited",
+      "max_children": null,
+      "kids_age_limit": null,
+      "adults_in_family_ticket": 2,
+      "price_adult": 0,
+      "price_child": 0,
+      "price_family": 0,
       "verified_at": "2026-11-13"
     },
     {
@@ -355,6 +371,22 @@
       "verified_at": "2026-11-13"
     },
     {
+      "slug": "stanice-prirodovedcu-ddm-praha",
+      "name": "Stanice přírodovědců DDM hl. m. Prahy",
+      "kraj": "Praha",
+      "city": "Praha 5 – Smíchov",
+      "category": "zoo",
+      "tier": "gold",
+      "family_policy": "unlimited",
+      "max_children": null,
+      "kids_age_limit": null,
+      "adults_in_family_ticket": 2,
+      "price_adult": 0,
+      "price_child": 0,
+      "price_family": 0,
+      "verified_at": "2026-11-13"
+    },
+    {
       "slug": "staromestska-mostecka-vez",
       "name": "Staroměstská mostecká věž",
       "kraj": "Praha",
@@ -432,6 +464,54 @@
       "price_adult": 330,
       "price_child": 250,
       "price_family": 1000,
+      "verified_at": "2026-11-13"
+    },
+    {
+      "slug": "zookoutek-kamyk",
+      "name": "Zookoutek Kamýk",
+      "kraj": "Praha",
+      "city": "Praha 12 – Kamýk",
+      "category": "zoo",
+      "tier": "gold",
+      "family_policy": "unlimited",
+      "max_children": null,
+      "kids_age_limit": null,
+      "adults_in_family_ticket": 2,
+      "price_adult": 0,
+      "price_child": 0,
+      "price_family": 0,
+      "verified_at": "2026-11-13"
+    },
+    {
+      "slug": "zookoutek-kunratice",
+      "name": "Zookoutek Kunratice",
+      "kraj": "Praha",
+      "city": "Praha 4 – Kunratice",
+      "category": "zoo",
+      "tier": "gold",
+      "family_policy": "unlimited",
+      "max_children": null,
+      "kids_age_limit": null,
+      "adults_in_family_ticket": 2,
+      "price_adult": 0,
+      "price_child": 0,
+      "price_family": 0,
+      "verified_at": "2026-11-13"
+    },
+    {
+      "slug": "zookoutek-mala-chuchle",
+      "name": "Zookoutek Malá Chuchle",
+      "kraj": "Praha",
+      "city": "Praha 5 – Malá Chuchle",
+      "category": "zoo",
+      "tier": "gold",
+      "family_policy": "unlimited",
+      "max_children": null,
+      "kids_age_limit": null,
+      "adults_in_family_ticket": 2,
+      "price_adult": 0,
+      "price_child": 0,
+      "price_family": 0,
       "verified_at": "2026-11-13"
     },
     {
@@ -656,6 +736,22 @@
       "price_adult": null,
       "price_child": 0,
       "price_family": null,
+      "verified_at": "2026-11-13"
+    },
+    {
+      "slug": "zoopark-zelcin",
+      "name": "Zoopark Zelčín",
+      "kraj": "Středočeský",
+      "city": "Hořín – Zelčín",
+      "category": "zoo",
+      "tier": "base",
+      "family_policy": "max_children",
+      "max_children": 4,
+      "kids_age_limit": 14,
+      "adults_in_family_ticket": 2,
+      "price_adult": 180,
+      "price_child": 180,
+      "price_family": 780,
       "verified_at": "2026-11-13"
     },
     {
@@ -928,6 +1024,22 @@
       "price_adult": 120,
       "price_child": 60,
       "price_family": 250,
+      "verified_at": "2026-11-13"
+    },
+    {
+      "slug": "fajnpark-chlumec-nad-cidlinou",
+      "name": "Fajnpark Chlumec nad Cidlinou",
+      "kraj": "Královéhradecký",
+      "city": "Chlumec nad Cidlinou",
+      "category": "zabavni_park",
+      "tier": "base",
+      "family_policy": "max_children",
+      "max_children": 4,
+      "kids_age_limit": null,
+      "adults_in_family_ticket": 2,
+      "price_adult": 590,
+      "price_child": 590,
+      "price_family": 3400,
       "verified_at": "2026-11-13"
     },
     {
@@ -1507,6 +1619,22 @@
       "verified_at": "2026-11-13"
     },
     {
+      "slug": "podzamecka-zahrada-kromeriz",
+      "name": "Podzámecká zahrada Kroměříž se zookoutkem",
+      "kraj": "Zlínský",
+      "city": "Kroměříž",
+      "category": "priroda",
+      "tier": "gold",
+      "family_policy": "unlimited",
+      "max_children": null,
+      "kids_age_limit": null,
+      "adults_in_family_ticket": 2,
+      "price_adult": 0,
+      "price_child": 0,
+      "price_family": 0,
+      "verified_at": "2026-11-13"
+    },
+    {
       "slug": "valasske-muzeum-v-prirode-roznov",
       "name": "Valašské muzeum v přírodě – Dřevěné městečko",
       "kraj": "Zlínský",
@@ -1648,6 +1776,22 @@
       "price_adult": 50,
       "price_child": 30,
       "price_family": 100,
+      "verified_at": "2026-11-13"
+    },
+    {
+      "slug": "zachranna-stanice-dum-prirody-poodri-bartosovice",
+      "name": "Záchranná stanice a Dům přírody Poodří",
+      "kraj": "Moravskoslezský",
+      "city": "Bartošovice",
+      "category": "priroda",
+      "tier": "base",
+      "family_policy": "max_children",
+      "max_children": 4,
+      "kids_age_limit": 15,
+      "adults_in_family_ticket": 2,
+      "price_adult": 100,
+      "price_child": 80,
+      "price_family": 340,
       "verified_at": "2026-11-13"
     },
     {
