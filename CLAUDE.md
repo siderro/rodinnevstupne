@@ -19,8 +19,10 @@ Rodinná vstupenka musí pokrýt **aspoň 4 děti**. Úrovně (počítá `script
   ze `scripts/candidates/verified-*.json` (dedup podle slugu, řazení kraj → název).
 - Supabase: **volitelný**, jen pro budoucí `/admin` (schéma v `supabase/`, prefix `rv_`).
   Bez klíčů web jede čistě ze statických dat.
-- Deploy: GitHub Actions → GitHub Pages. `VITE_BASE` = `/<repo>/` pro github.io,
-  `/` pro vlastní doménu; `SITE_URL` pro canonical/sitemap.
+- Deploy: GitHub Actions → push `dist/` do větve `production` v gitu Blueboardu
+  (`git@locutus.blueboard.cz:rodinnevstupne.cz`, secrets `BLUEBOARD_SSH_KEY`, `BLUEBOARD_KNOWN_HOSTS`)
+  → složka www. HTTPS (Let's Encrypt) spravuje Blueboard; přesměrování v `public/.htaccess`.
+  GitHub Pages je vypnuté (certifikát se tam zasekl). `SITE_URL` pro canonical/sitemap.
 
 ## Struktura
 - `src/` — React app; `src/data/venues.json` — vygenerovaná data (ručně neupravovat)

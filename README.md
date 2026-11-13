@@ -44,10 +44,11 @@ výchozí `https://rodinnevstupne.cz`).
 
 ## Deploy
 
-Push do `main` → GitHub Actions (`.github/workflows/deploy.yml`) → GitHub Pages.
-Workflow nastavuje `VITE_BASE=/<název-repa>/` pro adresu `<user>.github.io/<repo>/`.
-Po registraci domény: změnit `VITE_BASE` na `/`, aktualizovat `public/CNAME`
-na `rodinnevstupne.cz` a nastavit doménu v Settings → Pages.
+Push do `main` → GitHub Actions (`.github/workflows/deploy.yml`) sestaví web a pushne `dist/`
+do větve `production` v gitu hostingu Blueboard (Git deployment), který ho zveřejní na
+https://rodinnevstupne.cz. Deploy klíč je v secrets `BLUEBOARD_SSH_KEY` a `BLUEBOARD_KNOWN_HOSTS`
+(veřejná část v Blueboard → Git → SSH klíče). HTTPS a certifikát řeší Blueboard,
+přesměrování http→https a www→bez www je v `public/.htaccess`.
 
 ## Supabase (volitelné, pro budoucí /admin)
 
