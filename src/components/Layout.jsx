@@ -1,10 +1,17 @@
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { BUY_ME_A_COFFEE_URL, reportMailto } from '../lib/constants'
 
 export default function Layout() {
   const { pathname } = useLocation()
   useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+
+  // GoatCounter: první zobrazení počítá count.js sám, další přechody v SPA tady
+  const firstView = useRef(true)
+  useEffect(() => {
+    if (firstView.current) { firstView.current = false; return }
+    window.goatcounter?.count?.({ path: location.pathname + location.search })
+  }, [pathname])
 
   return (
     <>
