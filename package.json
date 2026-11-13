@@ -11,6 +11,7 @@
     "preview": "vite preview",
     "import": "node scripts/import.mjs",
     "novinky": "node scripts/novinky.mjs",
+    "indexnow": "node scripts/indexnow.mjs",
     "tips:fetch": "node scripts/tips/fetch-tips.mjs",
     "tips:replies": "node scripts/tips/reply-drafts.mjs",
     "tips:close": "node scripts/tips/close-tips.mjs"
