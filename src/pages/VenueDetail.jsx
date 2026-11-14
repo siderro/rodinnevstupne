@@ -4,7 +4,7 @@ import TierBadge from '../components/TierBadge'
 import Calculator from '../components/Calculator'
 import ShareButton from '../components/ShareButton'
 import {
-  CATEGORY_LABEL, BUY_ME_A_COFFEE_URL, SITE_URL, formatPrice, formatDate, dataAge, familyTicketSummary, krajFull,
+  CATEGORY_LABEL, BUY_ME_A_COFFEE_URL, SITE_URL, formatPrice, formatDate, dataAge, familyTicketSummary, krajFull, monthRange, sourceDate,
 } from '../lib/constants'
 import { venueMeta, krajPath, venuePath } from '../lib/seo'
 import { useHead } from '../lib/useHead'
@@ -60,10 +60,18 @@ export default function VenueDetail() {
             <p className="rule-summary">{familyTicketSummary(venue)}</p>
             {venue.family_ticket_desc && <blockquote>{venue.family_ticket_desc}</blockquote>}
             {venue.notes && <p className="meta">{venue.notes}</p>}
+            {(venue.closed_months || venue.kids_free_under) && <p className="meta">
+              {venue.closed_months && <>Zavřeno: {monthRange(venue.closed_months)}. </>}
+              {venue.kids_free_under && <>Děti do {venue.kids_free_under} let mají vstup zdarma.</>}
+            </p>}
 
             <table className="prices">
               <tbody>
-                <tr><th scope="row">Rodinná vstupenka</th><td className="price">{formatPrice(venue.price_family) || '–'}</td></tr>
+                <tr><th scope="row">Rodinná vstupenka{venue.price_family_offseason != null && venue.season_months && <span className="meta"> ({monthRange(venue.season_months)})</span>}</th><td className="price">{formatPrice(venue.price_family) || '–'}</td></tr>
+                {venue.price_family_offseason != null && venue.season_months &&
+                  <tr><th scope="row">Rodinná mimo sezónu</th><td className="price">{formatPrice(venue.price_family_offseason)}</td></tr>}
+                {venue.extra_child_price != null &&
+                  <tr><th scope="row">Každé další dítě nad {venue.max_children}</th><td className="num">+ {formatPrice(venue.extra_child_price)}</td></tr>}
                 <tr><th scope="row">Dospělý</th><td className="num">{formatPrice(venue.price_adult) || '–'}</td></tr>
                 <tr><th scope="row">Dítě</th><td className="num">{formatPrice(venue.price_child) || '–'}</td></tr>
               </tbody>
@@ -76,6 +84,7 @@ export default function VenueDetail() {
                 {venue.source_url
                   ? <> z <a href={venue.source_url} target="_blank" rel="noreferrer" onClick={() => track('cenik-klik', venue.slug)}>oficiálního ceníku<span className="sr-only"> (otevře se v novém okně)</span> ↗</a></>
                   : ' (zdroj zatím chybí)'}
+                {venue.source_date && <> (ceník z {sourceDate(venue.source_date)})</>}
               </p>
               <Link to={`/tip/?oprava=${encodeURIComponent(venue.slug)}`}>Nahlásit chybu</Link>
               <p className="trust-hint">Víte o změně? Napište nám, opravíme to.</p>

@@ -2,7 +2,7 @@
 // i prerender (scripts/postbuild.mjs → statické HTML v dist/).
 import {
   SITE_URL, CATEGORY_LABEL, TIERS, tierOf, krajFull, krajLocative, krajSlug,
-  familyTicketSummary, formatPrice, formatDate,
+  familyTicketSummary, formatPrice, formatDate, monthRange,
 } from './constants'
 
 export const SITE_NAME = 'Rodinné vstupné'
@@ -86,8 +86,9 @@ export function venueJsonLd(v) {
   const offers = []
   const base = { '@type': 'Offer', priceCurrency: 'CZK', availability: 'https://schema.org/InStock' }
   if (v.source_url) base.url = v.source_url
-  if (v.verified_at) base.validFrom = v.verified_at
-  if (v.price_family != null) offers.push({ ...base, name: 'Rodinné vstupné', price: v.price_family, description: familyTicketSummary(v) })
+  const seasonal = v.price_family_offseason != null && v.season_months
+  if (v.price_family != null) offers.push({ ...base, name: seasonal ? `Rodinné vstupné (${monthRange(v.season_months)})` : 'Rodinné vstupné', price: v.price_family, description: familyTicketSummary(v) })
+  if (seasonal) offers.push({ ...base, name: 'Rodinné vstupné mimo sezónu', price: v.price_family_offseason, description: familyTicketSummary(v) })
   if (v.price_adult != null) offers.push({ ...base, name: 'Dospělý', price: v.price_adult })
   if (v.price_child != null) offers.push({ ...base, name: 'Dítě', price: v.price_child })
 
@@ -98,7 +99,7 @@ export function venueJsonLd(v) {
     url: abs(venuePath(v)),
     description: venueMeta(v).description,
     touristType: 'Rodiny s dětmi',
-    isAccessibleForFree: false,
+    isAccessibleForFree: v.price_adult === 0 && v.price_child === 0,
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'CZ',

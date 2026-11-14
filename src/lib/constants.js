@@ -127,6 +127,22 @@ export function pluralAdults(n) {
   return `${n} dospělých`
 }
 
+// Pro koho (4. pád): „pro 2 dospělé“, „pro 1 dospělého“
+export function pluralAdultsAcc(n) {
+  if (n === 1) return '1 dospělého'
+  if (n >= 2 && n <= 4) return `${n} dospělé`
+  return `${n} dospělých`
+}
+
+// Datum ceníku: „2026“ → „2026“, „2025-12“ → „12/2025“, „2025-12-01“ → „1. 12. 2025“
+export function sourceDate(s) {
+  if (!s) return null
+  const m = String(s).match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/)
+  if (!m) return String(s)
+  if (m[3]) return formatDate(s)
+  return m[2] ? `${Number(m[2])}/${m[1]}` : m[1]
+}
+
 // Popis rodinné vstupenky jednou větou: „2 dospělí + až 5 dětí“
 export function familyTicketSummary(v) {
   const a = v.adults_in_family_ticket || 2
@@ -137,28 +153,71 @@ export function familyTicketSummary(v) {
 
 // ── Kalkulačka „Kolik zaplatíme my?“ ────────────────────────────────────────
 // Rodinná vstupenka se použije, jen když rodina splní její podmínky (počet dospělých i dětí).
-// Žádná pravidla „rodinné + doplatek“ nevymýšlíme; pokud je ceník uvádí, jsou v family_ticket_desc.
-export function calculate(v, adults, kids) {
+// Doplatek za další dítě, sezónu nebo „platí jen N dětí“ počítáme jen z polí, která uvádí ceník
+// (extra_child_price, price_family_offseason + season_months, paid_children); nic nedomýšlíme.
+export const MONTHS = ['leden', 'únor', 'březen', 'duben', 'květen', 'červen', 'červenec',
+  'srpen', 'září', 'říjen', 'listopad', 'prosinec']
+// 6. pád: „v lednu“
+export const MONTHS_LOC = ['lednu', 'únoru', 'březnu', 'dubnu', 'květnu', 'červnu', 'červenci',
+  'srpnu', 'září', 'říjnu', 'listopadu', 'prosinci']
+
+// Rozsah měsíců slovy: [3,4,…,10] → „březen–říjen“, [11,12,1,2] → „listopad–únor“
+export function monthRange(months) {
+  if (!months || !months.length) return null
+  const set = new Set(months)
+  // začátek = měsíc, jehož předchůdce v seznamu není (seznam může přecházet přes Nový rok)
+  const start = months.find((m) => !set.has(m === 1 ? 12 : m - 1)) ?? months[0]
+  const end = months.find((m) => !set.has(m === 12 ? 1 : m + 1)) ?? months[months.length - 1]
+  const contiguous = (((end - start + 12) % 12) + 1) === months.length
+  return contiguous
+    ? (start === end ? MONTHS[start - 1] : `${MONTHS[start - 1]}–${MONTHS[end - 1]}`)
+    : months.map((m) => MONTHS[m - 1]).join(', ')
+}
+
+// Mimo sezónu? (jen když místo má mimosezónní rodinnou cenu)
+export function isOffseason(v, month) {
+  return !!(v.season_months && v.price_family_offseason != null && month && !v.season_months.includes(month))
+}
+
+export function isClosed(v, month) {
+  return !!(v.closed_months && month && v.closed_months.includes(month))
+}
+
+export function calculate(v, adults, kids, month = null) {
   const pa = v.price_adult
   const pc = v.price_child
-  const individual = pa != null && pc != null ? adults * pa + kids * pc : null
+  const paidKids = v.paid_children != null ? Math.min(kids, v.paid_children) : kids
+  const individual = pa != null && pc != null ? adults * pa + paidKids * pc : null
 
   const maxAdults = v.adults_in_family_ticket || 2
-  const kidsOk = v.family_policy === 'unlimited' || (v.max_children != null && kids <= v.max_children)
+  const minKids = v.min_children || 1
+  const unlimited = v.family_policy === 'unlimited'
+  const over = !unlimited && v.max_children != null ? Math.max(0, kids - v.max_children) : 0
+  const canTopUp = over > 0 && v.extra_child_price != null
+  const kidsOk = unlimited || (v.max_children != null && (over === 0 || canTopUp))
   const adultsOk = adults <= maxAdults
-  const familyApplies = kidsOk && adultsOk && kids >= 1
-  const family = familyApplies ? v.price_family ?? null : null
+  const familyApplies = kidsOk && adultsOk && kids >= minKids
+
+  const offseason = isOffseason(v, month)
+  const base = offseason ? v.price_family_offseason : v.price_family
+  const extra = canTopUp ? over * v.extra_child_price : 0
+  const family = familyApplies && base != null ? base + extra : null
 
   let reason = null
-  if (!adultsOk) reason = `Rodinná vstupenka platí pro nejvýš ${pluralAdults(maxAdults)}.`
+  if (!adultsOk) reason = `Rodinná vstupenka platí nejvýš pro ${pluralAdultsAcc(maxAdults)}.`
   else if (!kidsOk) reason = `Rodinná vstupenka platí nejvýš pro ${pluralKids(v.max_children)}.`
-  else if (kids < 1) reason = 'Rodinná vstupenka počítá aspoň s jedním dítětem.'
+  else if (kids < minKids) reason = minKids > 1
+    ? `Rodinná vstupenka platí až od ${minKids} dětí.`
+    : 'Rodinná vstupenka počítá aspoň s jedním dítětem.'
 
   let best = null
   if (family != null && individual != null) best = family <= individual ? 'family' : 'individual'
   else if (family != null) best = 'family'
   else if (individual != null) best = 'individual'
 
-  return { individual, family, familyApplies, reason, best,
-    saving: family != null && individual != null ? individual - family : null }
+  // Úsporu ukazujeme jen tam, kde jednotlivé a rodinné vstupné platí pro stejný rozsah
+  const comparable = v.compare_ok !== false
+  return { individual, family, familyApplies, reason, best, offseason, extra, extraKids: canTopUp ? over : 0,
+    closed: isClosed(v, month), comparable,
+    saving: comparable && family != null && individual != null ? individual - family : null }
 }

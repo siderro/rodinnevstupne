@@ -67,7 +67,7 @@ const FOCUS_TEXT = FOCUS[FOCUS_KEY] || FOCUS_KEY
 const SEASONAL = FOCUS_KEY === 'sezonni-akce'
 
 const CAND = 'scripts/candidates'
-const RECORD_FIELDS = 'name, slug, category (zoo|aquapark|hrad|muzeum|zabavni_park|science|priroda|sport|jine), kraj (přesně jeden ze 14 krajů), city, address, lat, lng, website, family_policy (unlimited|max_children|per_child|none), max_children, adults_in_family_ticket, kids_age_limit, price_adult, price_child, price_family, family_ticket_desc, notes, source_url, verified_at'
+const RECORD_FIELDS = 'name, slug, category (zoo|aquapark|hrad|muzeum|zabavni_park|science|priroda|sport|jine), kraj (přesně jeden ze 14 krajů), city, address, lat, lng, website, family_policy (unlimited|max_children|per_child|none), max_children, adults_in_family_ticket, kids_age_limit, price_adult, price_child, price_family, price_family_offseason, season_months, closed_months, min_children, extra_child_price, paid_children, kids_free_under, compare_ok, source_date, family_ticket_desc, notes, source_url, verified_at'
 
 const RULES = `PRAVIDLA OVĚŘENÍ (přísná, platí bez výjimky):
 - Do katalogu patří jen místo, kde jedna rodinná vstupenka / bezplatný vstup pokryje ASPOŇ 4 děti.
@@ -79,7 +79,17 @@ const RULES = `PRAVIDLA OVĚŘENÍ (přísná, platí bez výjimky):
 - Podmíněné „neomezeně“ (jen s Rodinným pasem apod.) → uložit základní pravidlo bez karty, podmínku do family_ticket_desc a notes.
 - source_url = PŘÍMÁ URL oficiálního ceníku (stránka „Vstupné/Ceník“ nebo PDF) provozovatele. Nikdy agregátor (Kudy z nudy, finance.cz, prague.eu, Slevomat, Wikipedie, Facebook). Bez oficiálního ceníku → zamítnout s důvodem „ceník nenalezen“.
 - family_ticket_desc = doslovné nebo věrné znění z ceníku včetně věkové/výškové hranice.
-- Ceny: na pokladně, hlavní sezóna, víkend, celodenní (online, mimosezónní, všední den a časové varianty do notes). Neznámou cenu nech null, nehádej.
+- Ceny: na pokladně, hlavní sezóna, víkend, celodenní (online, všední den a časové varianty do notes). Neznámou cenu nech null, nehádej.
+- STRUKTUROVANÁ POLE (vyplň, když je ceník uvádí; jinak null – nic nedomýšlej):
+  · price_family_offseason + season_months: má-li rodinná vstupenka jinou cenu mimo sezónu, price_family = hlavní sezóna, price_family_offseason = mimo sezónu, season_months = pole čísel měsíců hlavní sezóny, např. [3,4,5,6,7,8,9,10].
+  · closed_months: měsíce, kdy je místo celé zavřené (např. hrad mimo sezónu [11,12,1,2,3]). Jen víkendový provoz NENÍ zavřeno – to do notes.
+  · min_children: rodinná vstupenka platí až od N dětí (např. „2 dospělí + 3–4 děti“ → min_children 3, max_children 4).
+  · extra_child_price: ceník výslovně říká, že k rodinné vstupence lze dokoupit další dítě za X Kč (Zoo Praha: „každé další dítě za plné vstupné“ → cena dětské vstupenky). Tier se tím nemění.
+  · paid_children: „platí 2 dospělí a 1 dítě, další děti zdarma“ → paid_children 1 (jednotlivé vstupné se počítá jen za N dětí).
+  · kids_free_under: děti mladší než X let mají vstup zdarma (typicky 3 nebo 6). Odlišné od kids_age_limit (horní věková hranice dítěte na rodinné vstupence).
+  · compare_ok: false, když price_adult/price_child platí pro jiný rozsah než rodinná (např. jednotlivé za jeden okruh, rodinná za celý areál). Jinak vynech (= true).
+  · source_date: datum nebo rok platnosti ceníku, pokud ho zdroj uvádí („Ceník 2026“ → "2026", PDF z prosince 2023 → "2023-12").
+- Dospělá cena: pokud chybí (price_adult null) a ceník ji uvádí, doplň ji – i u míst „děti zdarma“.
 - Jednorázové akce (Den dětí, „dítě za korunu“, dny volného vstupu) nejsou trvalé pravidlo → neukládat jako místo.
 - Ceník musí být platný pro aktuální nebo nadcházející sezónu; ceník starší než 2 roky bez potvrzení aktuálnosti → zamítnout „ceník neaktuální“.
 - Weby blokující automat (hrad.cz, zooliberec.cz, zoolesna.cz, vida.cz) nezkoušej opakovaně – zapiš „ověřit ručně v prohlížeči“.
@@ -236,14 +246,14 @@ if (doReverify && scout.stale.length) {
   phase('Přeověření')
   reverifyResults = (await parallel(chunks.map((chunk, i) => () => agent(
     `Jsi PŘEOVĚŘOVATEL dat pro rodinnevstupne.cz. Běh ${RUN}, dnes ${TODAY}, dávka ${i + 1}/${chunks.length}.
-U každého záznamu níže otevři jeho source_url (a když nefunguje, najdi aktuální oficiální ceník) a porovnej s uloženým záznamem v uvedeném souboru ${CAND}/<file>.
+U každého záznamu níže si NEJDŘÍV přečti celý uložený záznam v ${CAND}/<file> (hledej podle slugu), pak otevři jeho source_url (a když nefunguje, najdi aktuální oficiální ceník) a porovnej s uloženým záznamem v uvedeném souboru ${CAND}/<file>.
 ${WEB}
 
 ${RULES}
 
 Stavy:
 - unchanged – pravidlo i ceny sedí → v "record" jen {verified_at: "${TODAY}"}.
-- updated – změnila se cena, URL ceníku nebo popis, ale pořád ≥ 4 děti → v "record" celý aktualizovaný záznam; do notes připiš starou cenu ve formátu "${RUN}: 1 000 Kč → 1 100 Kč".
+- updated – změnila se cena, URL ceníku nebo popis, NEBO jsi doplnil některé ze strukturovaných polí / chybějící cenu, a pořád ≥ 4 děti → v "record" celý aktualizovaný záznam (všechna pole z: ${RECORD_FIELDS}); do notes připiš starou cenu ve formátu "${RUN}: 1 000 Kč → 1 100 Kč", když se cena změnila. Informace přesunuté z notes do strukturovaných polí z notes odstraň, ať se neopakují.
 - below_threshold – rodinná vstupenka nově kryje < 4 děti → "reason" s doslovným zněním.
 - closed – místo trvale zavřené, zrušené nebo dlouhodobě v rekonstrukci → "reason" se zdrojem.
 - unreachable – web nebo ceník nedostupný, blokuje automat → nic neměň, "reason" (ověřit ručně do 30 dní).

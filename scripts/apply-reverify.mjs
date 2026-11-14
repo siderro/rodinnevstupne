@@ -58,6 +58,8 @@ for (const rf of reportFiles) {
     if (!when && it.status !== 'unreachable') { problems.push(`${it.slug}: chybí checked_at`); continue }
 
     if (it.status === 'unchanged') {
+      // Přeověřovatel mohl i u beze změny doplnit strukturovaná pole – vezmeme je, slug a zdroj necháme
+      if (it.record) Object.assign(rec, it.record, { slug: rec.slug, source_url: it.record.source_url || rec.source_url })
       rec.verified_at = when
     } else if (it.status === 'updated') {
       if (!it.record || !it.record.source_url) { problems.push(`${it.slug}: updated bez record.source_url – přeskočeno`); continue }

@@ -30,6 +30,12 @@ const slugify = (s) => String(s || '').toLowerCase()
 
 const toNum = (v) => (v === '' || v == null || Number.isNaN(Number(v)) ? null : Number(v))
 const toInt = (v) => (toNum(v) == null ? null : Math.trunc(Number(v)))
+// Seznam měsíců 1–12 (např. sezóna nebo zavřeno); prázdný/neplatný → null
+const toMonths = (v) => {
+  if (!Array.isArray(v)) return null
+  const m = [...new Set(v.map(toInt).filter((n) => n >= 1 && n <= 12))].sort((a, b) => a - b)
+  return m.length && m.length < 12 ? m : null
+}
 
 export function computeTier(v) {
   if (v.family_policy === 'unlimited') return 'gold'
@@ -83,6 +89,22 @@ for (const f of files) {
       price_adult: toNum(raw.price_adult),
       price_child: toNum(raw.price_child),
       price_family: toNum(raw.price_family),
+      // Sezónní ceny: price_* platí v season_months, mimo ně price_family_offseason (null = celoročně stejně)
+      price_family_offseason: toNum(raw.price_family_offseason),
+      season_months: toMonths(raw.season_months),
+      closed_months: toMonths(raw.closed_months),
+      // Kolik dětí musí být aspoň v rodině, aby rodinná vstupenka platila (null = 1)
+      min_children: toInt(raw.min_children),
+      // Doplatek za každé dítě nad max_children při rodinné vstupence (null = nejde)
+      extra_child_price: toNum(raw.extra_child_price),
+      // Jednotlivé vstupné: platí se jen za prvních N dětí, ostatní zdarma (null = za všechny)
+      paid_children: toInt(raw.paid_children),
+      // Děti mladší než X let mají vstup zdarma a do počtu dětí se nepočítají
+      kids_free_under: toInt(raw.kids_free_under),
+      // false = price_adult/price_child platí pro jiný rozsah než rodinná (nesrovnávat úsporu)
+      compare_ok: raw.compare_ok === false ? false : true,
+      // Datum ceníku (YYYY nebo YYYY-MM[-DD]), když ho zdroj uvádí; liší se od verified_at
+      source_date: raw.source_date ?? null,
       family_ticket_desc: raw.family_ticket_desc ?? null,
       notes: raw.notes ?? null,
       source_url: raw.source_url ?? null,
