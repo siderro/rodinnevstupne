@@ -17,8 +17,17 @@
     "price_child": 590,
     "price_family": 3400,
     "family_ticket_desc": "RODINNÉ 2+4 – 2 dospělí a 4 děti, 3 400 Kč. Platí jakýkoliv otevírací den v sezóně 2027. Děti do 2 let zdarma.",
-    "notes": "Ceník na sezónu 2027. Základní vstupné 590 Kč pro jednu osobu bez rozlišení věku (dítě od 2 let platí jako dospělý, pokud není v rodinném vstupném). Další rodinné varianty: 2+2 za 2 300 Kč, 2+3 za 2 900 Kč; rodinné 2+1 park nenabízí. Horní věková hranice dítěte v rodinném vstupném na webu neuvedena. Vstupenky online i na místě v den návštěvy. Permanentka 2027 (1 osoba) 2 490 Kč. Poukázky Pluxee jen na základní vstupné, ne na rodinné. Součástí areálu Zvířátkov a Dinoprales. Ceny jsou načítány dynamicky z oficiálního API webu.",
+    "notes": "Základní vstupné 590 Kč pro jednu osobu bez rozlišení věku (dítě od 2 let platí jako dospělý, pokud není v rodinném vstupném). Další rodinné varianty: 2+2 za 2 300 Kč, 2+3 za 2 900 Kč; rodinné 2+1 park nenabízí. Horní věková hranice dítěte v rodinném vstupném na webu neuvedena. Vstupenky online i na místě v den návštěvy. Permanentka 2027 (1 osoba) 2 490 Kč. Poukázky Pluxee jen na základní vstupné, ne na rodinné. Součástí areálu Zvířátkov a Dinoprales. Ceny jsou načítány dynamicky z oficiálního API webu.",
     "source_url": "https://www.fajnpark.cz/vstupne/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": 2,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 2,
+    "compare_ok": true,
+    "source_date": "2027"
   }
 ]

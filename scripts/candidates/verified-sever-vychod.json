@@ -17,9 +17,18 @@
     "price_child": 60,
     "price_family": 440,
     "family_ticket_desc": "Rodinné vstupné (max. 2 dospělí a až 4 děti do 15 let) – 440 Kč.",
-    "notes": "Pobočka Národního technického muzea. Děti do 6 let zdarma. Ceník je společný pro všechny objekty NTM; stejné pravidlo 2+4 platí i v Praze.",
+    "notes": "Pobočka Národního technického muzea. Ceník NTM platný od 16. 2. 2026 je společný pro všechny objekty NTM; stejné pravidlo 2+4 platí i v Praze.",
     "source_url": "https://www.ntm.cz/pro-navstevniky/prehled-vstupneho",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "compare_ok": null,
+    "source_date": "2026-02"
   },
   {
     "name": "Muzeum v přírodě Zubrnice",
@@ -39,9 +48,18 @@
     "price_child": 80,
     "price_family": 360,
     "family_ticket_desc": "Rodinné – 2 dospělí a až 4 děti do 15 let; I. + II. trasa 360 Kč, okružní trasa 440 Kč.",
-    "notes": "Národní muzeum v přírodě. Děti do 6 let zdarma. Okružní vstupenka I.–IV.: dospělí 220 Kč, děti 100 Kč, rodinné 440 Kč.",
+    "notes": "Národní muzeum v přírodě. Okružní vstupenka I.–IV.: dospělí 220 Kč, děti 100 Kč, rodinné 440 Kč. Mimo sezónu (leden–březen, listopad–prosinec) jen prohlídky pro skupiny min. 10 osob po domluvě s příplatkem 100 %; o akcích (např. Vánoce v Zubrnicích) jednotné vstupné 100 Kč / snížené 70 Kč.",
     "source_url": "https://www.nmvp.cz/zubrnice/informace-pro-navstevniky/vstupne-slevy",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "compare_ok": null,
+    "source_date": null
   },
   {
     "name": "Muzeum Bílinská kyselka",
@@ -63,7 +81,7 @@
     "family_ticket_desc": "Rodinné vstupné (2 dospělí + děti do 15 let): 300 Kč.",
     "notes": "Firemní muzeum lázeňských pramenů; vstupenky v Infocentru. Snížené dětské vstupné na ceníku není uvedeno (individuální vstupné 150 Kč).",
     "source_url": "https://www.muzeumbilinskekyselky.cz/navstevni-rad/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14"
   },
   {
     "name": "Zámek Libouchec",
@@ -85,7 +103,16 @@
     "family_ticket_desc": "Rodinné vstupné (2 dospělí, 2 a více dětí do 16 let): 390 Kč.",
     "notes": "Jen komentované prohlídky v ohlášených termínech (rezervace). Děti 10–16 let 80 Kč. Soukromý majitel (Polesí Střekov a.s.).",
     "source_url": "https://www.zameklibouchec.cz/zamek-libouchec-navstevni-rad/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": 2,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": null,
+    "compare_ok": null,
+    "source_date": null
   },
   {
     "name": "Vlastivědné muzeum a galerie v České Lípě",
@@ -107,7 +134,7 @@
     "family_ticket_desc": "Rodinné vstupné: 2 dospělí a 1–5 dětí – 250 Kč (hlavní budova, augustiniánský klášter).",
     "notes": "Děti od 6 do 15 let poloviční vstupné. Platba kartou není možná. Stříbrná úroveň (5 dětí).",
     "source_url": "https://www.muzeumcl.cz/o-muzeu/oteviraci-doba-a-vstupne",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14"
   },
   {
     "name": "Archeologické muzeum Českolipska – Šatlava",
@@ -127,9 +154,24 @@
     "price_child": 30,
     "price_family": 130,
     "family_ticket_desc": "Rodinné vstupné: 2 dospělí a 1–5 dětí – 130 Kč.",
-    "notes": "Pobočka VMG Česká Lípa. S plnou vstupenkou z hlavní budovy sleva 50 % na plné vstupné.",
+    "notes": "Pobočka VMG Česká Lípa. S plnou vstupenkou z hlavní budovy sleva 50 % na plné vstupné. Duben a říjen otevřeno jen o víkendech a svátcích, květen–září út–ne.",
     "source_url": "https://www.muzeumcl.cz/o-muzeu/oteviraci-doba-a-vstupne",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": null,
+    "compare_ok": null,
+    "source_date": null
   },
   {
     "name": "Vísecká rychta – expozice lidového bydlení",
@@ -149,9 +191,24 @@
     "price_child": 30,
     "price_family": 130,
     "family_ticket_desc": "Rodinné vstupné: 2 dospělí a 1–5 dětí – 130 Kč.",
-    "notes": "Pobočka VMG Česká Lípa.",
+    "notes": "Pobočka VMG Česká Lípa. Duben a říjen otevřeno jen o víkendech a svátcích, květen–září út–ne.",
     "source_url": "https://www.muzeumcl.cz/o-muzeu/oteviraci-doba-a-vstupne",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": null,
+    "compare_ok": null,
+    "source_date": null
   },
   {
     "name": "Severočeské muzeum v Liberci (MUZA)",
@@ -173,7 +230,7 @@
     "family_ticket_desc": "„Do Severočeského muzea je vstupné dobrovolné.“ Rodinná vstupenka neexistuje, celá rodina platí dle uvážení.",
     "notes": "Dobrovolné vstupné pro všechny – počet dětí neomezuje cenu. Výstup na věž 100 Kč, děti do 18 let na věž zdarma (dle oficiální stránky vstupného).",
     "source_url": "https://www.muzeumlb.cz/vstupne",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14"
   },
   {
     "name": "Muzeum a galerie Orlických hor – Kolowratský zámek",
@@ -195,7 +252,16 @@
     "family_ticket_desc": "Rodinné vstupné „2 dospělé osoby + až 5 dětí“ 150 Kč; navíc „děti a mládež do 19 let“ mají vstup zdarma.",
     "notes": "Výstavní prostory muzea a Orlická galerie (II. patro zámku). Základní vstupné platí osoby od 19 let; děti a mládež do 19 let zdarma, takže počet dětí není prakticky omezen. Rodinná vstupenka 2+5 je tím pro rodiny vlastně zbytečná.",
     "source_url": "https://www.moh.cz/vstupne",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 19,
+    "compare_ok": null,
+    "source_date": null
   },
   {
     "name": "Sýpka – Muzeum Orlických hor",
@@ -215,9 +281,18 @@
     "price_child": 0,
     "price_family": 150,
     "family_ticket_desc": "Rodinné vstupné „2 dospělí + až 5 dětí“ 150 Kč; děti a mládež do 19 let vstup zdarma.",
-    "notes": "Pobočka MGOH. Děti a mládež do 19 let zdarma.",
+    "notes": "Pobočka MGOH.",
     "source_url": "https://www.moh.cz/vstupne",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 19,
+    "compare_ok": null,
+    "source_date": null
   },
   {
     "name": "Muzeum krajky Vamberk",
@@ -225,21 +300,30 @@
     "category": "muzeum",
     "kraj": "Královéhradecký",
     "city": "Vamberk",
-    "address": "Tyršova 88, 517 54 Vamberk",
+    "address": "Husovo náměstí 88, 517 54 Vamberk",
     "lat": 50.114186,
     "lng": 16.291348,
-    "website": "https://www.moh.cz/muzeum-krajky",
+    "website": "https://muzeumkrajky.cz",
     "family_policy": "unlimited",
     "max_children": null,
     "adults_in_family_ticket": 2,
     "kids_age_limit": 18,
-    "price_adult": 60,
+    "price_adult": 90,
     "price_child": 0,
-    "price_family": 150,
-    "family_ticket_desc": "Rodinné vstupné „2 dospělí + až 5 dětí“ 150 Kč; děti a mládež do 19 let vstup zdarma.",
-    "notes": "Pobočka MGOH. Děti a mládež do 19 let zdarma.",
-    "source_url": "https://www.moh.cz/vstupne",
-    "verified_at": "2026-11-13"
+    "price_family": null,
+    "family_ticket_desc": "Rodinné vstupné v ceníku není; „Volný vstup mají tyto osoby či skupiny osob: Děti a mládež do 19 let věku“ – rodina platí jen plné vstupné dospělých (90 Kč).",
+    "notes": "Od 1. 4. 2026 samostatná příspěvková organizace Královéhradeckého kraje (Muzeum krajky ve Vamberku), oddělená od MGOH. Snížené vstupné 60 Kč (studenti do 26 let s ISIC, senioři 65+). 2026-11: plné vstupné 60 Kč → 90 Kč; rodinné vstupné 150 Kč zrušeno.",
+    "source_url": "https://muzeumkrajky.cz/navsteva-muzea/",
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 19,
+    "compare_ok": null,
+    "source_date": null
   },
   {
     "name": "Synagoga – Památník Karla Poláčka",
@@ -259,9 +343,18 @@
     "price_child": 0,
     "price_family": 150,
     "family_ticket_desc": "Rodinné vstupné „2 dospělí + až 5 dětí“ 150 Kč; děti a mládež do 19 let vstup zdarma.",
-    "notes": "Pobočka MGOH. Děti a mládež do 19 let zdarma.",
+    "notes": "Pobočka MGOH; provoz zajišťuje Městské informační středisko Rychnov nad Kněžnou.",
     "source_url": "https://www.moh.cz/vstupne",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 19,
+    "compare_ok": null,
+    "source_date": null
   },
   {
     "name": "Městské muzeum Hořice",
@@ -281,9 +374,18 @@
     "price_child": 30,
     "price_family": 120,
     "family_ticket_desc": "Rodinné (maximálně 2 dospělí a 1 a více dětí): 120 Kč; zvýhodněné vstupné do dvou objektů rodinné 180 Kč.",
-    "notes": "Snížené vstupné pro děti 6–18 let; děti do 6 let zdarma. Zvýhodněná vstupenka platí pro Městské muzeum, Galerii plastik a Masarykovu věž samostatnosti.",
+    "notes": "Snížené vstupné pro děti 6–18 let. Zvýhodněná vstupenka do dvou objektů (Městské muzeum, Galerie plastik, Masarykova věž samostatnosti): plné 80 Kč, snížené 50 Kč, rodinné 180 Kč.",
     "source_url": "https://muzeum.horice.org/oteviraci-doba-vstupne/ds-51",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "compare_ok": null,
+    "source_date": null
   },
   {
     "name": "Městské muzeum Nový Bydžov",
@@ -305,7 +407,16 @@
     "family_ticket_desc": "Rodinné (2 dospělí + 2 a více dětí): 120 Kč za okruh (I. i II. okruh).",
     "notes": "Ceny platí pro každý ze dvou okruhů zvlášť.",
     "source_url": "https://www.novybydzov.cz/oteviraci-doba-a-vstupne/d-19553",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": 2,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "compare_ok": null,
+    "source_date": "2026-02"
   },
   {
     "name": "Muzeum v přírodě Vysočina – Veselý Kopec",
@@ -327,7 +438,16 @@
     "family_ticket_desc": "Rodinné vstupné (max. 2 dospělí a až 4 děti do 15 let) – 340 Kč; na kulturní akce 390 Kč.",
     "notes": "Národní muzeum v přírodě. Zvýhodněná vstupenka Veselý Kopec + Betlém Hlinsko v jeden den: rodinné 550 Kč.",
     "source_url": "https://www.nmvp.cz/vysocina/pro-navstevniky/prohlidka-expozicnich-arealu/vesely-kopec",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "compare_ok": null,
+    "source_date": null
   },
   {
     "name": "Muzeum v přírodě Vysočina – Betlém Hlinsko",
@@ -349,7 +469,16 @@
     "family_ticket_desc": "Rodinné vstupné (max. 2 dospělí a až 4 děti do 15 let) – 290 Kč.",
     "notes": "Národní muzeum v přírodě. Kombinace s Veselým Kopcem v jeden den: rodinné 550 Kč.",
     "source_url": "https://www.nmvp.cz/vysocina/pro-navstevniky/prohlidka-expozicnich-arealu/betlem-hlinsko-remeslnicka-obydli",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "compare_ok": null,
+    "source_date": null
   },
   {
     "name": "Regionální muzeum v Litomyšli",
@@ -369,9 +498,18 @@
     "price_child": 50,
     "price_family": 230,
     "family_ticket_desc": "rodinné – 230 Kč – dva dospělí a děti.",
-    "notes": "Počet dětí není omezen.",
+    "notes": "Počet dětí není omezen. S Rodinným pasem rodinné 180 Kč. Sdružené vstupné muzeum + Rodný byt B. Smetany + Portmoneum: rodinné 530 Kč.",
     "source_url": "https://www.rml.cz/cs/informace/pro-navstevniky.html",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "compare_ok": null,
+    "source_date": null
   },
   {
     "name": "Rodný byt Bedřicha Smetany",
@@ -391,9 +529,18 @@
     "price_child": 80,
     "price_family": 280,
     "family_ticket_desc": "rodinné – 280 Kč – dva dospělí a děti.",
-    "notes": "Spravuje Regionální muzeum v Litomyšli.",
+    "notes": "Spravuje Regionální muzeum v Litomyšli. S Rodinným pasem rodinné 200 Kč. Říjen–duben otevřeno pá–ne, květen–září út–ne.",
     "source_url": "https://www.rml.cz/cs/informace/pro-navstevniky.html",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "compare_ok": null,
+    "source_date": null
   },
   {
     "name": "Portmoneum – Museum Josefa Váchala",
@@ -413,9 +560,24 @@
     "price_child": 80,
     "price_family": 280,
     "family_ticket_desc": "rodinné – 280 Kč – dva dospělí a děti.",
-    "notes": "Spravuje Regionální muzeum v Litomyšli. Otevřeno duben–říjen.",
+    "notes": "Spravuje Regionální muzeum v Litomyšli. S Rodinným pasem rodinné 220 Kč. Duben a říjen otevřeno jen so–ne, květen–září út–ne.",
     "source_url": "https://www.rml.cz/cs/informace/pro-navstevniky.html",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "compare_ok": null,
+    "source_date": null
   },
   {
     "name": "Regionální muzeum v Chrudimi",
@@ -434,10 +596,18 @@
     "price_adult": 100,
     "price_child": 70,
     "price_family": 180,
-    "family_ticket_desc": "rodinné vstupné (2 dospělé osoby + neomezený počet dětí od 6 do 15 let) – 180 Kč.",
-    "notes": "S Rodinným pasem: neomezený počet dětí 6–15 let zdarma (200 Kč). Děti do 6 let zdarma. Každý čtvrtek žáci a studenti zdarma.",
+    "family_ticket_desc": "Rodinné vstupné (2 dospělé osoby + neomezený počet dětí od 6 do 15 let) – 180 Kč; s rodinným pasem neomezený počet dětí 6–15 let zdarma – 200 Kč.",
+    "notes": "S Rodinným pasem: neomezený počet dětí 6–15 let zdarma (200 Kč). Každý čtvrtek žáci a studenti zdarma.",
     "source_url": "https://www.muzeumcr.cz/vstupne",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "source_date": null
   },
   {
     "name": "Muzeum řemesel Letohrad",
@@ -457,9 +627,17 @@
     "price_child": 160,
     "price_family": 650,
     "family_ticket_desc": "Rodinné vstupné (otec, matka a jejich děti od 6 do 15 let) – 650 Kč (kombinovaná vstupenka 920 Kč).",
-    "notes": "Počet vlastních dětí není omezen. Partner NTM – sleva 20 % po předložení vstupenky z NTM.",
+    "notes": "Ceny za jednu trasu (A, B nebo G); kombinovaná vstupenka na trasy A+B: rodinné 920 Kč, dospělí 440 Kč, děti 280 Kč. Počet vlastních dětí není omezen. Partner NTM – sleva 20 % po předložení vstupenky z NTM.",
     "source_url": "https://www.muzeumremesel.cz/cz/node/53",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "source_date": "2026-04"
   },
   {
     "name": "Zámek Nové Hrady",
@@ -470,40 +648,32 @@
     "address": "Nové Hrady 1, 539 45 Nové Hrady",
     "lat": 49.85204,
     "lng": 16.143613,
-    "website": "https://www.zameknovehrady.cz",
+    "website": "https://www.nove-hrady.cz",
     "family_policy": "unlimited",
     "max_children": null,
     "adults_in_family_ticket": 2,
     "kids_age_limit": 15,
-    "price_adult": 100,
-    "price_child": 70,
-    "price_family": 230,
-    "family_ticket_desc": "Rodinné vstupné – rodiče a děti do 15 let: 230 Kč (prohlídka zámku).",
-    "notes": "Soukromý rokokový zámek u Litomyšle. Cena 230 Kč platí podle oficiální stránky pro prohlídku zámku; samostatné vstupné do zahrad oficiální stránka prohlídek neuvádí – před publikací ověřit u provozovatele.",
-    "source_url": "http://zameknovehrady.cz/prohlidky",
-    "verified_at": "2026-11-13"
-  },
-  {
-    "name": "První české muzeum cyklistiky",
-    "slug": "prvni-ceske-muzeum-cyklistiky",
-    "category": "muzeum",
-    "kraj": "Pardubický",
-    "city": "Nové Hrady",
-    "address": "Nové Hrady 1, 539 45 Nové Hrady",
-    "lat": 49.85204,
-    "lng": 16.143613,
-    "website": "https://www.zameknovehrady.cz",
-    "family_policy": "unlimited",
-    "max_children": null,
-    "adults_in_family_ticket": 2,
-    "kids_age_limit": 15,
-    "price_adult": 70,
-    "price_child": 40,
-    "price_family": 160,
-    "family_ticket_desc": "Rodinné vstupné – rodiče a děti do 15 let: 160 Kč.",
-    "notes": "Muzeum v areálu zámku Nové Hrady (stejný ceník).",
-    "source_url": "http://zameknovehrady.cz/prohlidky",
-    "verified_at": "2026-11-13"
+    "price_adult": 270,
+    "price_child": 230,
+    "price_family": 770,
+    "family_ticket_desc": "Prohlídka zámecké expozice (zahrnuje celý areál) – rodinné vstupné 770 Kč; rodinné vstupné: rodiče a jejich děti ve věku 6–15 let.",
+    "notes": "Soukromý zámek u Litomyšle. Vstup jen do zámeckého areálu (zahrady, muzeum motokol, galerie klobouků): jednotné 150 Kč, rodinné 450 Kč; sezónní rodinné 1 350 Kč. Duben a říjen jen víkendy a svátky. 2026-11: 230 Kč → 770 Kč (dřívější údaj byl z neoficiálního webu zameknovehrady.cz).",
+    "source_url": "https://www.nove-hrady.cz/cs/m-48-ceny-vstupneho",
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": null,
+    "source_date": null
   },
   {
     "name": "Hrad Roštejn",
@@ -523,9 +693,23 @@
     "price_child": 100,
     "price_family": 400,
     "family_ticket_desc": "Rodinné vstupné (2 dospělí + 1 až 4 děti): trasa A 400 Kč, trasa B 300 Kč.",
-    "notes": "Pobočka Muzea Vysočiny Jihlava. Děti do 6 let zdarma. Otevřeno duben–říjen. Podle oficiální stránky je hrad od 1. 11. 2026 pro veřejnost uzavřen (do jara 2027).",
+    "notes": "Pobočka Muzea Vysočiny Jihlava. Ceny za trasu A; trasa B: dospělí 100 Kč, snížené 80 Kč, rodinné 300 Kč; věž 50 Kč. Duben a říjen jen víkendy a svátky, květen–září úterý–neděle. Od 1. 11. 2026 do jara 2027 zavřeno.",
     "source_url": "https://hrad-rostejn.cz/vstupne/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "source_date": "2026"
   },
   {
     "name": "Muzeum Telč (pobočka Muzea Vysočiny Jihlava)",
@@ -545,9 +729,23 @@
     "price_child": 30,
     "price_family": 150,
     "family_ticket_desc": "Rodinné vstupné (2 dospělí + 1–4 děti) – 150 Kč.",
-    "notes": "Děti do šesti let zdarma. Otevřeno duben–říjen.",
+    "notes": "Duben a říjen jen víkendy a státní svátky, květen–září úterý–neděle.",
     "source_url": "https://mvji.cz/stranky/navstivte-nas",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "source_date": null
   },
   {
     "name": "Muzeum Třešť (pobočka Muzea Vysočiny Jihlava)",
@@ -567,9 +765,23 @@
     "price_child": 15,
     "price_family": 75,
     "family_ticket_desc": "Rodinné vstupné (2 dospělí + 1–4 děti) – 75 Kč.",
-    "notes": "Expozice betlémů. Děti do šesti let zdarma. Souřadnice přibližné (centrum Třeště).",
+    "notes": "Expozice betlémů. Otevřeno v prosinci, lednu a květen–září (v pondělí zavřeno). Souřadnice přibližné (centrum Třeště).",
     "source_url": "https://mvji.cz/stranky/navstivte-nas",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": [
+      2,
+      3,
+      4,
+      10,
+      11
+    ],
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "source_date": null
   },
   {
     "name": "Zámek Žirovnice",
@@ -589,9 +801,23 @@
     "price_child": 150,
     "price_family": 450,
     "family_ticket_desc": "Rodinné vstupné 450 Kč: pro 2 rodiče + od 2 dětí, pouze při koupi vstupného do celého zámeckého areálu (zámek, špýchar, pivovar).",
-    "notes": "Městský zámek. Snížené vstupné děti do 15 let; děti do 6 let zdarma. Věková hranice pro rodinné vstupné neuvedena. Listopad–březen zavřeno.",
+    "notes": "Městský zámek. Jednotlivé vstupné za celý areál (zámek, špýchar, pivovar): dospělí 200 Kč, snížené (děti do 15 let) 150 Kč; děti do 6 let včetně zdarma. Věková hranice pro rodinné vstupné neuvedena. Mimo sezónu jen prohlídky po domluvě pro skupiny nad 30 osob.",
     "source_url": "https://www.zirovnice.cz/vstupne-zamek-spychar-pivovar/d-99658",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "min_children": 2,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 7,
+    "source_date": "2026-04"
   },
   {
     "name": "Muzeum východních Čech v Hradci Králové",
@@ -611,9 +837,17 @@
     "price_child": 0,
     "price_family": null,
     "family_ticket_desc": "Rodinná vstupenka není; v ceníku vstupu zdarma: „Děti a mládež do 19 let“.",
-    "notes": "Děti a mládež do 19 let zdarma = prakticky neomezeně dětí, platí dospělí (celá historická budova 170 Kč, stálá expozice nebo výstavy 100 Kč). Držitelé Rodinného pasu mají zvýhodněné rodinné vstupné. Ceník platný od 1. 7. 2025.",
+    "notes": "Děti a mládež do 19 let zdarma = prakticky neomezeně dětí, platí dospělí (celá historická budova 170 Kč, stálá expozice nebo výstavy 100 Kč). Držitelé Rodinného pasu mají zvýhodněné rodinné vstupné (430 Kč celá budova, 185 Kč expozice nebo výstavy).",
     "source_url": "https://www.muzeumhk.cz/navstivte-nas/oteviraci-doba-a-vstupne.html",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": null,
+    "source_date": "2025-07"
   },
   {
     "name": "Muzeum války 1866 na Chlumu",
@@ -633,8 +867,16 @@
     "price_child": 0,
     "price_family": null,
     "family_ticket_desc": "Rodinná vstupenka není; v ceníku vstupu zdarma: „Děti a mládež do 19 let“.",
-    "notes": "Pobočka Muzea východních Čech. Děti a mládež do 19 let zdarma; rozhledna se platí zvlášť. Ceník ke 3. 7. 2026.",
+    "notes": "Pobočka Muzea východních Čech. Děti a mládež do 19 let zdarma; rozhledna se platí zvlášť (50 Kč, s muzeem 120 Kč) a je do odvolání uzavřena kvůli opravě schodišť. Říjen–duben otevřeno čtvrtek–neděle.",
     "source_url": "https://www.muzeumhk.cz/muzeum-valky-1866/oteviraci-doba-a-vstupne.html",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": null,
+    "source_date": "2026-07"
   }
 ]

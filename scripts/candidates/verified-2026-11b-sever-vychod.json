@@ -17,9 +17,18 @@
     "price_child": 40,
     "price_family": 180,
     "family_ticket_desc": "„Rodinné vstupné (1-2 dospělí a 1-4 děti)“ – 180 Kč; děti do 15 let, děti do 3 let zdarma.",
-    "notes": "Jednotné vstupné platí pro běžné pořady a pozorování na Hvězdárně na Písečném vrchu i v Planetáriu v Koperníkově ulici (souřadnice = hvězdárna, planetárium 50.645485, 13.852390). Dospělí 80 Kč, děti do 15 let, studenti a senioři 40 Kč, děti do 3 let zdarma. Program podle kalendáře pořadů, vstupenky lze koupit i online. Platba hotově i kartou.",
+    "notes": "Jednotné vstupné platí pro běžné pořady a pozorování na Hvězdárně na Písečném vrchu i v Planetáriu v Koperníkově ulici (souřadnice = hvězdárna, planetárium 50.645485, 13.852390). Dospělí 80 Kč, děti do 15 let, studenti a senioři 40 Kč. Rodinné vstupné platí i pro 1 dospělého. Program podle kalendáře pořadů, vstupenky lze koupit i online. Platba hotově i kartou.",
     "source_url": "https://hapteplice.cz/program/cenik-2/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 3,
+    "compare_ok": true,
+    "source_date": null
   },
   {
     "name": "Muzeum Vysočiny Jihlava",
@@ -39,9 +48,18 @@
     "price_child": 50,
     "price_family": 250,
     "family_ticket_desc": "Rodinné vstupné 250 Kč (celý objekt) – v oficiálním on-line prodeji definováno jako 2 plné (dospělí) + 2 až 5 snížených (děti od 6 let, studenti, senioři); děti do 6 let zdarma.",
-    "notes": "Stránka Navštivte nás uvádí pro jihlavskou budovu jen ceny (základní 100/40 Kč, snížené 50/20 Kč, rodinné 250 Kč celý objekt / 100 Kč pouze výstavy) bez složení rodiny; složení (Plné min 2 · max 2, Snížené min 2 · max 5) je v oficiálním e-shopu krajského systému vstupenek, na který odkazuje web muzea. Online vstupenky platí jednorázově do konce roku 2026. Otevřeno út–ne 9–12 a 12.30–17 (červenec–srpen denně). Slevy pro rodinné pasy. Ověřit na pokladně, zda varianta 2+5 platí i při nákupu na místě.",
+    "notes": "Stránka Navštivte nás uvádí pro jihlavskou budovu jen ceny (základní 100/40 Kč, snížené 50/20 Kč, rodinné 250 Kč celý objekt / 100 Kč pouze výstavy) bez složení rodiny; složení (Plné min 2 · max 2, Snížené min 2 · max 5) je v oficiálním e-shopu krajského systému vstupenek, na který odkazuje web muzea. Snížené vstupné platí i pro studenty a seniory. Online vstupenky platí jednorázově do konce roku 2026. Otevřeno út–ne 9–12 a 12.30–17 (červenec–srpen denně). Slevy pro rodinné pasy. Ověřit na pokladně, zda varianta 2+5 platí i při nákupu na místě.",
     "source_url": "https://vstupenky.kr-vysocina.cz/Hall/NonTimedTour?circuitId=8&mrsid=1",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": 2,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "compare_ok": true,
+    "source_date": "2026"
   },
   {
     "name": "Hvězdárna Turnov",
@@ -63,6 +81,6 @@
     "family_ticket_desc": "„První neděle v měsíci (14.00–16.00 hod.) – pozorování Slunce, pořad o zajímavostech na obloze – vstup zdarma“; „Večerní pozorování na hvězdárně a mimořádné úkazy – vstupné dobrovolné – kasička v posluchárně“.",
     "notes": "Rodinné vstupné neexistuje – veřejné programy jsou zdarma nebo za dobrovolné vstupné, počet dětí cenu neomezuje (obdobně jako Severočeské muzeum). Hvězdárna nemá běžnou otevírací dobu: veřejnosti je otevřena na nedělní setkání (na podzim 2026 4. 10. a 1. 11., 14–16 h) a večerní pozorování se domlouvá individuálně podle počasí (tel. +420 775 580 396). Programy pro školy 40 Kč/žák. Provoz zajišťují dobrovolníci Klubu astronomů Liberecka.",
     "source_url": "https://turnov.astro.cz/cenik/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14"
   }
 ]

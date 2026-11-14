@@ -19,7 +19,15 @@
     "family_ticket_desc": "Rodinné 2+4 – 240 Kč.",
     "notes": "Základní 120 Kč, snížené (děti a mladí 7–26,99 let) 70 Kč, senioři 65+ 70 Kč, děti do 6,99 let 0 Kč. Věková hranice dětí v rodinném vstupném neuvedena; děti do 15 let jen v doprovodu dospělé osoby. Ceny shodné na stránce budovy (https://muzeumprahy.cz/muzejni-budovy/zamecky-areal-ctenice-3) i v e-shopu muzea. Otevřeno pátek–neděle 10–18 h.",
     "source_url": "https://eshop.muzeumprahy.cz/ticket/detail/95/buy",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 7,
+    "source_date": null
   },
   {
     "name": "Muzeum Prahy – Podskalská celnice na Výtoni",
@@ -41,7 +49,15 @@
     "family_ticket_desc": "Rodinné 2+4 – 160 Kč.",
     "notes": "Základní 80 Kč, snížené (děti a mladí 7–26,99 let) 50 Kč, senioři 65+ 50 Kč, děti do 6,99 let 0 Kč. Věková hranice dětí v rodinném vstupném neuvedena; děti do 15 let jen v doprovodu dospělé osoby. Ceny shodné na stránce budovy (https://muzeumprahy.cz/muzejni-budovy/podskalska-celnice-na-vytoni-2) i v e-shopu muzea. Otevřeno sobota a neděle 10–18 h.",
     "source_url": "https://eshop.muzeumprahy.cz/ticket/detail/280/buy",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 7,
+    "source_date": null
   },
   {
     "name": "Muzeum Prahy – Dům U Zlatého prstenu",
@@ -63,7 +79,15 @@
     "family_ticket_desc": "Rodinné 2+4 – 360 Kč.",
     "notes": "Základní 180 Kč, snížené (děti a mladí 7–26,99 let) 80 Kč, senioři 65+ 80 Kč, děti do 6,99 let 0 Kč. Věková hranice dětí v rodinném vstupném neuvedena; děti do 15 let jen v doprovodu dospělé osoby. Ceny shodné na stránce budovy (https://muzeumprahy.cz/muzejni-budovy/dum-u-zlateho-prstenu-4) i v e-shopu muzea. Otevřeno úterý–neděle 10–18 h. Objekt je bezbariérový.",
     "source_url": "https://eshop.muzeumprahy.cz/ticket/detail/271/buy",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 7,
+    "source_date": null
   },
   {
     "name": "GHMP Dům U Kamenného zvonu",
@@ -85,7 +109,15 @@
     "family_ticket_desc": "450 Kč rodinné / 2 dospělí + 1–4 děti do 15 let.",
     "notes": "Plné 200 Kč; snížené 90 Kč (žáci a studenti 11–26 let, senioři 65+); snížené 50 Kč děti 6–10 let; děti do 6 let zdarma (dle stránky Speciální vstupné a zvláštní slevy GHMP). Otevřeno v době konání výstavy, út–ne 10–20 h. Budova není bezbariérová. Stejné pravidlo rodinného vstupného (330/450 Kč dle budovy) uvádí GHMP pro všechny budovy; ostatní budovy (Colloredo-Mansfeld, Bílkův dům aj.) v tomto běhu jednotlivě neověřeny.",
     "source_url": "https://www.ghmp.cz/oteviraci-doba-a-vstupne/ghmp-zvon/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "source_date": null
   },
   {
     "name": "GHMP Zámek Troja",
@@ -107,7 +139,21 @@
     "family_ticket_desc": "450 Kč rodinné / 2 dospělí + 1–4 děti do 15 let.",
     "notes": "Plné 200 Kč; snížené 90 Kč (žáci a studenti 11–26 let, senioři 65+); snížené 50 Kč děti 6–10 let; děti do 6 let zdarma (dle stránky Speciální vstupné a zvláštní slevy GHMP). Zámek otevřen sezónně 1. 4. – 29. 10. 2026 (út–čt 10–18, pá 13–18, so–ne 10–18 h); zahrady i v zimě. Stejné pravidlo rodinného vstupného (330/450 Kč dle budovy) uvádí GHMP pro všechny budovy; ostatní budovy (Colloredo-Mansfeld, Bílkův dům aj.) v tomto běhu jednotlivě neověřeny.",
     "source_url": "https://www.ghmp.cz/oteviraci-doba-a-vstupne/ghmp-zamek-troja/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "source_date": null
   },
   {
     "name": "GHMP Dům fotografie",
@@ -129,7 +175,15 @@
     "family_ticket_desc": "330 Kč rodinné / 2 dospělí + 1–4 děti do 15 let.",
     "notes": "Plné 150 Kč; snížené 60 Kč (žáci a studenti 11–26 let, senioři 65+); snížené 50 Kč děti 6–10 let; děti do 6 let zdarma (dle stránky Speciální vstupné a zvláštní slevy GHMP). Stejné pravidlo rodinného vstupného (330/450 Kč dle budovy) uvádí GHMP pro všechny budovy; ostatní budovy (Colloredo-Mansfeld, Bílkův dům aj.) v tomto běhu jednotlivě neověřeny.",
     "source_url": "https://www.ghmp.cz/oteviraci-doba-a-vstupne/ghmp-dum-fotografie/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "source_date": null
   },
   {
     "name": "GHMP Bílkova vila",
@@ -151,6 +205,14 @@
     "family_ticket_desc": "330 Kč rodinné / 2 dospělí + 1–4 děti do 15 let.",
     "notes": "Plné 150 Kč; snížené 60 Kč (žáci a studenti 11–26 let, senioři 65+); snížené 50 Kč děti 6–10 let; děti do 6 let zdarma (dle stránky Speciální vstupné a zvláštní slevy GHMP). Čítárna vstup zdarma. Stejné pravidlo rodinného vstupného (330/450 Kč dle budovy) uvádí GHMP pro všechny budovy; ostatní budovy (Colloredo-Mansfeld, Bílkův dům aj.) v tomto běhu jednotlivě neověřeny.",
     "source_url": "https://www.ghmp.cz/oteviraci-doba-a-vstupne/ghmp-bilkova-vila/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "source_date": null
   }
 ]

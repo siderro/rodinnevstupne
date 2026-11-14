@@ -17,9 +17,18 @@
     "price_child": 180,
     "price_family": 780,
     "family_ticket_desc": "Rodina 2+4 (děti 2–14,99 let) 780 Kč.",
-    "notes": "Celoroční jednotné vstupné 180 Kč. Další rodinné varianty: 2+1 480 Kč, 2+2 580 Kč, 2+3 680 Kč. Dítě 0–1,99 let zdarma; ZTP / důchodce nad 65 let 100 Kč; ZTP/P vč. doprovodu zdarma; pes 100 Kč. Celoroční permanentka rodina 2+2 2 900 Kč. K dispozici i online vstupenky. Souřadnice přibližné (OSM, naučná stezka u zooparku).",
+    "notes": "Celoroční jednotné vstupné 180 Kč. Další rodinné varianty: 2+1 480 Kč, 2+2 580 Kč, 2+3 680 Kč. ZTP / důchodce nad 65 let 100 Kč; ZTP/P vč. doprovodu zdarma; pes 100 Kč. Celoroční permanentka 1 osoba 980 Kč, rodina 2+2 2 900 Kč (jen na pokladně). Otevřeno celoročně. K dispozici i online vstupenky. Souřadnice přibližné (OSM, naučná stezka u zooparku).",
     "source_url": "https://www.zooparkzelcin.cz/cenik",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 2,
+    "compare_ok": true,
+    "source_date": null
   },
   {
     "name": "Zookoutek Malá Chuchle",
@@ -41,7 +50,7 @@
     "family_ticket_desc": "Lesní zookoutek v Malé Chuchli je celoročně volně přístupný areál u hájovny v Chuchelském háji – vstup zdarma pro všechny.",
     "notes": "Lesní zookoutek Záchranné stanice hl. m. Prahy (provozuje Lesy hl. m. Prahy); zvířata s trvalým handicapem. Provozovatel uvádí „volně přístupný“, ceník se nevydává. ",
     "source_url": "https://zachranazviratpraha.cz/misto/zookoutek-mala-chuchle/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14"
   },
   {
     "name": "Divoká zahrada Hostivař",
@@ -63,7 +72,7 @@
     "family_ticket_desc": "Divoká zahrada Hostivař je celoročně volně přístupný zookoutek u hájovny na kraji Hostivařského lesoparku – vstup zdarma pro všechny.",
     "notes": "Lesní zookoutek Záchranné stanice hl. m. Prahy (provozuje Lesy hl. m. Prahy); zvířata s trvalým handicapem. Provozovatel uvádí „volně přístupný“, ceník se nevydává. ",
     "source_url": "https://zachranazviratpraha.cz/misto/divoka-zahrada-hostivar-2/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14"
   },
   {
     "name": "Zookoutek Kunratice",
@@ -85,7 +94,7 @@
     "family_ticket_desc": "Malý kunratický zookoutek je celoročně volně přístupný areál u hájovny v Kunratickém lese – vstup zdarma pro všechny.",
     "notes": "Lesní zookoutek Záchranné stanice hl. m. Prahy (provozuje Lesy hl. m. Prahy); zvířata s trvalým handicapem. Provozovatel uvádí „volně přístupný“, ceník se nevydává. Malý zookoutek (dva výběhy).",
     "source_url": "https://zachranazviratpraha.cz/misto/zookoutek-kunratice/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14"
   },
   {
     "name": "Zookoutek Kamýk",
@@ -107,7 +116,7 @@
     "family_ticket_desc": "Malý lesní zookoutek v Kamýckém lese je celoročně volně přístupný areál u zdejší hájovny – vstup zdarma pro všechny.",
     "notes": "Lesní zookoutek Záchranné stanice hl. m. Prahy (provozuje Lesy hl. m. Prahy); zvířata s trvalým handicapem. Provozovatel uvádí „volně přístupný“, ceník se nevydává. Malý zookoutek (kozy, bažanti aj.).",
     "source_url": "https://zachranazviratpraha.cz/misto/zookoutek-kamyk/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14"
   },
   {
     "name": "Stanice přírodovědců DDM hl. m. Prahy",
@@ -127,8 +136,20 @@
     "price_child": 0,
     "price_family": 0,
     "family_ticket_desc": "ZAHRADA: pondělí–pátek 8:00–17:00, sobota 9:00–17:00 (září–říjen, duben–červen) – vstup volný.",
-    "notes": "Zahrada se zvířaty (minizoo) zdarma; areál zavřený ve dnech státních svátků a školních prázdnin. Skleník – tropické terárium (út 13–15, st 13–16) zpoplatněn: 50 Kč, snížené (děti, studenti, senioři) 30 Kč, děti do 1 m zdarma, jen hotově. Psi do areálu nesmí.",
+    "notes": "Zahrada se zvířaty (minizoo) zdarma; areál zavřený ve dnech státních svátků a školních prázdnin (proto v červenci a srpnu zavřeno), sobotní provoz jen v září–říjnu a dubnu–červnu. Skleník – tropické terárium (út 13–15, st 13–16) zpoplatněn: 50 Kč, snížené (děti, studenti, senioři) 30 Kč, děti do 1 m zdarma, jen hotově. Psi do areálu nesmí.",
     "source_url": "https://ddmpraha.cz/stanice-prirodovedcu/Oteviraci_doba",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": [
+      7,
+      8
+    ],
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": null,
+    "compare_ok": true,
+    "source_date": null
   }
 ]

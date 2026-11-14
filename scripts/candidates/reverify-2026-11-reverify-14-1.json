@@ -1,0 +1,383 @@
+[
+ {
+  "slug": "zachranna-stanice-dum-prirody-poodri-bartosovice",
+  "file": "verified-2026-11-morava.json",
+  "status": "updated",
+  "record": {
+   "name": "Záchranná stanice a Dům přírody Poodří",
+   "slug": "zachranna-stanice-dum-prirody-poodri-bartosovice",
+   "category": "priroda",
+   "kraj": "Moravskoslezský",
+   "city": "Bartošovice",
+   "address": "Bartošovice 146, 742 54 Bartošovice",
+   "lat": 49.670688,
+   "lng": 18.053039,
+   "website": "https://csopnj.cz",
+   "family_policy": "max_children",
+   "max_children": 4,
+   "adults_in_family_ticket": 2,
+   "kids_age_limit": 15,
+   "price_adult": 100,
+   "price_child": 80,
+   "price_family": 340,
+   "price_family_offseason": null,
+   "season_months": null,
+   "closed_months": null,
+   "min_children": 2,
+   "extra_child_price": null,
+   "paid_children": null,
+   "kids_free_under": 6,
+   "compare_ok": true,
+   "source_date": null,
+   "family_ticket_desc": "Rodinné vstupné (2 dospělí + 2–4 děti): 340 Kč; děti do 6 let zdarma, děti 6–15 let 80 Kč.",
+   "notes": "Provozuje ZO ČSOP Nový Jičín. Dospělí a mládež nad 15 let 100 Kč, ZTP 80 Kč; lze platit kartou. Děti mladší 6 let do počtu na rodinné vstupence nespadají (mají vstup zdarma), takže s rodinnou vstupenkou může přijít i více než 4 děti. Expozice živých zvířat jen s komentovanou prohlídkou (v celou hodinu 10–16). Otevřeno IV–VI a IX–X o víkendech a svátcích, VII–VIII denně 9–17; XI–III omezený provoz. Ceník bez uvedení roku, stránka naposledy upravena 20. 10. 2025.",
+   "source_url": "https://csopnj.cz/navstivte-nas/",
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "podzamecka-zahrada-kromeriz",
+  "file": "verified-2026-11-morava.json",
+  "status": "unchanged",
+  "record": {
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "fajnpark-chlumec-nad-cidlinou",
+  "file": "verified-2026-11-sever-vychod.json",
+  "status": "updated",
+  "record": {
+   "name": "Fajnpark Chlumec nad Cidlinou",
+   "slug": "fajnpark-chlumec-nad-cidlinou",
+   "category": "zabavni_park",
+   "kraj": "Královéhradecký",
+   "city": "Chlumec nad Cidlinou",
+   "address": "Kozelkova 898, 503 51 Chlumec nad Cidlinou",
+   "lat": 50.17128,
+   "lng": 15.46002,
+   "website": "https://www.fajnpark.cz",
+   "family_policy": "max_children",
+   "max_children": 4,
+   "adults_in_family_ticket": 2,
+   "kids_age_limit": null,
+   "price_adult": 590,
+   "price_child": 590,
+   "price_family": 3400,
+   "price_family_offseason": null,
+   "season_months": null,
+   "closed_months": null,
+   "min_children": 2,
+   "extra_child_price": null,
+   "paid_children": null,
+   "kids_free_under": 2,
+   "compare_ok": true,
+   "source_date": "2027",
+   "family_ticket_desc": "RODINNÉ 2+4 – 2 dospělí a 4 děti, 3 400 Kč. Platí jakýkoliv otevírací den v sezóně 2027. Děti do 2 let zdarma.",
+   "notes": "Základní vstupné 590 Kč pro jednu osobu bez rozlišení věku (dítě od 2 let platí jako dospělý, pokud není v rodinném vstupném). Další rodinné varianty: 2+2 za 2 300 Kč, 2+3 za 2 900 Kč; rodinné 2+1 park nenabízí. Horní věková hranice dítěte v rodinném vstupném na webu neuvedena. Vstupenky online i na místě v den návštěvy. Permanentka 2027 (1 osoba) 2 490 Kč. Poukázky Pluxee jen na základní vstupné, ne na rodinné. Součástí areálu Zvířátkov a Dinoprales. Ceny jsou načítány dynamicky z oficiálního API webu.",
+   "source_url": "https://www.fajnpark.cz/vstupne/",
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "zoopark-zelcin",
+  "file": "verified-2026-11-zapad.json",
+  "status": "updated",
+  "record": {
+   "name": "Zoopark Zelčín",
+   "slug": "zoopark-zelcin",
+   "category": "zoo",
+   "kraj": "Středočeský",
+   "city": "Hořín – Zelčín",
+   "address": "Zelčín 1, Hořín",
+   "lat": 50.32701,
+   "lng": 14.43701,
+   "website": "https://www.zooparkzelcin.cz",
+   "family_policy": "max_children",
+   "max_children": 4,
+   "adults_in_family_ticket": 2,
+   "kids_age_limit": 14,
+   "price_adult": 180,
+   "price_child": 180,
+   "price_family": 780,
+   "price_family_offseason": null,
+   "season_months": null,
+   "closed_months": null,
+   "min_children": null,
+   "extra_child_price": null,
+   "paid_children": null,
+   "kids_free_under": 2,
+   "compare_ok": true,
+   "source_date": null,
+   "family_ticket_desc": "Rodina 2+4 (děti 2–14,99 let) 780 Kč.",
+   "notes": "Celoroční jednotné vstupné 180 Kč. Další rodinné varianty: 2+1 480 Kč, 2+2 580 Kč, 2+3 680 Kč. ZTP / důchodce nad 65 let 100 Kč; ZTP/P vč. doprovodu zdarma; pes 100 Kč. Celoroční permanentka 1 osoba 980 Kč, rodina 2+2 2 900 Kč (jen na pokladně). Otevřeno celoročně. K dispozici i online vstupenky. Souřadnice přibližné (OSM, naučná stezka u zooparku).",
+   "source_url": "https://www.zooparkzelcin.cz/cenik",
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "zookoutek-mala-chuchle",
+  "file": "verified-2026-11-zapad.json",
+  "status": "unchanged",
+  "record": {
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "divoka-zahrada-hostivar",
+  "file": "verified-2026-11-zapad.json",
+  "status": "unchanged",
+  "record": {
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "zookoutek-kunratice",
+  "file": "verified-2026-11-zapad.json",
+  "status": "unchanged",
+  "record": {
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "zookoutek-kamyk",
+  "file": "verified-2026-11-zapad.json",
+  "status": "unchanged",
+  "record": {
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "stanice-prirodovedcu-ddm-praha",
+  "file": "verified-2026-11-zapad.json",
+  "status": "updated",
+  "record": {
+   "name": "Stanice přírodovědců DDM hl. m. Prahy",
+   "slug": "stanice-prirodovedcu-ddm-praha",
+   "category": "zoo",
+   "kraj": "Praha",
+   "city": "Praha 5 – Smíchov",
+   "address": "Drtinova 1a, 150 00 Praha 5",
+   "lat": 50.07523,
+   "lng": 14.40017,
+   "website": "https://ddmpraha.cz/stanice-prirodovedcu",
+   "family_policy": "unlimited",
+   "max_children": null,
+   "adults_in_family_ticket": null,
+   "kids_age_limit": null,
+   "price_adult": 0,
+   "price_child": 0,
+   "price_family": 0,
+   "price_family_offseason": null,
+   "season_months": null,
+   "closed_months": [
+    7,
+    8
+   ],
+   "min_children": null,
+   "extra_child_price": null,
+   "paid_children": null,
+   "kids_free_under": null,
+   "compare_ok": true,
+   "source_date": null,
+   "family_ticket_desc": "ZAHRADA: pondělí–pátek 8:00–17:00, sobota 9:00–17:00 (září–říjen, duben–červen) – vstup volný.",
+   "notes": "Zahrada se zvířaty (minizoo) zdarma; areál zavřený ve dnech státních svátků a školních prázdnin (proto v červenci a srpnu zavřeno), sobotní provoz jen v září–říjnu a dubnu–červnu. Skleník – tropické terárium (út 13–15, st 13–16) zpoplatněn: 50 Kč, snížené (děti, studenti, senioři) 30 Kč, děti do 1 m zdarma, jen hotově. Psi do areálu nesmí.",
+   "source_url": "https://ddmpraha.cz/stanice-prirodovedcu/Oteviraci_doba",
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "narodni-zemedelske-muzeum-ostrava",
+  "file": "verified-2026-11b-morava.json",
+  "status": "unchanged",
+  "record": {
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "narodni-zemedelske-muzeum-valtice",
+  "file": "verified-2026-11b-morava.json",
+  "status": "unchanged",
+  "record": {
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "hvezdarna-a-planetarium-teplice",
+  "file": "verified-2026-11b-sever-vychod.json",
+  "status": "updated",
+  "record": {
+   "name": "Hvězdárna a planetárium Teplice",
+   "slug": "hvezdarna-a-planetarium-teplice",
+   "category": "science",
+   "kraj": "Ústecký",
+   "city": "Teplice",
+   "address": "Písečný vrch 2517, 415 01 Teplice (hvězdárna); planetárium Koperníkova 3062, 415 01 Teplice",
+   "lat": 50.638457,
+   "lng": 13.846684,
+   "website": "https://hapteplice.cz/",
+   "family_policy": "max_children",
+   "max_children": 4,
+   "adults_in_family_ticket": 2,
+   "kids_age_limit": 15,
+   "price_adult": 80,
+   "price_child": 40,
+   "price_family": 180,
+   "price_family_offseason": null,
+   "season_months": null,
+   "closed_months": null,
+   "min_children": null,
+   "extra_child_price": null,
+   "paid_children": null,
+   "kids_free_under": 3,
+   "compare_ok": true,
+   "source_date": null,
+   "family_ticket_desc": "„Rodinné vstupné (1-2 dospělí a 1-4 děti)“ – 180 Kč; děti do 15 let, děti do 3 let zdarma.",
+   "notes": "Jednotné vstupné platí pro běžné pořady a pozorování na Hvězdárně na Písečném vrchu i v Planetáriu v Koperníkově ulici (souřadnice = hvězdárna, planetárium 50.645485, 13.852390). Dospělí 80 Kč, děti do 15 let, studenti a senioři 40 Kč. Rodinné vstupné platí i pro 1 dospělého. Program podle kalendáře pořadů, vstupenky lze koupit i online. Platba hotově i kartou.",
+   "source_url": "https://hapteplice.cz/program/cenik-2/",
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "muzeum-vysociny-jihlava",
+  "file": "verified-2026-11b-sever-vychod.json",
+  "status": "updated",
+  "record": {
+   "name": "Muzeum Vysočiny Jihlava",
+   "slug": "muzeum-vysociny-jihlava",
+   "category": "muzeum",
+   "kraj": "Vysočina",
+   "city": "Jihlava",
+   "address": "Masarykovo náměstí 57 a 58, 586 01 Jihlava",
+   "lat": 49.396524,
+   "lng": 15.588924,
+   "website": "https://mvji.cz/",
+   "family_policy": "max_children",
+   "max_children": 5,
+   "adults_in_family_ticket": 2,
+   "kids_age_limit": null,
+   "price_adult": 100,
+   "price_child": 50,
+   "price_family": 250,
+   "price_family_offseason": null,
+   "season_months": null,
+   "closed_months": null,
+   "min_children": 2,
+   "extra_child_price": null,
+   "paid_children": null,
+   "kids_free_under": 6,
+   "compare_ok": true,
+   "source_date": "2026",
+   "family_ticket_desc": "Rodinné vstupné 250 Kč (celý objekt) – v oficiálním on-line prodeji definováno jako 2 plné (dospělí) + 2 až 5 snížených (děti od 6 let, studenti, senioři); děti do 6 let zdarma.",
+   "notes": "Stránka Navštivte nás uvádí pro jihlavskou budovu jen ceny (základní 100/40 Kč, snížené 50/20 Kč, rodinné 250 Kč celý objekt / 100 Kč pouze výstavy) bez složení rodiny; složení (Plné min 2 · max 2, Snížené min 2 · max 5) je v oficiálním e-shopu krajského systému vstupenek, na který odkazuje web muzea. Snížené vstupné platí i pro studenty a seniory. Online vstupenky platí jednorázově do konce roku 2026. Otevřeno út–ne 9–12 a 12.30–17 (červenec–srpen denně). Slevy pro rodinné pasy. Ověřit na pokladně, zda varianta 2+5 platí i při nákupu na místě.",
+   "source_url": "https://vstupenky.kr-vysocina.cz/Hall/NonTimedTour?circuitId=8&mrsid=1",
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "hvezdarna-turnov",
+  "file": "verified-2026-11b-sever-vychod.json",
+  "status": "unchanged",
+  "record": {
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "umeleckoprumyslove-museum-praha",
+  "file": "verified-2026-11b-zapad.json",
+  "status": "unchanged",
+  "record": {
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "pamatnik-lety-u-pisku",
+  "file": "verified-2026-11b-zapad.json",
+  "status": "unchanged",
+  "record": {
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "muzeum-loutek-plzen",
+  "file": "verified-2026-11b-zapad.json",
+  "status": "unreachable",
+  "reason": "Oficiální ceník https://www.zcm.cz/pro-navstevniky/vstupne 14. 11. 2026 nedostupný – server www.zcm.cz vrací prošlý TLS certifikát (curl i WebFetch: „certificate has expired“), zcm.cz bez www vrací 403. Ověřit ručně v prohlížeči do 30 dní.",
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "narodni-pedagogicke-muzeum-komenskeho",
+  "file": "verified-2026-11b-zapad.json",
+  "status": "unchanged",
+  "record": {
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "muzeum-v-prirode-plzen-bolevec",
+  "file": "verified-2026-11b-zapad.json",
+  "status": "updated",
+  "record": {
+   "name": "Muzeum v přírodě Plzeň-Bolevec (Selský dvůr U Matoušů)",
+   "slug": "muzeum-v-prirode-plzen-bolevec",
+   "category": "muzeum",
+   "kraj": "Plzeňský",
+   "city": "Plzeň – Bolevec",
+   "address": "Bolevecká náves 1/3, 323 00 Plzeň",
+   "lat": 49.7760989,
+   "lng": 13.3779067,
+   "website": "https://www.nmvp.cz/bolevec",
+   "family_policy": "max_children",
+   "max_children": 4,
+   "adults_in_family_ticket": 2,
+   "kids_age_limit": 15,
+   "price_adult": 120,
+   "price_child": 40,
+   "price_family": 240,
+   "price_family_offseason": null,
+   "season_months": null,
+   "closed_months": [
+    1,
+    2,
+    3
+   ],
+   "min_children": null,
+   "extra_child_price": null,
+   "paid_children": null,
+   "kids_free_under": 6,
+   "compare_ok": true,
+   "source_date": null,
+   "family_ticket_desc": "Rodinné vstupné (max. 2 dospělí a až 4 děti do 15 let).",
+   "notes": "Pobočka Národního muzea v přírodě. Ceny za areál bez průvodce; s průvodcem (obytné stavení) dospělí 160 Kč, žáci 6–15 let 50 Kč, rodinné 320 Kč. Snížené 100 Kč (studenti, senioři). Sezónní provoz: 2. 11.–18. 12. zavřeno (kromě edukačních programů a akcí), 19.–20. 12. adventní prohlídky, 21. 12.–31. 3. zavřeno.",
+   "source_url": "https://www.nmvp.cz/bolevec/informace-pro-navstevniky/prohlidkove-okruhy/areal-bez-pruvodce",
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ },
+ {
+  "slug": "muzeum-hranice",
+  "file": "verified-2026-11c-morava.json",
+  "status": "unchanged",
+  "record": {
+   "verified_at": "2026-11-14"
+  },
+  "checked_at": "2026-11-14"
+ }
+]

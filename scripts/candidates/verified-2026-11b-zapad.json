@@ -19,7 +19,7 @@
     "family_ticket_desc": "Vstup zdarma: děti do 15 let (na zámku Kamenice nad Lipou do 10 let).",
     "notes": "Historická budova – celý objekt vč. stálé expozice ART, LIFE a všech výstav 350 Kč / snížené 180 Kč (studenti 15–26, senioři 65+); samotná stálá expozice 250/120 Kč. Pobočky: Dům U Černé Matky Boží (Český kubismus 150/80 Kč), Galerie Josefa Sudka (40/20 Kč) – děti do 15 let zdarma i tam. Pobočka Zámek Kamenice nad Lipou (Jihočeský) má rodinné jen 2+3 (240 Kč). Online přes GoOut +15 Kč poplatek. Ceník bez data platnosti, web © 2026.",
     "source_url": "https://www.upm.cz/navstivte-nas/vstupne/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14"
   },
   {
     "name": "Památník holokaustu Romů a Sintů v Čechách – Lety u Písku",
@@ -41,7 +41,7 @@
     "family_ticket_desc": "Vstupné do areálu (venkovní expozice „Stezka paměti“, pietní kruh, nouzové pohřebiště) je ZDARMA. Vnitřní stálá expozice: zdarma děti do 12 let; zlevněné vstupné 50 Kč děti 13–18 let včetně.",
     "notes": "Pietní místo, spravuje Muzeum romské kultury. Venkovní areál přístupný celoročně; návštěvnické centrum s vnitřní expozicí „Paměť místa a místo paměti“ jen v hlavní sezóně duben–říjen, čt–ne 10–17 h (mimo sezónu po domluvě). Vnitřní expozice: plné 100 Kč, zlevněné 50 Kč, rodinné 180 Kč (složení neuvedeno), s Rodinným pasem sleva 15 % z rodinného.",
     "source_url": "https://letypamatnik.cz/vstupne-a-oteviraci-doba/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14"
   },
   {
     "name": "Muzeum loutek Plzeň",
@@ -85,7 +85,7 @@
     "family_ticket_desc": "Rodinné vstupné 200 Kč – max. 2 dospělí + max. 4 děti.",
     "notes": "Dítě od 6 do 15 let 50 Kč; ceník neuvádí věkovou hranici dítěte v rodinném vstupném ani vstup zdarma pro děti do 6 let. Otevřeno út–ne 10–17 h; platba hotově i kartou. Historická budova bez bezbariérového přístupu.",
     "source_url": "https://npmk.gov.cz/muzeum/pro-navstevniky/vstupne-do-muzea",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14"
   },
   {
     "name": "Muzeum v přírodě Plzeň-Bolevec (Selský dvůr U Matoušů)",
@@ -105,8 +105,21 @@
     "price_child": 40,
     "price_family": 240,
     "family_ticket_desc": "Rodinné vstupné (max. 2 dospělí a až 4 děti do 15 let).",
-    "notes": "Pobočka Národního muzea v přírodě. Ceny za areál bez průvodce; s průvodcem (obytné stavení) dospělí 160 Kč, žáci 6–15 let 50 Kč, rodinné 320 Kč. Snížené 100 Kč (studenti, senioři). Děti do 6 let zdarma. Sezónní provoz, v zimě jen akce – ověřit otevírací dobu.",
+    "notes": "Pobočka Národního muzea v přírodě. Ceny za areál bez průvodce; s průvodcem (obytné stavení) dospělí 160 Kč, žáci 6–15 let 50 Kč, rodinné 320 Kč. Snížené 100 Kč (studenti, senioři). Sezónní provoz: 2. 11.–18. 12. zavřeno (kromě edukačních programů a akcí), 19.–20. 12. adventní prohlídky, 21. 12.–31. 3. zavřeno.",
     "source_url": "https://www.nmvp.cz/bolevec/informace-pro-navstevniky/prohlidkove-okruhy/areal-bez-pruvodce",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": [
+      1,
+      2,
+      3
+    ],
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "compare_ok": true,
+    "source_date": null
   }
 ]

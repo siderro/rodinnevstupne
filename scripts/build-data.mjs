@@ -112,6 +112,8 @@ for (const f of files) {
       // Poděkování za tip (max 40 znaků, jen se souhlasem odesílatele), viz docs/ops/tipy.md
       tip_credit: raw.tip_credit ? String(raw.tip_credit).trim().slice(0, 40) : null,
     }
+    // „Děti zdarma do X let“ u míst, kde děti neplatí vůbec, je jen opakování kids_age_limit
+    if (rec.price_child === 0) rec.kids_free_under = null
     if (!KRAJE.includes(rec.kraj)) warnings.push(`${f}: „${rec.name}“ má neznámý kraj „${rec.kraj}“`)
     if (!rec.source_url) warnings.push(`${f}: „${rec.name}“ nemá source_url`)
     const tier = computeTier(rec)

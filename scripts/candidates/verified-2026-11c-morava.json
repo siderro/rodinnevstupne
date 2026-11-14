@@ -19,7 +19,7 @@
     "family_ticket_desc": "„Vstupné do všech našich stálých expozic i na jednotlivé výstavy je ZDARMA.“",
     "notes": "Vstup zdarma pro všechny. Provozuje Městská kulturní zařízení Hranice, p. o.; muzeum sídlí ve dvou budovách (Stará radnice a zámek), otevírací doba se liší podle budovy. Doprovodné programy a dílny mohou být placené.",
     "source_url": "https://muzeum-hranice.cz/pro-navstevniky/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14"
   },
   {
     "name": "Moravská galerie v Brně – stálé expozice",
@@ -41,7 +41,15 @@
     "family_ticket_desc": "„Vstupné do stálých expozic v Uměleckoprůmyslovém muzeu, Pražákově a Místodržitelském paláci je dobrovolné.“ Děti do 6 let mají volné vstupné.",
     "notes": "Dobrovolné vstupné do stálých expozic – počet dětí cenu neomezuje (obdobně jako Severočeské muzeum). Neplatí pro krátkodobé výstavy, Jurkovičovu vilu (100/50 Kč, rodinné 190 Kč), Muzeum Josefa Hoffmanna (150/75 Kč, rodinné 290 Kč) a Otevřený depozitář (300/150 Kč, rodinné 490 Kč) – tam rodinné vstupné jen pro 1–2 dospělé a max. 3 děti do 15 let.",
     "source_url": "https://www.moravska-galerie.cz/navstivte-nas/vstupne/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "source_date": null
   },
   {
     "name": "Expozice Historie psaná uhlím Havířov",
@@ -63,6 +71,6 @@
     "family_ticket_desc": "„Standardní vstupné zdarma. Vybrané kulturní akce mohou být zpoplatněny.“",
     "notes": "Provozuje Městská knihovna Havířov. Expozice dějin Havířova a hornictví (důlní lampy, možnost vyzkoušet sbíječky, fotit se v hornické uniformě). Menší cíl, o víkendech zpravidla zavřeno – ověřte otevírací dobu na webu.",
     "source_url": "https://knihovnahavirov.cz/pobocky-knihovny/expozice-historie-psana-uhlim/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14"
   }
 ]

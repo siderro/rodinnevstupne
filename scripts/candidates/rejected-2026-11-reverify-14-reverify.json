@@ -1,0 +1,26 @@
+[
+  {
+    "name": "První české muzeum cyklistiky",
+    "slug": "prvni-ceske-muzeum-cyklistiky",
+    "category": "muzeum",
+    "kraj": "Pardubický",
+    "city": "Nové Hrady",
+    "address": "Nové Hrady 1, 539 45 Nové Hrady",
+    "lat": 49.85204,
+    "lng": 16.143613,
+    "website": "https://www.zameknovehrady.cz",
+    "family_policy": "unlimited",
+    "max_children": null,
+    "adults_in_family_ticket": 2,
+    "kids_age_limit": 15,
+    "price_adult": 70,
+    "price_child": 40,
+    "price_family": 160,
+    "family_ticket_desc": "Rodinné vstupné – rodiče a děti do 15 let: 160 Kč.",
+    "notes": "Muzeum v areálu zámku Nové Hrady (stejný ceník).",
+    "source_url": "http://zameknovehrady.cz/prohlidky",
+    "verified_at": "2026-11-13",
+    "reason": "closed: Oficiální web zámku (https://www.nove-hrady.cz/cs/m-2-zamecky-areal, /cs/m-48-ceny-vstupneho) muzeum cyklistiky vůbec neuvádí – v barokním špýcharu je nyní Muzeum motokol (součást vstupného do areálu 150/450 Kč); web muzeumcyklistiky.cz neodpovídá; sterba-bike.cz uvádí uzavření muzea k 31. 12. 2017. Původní source_url zameknovehrady.cz je neoficiální turistický web (Region-tour.cz) se zastaralými údaji. Doporučeno ručně potvrdit a záznam vyřadit.",
+    "checked_at": "2026-11-14"
+  }
+]

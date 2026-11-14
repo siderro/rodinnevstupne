@@ -17,9 +17,18 @@
     "price_child": 80,
     "price_family": 340,
     "family_ticket_desc": "Rodinné vstupné (2 dospělí + 2–4 děti): 340 Kč; děti do 6 let zdarma, děti 6–15 let 80 Kč.",
-    "notes": "Provozuje ZO ČSOP Nový Jičín. Dospělí a mládež nad 15 let 100 Kč, ZTP 80 Kč; lze platit kartou. Děti do 6 let mají vstup zdarma, takže s rodinnou vstupenkou může přijít i více než 4 děti, pokud jsou některé mladší 6 let. Expozice živých zvířat jen s komentovanou prohlídkou (v celou hodinu 10–16). Otevřeno IV–VI a IX–X o víkendech a svátcích, VII–VIII denně 9–17; XI–III omezený provoz. Ceník bez uvedení roku, stránka naposledy upravena 20. 10. 2025.",
+    "notes": "Provozuje ZO ČSOP Nový Jičín. Dospělí a mládež nad 15 let 100 Kč, ZTP 80 Kč; lze platit kartou. Děti mladší 6 let do počtu na rodinné vstupence nespadají (mají vstup zdarma), takže s rodinnou vstupenkou může přijít i více než 4 děti. Expozice živých zvířat jen s komentovanou prohlídkou (v celou hodinu 10–16). Otevřeno IV–VI a IX–X o víkendech a svátcích, VII–VIII denně 9–17; XI–III omezený provoz. Ceník bez uvedení roku, stránka naposledy upravena 20. 10. 2025.",
     "source_url": "https://csopnj.cz/navstivte-nas/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14",
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": 2,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "compare_ok": true,
+    "source_date": null
   },
   {
     "name": "Podzámecká zahrada Kroměříž se zookoutkem",
@@ -41,6 +50,6 @@
     "family_ticket_desc": "„Do zahrady je vstup celoročně zdarma.“ Součástí volně přístupné zahrady (UNESCO) je zookoutek a volně chovaní pávi, labutě, kachny a veverky.",
     "notes": "Provozovatel: Arcibiskupský zámek a zahrady v Kroměříži. Zookoutek (opice, papoušci aj.) je uvnitř zahrady, samostatné vstupné nemá. Placené jsou jen komentované prohlídky zahrady (od června, rodinné vstupné 2 dospělí + 2–3 děti do 15 let) a zámek. Zákaz vjezdu na kolech a vstupu se psy. Otevírací doba je sezónní; vstupní brána z náměstí je podle webu dočasně uzavřena.",
     "source_url": "https://www.zamek-kromeriz.cz/navstevni-trasy/podzamecka-zahrada/",
-    "verified_at": "2026-11-13"
+    "verified_at": "2026-11-14"
   }
 ]
