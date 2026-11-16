@@ -37,7 +37,7 @@ export default function About() {
       <p>
         Víte o místě, které tu chybí, nebo se změnil ceník? <Link to="/tip/">Napište nám</Link>,
         opravíme to. Provoz drží komunita, takže pokud vám web pomohl,{' '}
-        <a href={BUY_ME_A_COFFEE_URL} target="_blank" rel="noreferrer">podpořte nás kávou</a>.
+        <a href={BUY_ME_A_COFFEE_URL} target="_blank" rel="noreferrer">kupte nám pivo 🍺</a>.
       </p>
       <p><Link to="/">← Zpět na výlety</Link></p>
     </article>

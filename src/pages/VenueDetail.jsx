@@ -106,7 +106,7 @@ export default function VenueDetail() {
           </section>}
           <section className="side-box side-box--support">
             <p>Pomohlo vám to? Provoz drží komunita.</p>
-            <a className="btn btn--support" href={BUY_ME_A_COFFEE_URL} target="_blank" rel="noreferrer">Podpořit projekt kávou</a>
+            <a className="btn btn--support" href={BUY_ME_A_COFFEE_URL} target="_blank" rel="noreferrer">Kupte nám pivo 🍺</a>
           </section>
         </aside>
       </div>

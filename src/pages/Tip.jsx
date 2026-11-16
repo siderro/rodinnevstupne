@@ -309,7 +309,7 @@ function TipForm({ oprava }) {
             <p><strong>Děkujeme. Tip ověříme a do týdne ho přidáme, nebo vám dáme vědět, proč to nejde.</strong></p>
             <p className="meta">
               Našli jste, co jste hledali? Projekt je zdarma díky komunitě.{' '}
-              <a href={BUY_ME_A_COFFEE_URL} target="_blank" rel="noreferrer">Podpořit kafem</a>
+              <a href={BUY_ME_A_COFFEE_URL} target="_blank" rel="noreferrer">Kupte nám pivo 🍺</a>
             </p>
           </div>
         )}

@@ -43,7 +43,7 @@ export default function Layout() {
             <NavLink to="/tip/">Poslat tip</NavLink>
             <NavLink to="/o-projektu/" className="nav-about">O projektu</NavLink>
             <a className="btn btn--support btn--sm" href={BUY_ME_A_COFFEE_URL} target="_blank" rel="noreferrer">
-              Podpořit
+              Na pivo 🍺
             </a>
           </nav>
         </div>
@@ -69,9 +69,9 @@ export default function Layout() {
             <a href={`${import.meta.env.BASE_URL}rss.xml`}>Novinky přes RSS</a>
           </nav>
           <div className="footer-col">
-            <p className="meta">Líbí se vám to? Kafe nás drží v chodu.</p>
+            <p className="meta">Líbí se vám to? Za pivo se nezlobíme.</p>
             <a className="btn btn--support" href={BUY_ME_A_COFFEE_URL} target="_blank" rel="noreferrer">
-              Podpořit projekt kávou
+              Kupte nám pivo 🍺
             </a>
             <p className="meta footer-credits">
               Nápad: <a href="https://www.jakubgoldmann.cz" target="_blank" rel="noopener">Jakub Goldmann</a>
