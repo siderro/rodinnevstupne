@@ -78,6 +78,7 @@ p { margin: 0 0 .75em; }
 /* ── Upozornění ──────────────────────────────────────────────────────── */
 .notice { padding: 12px 16px; border-radius: var(--radius-sm); background: var(--surface);
   border: 1px solid var(--line); margin: 12px 0; }
+.card-alert { margin: 8px 0 0; padding: 6px 10px; border-radius: var(--radius-sm); background: var(--warn-bg); color: var(--warn-fg); font-size: .875rem; }
 .notice--warn { background: var(--warn-bg); color: var(--warn-fg); border-color: transparent; }
 
 /* ── Filtry ──────────────────────────────────────────────────────────── */

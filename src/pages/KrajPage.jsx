@@ -33,7 +33,7 @@ export default function KrajPage() {
         <h1>Výlety pro velké rodiny {loc}</h1>
         <p className="lead">
           {venues.length > 0
-            ? <>Vybrali jsme {countPlaces(venues.length)} {loc}, kde rodinné vstupné platí aspoň pro 4 děti.
+            ? <>Vybrali jsme {countPlaces(venues.length)} {loc}, kde rodinné vstupné platí aspoň pro 4 děti, a tedy i pro 3.
               U každého uvádíme cenu pro celou rodinu, odkaz na oficiální ceník a datum, kdy jsme ji ověřili.</>
             : <>{krajFull(kraj)} zatím v katalogu nemá žádné místo. Ověřujeme ceníky postupně a tenhle kraj doplníme.
               Znáte tu místo, kde rodinná vstupenka pokryje aspoň 4 děti? Pošlete nám ho.</>}

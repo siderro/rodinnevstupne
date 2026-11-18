@@ -107,6 +107,8 @@ for (const f of files) {
       source_date: raw.source_date ?? null,
       family_ticket_desc: raw.family_ticket_desc ?? null,
       notes: raw.notes ?? null,
+      // Krátké upozornění pro návštěvníky (dočasně zavřeno, jen v sezóně, co děti platí), zobrazí se na kartě i v detailu
+      alert: raw.alert ? String(raw.alert).trim() : null,
       source_url: raw.source_url ?? null,
       verified_at: raw.verified_at ?? null,
       // Poděkování za tip (max 40 znaků, jen se souhlasem odesílatele), viz docs/ops/tipy.md

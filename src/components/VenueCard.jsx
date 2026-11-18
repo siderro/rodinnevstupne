@@ -19,6 +19,7 @@ export default function VenueCard({ venue }) {
         <span className="meta">Rodinné vstupné {familyTicketSummary(venue)}</span>
         {price ? <span className="price">{price}</span> : <span className="price price--na">cena na webu místa</span>}
       </div>
+      {venue.alert && <p className="card-alert">⚠️ {venue.alert}</p>}
       <p className={`card-verified ${age === 'stale' ? 'is-stale' : ''}`}>
         {age === 'stale'
           ? `Ověřte před návštěvou · údaj z ${formatDate(venue.verified_at)}`

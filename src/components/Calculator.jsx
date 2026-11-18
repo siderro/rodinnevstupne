@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { calculate, formatPrice, pluralKids, pluralAdults, pluralAdultsAcc, monthRange, MONTHS_LOC } from '../lib/constants'
-import { track } from '../lib/track'
+import { track, trackOnce } from '../lib/track'
 
 function Stepper({ label, value, min, max, onChange, unit }) {
   const id = useId()
@@ -25,6 +25,13 @@ export default function Calculator({ venue, initialKids = 4 }) {
   // Událost „kalkulacka“ jednou na stránku místa (VenueDetail dává komponentě key podle slugu)
   const tracked = useRef(false)
   const touched = () => { if (!tracked.current) { tracked.current = true; track('kalkulacka', venue.slug) } }
+  // Událost „deti-N“: počet dětí, na kterém se uživatel zastaví (podklad pro rozhodnutí o 2 + 3, docs/kpi.md)
+  const kidsTimer = useRef(null)
+  const kidsSettled = (n) => {
+    clearTimeout(kidsTimer.current)
+    kidsTimer.current = setTimeout(() => trackOnce(`deti-${Math.min(n, 8)}`), 1500)
+  }
+  useEffect(() => () => clearTimeout(kidsTimer.current), [])
   // Měsíc až po načtení v prohlížeči: prerender (SSR) počítá s hlavní sezónou, ať se HTML neliší podle dne buildu
   const [month, setMonth] = useState(null)
   useEffect(() => { setMonth(new Date().getMonth() + 1) }, [])
@@ -37,7 +44,7 @@ export default function Calculator({ venue, initialKids = 4 }) {
       <h2 id="calc-h">Kolik zaplatíme my?</h2>
       <div className="calc-inputs">
         <Stepper label="Dospělí" value={adults} min={1} max={6} onChange={(n) => { touched(); setAdults(n) }} unit={pluralAdults} />
-        <Stepper label="Děti" value={kids} min={0} max={15} onChange={(n) => { touched(); setKids(n) }} unit={pluralKids} />
+        <Stepper label="Děti" value={kids} min={0} max={15} onChange={(n) => { touched(); kidsSettled(n); setKids(n) }} unit={pluralKids} />
       </div>
 
       <div className="calc-rows">

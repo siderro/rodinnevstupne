@@ -41,6 +41,12 @@ export default function VenueDetail() {
         </div>
       )}
 
+      {venue.alert && (
+        <div className="notice notice--warn" role="status">
+          <strong>Upozornění:</strong> {venue.alert}
+        </div>
+      )}
+
       <header className="detail-head">
         <TierBadge venue={venue} />
         <h1>{venue.name}</h1>

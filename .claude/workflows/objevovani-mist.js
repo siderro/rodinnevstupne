@@ -67,7 +67,7 @@ const FOCUS_TEXT = FOCUS[FOCUS_KEY] || FOCUS_KEY
 const SEASONAL = FOCUS_KEY === 'sezonni-akce'
 
 const CAND = 'scripts/candidates'
-const RECORD_FIELDS = 'name, slug, category (zoo|aquapark|hrad|muzeum|zabavni_park|science|priroda|sport|jine), kraj (přesně jeden ze 14 krajů), city, address, lat, lng, website, family_policy (unlimited|max_children|per_child|none), max_children, adults_in_family_ticket, kids_age_limit, price_adult, price_child, price_family, price_family_offseason, season_months, closed_months, min_children, extra_child_price, paid_children, kids_free_under, compare_ok, source_date, family_ticket_desc, notes, source_url, verified_at'
+const RECORD_FIELDS = 'name, slug, category (zoo|aquapark|hrad|muzeum|zabavni_park|science|priroda|sport|jine), kraj (přesně jeden ze 14 krajů), city, address, lat, lng, website, family_policy (unlimited|max_children|per_child|none), max_children, adults_in_family_ticket, kids_age_limit, price_adult, price_child, price_family, price_family_offseason, season_months, closed_months, min_children, extra_child_price, paid_children, kids_free_under, compare_ok, source_date, family_ticket_desc, notes, alert, source_url, verified_at'
 
 const RULES = `PRAVIDLA OVĚŘENÍ (přísná, platí bez výjimky):
 - Do katalogu patří jen místo, kde jedna rodinná vstupenka / bezplatný vstup pokryje ASPOŇ 4 děti.
@@ -89,6 +89,7 @@ const RULES = `PRAVIDLA OVĚŘENÍ (přísná, platí bez výjimky):
   · kids_free_under: děti mladší než X let mají vstup zdarma (typicky 3 nebo 6). Odlišné od kids_age_limit (horní věková hranice dítěte na rodinné vstupence).
   · compare_ok: false, když price_adult/price_child platí pro jiný rozsah než rodinná (např. jednotlivé za jeden okruh, rodinná za celý areál). Jinak vynech (= true).
   · source_date: datum nebo rok platnosti ceníku, pokud ho zdroj uvádí („Ceník 2026“ → "2026", PDF z prosince 2023 → "2023-12").
+- alert: jedna krátká věta pro návštěvníka, jen když hrozí zklamání u pokladny – dočasně zavřeno (do kdy), otevřeno jen v sezóně, zdarma jen část (co děti platí), provoz nejistý. Jinak null.
 - Dospělá cena: pokud chybí (price_adult null) a ceník ji uvádí, doplň ji – i u míst „děti zdarma“.
 - Jednorázové akce (Den dětí, „dítě za korunu“, dny volného vstupu) nejsou trvalé pravidlo → neukládat jako místo.
 - Ceník musí být platný pro aktuální nebo nadcházející sezónu; ceník starší než 2 roky bez potvrzení aktuálnosti → zamítnout „ceník neaktuální“.
@@ -181,6 +182,7 @@ ${skipList(kraje)}
 VÝSTUP:
 - ${CAND}/verified-${TAG}-${g}.json – JSON pole jen schválených záznamů s poli: ${RECORD_FIELDS}. Souřadnice lat/lng doplň (oficiální web, mapy.cz nebo OpenStreetMap), jinak null.
 - ${CAND}/rejected-${TAG}-${g}.json – JSON pole zamítnutých: {name, slug, kraj, website, reason, family_ticket_desc?, source_url?, checked_at: "${TODAY}"}. Zamítnuté se ukládají, aby je další běhy znovu nehledaly; místa s 2+3 se hodí pro budoucí kalkulačku.
+- ${CAND}/tri-deti-${TAG}-${g}.json – JSON pole míst, kde rodinná vstupenka pokryje PRÁVĚ 3 děti (2+3, i s doplatkem za další dítě), ověřených stejně přísně jako katalog, s poli: ${RECORD_FIELDS} (max_children 3). Do katalogu NEPATŘÍ (build je nečte), do rejected je nedávej. Když žádné nejsou, zapiš [].
 - Když nic neschválíš, zapiš verified soubor jako prázdné pole [].
 - Do "manual" dej místa, kde web blokuje automat nebo ceník je jen v obrázku – ta NEPATŘÍ do verified souboru.
 Pak spusť \`node scripts/build-data.mjs\` a zkontroluj, že tvoje záznamy nevyvolaly varování (neznámý kraj, chybí source_url, duplicitní slug). Chyby oprav ve svém souboru. Jiné soubory needituj.
@@ -198,7 +200,7 @@ ${WEB}
 
 Postup:
 1. Z výčtových zdrojů (Kudy z nudy, Wikipedie, krajské turistické portály, seznamy asociací, finance.cz a blogy jen jako TIP) sestav seznam míst k tématu v těchto krajích. Pokryj rovnoměrně všechny kraje skupiny, přednostně ty, kde katalog má málo míst.
-2. U každého rychle otevři oficiální web a stránku vstupného. Ponech jen ta, kde to vypadá na 4+ dětí na jednu rodinnou vstupenku, „děti do X let zdarma“, „neomezený počet dětí“, skupinovou vstupenku 6+ osob, nebo vstup zdarma. 2+2 / 2+3 / per_child rovnou zahoď (stačí je zmínit v "claim" s poznámkou).
+2. U každého rychle otevři oficiální web a stránku vstupného. Ponech jen ta, kde to vypadá na 4+ dětí na jednu rodinnou vstupenku, „děti do X let zdarma“, „neomezený počet dětí“, skupinovou vstupenku 6+ osob, nebo vstup zdarma. 2+2 / per_child rovnou zahoď (stačí je zmínit v "claim" s poznámkou). Místa s rodinnou vstupenkou pro PRÁVĚ 3 děti (2+3) nezahazuj: zapiš je do raw taky, do notes dej „2+3“ (ukládáme je interně, rozhodnutí o rozšíření v polovině prosince 2026).
 3. Cíl: až ${PER_GROUP} slibných kandidátů. Méně je v pořádku – nevymýšlej.
 ${SEASONAL ? '4. TÉMA JE SEZÓNNÍ: akce NEJSOU místa do katalogu. Zapiš je do ' + CAND + '/akce-' + RUN + '-' + g + '.json jako {nazev, misto, kraj, datum_od, datum_do, co_je_zdarma, zdroj_url} a do raw souboru zapiš prázdné pole [].' : ''}
 
@@ -254,7 +256,7 @@ ${RULES}
 Stavy:
 - unchanged – pravidlo i ceny sedí → v "record" jen {verified_at: "${TODAY}"}.
 - updated – změnila se cena, URL ceníku nebo popis, NEBO jsi doplnil některé ze strukturovaných polí / chybějící cenu, a pořád ≥ 4 děti → v "record" celý aktualizovaný záznam (všechna pole z: ${RECORD_FIELDS}); do notes připiš starou cenu ve formátu "${RUN}: 1 000 Kč → 1 100 Kč", když se cena změnila. Informace přesunuté z notes do strukturovaných polí z notes odstraň, ať se neopakují.
-- below_threshold – rodinná vstupenka nově kryje < 4 děti → "reason" s doslovným zněním.
+- below_threshold – rodinná vstupenka nově kryje < 4 děti → "reason" s doslovným zněním (kryje-li právě 3 děti, napiš do reason „2+3“, ať se dá přesunout mezi tri-deti).
 - closed – místo trvale zavřené, zrušené nebo dlouhodobě v rekonstrukci → "reason" se zdrojem.
 - unreachable – web nebo ceník nedostupný, blokuje automat → nic neměň, "reason" (ověřit ručně do 30 dní).
 
@@ -303,6 +305,7 @@ return {
     raw: MODE === 'discovery' ? groupKeys.map((g) => `${CAND}/raw-${TAG}-${g}.json`) : [],
     verified: groupResults.filter(Boolean).filter((r) => r.validated).map((r) => `${CAND}/verified-${TAG}-${r.group}.json`),
     rejected: groupResults.filter(Boolean).filter((r) => r.validated).map((r) => `${CAND}/rejected-${TAG}-${r.group}.json`),
+    tri_deti: groupResults.filter(Boolean).filter((r) => r.validated).map((r) => `${CAND}/tri-deti-${TAG}-${r.group}.json`),
     reverify: reverifyResults.map((r) => r.file),
     novinky: novinkyFile,
   },

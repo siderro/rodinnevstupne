@@ -21,7 +21,11 @@
 | **Dětí spousta, vstupenka jedna.** (kampaňový) | Sociální sítě (příspěvky, karusely, druhý řádek biografie na IG a FB), letáky, plakáty, reklama | Krátký a zapamatovatelný, nese slib jedné vstupenky. Potřebuje vedle sebe logo nebo název, proto ho nedáváme do titulku webu. |
 
 - Hlavní claim sám o vstupném nemluví. Na webu proto pod ním vždy stojí podtitulek s přínosem:
-  „Rodinné vstupné aspoň pro 4 děti, s ověřenou cenou.“
+  „Rodinné vstupné aspoň pro 4 děti, s ověřenou cenou. Máte tři? Platí i pro vás.“
+- **Tři děti (od 18. 11. 2026):** kde mluvíme o kritériu (web, posty, bio, e-maily), dodáme, že katalog
+  platí i pro rodiny se 3 dětmi, např. „Máte tři děti? Všechno tady platí i pro vás.“ Kritérium katalogu
+  zůstává 4+; místa jen pro 2 + 3 ukládáme interně (`scripts/candidates/tri-deti-*.json`).
+  O případném rozšíření rozhodneme v polovině prosince 2026 podle čísel.
 - Oba claimy na jedné ploše nekombinujeme hned pod sebou, slovo „spousta“ by se opakovalo. Výjimka je bio, kde je kampaňový claim na druhém řádku pod věcným popisem.
 - Claim píšeme vždy s tečkou na konci, v nadpisu webu (`<h1>`) a v titulku stránky bez tečky.
 

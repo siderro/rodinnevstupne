@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "name": "Regionální muzeum v Teplicích (zámek)",
+    "slug": "regionalni-muzeum-teplice",
+    "kraj": "Ústecký",
+    "website": "https://www.zamek-teplice.cz",
+    "reason": "Rodinná vstupenka jen „do 5 osob“ bez určení složení → při 2 dospělých 2+3 (max. 3 děti). Nesplňuje 4 děti. Hodí se pro kalkulačku 2+3.",
+    "family_ticket_desc": "Expozice: rodinná vstupenka (do 5 osob) 250 Kč, držitelé Rodinného pasu 240 Kč; výstavy: rodinná (do 5 osob) 160 Kč. Osoby nad 15 let 120 Kč, děti 6–15 let 60 Kč, děti do 6 let zdarma.",
+    "source_url": "https://www.zamek-teplice.cz/cz/oteviraci-doba-a-vstupne",
+    "checked_at": "2026-11-18"
+  },
+  {
+    "name": "Gočárova galerie (Automatické mlýny a Dům U Jonáše)",
+    "slug": "gocarova-galerie-pardubice",
+    "kraj": "Pardubický",
+    "website": "https://www.gocarovagalerie.cz",
+    "reason": "Rodinné vstupné max. 5 členů → při 2 dospělých 2+3 (max. 3 děti). Nesplňuje 4 děti. Hodí se pro kalkulačku 2+3.",
+    "family_ticket_desc": "Rodinné 400 Kč: max. 5 členů, z toho alespoň 1 dítě ve věku 6–15 let. Základní 200 Kč, snížené 100 Kč, děti do 6 let zdarma. Platí jeden den do obou budov.",
+    "source_url": "https://www.gocarovagalerie.cz/navstivte-nas/oteviraci-doba-a-vstupne",
+    "checked_at": "2026-11-18"
+  },
+  {
+    "name": "Muzeum města Ústí nad Labem",
+    "slug": "muzeum-mesta-usti-nad-labem",
+    "kraj": "Ústecký",
+    "website": "https://www.muzeumusti.cz",
+    "reason": "Rodinné do 5 osob (max. 2 dospělí) = 2+3, každé další dítě zlevněné vstupné 50 Kč → per_child. Nesplňuje 4 děti. Hodí se pro kalkulačku 2+3.",
+    "family_ticket_desc": "Rodinné 200 Kč: „Do 5 osob, na každé další dítě se vztahuje zlevněné vstupné“ (max. 2 dospělí, děti 3–15 let). Základní 100 Kč, zlevněné 50 Kč, děti do 3 let zdarma. Ceník platný od 1. 2. 2022.",
+    "source_url": "https://www.muzeumusti.cz/muzeum/vstupne/",
+    "checked_at": "2026-11-18"
+  }
+]

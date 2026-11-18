@@ -25,5 +25,15 @@
     "reason": "ceník nenalezen – oficiální stránka správce (Koupaliště Brno-jih p.o.) popisuje městskou farmu, ale vstupné ani volný vstup neuvádí; „vstupné se neplatí“ tvrdí jen Slevomat. Pokud správce výslovně uvede volný vstup, lze místo zařadit.",
     "source_url": "https://biotopbrno.cz/jizansky-dvorek.php",
     "checked_at": "2026-11-13"
+  },
+  {
+    "name": "Expozice města Moravský Beroun",
+    "slug": "expozice-mesta-moravsky-beroun",
+    "kraj": "Olomoucký",
+    "website": "https://www.morberoun.cz/",
+    "reason": "ceník nenalezen – vstup zdarma uvádí jen agregátor Kudy z nudy; na webu města (morberoun.cz, sekce Turismus, Místní zajímavosti, Informační centrum) stránka expozice ani vstupné nejsou, otevírací doba není pevná. Pokud město nebo knihovna výslovně uvede volný vstup, lze místo zařadit (unlimited).",
+    "family_ticket_desc": "Prohlídka expozice je zdarma (podle Kudy z nudy, neověřeno u provozovatele).",
+    "source_url": "https://www.kudyznudy.cz/aktivity/expozice-mesta-moravsky-beroun",
+    "checked_at": "2026-11-18"
   }
 ]

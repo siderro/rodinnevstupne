@@ -75,7 +75,7 @@ export default function Home() {
       <section className="hero hero--home">
         <div className="hero-text">
           <h1>Kam na výlet, když je dětí spousta</h1>
-          <p className="hero-sub">Rodinné vstupné aspoň pro 4 děti, s ověřenou cenou.</p>
+          <p className="hero-sub">Rodinné vstupné aspoň pro 4 děti, s ověřenou cenou. Máte tři? Platí i pro vás.</p>
           <p className="lead">
             Místa po celé ČR. U každého uvádíme cenu pro celou rodinu, odkud ji máme a kdy jsme
             ji ověřili.

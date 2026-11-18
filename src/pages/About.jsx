@@ -15,9 +15,11 @@ export default function About() {
 
       <h2>Proč to děláme</h2>
       <p>
-        Ceníky v Česku většinou počítají s rodinou „2 + 2“. S více dětmi se u pokladny často zjistí,
-        že rodinné vstupné neplatí a za každé další dítě se doplácí. Informace o tom, kde to jde jinak,
-        jsou rozházené po webech zoo, hradů a aquaparků. My je dáváme na jedno místo.
+        Rodina s více dětmi by neměla u pokladny přemýšlet, jestli si výlet může dovolit. Ceníky
+        v Česku ale většinou počítají s rodinou „2 + 2“ a za každé další dítě se doplácí. Informace
+        o tom, kde to jde jinak, jsou rozházené po webech zoo, hradů a aquaparků. My je dáváme na
+        jedno místo a ukazujeme provozovatelům, že férové rodinné vstupné se vyplatí. Chceme, aby
+        velká rodina byla u pokladny vítaná.
       </p>
 
       <h2>Jak ověřujeme</h2>
@@ -31,6 +33,10 @@ export default function About() {
         <li><strong>Plná posádka · 5+ dětí</strong>: rodinná vstupenka pokryje aspoň 5 dětí.</li>
         <li><strong>Čtyřlístek · 4 děti</strong>: rodinná vstupenka pokryje 4 děti.</li>
       </ul>
+      <p>
+        Máte tři děti? Všechna místa v katalogu platí i pro vás: vstupenka pro 4 a více dětí
+        pokryje i tři.
+      </p>
       <p>Za zařazení ani za lepší pořadí se neplatí. Kritérium je pro všechna místa stejné.</p>
 
       <h2>Pomozte nám</h2>
