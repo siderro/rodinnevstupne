@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState } from 'react'
-import { calculate, formatPrice, pluralKids, pluralAdults, pluralAdultsAcc, monthRange, MONTHS_LOC } from '../lib/constants'
+import { calculate, formatPrice, pluralKids, pluralAdults, pluralAdultsAcc, MONTHS_LOC } from '../lib/constants'
 import { track, trackOnce } from '../lib/track'
 
 function Stepper({ label, value, min, max, onChange, unit }) {
@@ -10,7 +10,7 @@ function Stepper({ label, value, min, max, onChange, unit }) {
       <div className="stepper-ctrl" role="group" aria-labelledby={id}>
         <button type="button" aria-label={`Ubrat: ${label.toLowerCase()}`} disabled={value <= min}
           onClick={() => onChange(Math.max(min, value - 1))}>−</button>
-        <output aria-live="polite" className="num">{value}</output>
+        <output className="num">{value}</output>
         <button type="button" aria-label={`Přidat: ${label.toLowerCase()}`} disabled={value >= max}
           onClick={() => onChange(Math.min(max, value + 1))}>+</button>
       </div>
@@ -38,6 +38,8 @@ export default function Calculator({ venue, initialKids = 4 }) {
   const r = calculate(venue, adults, kids, month)
   const fam = formatPrice(r.family)
   const ind = formatPrice(r.individual)
+  // Rodinná platí, ale ceník ji nemá (typicky „děti zdarma“): ukážeme jen jeden řádek s cenou za vstupné
+  const onlyIndividual = r.familyApplies && !fam
 
   return (
     <section className="calc" aria-labelledby="calc-h">
@@ -48,19 +50,19 @@ export default function Calculator({ venue, initialKids = 4 }) {
       </div>
 
       <div className="calc-rows">
-        <div className={`calc-row ${r.best === 'family' ? 'is-best' : ''}`}>
+        {!onlyIndividual && <div className={`calc-row ${r.best === 'family' ? 'is-best' : ''}`}>
           <span>
             Rodinná vstupenka
             {r.offseason && <span className="meta"> (mimo sezónu)</span>}
             {r.extraKids > 0 && <span className="meta"> (+ {pluralKids(r.extraKids)} × {formatPrice(venue.extra_child_price)})</span>}
           </span>
           <span className="price">
-            {r.familyApplies ? (fam || 'cena není v ceníku') : 'neplatí'}
+            {r.familyApplies ? fam : 'neplatí'}
           </span>
-        </div>
-        <div className={`calc-row ${r.best === 'individual' ? 'is-best' : ''}`}>
+        </div>}
+        <div className={`calc-row ${onlyIndividual ? 'is-only' : r.best === 'individual' ? 'is-best' : ''}`}>
           <span>
-            Jednotlivé vstupenky
+            {onlyIndividual ? 'Vstupné pro vás' : 'Jednotlivé vstupenky'}
             {venue.price_adult != null && venue.price_child != null && (
               <span className="meta"> ({adults} × {formatPrice(venue.price_adult)} + {venue.paid_children != null ? Math.min(kids, venue.paid_children) : kids} × {formatPrice(venue.price_child)})</span>
             )}
@@ -79,9 +81,7 @@ export default function Calculator({ venue, initialKids = 4 }) {
           <>Pro {pluralAdultsAcc(adults)} a {pluralKids(kids)} vycházejí jednotlivé vstupenky lépe.</>}
       </p>
       <p className="meta">
-        {venue.kids_age_limit ? `Ceník počítá s dětmi do ${venue.kids_age_limit} let. ` : ''}
         {venue.kids_free_under ? `Děti do ${venue.kids_free_under} let nepočítejte, mají vstup zdarma. ` : ''}
-        {venue.price_family_offseason != null && venue.season_months ? `Rodinná cena podle sezóny (${monthRange(venue.season_months)} ${formatPrice(venue.price_family)}, jinak ${formatPrice(venue.price_family_offseason)}). ` : ''}
         {!r.comparable ? 'Jednotlivé vstupné v ceníku platí pro jiný rozsah prohlídky, proto ho s rodinným nesrovnáváme. ' : ''}
         Orientační výpočet z ceníku, nezahrnuje zlevněné vstupenky.
       </p>

@@ -221,3 +221,36 @@ export function calculate(v, adults, kids, month = null) {
     closed: isClosed(v, month), comparable,
     saving: comparable && family != null && individual != null ? individual - family : null }
 }
+
+// ── Rychlá odpověď pro kartu a hlavičku detailu ─────────────────────────────
+// Kolik zaplatí typická velká rodina (2 + 4) v daném měsíci: levnější z rodinné a jednotlivých.
+// Bez měsíce (prerender) počítá s hlavní sezónou.
+export const QUOTE_KIDS = 4
+export function familyQuote(v, month = null, kids = QUOTE_KIDS) {
+  const r = calculate(v, 2, kids, month)
+  const price = r.best === 'family' ? r.family : r.best === 'individual' ? r.individual : null
+  return { price, kids, offseason: r.offseason && r.best === 'family', extraKids: r.extraKids, closed: r.closed }
+}
+
+// První otevřený měsíc po zavřeném období (6. pád: „v dubnu“)
+export function reopensIn(v, month) {
+  if (!isClosed(v, month)) return null
+  for (let i = 1; i <= 12; i++) {
+    const m = ((month - 1 + i) % 12) + 1
+    if (!v.closed_months.includes(m)) return MONTHS_LOC[m - 1]
+  }
+  return null
+}
+
+// Podmínky rodinné vstupenky jako krátké štítky: „až 4 děti“, „od 3 dětí“, „děti do 15 let“, „do 3 let zdarma“
+export function conditionChips(v) {
+  const chips = []
+  if (v.family_policy === 'unlimited') chips.push(v.min_children > 1 ? `od ${v.min_children} dětí, bez horní hranice` : 'neomezeně dětí')
+  else chips.push(v.min_children > 1 ? `${v.min_children}–${v.max_children} dětí` : `až ${pluralKids(v.max_children)}`)
+  if (v.kids_age_limit) chips.push(`děti do ${v.kids_age_limit} let`)
+  if (v.kids_free_under) chips.push(`do ${v.kids_free_under} let zdarma`)
+  if (v.extra_child_price != null) chips.push(`další dítě +${nbsp}${formatPrice(v.extra_child_price)}`)
+  if (v.price_family_offseason != null && v.season_months) chips.push(`sezóna ${monthRange(v.season_months)}`)
+  if (v.closed_months) chips.push(`zavřeno ${monthRange(v.closed_months)}`)
+  return chips
+}
