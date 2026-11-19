@@ -9,7 +9,8 @@ import goldSvg from '../../brand/icons/tier-gold.svg?raw'
 import silverSvg from '../../brand/icons/tier-silver.svg?raw'
 import baseSvg from '../../brand/icons/tier-base.svg?raw'
 import TierBadge from './TierBadge'
-import { TIERS, tierOf, formatPrice, CATEGORY_LABEL } from '../lib/constants'
+import { TIERS, tierOf, tierLabel, formatPrice, familyQuote, pluralKids, QUOTE_KIDS, CATEGORY_LABEL } from '../lib/constants'
+import { useMonth } from '../lib/useMonth'
 
 const ICON_SVG = { gold: goldSvg, silver: silverSvg, base: baseSvg }
 const CZ_CENTER = [49.8, 15.5]
@@ -33,7 +34,8 @@ function FitBounds({ points }) {
   return null
 }
 
-export default function VenueMap({ venues }) {
+export default function VenueMap({ venues, kids = null }) {
+  const month = useMonth()
   const located = useMemo(() => venues.filter((v) => v.lat != null && v.lng != null), [venues])
   const points = useMemo(() => located.map((v) => [Number(v.lat), Number(v.lng)]), [located])
   const missing = venues.length - located.length
@@ -49,15 +51,16 @@ export default function VenueMap({ venues }) {
         <FitBounds points={points} />
         {located.map((v) => {
           const t = tierOf(v)
+          const q = familyQuote(v, month, kids || QUOTE_KIDS)
           return (
             <Marker key={v.slug} position={[Number(v.lat), Number(v.lng)]} icon={icons[t?.key || 'base']}
-              title={`${v.name}${t ? ` – ${t.name}, ${t.label}` : ''}`} alt={v.name} keyboard>
+              title={`${v.name}${t ? ` – ${tierLabel(v)}` : ''}`} alt={v.name} keyboard>
               <Popup>
                 <div className="map-popup">
-                  <TierBadge venue={v} compact />
-                  <p className="map-popup-name"><Link to={`/misto/${v.slug}/`}>{v.name}</Link></p>
+                  <TierBadge venue={v} />
+                  <p className="map-popup-name"><Link to={`/misto/${v.slug}/${kids ? `?deti=${kids}` : ''}`}>{v.name}</Link></p>
                   <p className="meta">{[CATEGORY_LABEL[v.category], v.city].filter(Boolean).join(' · ')}</p>
-                  {v.price_family != null && <p className="map-popup-price">Rodina: <strong>{formatPrice(v.price_family)}</strong></p>}
+                  {q.price != null && <p className="map-popup-price">2 dospělí + {pluralKids(q.kids)}: <strong>{q.price === 0 ? 'zdarma' : formatPrice(q.price)}</strong></p>}
                 </div>
               </Popup>
             </Marker>
@@ -69,7 +72,7 @@ export default function VenueMap({ venues }) {
         {['gold', 'silver', 'base'].map((k) => (
           <li key={k}>
             <span className={`map-pin map-pin--${k} map-pin--sm`} aria-hidden="true" dangerouslySetInnerHTML={{ __html: ICON_SVG[k] }} />
-            {TIERS[k].name} · {TIERS[k].label}
+            {TIERS[k].label}
           </li>
         ))}
       </ul>

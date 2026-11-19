@@ -56,19 +56,46 @@ export const CATEGORIES = [
 
 export const CATEGORY_LABEL = Object.fromEntries(CATEGORIES.map((c) => [c.value, c.label]))
 
-// ── Úrovně míst (klíče jsou interní; v UI vždy název + počet dětí) ──────────
+// ── Úrovně míst (klíče jsou interní; v UI jen ikona + počet dětí, názvy úrovní nepoužíváme) ──
+// name = interní/kampaňový název (brand/brand.md), na webu se neukazuje.
 export const TIERS = {
-  gold: { key: 'gold', name: 'Všichni dovnitř', label: 'neomezeně dětí', short: 'Neomezeně', rank: 3 },
-  silver: { key: 'silver', name: 'Plná posádka', label: '5+ dětí', short: '5+ dětí', rank: 2 },
-  base: { key: 'base', name: 'Čtyřlístek', label: '4 děti', short: '4+ dětí', rank: 1 },
+  gold: { key: 'gold', name: 'Všichni dovnitř', label: 'neomezeně dětí', short: '∞', rank: 3 },
+  silver: { key: 'silver', name: 'Plná posádka', label: 'až 5 dětí', short: 'až 5', rank: 2 },
+  base: { key: 'base', name: 'Čtyřlístek', label: 'až 4 děti', short: 'až 4', rank: 1 },
 }
 
-// Filtr úrovně je kumulativní: „4+“ = vše, „5+“ = Plná posádka + Všichni dovnitř, „neomezeně“ = jen gold.
-export const TIER_FILTERS = [
-  { value: '', label: '4+ dětí', minRank: 0 },
-  { value: '5', label: '5+ dětí', minRank: 2 },
-  { value: 'neomezene', label: 'Neomezeně dětí', minRank: 3 },
+// „Děti zdarma“: rodinná vstupenka se nekupuje, platí se jen dospělí
+export const kidsFree = (v) => v?.family_policy === 'unlimited' && v.price_family == null && v.price_child === 0
+
+// Text odznaku: horní mez počtu dětí („až 4 děti“, „neomezeně dětí do 15 let“, „děti zdarma“, „2–4 děti“)
+export function tierLabel(v) {
+  const t = tierOf(v)
+  if (!t) return null
+  const age = v.kids_age_limit ? ` do ${v.kids_age_limit} let` : ''
+  if (t.key === 'gold') {
+    if (kidsFree(v)) return v.kids_age_limit ? `děti do ${v.kids_age_limit} let zdarma` : 'děti zdarma'
+    return v.min_children > 1 ? `neomezeně, od ${v.min_children} dětí` : `neomezeně dětí${age}`
+  }
+  const max = Number(v.max_children)
+  return v.min_children > 1 ? `${v.min_children}–${pluralKids(max)}` : `až ${pluralKids(max)}`
+}
+
+// Filtr „Kolik dětí jede?“ (?deti=N). Bez výběru se ukazuje vše; „6 a víc“ počítá s 6 dětmi.
+export const KIDS_FILTERS = [
+  { value: 3, label: '3' },
+  { value: 4, label: '4' },
+  { value: 5, label: '5' },
+  { value: 6, label: '6 a víc' },
 ]
+export function parseKids(s) {
+  const n = Number(s)
+  return KIDS_FILTERS.some((f) => f.value === n) ? n : null
+}
+// „pro 5 dětí“, „pro 6 a víc dětí“, „pro 3 děti“
+export const kidsPhrase = (n) => (n >= 6 ? 'pro 6 a víc dětí' : `pro ${pluralKids(n)}`)
+export const kidsChip = (n) => (n >= 6 ? '6 a víc dětí' : pluralKids(n))
+// Platí rodinná vstupenka (případně s doplatkem) pro 2 dospělé a N dětí?
+export const fitsKids = (v, n) => !n || calculate(v, 2, n).familyApplies
 
 // Deterministický výpočet úrovně (shodný se scripts/build-data.mjs)
 export function computeTier(v) {
@@ -246,7 +273,7 @@ export function reopensIn(v, month) {
 export function conditionChips(v) {
   const chips = []
   if (v.family_policy === 'unlimited') chips.push(v.min_children > 1 ? `od ${v.min_children} dětí, bez horní hranice` : 'neomezeně dětí')
-  else chips.push(v.min_children > 1 ? `${v.min_children}–${v.max_children} dětí` : `až ${pluralKids(v.max_children)}`)
+  else chips.push(v.min_children > 1 ? `${v.min_children}–${pluralKids(v.max_children)}` : `až ${pluralKids(v.max_children)}`)
   if (v.kids_age_limit) chips.push(`děti do ${v.kids_age_limit} let`)
   if (v.kids_free_under) chips.push(`do ${v.kids_free_under} let zdarma`)
   if (v.extra_child_price != null) chips.push(`další dítě +${nbsp}${formatPrice(v.extra_child_price)}`)

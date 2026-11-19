@@ -11,6 +11,8 @@ import NotFound from './NotFound'
 
 const VenueMap = lazy(() => import('../components/VenueMap'))
 
+// „12 míst až pro 4 děti“
+const TIER_COUNT = { gold: 'bez omezení počtu dětí', silver: 'až pro 5 dětí', base: 'až pro 4 děti' }
 const countPlaces = (n) => (n === 1 ? '1 místo' : n >= 2 && n <= 4 ? `${n} místa` : `${n} míst`)
 
 export default function KrajPage() {
@@ -40,7 +42,7 @@ export default function KrajPage() {
         </p>
         {counts.length > 0 && (
           <ul className="kraj-tiers" aria-label="Počet míst podle úrovně">
-            {counts.map(([k, n]) => <li key={k}><strong>{n}</strong> {TIERS[k].name} ({TIERS[k].label})</li>)}
+            {counts.map(([k, n]) => <li key={k}><strong>{countPlaces(n)}</strong> {TIER_COUNT[k]}</li>)}
           </ul>
         )}
       </section>
@@ -61,7 +63,7 @@ export default function KrajPage() {
       ) : (
         <>
           <div className="results-head">
-            <p className="count">{countPlaces(venues.length)}</p>
+            <p className="count">{countPlaces(venues.length)} {loc}</p>
             <ViewToggle value={view} onChange={(v) => { if (v === 'mapa') trackOnce('filtr-zobrazeni'); setView(v) }} />
             <Link className="link-btn" to={`/?kraj=${encodeURIComponent(kraj)}`}>Filtrovat podrobněji</Link>
           </div>

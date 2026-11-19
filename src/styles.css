@@ -113,6 +113,9 @@ p { margin: 0 0 .75em; }
 .chip:hover { border-color: var(--primary); }
 .chip.is-on { background: var(--primary-soft); border-color: var(--primary); color: var(--primary); font-weight: 650; }
 .chip.is-on::before { content: "✓ "; }
+.chip-n { margin-left: 2px; font-size: var(--fs-sm); color: var(--muted); font-weight: 400; }
+.chip.is-empty { opacity: .55; }
+.filters-hint { margin: 4px 0 0; font-size: var(--fs-sm); color: var(--muted); }
 
 .results-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 16px 0 12px; }
 .count { margin: 0; font-weight: 650; }

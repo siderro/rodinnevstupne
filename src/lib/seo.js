@@ -1,7 +1,7 @@
 // SEO metadata pro jednotlivé stránky. Sdílí je klient (document.title při přechodu mezi stránkami)
 // i prerender (scripts/postbuild.mjs → statické HTML v dist/).
 import {
-  SITE_URL, CATEGORY_LABEL, TIERS, tierOf, krajFull, krajLocative, krajSlug,
+  SITE_URL, CATEGORY_LABEL, TIERS, tierOf, tierLabel, krajFull, krajLocative, krajSlug,
   familyTicketSummary, formatPrice, formatDate, monthRange,
 } from './constants'
 
@@ -22,7 +22,7 @@ export function homeMeta() {
 export function aboutMeta() {
   return {
     title: `O projektu a jak ověřujeme – ${SITE_NAME}`,
-    description: 'Jak vybíráme místa, co znamenají úrovně Čtyřlístek, Plná posádka a Všichni dovnitř a jak ověřujeme ceny rodinného vstupného.',
+    description: 'Jak vybíráme místa, co znamenají odznaky „až 4 děti“, „až 5 dětí“ a „neomezeně dětí“ a jak ověřujeme ceny rodinného vstupného.',
     path: '/o-projektu/',
   }
 }
@@ -52,7 +52,7 @@ export function venueMeta(v) {
     `${CATEGORY_LABEL[v.category] || 'Výlet'}${where ? ` (${where})` : ''}.`,
     `Rodinné vstupné: ${familyTicketSummary(v)}${price ? ` za ${price}` : ''}.`,
     v.verified_at ? `Ověřeno ${formatDate(v.verified_at)}.` : '',
-    t ? `Úroveň ${t.name}.` : '',
+    t ? `Rodinná vstupenka: ${tierLabel(v)}.` : '',
     'Kalkulačka ceny pro celou rodinu.',
   ].filter(Boolean)
   let description = parts[0]

@@ -29,9 +29,9 @@ export default function About() {
         údaj ověřili. Údaje starší než rok označujeme „Ověřte před návštěvou“.
       </p>
       <ul className="tier-legend">
-        <li><strong>Všichni dovnitř · neomezeně dětí</strong>: rodinná vstupenka platí pro všechny vaše děti.</li>
-        <li><strong>Plná posádka · 5+ dětí</strong>: rodinná vstupenka pokryje aspoň 5 dětí.</li>
-        <li><strong>Čtyřlístek · 4 děti</strong>: rodinná vstupenka pokryje 4 děti.</li>
+        <li><strong>až 4 děti</strong> nebo <strong>až 5 dětí</strong>: kolik dětí rodinná vstupenka nejvýš pokryje.</li>
+        <li><strong>neomezeně dětí</strong>: rodinná vstupenka platí pro všechny vaše děti, případně do uvedeného věku.</li>
+        <li><strong>děti zdarma</strong>: rodinnou vstupenku nekupujete, děti mají vstup zdarma a platí jen dospělí.</li>
       </ul>
       <p>
         Máte tři děti? Všechna místa v katalogu platí i pro vás: vstupenka pro 4 a více dětí

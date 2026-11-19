@@ -1,11 +1,11 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { getVenueBySlug } from '../lib/venues'
 import TierBadge from '../components/TierBadge'
 import Calculator from '../components/Calculator'
 import ShareButton from '../components/ShareButton'
 import {
   CATEGORY_LABEL, BUY_ME_A_COFFEE_URL, SITE_URL, formatPrice, formatDate, dataAge, familyTicketSummary, krajFull, monthRange, sourceDate,
-  familyQuote, reopensIn, conditionChips,
+  familyQuote, reopensIn, conditionChips, parseKids, pluralKids, QUOTE_KIDS,
 } from '../lib/constants'
 import { useMonth } from '../lib/useMonth'
 import { venueMeta, krajPath, venuePath } from '../lib/seo'
@@ -16,6 +16,9 @@ export default function VenueDetail() {
   const { slug } = useParams()
   const venue = getVenueBySlug(slug)
   const month = useMonth()
+  // ?deti=N z filtru „Kolik dětí jede?“ přepočítá odpověď i kalkulačku
+  const [params] = useSearchParams()
+  const kids = parseKids(params.get('deti')) || QUOTE_KIDS
   useHead(venue ? venueMeta(venue) : { title: 'Místo nenalezeno – Rodinné vstupné', noindex: true })
 
   if (!venue) return (
@@ -27,7 +30,7 @@ export default function VenueDetail() {
   )
 
   const age = dataAge(venue.verified_at)
-  const q = familyQuote(venue, month)
+  const q = familyQuote(venue, month, kids)
   const reopens = reopensIn(venue, month)
   const priceOrFree = (n) => (n === 0 ? 'zdarma' : formatPrice(n))
   const mapsUrl = venue.lat != null && venue.lng != null
@@ -63,15 +66,18 @@ export default function VenueDetail() {
         <div className="answer">
           <p className="answer-line">
             {q.price != null
-              ? <>2 dospělí + {q.kids} děti {q.price === 0 ? 'mají vstup' : 'zaplatí'} <strong className="answer-price">{priceOrFree(q.price)}</strong>
+              ? <>2 dospělí + {pluralKids(q.kids)} {q.price === 0 ? 'mají vstup' : 'zaplatí'} <strong className="answer-price">{priceOrFree(q.price)}</strong>
                 {q.offseason && <span className="meta"> (mimo sezónu)</span>}
                 {q.extraKids > 0 && <span className="meta"> (s doplatkem za {q.extraKids === 1 ? 'dítě' : 'děti'} navíc)</span>}</>
               : <>Rodinné vstupné {familyTicketSummary(venue)}. Cenu najdete na webu místa.</>}
           </p>
           {reopens && !venue.alert && <p className="answer-closed">Teď je zavřeno, otevírá v {reopens}.</p>}
-          <ul className="cond-chips" aria-label="Podmínky rodinné vstupenky">
-            {conditionChips(venue).map((c) => <li key={c}>{c}</li>)}
-          </ul>
+          {/* první štítek (počet dětí) už říká odznak */}
+          {conditionChips(venue).length > 1 && (
+            <ul className="cond-chips" aria-label="Podmínky rodinné vstupenky">
+              {conditionChips(venue).slice(1).map((c) => <li key={c}>{c}</li>)}
+            </ul>
+          )}
         </div>
 
         <div className="detail-actions">
@@ -84,7 +90,7 @@ export default function VenueDetail() {
 
       <div className="detail-grid">
         <div className="detail-main">
-          <Calculator key={venue.slug} venue={venue} />
+          <Calculator key={`${venue.slug}-${kids}`} venue={venue} initialKids={kids} />
 
           <section className="rule-box" aria-labelledby="rule-h">
             <h2 id="rule-h">Rodinné vstupné</h2>

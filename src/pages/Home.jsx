@@ -2,7 +2,7 @@ import { lazy, Suspense, useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { getVenues, getVenueBySlug } from '../lib/venues'
 import { getLatestRelease } from '../lib/novinky'
-import { KRAJE, CATEGORIES, CATEGORY_LABEL, TIERS, TIER_FILTERS, krajFull, formatDate } from '../lib/constants'
+import { KRAJE, CATEGORIES, CATEGORY_LABEL, KIDS_FILTERS, parseKids, kidsPhrase, kidsChip, fitsKids, krajFull, krajLocative, formatDate } from '../lib/constants'
 import { homeMeta, krajPath, byTierThenName } from '../lib/seo'
 import { useHead } from '../lib/useHead'
 import VenueCard from '../components/VenueCard'
@@ -18,10 +18,10 @@ export default function Home() {
   const { data: venues, demo } = getVenues()
   const [params, setParams] = useSearchParams()
 
-  // Všechny filtry žijí v URL: /?kraj=Vysočina&kat=zoo,hrad&uroven=5&q=…
+  // Všechny filtry žijí v URL: /?kraj=Vysočina&kat=zoo,hrad&deti=5&q=…
   const kraj = params.get('kraj') || ''
   const kats = (params.get('kat') || '').split(',').filter(Boolean)
-  const uroven = params.get('uroven') || ''
+  const deti = parseKids(params.get('deti'))
   const q = params.get('q') || ''
   const view = params.get('zobrazeni') === 'mapa' ? 'mapa' : 'seznam'
   useHead(homeMeta())
@@ -45,30 +45,47 @@ export default function Home() {
   }
   const toggleKat = (k) => update({ kat: kats.includes(k) ? kats.filter((x) => x !== k) : [...kats, k] })
 
-  const minRank = (TIER_FILTERS.find((t) => t.value === uroven) || TIER_FILTERS[0]).minRank
+  // Hledáme jen v názvu, obci a typu místa (kraj má vlastní výběr; „hrad“ by jinak našel celý Královéhradecký kraj).
+  const hay = (v) => norm(`${v.name} ${v.city || ''} ${CATEGORY_LABEL[v.category] || ''}`)
+  // Když slovo nic nenajde, zkusíme ho bez koncovky („Prahu“ → „prah“, „Ostravě“ → „ostrav“).
+  const nq = useMemo(() => {
+    let w = norm(q).trim()
+    for (let i = 0; i < 2 && w.length >= 5 && !venues.some((v) => hay(v).includes(w)); i++) w = w.slice(0, -1)
+    return w
+  }, [venues, q])
 
-  const filtered = useMemo(() => {
-    const nq = norm(q)
-    return venues.filter((v) => {
-      if (kraj && v.kraj !== kraj) return false
-      if (kats.length && !kats.includes(v.category)) return false
-      if ((TIERS[v.tier]?.rank || 0) < minRank) return false
-      if (nq) {
-        const hay = norm(`${v.name} ${v.city || ''} ${v.kraj || ''} ${CATEGORY_LABEL[v.category] || ''}`)
-        if (!hay.includes(nq)) return false
-      }
-      return true
-    })
-  }, [venues, kraj, kats.join(','), minRank, q])
+  // Shoda se všemi filtry kromě vynechaného (pro počty na čipech a tlačítka v prázdném stavu)
+  const matches = (v, skip = null) => (skip === 'kraj' || !kraj || v.kraj === kraj)
+    && (skip === 'kat' || !kats.length || kats.includes(v.category))
+    && (skip === 'deti' || fitsKids(v, deti))
+    && (skip === 'q' || !nq || hay(v).includes(nq))
+  const countWithout = (skip) => venues.filter((v) => matches(v, skip)).length
+
+  const filtered = useMemo(() => venues.filter((v) => matches(v)), [venues, kraj, kats.join(','), deti, nq])
+  const katCounts = useMemo(() => Object.fromEntries(CATEGORIES.map((c) => [c.value,
+    venues.filter((v) => v.category === c.value && matches(v, 'kat')).length])), [venues, kraj, deti, nq])
+  // Typy, které v katalogu zatím nemají žádné místo, nenabízíme
+  const shownCats = CATEGORIES.filter((c) => kats.includes(c.value) || venues.some((v) => v.category === c.value))
+  // Hledané slovo, které je vlastně kraj („jihomoravsky“) → nabídneme filtr kraje
+  const krajHit = nq.length >= 4 ? KRAJE.find((k) => k !== kraj && norm(k).startsWith(nq)) : null
 
   const applied = [
     kraj && { key: 'kraj', label: `Kraj: ${kraj}`, clear: () => update({ kraj: '' }) },
     ...kats.map((k) => ({ key: `kat-${k}`, label: CATEGORY_LABEL[k] || k, clear: () => toggleKat(k) })),
-    uroven && { key: 'uroven', label: TIER_FILTERS.find((t) => t.value === uroven)?.label, clear: () => update({ uroven: '' }) },
+    deti && { key: 'deti', label: kidsChip(deti), clear: () => update({ deti: '' }) },
     q && { key: 'q', label: `„${q}“`, clear: () => update({ q: '' }) },
   ].filter(Boolean)
 
   const countLabel = (n) => (n === 1 ? '1 místo' : n >= 2 && n <= 4 ? `${n} místa` : `${n} míst`)
+  // „12 míst v Praze pro 5 dětí“
+  const countLine = (n) => [countLabel(n), kraj ? krajLocative(kraj) : 'po celé ČR', deti && kidsPhrase(deti)].filter(Boolean).join(' ')
+  // Tlačítka, která z prázdného výsledku vedou k nenulovému (nanejvýš 3, podle počtu)
+  const relax = [
+    kraj && { label: 'Celá ČR', n: countWithout('kraj'), patch: { kraj: '' } },
+    kats.length > 0 && { label: kraj ? `Všechny typy ${krajLocative(kraj)}` : 'Všechny typy míst', n: countWithout('kat'), patch: { kat: [] } },
+    deti && { label: 'Pro jakýkoli počet dětí', n: countWithout('deti'), patch: { deti: '' } },
+    q && { label: 'Zrušit hledání', n: countWithout('q'), patch: { q: '' } },
+  ].filter((r) => r && r.n > 0).sort((a, b) => b.n - a.n).slice(0, 3)
 
   return (
     <>
@@ -111,24 +128,26 @@ export default function Home() {
         </div>
 
         <div className="filters-group">
-          <span className="filters-label" id="lbl-uroven">Rodinná vstupenka platí pro</span>
-          <div className="segmented" role="radiogroup" aria-labelledby="lbl-uroven">
-            {TIER_FILTERS.map((t) => (
-              <button key={t.value || 'all'} type="button" role="radio" aria-checked={uroven === t.value}
-                className={uroven === t.value ? 'is-on' : ''} onClick={() => update({ uroven: t.value })}>
-                {t.label}
+          <span className="filters-label" id="lbl-deti">Kolik dětí jede?</span>
+          <div className="segmented" role="radiogroup" aria-labelledby="lbl-deti">
+            {KIDS_FILTERS.map((f) => (
+              <button key={f.value} type="button" role="radio" aria-checked={deti === f.value}
+                className={deti === f.value ? 'is-on' : ''} onClick={() => update({ deti: deti === f.value ? '' : String(f.value) })}>
+                {f.label}
               </button>
             ))}
           </div>
+          {!deti && <p className="filters-hint">Vyberte a ceny přepočítáme pro vaši rodinu.</p>}
         </div>
 
         <div className="filters-group">
           <span className="filters-label" id="lbl-kat">Typ místa</span>
           <div className="chips" role="group" aria-labelledby="lbl-kat">
-            {CATEGORIES.map((c) => (
+            {shownCats.map((c) => (
               <button key={c.value} type="button" aria-pressed={kats.includes(c.value)}
-                className={`chip ${kats.includes(c.value) ? 'is-on' : ''}`} onClick={() => toggleKat(c.value)}>
-                {c.label}
+                aria-label={`${c.label}, v tomto výběru ${countLabel(katCounts[c.value])}`}
+                className={`chip ${kats.includes(c.value) ? 'is-on' : ''} ${katCounts[c.value] === 0 ? 'is-empty' : ''}`} onClick={() => toggleKat(c.value)}>
+                {c.label} <span className="chip-n" aria-hidden="true">{katCounts[c.value]}</span>
               </button>
             ))}
           </div>
@@ -136,7 +155,7 @@ export default function Home() {
       </section>
 
       <div className="results-head">
-        <p className="count" aria-live="polite">{countLabel(filtered.length)}</p>
+        <p className="count" aria-live="polite">{countLine(filtered.length)}</p>
         <ViewToggle value={view} onChange={(v) => update({ zobrazeni: v === 'mapa' ? 'mapa' : '' })} />
         {applied.length > 0 && (
           <div className="applied" aria-label="Použité filtry">
@@ -155,24 +174,29 @@ export default function Home() {
 
       {filtered.length === 0 ? (
         <div className="empty-state">
-          <p>Tomuhle výběru zatím nic neodpovídá.</p>
+          <h2 className="h-sm">Pro tenhle výběr zatím nemáme žádné místo</h2>
+          {q
+            ? <p>Na „{q}“ jsme nic nenašli. Hledáme v názvech míst a obcí. Zkuste základní tvar slova nebo vyberte kraj.</p>
+            : <p>Do katalogu dáváme jen místa, kde rodinná vstupenka pokryje aspoň 4 děti, a ceníky ověřujeme postupně.</p>}
           <div className="empty-actions">
-            {kraj && <button className="btn btn--ghost" onClick={() => update({ kraj: '' })}>Zrušit filtr Kraj</button>}
-            {uroven && <button className="btn btn--ghost" onClick={() => update({ uroven: '' })}>Zobrazit i místa pro 4 děti</button>}
+            {krajHit && <button className="btn" onClick={() => update({ kraj: krajHit, q: '' })}>
+              Výlety {krajLocative(krajHit)} ({venues.filter((v) => v.kraj === krajHit && fitsKids(v, deti)).length})</button>}
+            {relax.map((r) => <button key={r.label} className="btn btn--ghost" onClick={() => update(r.patch)}>{r.label} ({countLabel(r.n)})</button>)}
             <Link className="btn btn--ghost" to="/tip/">Poslat tip na místo</Link>
           </div>
         </div>
       ) : view === 'mapa' ? (
         <Suspense fallback={<div className="map map--loading" role="status">Načítáme mapu…</div>}>
-          <VenueMap venues={filtered} />
+          <VenueMap venues={filtered} kids={deti} />
         </Suspense>
       ) : (
         <div className="grid">
-          {filtered.map((v) => <VenueCard key={v.slug} venue={v} />)}
+          {filtered.map((v) => <VenueCard key={v.slug} venue={v} kids={deti} />)}
         </div>
       )}
 
-      {latest && latestVenues.length > 0 && (
+      {/* Při filtrování by místa z jiných krajů pod výsledky mátla, proto jen bez filtrů. */}
+      {latest && latestVenues.length > 0 && !kraj && !kats.length && !q && (
         <section className="latest" aria-labelledby="latest-h">
           <div className="latest-head">
             <h2 id="latest-h" className="h-sm">Naposledy přidáno</h2>
