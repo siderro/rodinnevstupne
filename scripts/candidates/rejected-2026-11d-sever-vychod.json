@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Zoo Děčín – Pastýřská stěna",
+    "slug": "zoo-decin",
+    "kraj": "Ústecký",
+    "website": "https://www.zoodecin.cz",
+    "reason": "Žádná rodinná vstupenka, jen sleva 10 % ze součtu jednotlivého vstupného (min. 2 dospělí a 2 děti) – každé dítě platí (per_child). Ceník navíc s poznámkou z 2023, stránka aktualizována 21. 3. 2024 (starší než 2 roky). Rodinná permanentka max. 2+3.",
+    "family_ticket_desc": "rodinné vstupné (min. 2 dospělí a 2 děti) 10 %; Rodinná permanentka (2 dospělí + 3 děti) 2700 Kč",
+    "source_url": "https://www.zoodecin.cz/?p=clanky/vstupne_1",
+    "checked_at": "2026-11-19"
+  },
+  {
+    "name": "Liberecká radnice – prohlídky",
+    "slug": "radnice-liberec",
+    "kraj": "Liberecký",
+    "website": "https://www.visitliberec.eu",
+    "reason": "Ceník nenalezen – cena jen v souhrnné brožuře Turistické cíle (9/2025), oficiální ceník prohlídek neexistuje online. Dle brožury navíc jen 2+2–3 (rodina 200 Kč).",
+    "family_ticket_desc": "rodina 200 Kč = 2 dospělí + 2–3 děti do 15 let (dle brožury)",
+    "checked_at": "2026-11-19"
+  }
+]

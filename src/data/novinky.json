@@ -1,5 +1,107 @@
 [
   {
+    "date": "2026-11-19",
+    "type": "update",
+    "headline": "Přibylo 12 nových míst, kam můžete s dětmi. U 16 míst jsme aktualizovali ceník nebo podmínky. 1 místo jsme z katalogu vyřadili",
+    "added": [
+      "galerie-rudolfinum",
+      "muzeum-bedricha-smetany",
+      "ng-klaster-sv-anezky",
+      "ng-schwarzenbersky-palac",
+      "ng-sternbersky-palac",
+      "pamatnik-palackeho-a-riegra",
+      "narodni-zemedelske-muzeum-kacina",
+      "husitske-muzeum-galerie-ambit-tabor",
+      "galerie-moderniho-umeni-roudnice-nad-labem",
+      "zamek-kamenice-nad-lipou",
+      "krajska-galerie-zlin",
+      "skanzen-rochus-uherske-hradiste"
+    ],
+    "updated": [
+      "ceske-muzeum-hudby",
+      "muzeum-antonina-dvoraka",
+      "naprstkovo-muzeum",
+      "narodni-galerie-praha",
+      "narodni-muzeum",
+      "narodopisne-muzeum-musaion",
+      "planetarium-praha",
+      "pamatnik-bedricha-smetany-jabkenice",
+      "pamatnik-jana-palacha-vsetaty",
+      "pamatnik-josefa-suka-krecovice",
+      "zamek-vrchotovy-janovice",
+      "muzeum-ceske-loutky-a-cirkusu-prachatice",
+      "muzeum-krajky-vamberk",
+      "zamek-nove-hrady",
+      "pamatnik-holokaustu-romu-hodonin-u-kunstatu",
+      "vetrny-mlyn-velke-tesany"
+    ],
+    "removed": [
+      "prvni-ceske-muzeum-cyklistiky"
+    ],
+    "total": 151,
+    "changes": {
+      "ceske-muzeum-hudby": [
+        "dospělý: neuvedeno → 140 Kč"
+      ],
+      "muzeum-antonina-dvoraka": [
+        "dospělý: neuvedeno → 70 Kč"
+      ],
+      "naprstkovo-muzeum": [
+        "dospělý: neuvedeno → 140 Kč"
+      ],
+      "narodni-galerie-praha": [
+        "dospělý: neuvedeno → 250 Kč"
+      ],
+      "narodni-muzeum": [
+        "dospělý: neuvedeno → 360 Kč"
+      ],
+      "narodopisne-muzeum-musaion": [
+        "dospělý: neuvedeno → 100 Kč"
+      ],
+      "planetarium-praha": [
+        "rodinné vstupné: 869 Kč → 969 Kč",
+        "dospělý: 299 Kč → 349 Kč",
+        "dítě: 229 Kč → 249 Kč"
+      ],
+      "pamatnik-bedricha-smetany-jabkenice": [
+        "dospělý: neuvedeno → 70 Kč"
+      ],
+      "pamatnik-jana-palacha-vsetaty": [
+        "věková hranice dětí: do 15 let → bez hranice",
+        "rodinné vstupné: neuvedeno → zdarma",
+        "dospělý: neuvedeno → zdarma"
+      ],
+      "pamatnik-josefa-suka-krecovice": [
+        "dospělý: neuvedeno → 70 Kč"
+      ],
+      "zamek-vrchotovy-janovice": [
+        "dospělý: neuvedeno → 140 Kč"
+      ],
+      "muzeum-ceske-loutky-a-cirkusu-prachatice": [
+        "dospělý: neuvedeno → 70 Kč"
+      ],
+      "muzeum-krajky-vamberk": [
+        "rodinné vstupné: 150 Kč → neuvedeno",
+        "dospělý: 60 Kč → 90 Kč"
+      ],
+      "zamek-nove-hrady": [
+        "rodinné vstupné: 230 Kč → 770 Kč",
+        "dospělý: 100 Kč → 270 Kč",
+        "dítě: 70 Kč → 230 Kč"
+      ],
+      "pamatnik-holokaustu-romu-hodonin-u-kunstatu": [
+        "úroveň: až 4 děti → neomezeně dětí",
+        "počet dětí na rodinnou vstupenku: 4 → neomezeně"
+      ],
+      "vetrny-mlyn-velke-tesany": [
+        "věková hranice dětí: bez hranice → do 15 let"
+      ]
+    },
+    "removed_names": {
+      "prvni-ceske-muzeum-cyklistiky": "První české muzeum cyklistiky"
+    }
+  },
+  {
     "date": "2026-11-13",
     "type": "launch",
     "headline": "Na startu je 140 míst, kam můžete s dětmi, ze všech 14 krajů",
