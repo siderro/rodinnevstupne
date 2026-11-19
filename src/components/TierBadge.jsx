@@ -1,9 +1,10 @@
 import goldSvg from '../../brand/icons/tier-gold.svg?raw'
 import silverSvg from '../../brand/icons/tier-silver.svg?raw'
 import baseSvg from '../../brand/icons/tier-base.svg?raw'
+import threeSvg from '../../brand/icons/tier-three.svg?raw'
 import { tierOf, tierLabel } from '../lib/constants'
 
-const ICONS = { gold: goldSvg, silver: silverSvg, base: baseSvg }
+const ICONS = { gold: goldSvg, silver: silverSvg, base: baseSvg, three: threeSvg }
 
 export function TierIcon({ tier }) {
   return <span className="tier-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: ICONS[tier] }} />

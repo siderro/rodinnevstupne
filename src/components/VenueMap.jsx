@@ -8,11 +8,12 @@ import 'leaflet/dist/leaflet.css'
 import goldSvg from '../../brand/icons/tier-gold.svg?raw'
 import silverSvg from '../../brand/icons/tier-silver.svg?raw'
 import baseSvg from '../../brand/icons/tier-base.svg?raw'
+import threeSvg from '../../brand/icons/tier-three.svg?raw'
 import TierBadge from './TierBadge'
 import { TIERS, tierOf, tierLabel, formatPrice, familyQuote, pluralKids, QUOTE_KIDS, CATEGORY_LABEL } from '../lib/constants'
 import { useMonth } from '../lib/useMonth'
 
-const ICON_SVG = { gold: goldSvg, silver: silverSvg, base: baseSvg }
+const ICON_SVG = { gold: goldSvg, silver: silverSvg, base: baseSvg, three: threeSvg }
 const CZ_CENTER = [49.8, 15.5]
 
 // Špendlík jako HTML (divIcon): barva podle úrovně z brand tokenů, uvnitř ikona úrovně.
@@ -69,7 +70,7 @@ export default function VenueMap({ venues, kids = null }) {
       </MapContainer>
 
       <ul className="map-legend" aria-label="Legenda mapy">
-        {['gold', 'silver', 'base'].map((k) => (
+        {Object.keys(TIERS).filter((k) => located.some((v) => v.tier === k)).map((k) => (
           <li key={k}>
             <span className={`map-pin map-pin--${k} map-pin--sm`} aria-hidden="true" dangerouslySetInnerHTML={{ __html: ICON_SVG[k] }} />
             {TIERS[k].label}

@@ -115,6 +115,7 @@ p { margin: 0 0 .75em; }
 .chip.is-on::before { content: "✓ "; }
 .chip-n { margin-left: 2px; font-size: var(--fs-sm); color: var(--muted); font-weight: 400; }
 .chip.is-empty { opacity: .55; }
+.segmented--num button { min-width: 40px; padding: 0 10px; font-variant-numeric: tabular-nums; }
 .filters-hint { margin: 4px 0 0; font-size: var(--fs-sm); color: var(--muted); }
 
 .results-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 16px 0 12px; }
@@ -249,6 +250,7 @@ form.detail { background: var(--surface); padding: 16px; border-radius: var(--ra
 .map-pin--gold { background: var(--tier-gold-ui); }
 .map-pin--silver { background: var(--tier-silver-ui); }
 .map-pin--base { background: var(--tier-base-ui); }
+.map-pin--three { background: var(--tier-three-ui); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .map-pin { color: var(--bg); } }
 :root[data-theme="dark"] .map-pin { color: var(--bg); }
 .map-pin--sm { width: 20px; height: 20px; border-width: 1.5px; box-shadow: none; flex: none; }
@@ -333,3 +335,13 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-r
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* V sousedních krajích (málo nebo žádné výsledky) */
+.nearby { margin-top: 24px; padding: 16px 18px; background: var(--surface-2); border-top: 1px solid var(--line); border-radius: var(--radius); }
+.nearby .h-sm { margin-top: 0; }
+.nearby-kraje { margin: 0 0 10px; }
+.nearby-list { margin: 0; padding-left: 1.1em; }
+.nearby-list li { margin-bottom: 6px; }
+.nearby-more { margin-top: 20px; }
+.nearby-more > summary { cursor: pointer; font-weight: 600; color: var(--primary); }
+.nearby-more .nearby { margin-top: 12px; }

@@ -2,10 +2,12 @@ import { lazy, Suspense, useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { getVenues, getVenueBySlug } from '../lib/venues'
 import { getLatestRelease } from '../lib/novinky'
-import { KRAJE, CATEGORIES, CATEGORY_LABEL, KIDS_FILTERS, parseKids, kidsPhrase, kidsChip, fitsKids, krajFull, krajLocative, formatDate } from '../lib/constants'
+import { KRAJE, CATEGORIES, CATEGORY_LABEL, KIDS_FILTERS, parseKids, pluralKids, kidsPhrase, kidsChip, fitsKids, isClosed, krajFull, krajLocative, formatDate } from '../lib/constants'
 import { homeMeta, krajPath, byTierThenName } from '../lib/seo'
 import { useHead } from '../lib/useHead'
+import { useMonth } from '../lib/useMonth'
 import VenueCard from '../components/VenueCard'
+import NearbyKraje, { nearbyFor } from '../components/NearbyKraje'
 import ViewToggle from '../components/ViewToggle'
 import { trackOnce, trackDebounced } from '../lib/track'
 
@@ -61,7 +63,12 @@ export default function Home() {
     && (skip === 'q' || !nq || hay(v).includes(nq))
   const countWithout = (skip) => venues.filter((v) => matches(v, skip)).length
 
-  const filtered = useMemo(() => venues.filter((v) => matches(v)), [venues, kraj, kats.join(','), deti, nq])
+  // Pořadí z dat (kraj → název); místa „až 3 děti“ a teď zavřená místa jdou na konec
+  const month = useMonth()
+  const filtered = useMemo(() => {
+    const last = (v) => (v.tier === 'three' ? 2 : 0) + (isClosed(v, month) ? 1 : 0)
+    return venues.filter((v) => matches(v)).sort((a, b) => last(a) - last(b))
+  }, [venues, kraj, kats.join(','), deti, nq, month])
   const katCounts = useMemo(() => Object.fromEntries(CATEGORIES.map((c) => [c.value,
     venues.filter((v) => v.category === c.value && matches(v, 'kat')).length])), [venues, kraj, deti, nq])
   // Typy, které v katalogu zatím nemají žádné místo, nenabízíme
@@ -80,6 +87,18 @@ export default function Home() {
   // „12 míst v Praze pro 5 dětí“
   const countLine = (n) => [countLabel(n), kraj ? krajLocative(kraj) : 'po celé ČR', deti && kidsPhrase(deti)].filter(Boolean).join(' ')
   // Tlačítka, která z prázdného výsledku vedou k nenulovému (nanejvýš 3, podle počtu)
+  // Sousední kraje: při 0 výsledcích otevřeně, při 1–3 (bez hledání) sbaleně. Typ místa se neuvolňuje.
+  const nearby = useMemo(() => {
+    if (!kraj || filtered.length > 3 || (filtered.length > 0 && q)) return null
+    const n = nearbyFor(kraj, venues, (v) => (!kats.length || kats.includes(v.category)) && fitsKids(v, deti))
+    return n.total ? n : null
+  }, [venues, kraj, kats.join(','), deti, nq, filtered.length])
+  const krajLink = (k) => {
+    const next = new URLSearchParams(params)
+    next.set('kraj', k)
+    next.delete('q')
+    return `/?${next}`
+  }
   const relax = [
     kraj && { label: 'Celá ČR', n: countWithout('kraj'), patch: { kraj: '' } },
     kats.length > 0 && { label: kraj ? `Všechny typy ${krajLocative(kraj)}` : 'Všechny typy míst', n: countWithout('kat'), patch: { kat: [] } },
@@ -129,11 +148,11 @@ export default function Home() {
 
         <div className="filters-group">
           <span className="filters-label" id="lbl-deti">Kolik dětí jede?</span>
-          <div className="segmented" role="radiogroup" aria-labelledby="lbl-deti">
-            {KIDS_FILTERS.map((f) => (
-              <button key={f.value} type="button" role="radio" aria-checked={deti === f.value}
-                className={deti === f.value ? 'is-on' : ''} onClick={() => update({ deti: deti === f.value ? '' : String(f.value) })}>
-                {f.label}
+          <div className="segmented segmented--num" role="radiogroup" aria-labelledby="lbl-deti">
+            {KIDS_FILTERS.map((n) => (
+              <button key={n} type="button" role="radio" aria-checked={deti === n} aria-label={pluralKids(n)}
+                className={deti === n ? 'is-on' : ''} onClick={() => update({ deti: deti === n ? '' : String(n) })}>
+                {n}
               </button>
             ))}
           </div>
@@ -154,22 +173,24 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="results-head">
-        <p className="count" aria-live="polite">{countLine(filtered.length)}</p>
-        <ViewToggle value={view} onChange={(v) => update({ zobrazeni: v === 'mapa' ? 'mapa' : '' })} />
-        {applied.length > 0 && (
-          <div className="applied" aria-label="Použité filtry">
-            {applied.map((a) => (
-              <button key={a.key} type="button" className="applied-chip" onClick={a.clear}
-                aria-label={`Zrušit filtr ${a.label}`}>
-                {a.label} <span aria-hidden="true">×</span>
-              </button>
-            ))}
+      {applied.length > 0 && (
+        <div className="applied" aria-label="Použité filtry">
+          {applied.map((a) => (
+            <button key={a.key} type="button" className="applied-chip" onClick={a.clear}
+              aria-label={`Zrušit filtr ${a.label}`}>
+              {a.label} <span aria-hidden="true">×</span>
+            </button>
+          ))}
+          {applied.length > 1 && (
             <button type="button" className="link-btn" onClick={() => setParams(new URLSearchParams(view === 'mapa' ? { zobrazeni: 'mapa' } : {}))}>
               Zrušit vše
             </button>
-          </div>
-        )}
+          )}
+        </div>
+      )}
+      <div className="results-head">
+        <p className="count" aria-live="polite">{countLine(filtered.length)}</p>
+        <ViewToggle value={view} onChange={(v) => update({ zobrazeni: v === 'mapa' ? 'mapa' : '' })} />
       </div>
 
       {filtered.length === 0 ? (
@@ -182,8 +203,11 @@ export default function Home() {
             {krajHit && <button className="btn" onClick={() => update({ kraj: krajHit, q: '' })}>
               Výlety {krajLocative(krajHit)} ({venues.filter((v) => v.kraj === krajHit && fitsKids(v, deti)).length})</button>}
             {relax.map((r) => <button key={r.label} className="btn btn--ghost" onClick={() => update(r.patch)}>{r.label} ({countLabel(r.n)})</button>)}
-            <Link className="btn btn--ghost" to="/tip/">Poslat tip na místo</Link>
           </div>
+          {nearby && <NearbyKraje nearby={nearby} krajLink={krajLink} kids={deti} />}
+          <p className="tip-nudge">
+            Znáte {kraj ? krajLocative(kraj) : 'nějaké'} místo, kde rodinná vstupenka pokryje aspoň 4 děti? <Link to="/tip/">Pošlete tip</Link>
+          </p>
         </div>
       ) : view === 'mapa' ? (
         <Suspense fallback={<div className="map map--loading" role="status">Načítáme mapu…</div>}>
@@ -193,6 +217,14 @@ export default function Home() {
         <div className="grid">
           {filtered.map((v) => <VenueCard key={v.slug} venue={v} kids={deti} />)}
         </div>
+      )}
+
+      {/* Málo výsledků v kraji: sousedy nabídneme jen sbaleně, aby se nepletli s výsledky */}
+      {nearby && filtered.length > 0 && (
+        <details className="nearby-more">
+          <summary>Ukázat i místa v sousedních krajích ({nearby.total})</summary>
+          <NearbyKraje nearby={nearby} krajLink={krajLink} kids={deti} />
+        </details>
       )}
 
       {/* Při filtrování by místa z jiných krajů pod výsledky mátla, proto jen bez filtrů. */}

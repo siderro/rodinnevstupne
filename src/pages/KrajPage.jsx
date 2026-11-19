@@ -1,11 +1,12 @@
-import { lazy, Suspense, useMemo, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { lazy, Suspense, useMemo } from 'react'
+import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { getVenuesByKraj, getVenues } from '../lib/venues'
 import { KRAJE, TIERS, krajBySlug, krajFull, krajLocative } from '../lib/constants'
 import { krajMeta, krajPath, byTierThenName } from '../lib/seo'
 import { useHead } from '../lib/useHead'
 import VenueCard from '../components/VenueCard'
 import ViewToggle from '../components/ViewToggle'
+import NearbyKraje, { nearbyFor } from '../components/NearbyKraje'
 import { trackOnce } from '../lib/track'
 import NotFound from './NotFound'
 
@@ -20,7 +21,11 @@ export default function KrajPage() {
   const kraj = krajBySlug(krajSlug)
   const { demo } = getVenues()
   const venues = useMemo(() => (kraj ? getVenuesByKraj(kraj).slice().sort(byTierThenName) : []), [kraj])
-  const [view, setView] = useState('seznam')
+  // Zobrazení drží URL, aby tlačítko Zpět vrátilo mapu
+  const [params, setParams] = useSearchParams()
+  const view = params.get('zobrazeni') === 'mapa' ? 'mapa' : 'seznam'
+  const setView = (v) => setParams(v === 'mapa' ? { zobrazeni: 'mapa' } : {}, { replace: true })
+  const nearby = useMemo(() => (kraj && venues.length < 4 ? nearbyFor(kraj, getVenues().data, () => true) : null), [kraj, venues])
   useHead(kraj ? krajMeta(kraj, venues) : { title: 'Stránka nenalezena – Rodinné vstupné', noindex: true })
 
   if (!kraj) return <NotFound />
@@ -57,7 +62,6 @@ export default function KrajPage() {
         <div className="empty-state">
           <div className="empty-actions">
             <Link className="btn" to="/tip/">Poslat tip na místo</Link>
-            <Link className="btn btn--ghost" to="/">Prohlédnout ostatní kraje</Link>
           </div>
         </div>
       ) : (
@@ -76,12 +80,12 @@ export default function KrajPage() {
               {venues.map((v) => <VenueCard key={v.slug} venue={v} />)}
             </div>
           )}
-          {venues.length < 3 && (
-            <p className="tip-nudge">
-              V tomhle kraji toho zatím víme málo. <Link to="/tip/">Znáte místo?</Link>
-            </p>
-          )}
         </>
+      )}
+
+      {nearby && <NearbyKraje nearby={nearby} krajLink={krajPath} />}
+      {venues.length > 0 && venues.length < 4 && (
+        <p className="tip-nudge">Znáte místo {loc}? <Link to="/tip/">Pošlete tip</Link></p>
       )}
 
       <nav className="kraj-links" aria-labelledby="kraje-h">

@@ -306,7 +306,8 @@ function TipForm({ oprava }) {
 
         {sent && (
           <div className="notice tip-thanks" role="status">
-            <p><strong>Děkujeme. Tip ověříme a do týdne ho přidáme, nebo vám dáme vědět, proč to nejde.</strong></p>
+            <p><strong>Otevřel se vám e-mail? Stačí ho odeslat.</strong> Pokud ne, zkopírujte text tlačítkem výš a pošlete ho na {REPORT_EMAIL}.</p>
+            <p>Děkujeme. Tip ověříme a do týdne ho přidáme, nebo vám dáme vědět, proč to nejde.</p>
             <p className="meta">
               Našli jste, co jste hledali? Projekt je zdarma díky komunitě.{' '}
               <a href={BUY_ME_A_COFFEE_URL} target="_blank" rel="noreferrer">Kupte nám pivo 🍺</a>

@@ -4,7 +4,7 @@ import TierBadge from '../components/TierBadge'
 import Calculator from '../components/Calculator'
 import ShareButton from '../components/ShareButton'
 import {
-  CATEGORY_LABEL, BUY_ME_A_COFFEE_URL, SITE_URL, formatPrice, formatDate, dataAge, familyTicketSummary, krajFull, monthRange, sourceDate,
+  CATEGORY_LABEL, KRAJE, BUY_ME_A_COFFEE_URL, SITE_URL, formatPrice, formatDate, dataAge, familyTicketSummary, krajFull, monthRange, sourceDate,
   familyQuote, reopensIn, conditionChips, parseKids, pluralKids, QUOTE_KIDS,
 } from '../lib/constants'
 import { useMonth } from '../lib/useMonth'
@@ -23,9 +23,13 @@ export default function VenueDetail() {
 
   if (!venue) return (
     <div className="empty-state">
-      <h1>Místo jsme nenašli</h1>
-      <p>Možná se změnila adresa, nebo místo z katalogu vypadlo.</p>
-      <Link className="btn" to="/">Zpět na výlety</Link>
+      <h1>Tohle místo už v katalogu není</h1>
+      <p>Možná se změnila adresa, nebo jsme ho vyřadili, protože rodinná vstupenka už nepokryje 4 děti.</p>
+      <Link className="btn" to="/">Všechny výlety</Link>
+      <nav className="kraj-links" aria-label="Výlety podle krajů">
+        <h2 className="h-sm">Výlety podle krajů</h2>
+        <ul>{KRAJE.map((k) => <li key={k}><Link to={krajPath(k)}>{krajFull(k)}</Link></li>)}</ul>
+      </nav>
     </div>
   )
 

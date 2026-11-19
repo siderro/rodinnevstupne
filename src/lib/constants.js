@@ -41,6 +41,24 @@ export function krajLocative(k) {
   return `${prep} ${k.replace(/ý$/, 'ém')} kraji`
 }
 
+// Sousední kraje (pro „V sousedních krajích“, když je výsledků málo)
+export const NEIGHBORS = {
+  Praha: ['Středočeský'],
+  Středočeský: ['Praha', 'Ústecký', 'Liberecký', 'Královéhradecký', 'Pardubický', 'Vysočina', 'Jihočeský', 'Plzeňský'],
+  Jihočeský: ['Plzeňský', 'Středočeský', 'Vysočina', 'Jihomoravský'],
+  Plzeňský: ['Karlovarský', 'Ústecký', 'Středočeský', 'Jihočeský'],
+  Karlovarský: ['Plzeňský', 'Ústecký'],
+  Ústecký: ['Karlovarský', 'Plzeňský', 'Středočeský', 'Liberecký'],
+  Liberecký: ['Ústecký', 'Středočeský', 'Královéhradecký'],
+  Královéhradecký: ['Liberecký', 'Středočeský', 'Pardubický'],
+  Pardubický: ['Královéhradecký', 'Středočeský', 'Vysočina', 'Jihomoravský', 'Olomoucký'],
+  Vysočina: ['Středočeský', 'Pardubický', 'Jihomoravský', 'Jihočeský'],
+  Jihomoravský: ['Jihočeský', 'Vysočina', 'Pardubický', 'Olomoucký', 'Zlínský'],
+  Olomoucký: ['Pardubický', 'Jihomoravský', 'Zlínský', 'Moravskoslezský'],
+  Zlínský: ['Jihomoravský', 'Olomoucký', 'Moravskoslezský'],
+  Moravskoslezský: ['Olomoucký', 'Zlínský'],
+}
+
 // ── Kategorie míst ───────────────────────────────────────────────────────────
 export const CATEGORIES = [
   { value: 'zoo', label: 'Zoo' },
@@ -62,6 +80,8 @@ export const TIERS = {
   gold: { key: 'gold', name: 'Všichni dovnitř', label: 'neomezeně dětí', short: '∞', rank: 3 },
   silver: { key: 'silver', name: 'Plná posádka', label: 'až 5 dětí', short: 'až 5', rank: 2 },
   base: { key: 'base', name: 'Čtyřlístek', label: 'až 4 děti', short: 'až 4', rank: 1 },
+  // Od 6. 12. 2026 (docs/plan-tri-deti.md); do té doby je build-data.mjs do dat nepustí
+  three: { key: 'three', name: 'až 3 děti', label: 'až 3 děti', short: 'až 3', rank: 0 },
 }
 
 // „Děti zdarma“: rodinná vstupenka se nekupuje, platí se jen dospělí
@@ -80,20 +100,16 @@ export function tierLabel(v) {
   return v.min_children > 1 ? `${v.min_children}–${pluralKids(max)}` : `až ${pluralKids(max)}`
 }
 
-// Filtr „Kolik dětí jede?“ (?deti=N). Bez výběru se ukazuje vše; „6 a víc“ počítá s 6 dětmi.
-export const KIDS_FILTERS = [
-  { value: 3, label: '3' },
-  { value: 4, label: '4' },
-  { value: 5, label: '5' },
-  { value: 6, label: '6 a víc' },
-]
+// Filtr „Kolik dětí jede?“ (?deti=N): konkrétní čísla, žádné „a víc“ – každá rodina najde svoje
+// a cena se spočítá přesně (doplatky, „platí jen N dětí“). Bez výběru se ukazuje vše.
+export const KIDS_FILTERS = [3, 4, 5, 6, 7, 8, 9, 10]
 export function parseKids(s) {
   const n = Number(s)
-  return KIDS_FILTERS.some((f) => f.value === n) ? n : null
+  return Number.isInteger(n) && n >= 1 && n <= 15 ? n : null
 }
-// „pro 5 dětí“, „pro 6 a víc dětí“, „pro 3 děti“
-export const kidsPhrase = (n) => (n >= 6 ? 'pro 6 a víc dětí' : `pro ${pluralKids(n)}`)
-export const kidsChip = (n) => (n >= 6 ? '6 a víc dětí' : pluralKids(n))
+// „pro 5 dětí“, „pro 3 děti“
+export const kidsPhrase = (n) => `pro ${pluralKids(n)}`
+export const kidsChip = (n) => pluralKids(n)
 // Platí rodinná vstupenka (případně s doplatkem) pro 2 dospělé a N dětí?
 export const fitsKids = (v, n) => !n || calculate(v, 2, n).familyApplies
 
@@ -104,6 +120,7 @@ export function computeTier(v) {
   const max = v.max_children == null ? null : Number(v.max_children)
   if (max != null && max >= 5) return 'silver'
   if (max === 4) return 'base'
+  if (max === 3) return 'three'
   return null
 }
 
