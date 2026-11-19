@@ -37,6 +37,10 @@ const toMonths = (v) => {
   return m.length && m.length < 12 ? m : null
 }
 
+// Rozšíření na 3 děti (docs/plan-tri-deti.md): zapnout 6. 12. 2026 → build čte i tri-deti-*.json
+// a místa s max_children = 3 dostanou úroveň „three“ (odznak „až 3 děti“).
+const INCLUDE_THREE = false
+
 export function computeTier(v) {
   if (v.family_policy === 'unlimited') return 'gold'
   // Děti zdarma do 15 a více let = libovolný počet dětí, tedy nejvyšší úroveň
@@ -44,12 +48,13 @@ export function computeTier(v) {
   const max = toInt(v.max_children)
   if (max != null && max >= 5) return 'silver'
   if (max === 4) return 'base'
+  if (max === 3 && INCLUDE_THREE) return 'three'
   return null
 }
 
 let files = []
 try {
-  files = (await readdir(candDir)).filter((f) => /^verified-.*\.json$/.test(f)).sort()
+  files = (await readdir(candDir)).filter((f) => /^verified-.*\.json$/.test(f) || (INCLUDE_THREE && /^tri-deti-.*\.json$/.test(f))).sort()
 } catch {
   console.warn(`Složka ${path.relative(root, candDir)} neexistuje, výstup bude prázdný.`)
 }

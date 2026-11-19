@@ -61,6 +61,7 @@ const FOCUS = {
   'priroda-a-zahrady': 'Botanické zahrady, arboreta, jeskyně (Správa jeskyní ČR i soukromé), naučné stezky a přírodní areály se vstupným, lanová centra a bobové dráhy.',
   'zabavni-parky-a-farmy': 'Zábavní a rodinné parky, DinoParky, Mirakulum, Bruno Family Park, farmy a statky pro děti, bludiště, dětské parky. Typicky 2+2 s doplatkem za další dítě → takové zamítnout (per_child), hledej výjimky.',
   'statni-muzea-mk': 'Příspěvkové organizace Ministerstva kultury podle nového dubnového „Aktualizovaného přehledu slev ze vstupného“ (mk.gov.cz). Porovnej s katalogem: nové instituce i změněná pravidla.',
+  'tri-deti': 'Místa, kde rodinná vstupenka pokryje PRÁVĚ 3 děti (2 dospělí + 3 děti, i „2+3 a další dítě za příplatek“) – připravujeme rozšíření katalogu na 6. 12. 2026. Projdi hlavně zoo a zooparky, science centra, hrady a zámky mimo NPÚ, městská a krajská muzea, zábavní parky, aquaparky, jeskyně a rozhledny. Typické znění ceníku: „rodinné vstupné (2 dospělí + 3 děti)“, „rodina 2+3“, „rodinná vstupenka do 5 osob“ (= 2+3). Místa 4+ dětí, na která narazíš, ber taky. 2+2 a per_child zahoď.',
   'sezonni-akce': 'Jednorázové a sezónní akce s volným nebo symbolickým vstupem pro děti (Den dětí, dny otevřených dveří, Muzejní noc, „dítě za korunu“). TYTO SE DO KATALOGU NEUKLÁDAJÍ – jen jako podklad pro marketing.',
 }
 const FOCUS_TEXT = FOCUS[FOCUS_KEY] || FOCUS_KEY
