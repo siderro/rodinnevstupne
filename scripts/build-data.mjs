@@ -4,9 +4,9 @@
 // - deduplikace podle slugu (při shodě vyhrává záznam ze souboru, který je abecedně později,
 //   takže novější ověření přepíše starší),
 // - úroveň (tier) se počítá deterministicky:
-//     family_policy = "unlimited"      → "gold"   (Všichni dovnitř · neomezeně dětí)
-//     max_children >= 5                → "silver" (Plná posádka · 5+ dětí)
-//     max_children == 4                → "base"   (Čtyřlístek · 4 děti)
+//     family_policy = "unlimited"      → "gold"   (odznak „neomezeně dětí“ / „děti zdarma“)
+//     max_children >= 5                → "silver" (odznak „až 5 dětí“)
+//     max_children == 4                → "base"   (odznak „až 4 děti“)
 //     cokoli jiného                    → vyřazeno (nesplňuje kritérium zařazení)
 // - řazení podle kraje (pořadí 14 krajů jako ve filtru) a pak podle názvu (česká kolace).
 

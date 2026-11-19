@@ -56,23 +56,27 @@ později, nenápadně a nikdy mezi výsledky.
 
 ## 4. Úrovně míst
 
-Do katalogu patří místo, kde rodinná vstupenka pokryje **aspoň 4 děti**. Úroveň má vždy
-přátelský název **a vedle něj počet dětí**. Samotný název nikdy nestačí, protože počet je informace, kvůli které lidé přišli.
+Do katalogu patří místo, kde rodinná vstupenka pokryje **aspoň 4 děti**. Odznak úrovně je vždy
+**ikona + horní mez počtu dětí** („až 4 děti“). Počet je informace, kvůli které lidé přišli. Odznak popisuje vstupenku, ne rodinu.
 
-| Klíč v kódu | Název úrovně | Povinný popisek | Ikona | `family_policy` | Barvy (tokeny) |
+| Klíč v kódu | Odznak | Kompaktně (pin, legenda) | Ikona | Kdy | Barvy (tokeny) |
 |---|---|---|---|---|---|
-| `gold` | **Všichni dovnitř** | Neomezeně dětí | ∞ (`brand/icons/tier-gold.svg`) | `unlimited`, `kids_free_age` | `--tier-gold-fg` / `--tier-gold-bg` |
-| `silver` | **Plná posádka** | 5+ dětí | 5 teček (`brand/icons/tier-silver.svg`) | `max_children` ≥ 5 | `--tier-silver-fg` / `--tier-silver-bg` |
-| `base` | **Čtyřlístek** | 4 děti | 4 tečky (`brand/icons/tier-base.svg`) | `max_children` = 4 | `--tier-base-fg` / `--tier-base-bg` |
+| `gold` | **neomezeně dětí**, s věkem **neomezeně dětí do 15 let** | ∞ | ∞ (`brand/icons/tier-gold.svg`) | `family_policy = unlimited` s rodinnou cenou | `--tier-gold-fg` / `--tier-gold-bg` |
+| `gold` | **děti zdarma**, s věkem **děti do 15 let zdarma** | zdarma | ∞ | rodinná vstupenka se nekupuje, platí jen dospělí (`price_child` = 0) | `--tier-gold-fg` / `--tier-gold-bg` |
+| `silver` | **až 5 dětí** (při vyšším stropu podle `max_children`, např. „až 6 dětí“) | až 5 | 5 teček (`brand/icons/tier-silver.svg`) | `max_children` ≥ 5 | `--tier-silver-fg` / `--tier-silver-bg` |
+| `base` | **až 4 děti** | až 4 | 4 tečky (`brand/icons/tier-base.svg`) | `max_children` = 4 | `--tier-base-fg` / `--tier-base-bg` |
+| `three` (od 6. 12. 2026) | **až 3 děti** | až 3 | 3 tečky (`brand/icons/tier-three.svg`) | `max_children` = 3 | `--tier-three-fg` / `--tier-three-bg` |
 
-- Zápis odznaku: **„Všichni dovnitř · neomezeně dětí“**, **„Plná posádka · 5+ dětí“**, **„Čtyřlístek · 4 děti“**.
-  Na úzkých místech (pin na mapě, malá karta) stačí ikona a popisek („5+ dětí“), název úrovně se může vynechat.
-- Zlatá úroveň s věkovou hranicí: „Všichni dovnitř · děti do 15 let zdarma“. Vždy uvádíme, od kolika let děti platí.
+- **Názvy úrovní na webu ani v příspěvcích nepoužíváme.** Dřívější názvy „Čtyřlístek“, „Plná posádka“ a „Všichni dovnitř“
+  zůstávají jen jako interní a kampaňové. „Čtyřlístek“ lidé četli jako komiks, proto ho nepoužíváme vůbec.
+  „Všichni dovnitř“ smí přežít jako slogan kampaně a na externím odznaku pro provozovatele, nikdy jako název úrovně v UI.
+  Pro 3 děti žádný nový název nevzniká, odznak je „až 3 děti“.
+- **„až“** říká horní mez: rodina se 6 dětmi nepojede k pokladně, kde vstupenka platí pro 5. Zápis „5+ dětí“ nepoužíváme, je věcně špatně.
+- Když vstupenka platí až od určitého počtu dětí: **„2–4 děti“**, u neomezené **„neomezeně, od 2 dětí“**.
+- U neomezené úrovně vždy uvádíme věkovou hranici, pokud ji ceník má („neomezeně dětí do 15 let“, „děti do 18 let zdarma“).
 - **Podmíněná úroveň** (platí jen s kartou, např. Rodinným pasem): čárkovaný obrys místo plné plochy (`.tier--conditional`)
-  a podmínka v textu: „Všichni dovnitř · s Rodinným pasem“.
-- Proč tyhle názvy: *Čtyřlístek* je čtyřka pro štěstí, *Plná posádka* je auto nebo loďka plná dětí,
-  *Všichni dovnitř* je to, co chce slyšet každá velká rodina u pokladny. Názvy jsou vřelé, ale ne dětské,
-  a nehodnotí rodiny, jen vstupenky.
+  a podmínka v textu odznaku: „s Rodinným pasem“.
+- Dospělé do odznaku nepíšeme (skoro všude jsou 2). Tvar „2 dospělí + až 4 děti“ patří do souhrnu vstupenky a cenového řádku.
 - V textu nepoužíváme „zlatá / stříbrná“. To jsou jen interní klíče.
 
 ## 5. Tón hlasu
@@ -97,7 +101,7 @@ Krátké věty, konkrétní čísla, česká typografie (nedělitelná mezera v 
 Další pravidla:
 - Bez emoji v nadpisech a odznacích. Na sociálních sítích nanejvýš jedno, pokud něco nese.
 - Žádné „TOP“, „nejlepší“, hvězdičky ani hodnocení. Odznak říká jen fakt o vstupence.
-- Čísla píšeme číslicemi („5 dětí“), počet dětí vždy s podstatným jménem („4 děti“, „5+ dětí“).
+- Čísla píšeme číslicemi („5 dětí“), počet dětí vždy s podstatným jménem („4 děti“, „až 5 dětí“).
 - Výzva k akci je sloveso: „Zadejte počet dětí“, „Ukázat místa“, „Nahlásit změnu“.
 
 ## 6. Barvy

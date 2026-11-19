@@ -65,8 +65,10 @@ function familySummary(v) {
 function tierText(v) {
   const k = computeTierKey(v)
   if (!k) return null
-  if (k === 'gold' && v.family_policy === 'kids_free_age') return `${TIERS.gold.name} · děti do ${v.kids_age_limit} let zdarma`
-  return `${TIERS[k].name} · ${TIERS[k].label}`
+  // Jako odznak na webu: jen počet dětí, bez názvu úrovně
+  if (k === 'gold' && v.family_policy === 'kids_free_age') return `děti do ${v.kids_age_limit} let zdarma`
+  if (k === 'silver' && v.max_children > 5) return `až ${v.max_children} dětí`
+  return TIERS[k].label
 }
 
 const REASON_SENTENCES = {
@@ -96,7 +98,7 @@ function tplPridano(q, v) {
     `díky za tip. Ověřili jsme ho na oficiálním ceníku a ${v.name} je od dnešního dne v katalogu:`,
     `${SITE}/misto/${v.slug}/`,
     '',
-    `Rodinná vstupenka: ${familySummary(v)}${price ? `, ${price}` : ''}.${tier ? ` ${tier}.` : ''}`,
+    `Rodinná vstupenka: ${familySummary(v)}${price ? `, ${price}` : ''}.${tier ? ` Odznak v katalogu: ${tier}.` : ''}`,
   ]
   const credit = v.tip_credit || q.tip_credit
   if (credit) lines.push(`U místa vám děkujeme jako „${credit}“. Kdybyste to chtěli změnit nebo odstranit, stačí odepsat.`)

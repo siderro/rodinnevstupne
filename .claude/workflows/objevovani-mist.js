@@ -284,10 +284,10 @@ if (accepted.length) {
   phase('Novinky')
   novinkyFile = `marketing/novinky/${TAG}.md`
   await agent(
-    `Napiš koncept do souboru ${novinkyFile} (složku vytvoř). Hlas značky podle brand/brand.md: mluvíme za tým v množném čísle („ověřili jsme“), věcně a vřele, žádný slevový křik, žádné vykřičníky v řadě, nic o soukromí kohokoli z týmu. Úrovně v textu jen přátelskými názvy s počtem dětí: „Všichni dovnitř · neomezeně dětí“, „Plná posádka · 5+ dětí“, „Čtyřlístek · 4 děti“ (nikdy „zlatá/stříbrná“).
+    `Napiš koncept do souboru ${novinkyFile} (složku vytvoř). Hlas značky podle brand/brand.md: mluvíme za tým v množném čísle („ověřili jsme“), věcně a vřele, žádný slevový křik, žádné vykřičníky v řadě, nic o soukromí kohokoli z týmu. Úrovně v textu jen počtem dětí jako na odznaku webu: „až 4 děti“, „až 5 dětí“, „neomezeně dětí“ (s věkem „neomezeně dětí do 15 let“), u míst, kde se rodinná vstupenka nekupuje a děti mají vstup zdarma, „děti zdarma“ / „děti do 15 let zdarma“. Názvy úrovní (Čtyřlístek, Plná posádka, Všichni dovnitř) ani „zlatá/stříbrná“ nepoužívej.
 Obsah souboru:
 1. Krátký příspěvek na sociální sítě „Dalších ${accepted.length} míst, kam se vejdete všichni“ (do 600 znaků, 3–5 nejzajímavějších míst, odkaz https://rodinnevstupne.cz).
-2. Delší novinka na web: úvodní věta, místa seskupená podle kraje (název, obec, úroveň s počtem dětí, jedna věta o pravidlu), poděkování komunitě, pokud šlo o tipy, a výzva „Znáte další místo? Napište na tipy@rodinnevstupne.cz.“
+2. Delší novinka na web: úvodní věta, místa seskupená podle kraje (název, obec, odznak s počtem dětí, např. „až 4 děti“, jedna věta o pravidlu), poděkování komunitě, pokud šlo o tipy, a výzva „Znáte další místo? Napište na tipy@rodinnevstupne.cz.“
 3. Na konci HTML komentář s interní poznámkou: datum běhu ${TODAY}, že ceny ověřujeme k datu ověření a koncept před zveřejněním zkontroluje člověk.
 Ceny uváděj jen tak, jak jsou níže; nic nedohledávej a nevymýšlej. Jiné soubory needituj.
 Nová místa: ${JSON.stringify(accepted)}`,

@@ -19,7 +19,7 @@
 import { readdir, readFile, writeFile, mkdir } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
-import { KRAJE, TIERS, krajSlug, krajLocative, familyTicketSummary } from '../src/lib/constants.js'
+import { KRAJE, TIERS, krajSlug, krajLocative, familyTicketSummary, tierLabel } from '../src/lib/constants.js'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const venuesFile = path.join(root, 'src', 'data', 'venues.json')
@@ -70,8 +70,10 @@ const DIFF_FIELDS = ['tier', 'family_policy', 'max_children', 'kids_age_limit', 
   'price_family', 'price_adult', 'price_child']
 const slim = (v) => Object.fromEntries(SNAP_FIELDS.map((k) => [k, v[k] ?? null]))
 
-const tierBadge = (v) => { const t = TIERS[v.tier]; return t ? `${t.name} · ${t.label}` : '' }
-const tierShort = (v) => ({ gold: 'neomezeně dětí', silver: '5+ dětí', base: '4 děti' }[v.tier] || '')
+// Text odznaku jako na webu („až 4 děti“, „neomezeně dětí do 15 let“, „děti zdarma“); názvy úrovní nepoužíváme.
+// Bez dat místa (jen { tier }) obecný popisek úrovně.
+const tierBadge = (v) => (v.family_policy ? tierLabel(v) : TIERS[v.tier]?.label) || ''
+const tierShort = tierBadge
 const priceText = (v) => {
   if (v.price_family === 0) return 'vstup zdarma'
   if (v.price_family != null) return `rodinné vstupné ${fmtKc(v.price_family)}`
@@ -197,9 +199,9 @@ const tierCounts = (list) => list.reduce((m, v) => ((m[v.tier] = (m[v.tier] || 0
 function tierSentence(list) {
   const c = tierCounts(list)
   const out = []
-  if (c.gold) out.push(`${pocetMist(c.gold)} „Všichni dovnitř“ (neomezeně dětí)`)
-  if (c.silver) out.push(`${pocetMist(c.silver)} „Plná posádka“ (5+ dětí)`)
-  if (c.base) out.push(`${pocetMist(c.base)} „Čtyřlístek“ (4 děti)`)
+  if (c.gold) out.push(`${pocetMist(c.gold)} pro neomezeně dětí nebo s dětmi zdarma`)
+  if (c.silver) out.push(`${pocetMist(c.silver)} až pro 5 dětí`)
+  if (c.base) out.push(`${pocetMist(c.base)} až pro 4 děti`)
   return out.length > 1 ? `${out.slice(0, -1).join(', ')} a ${out.at(-1)}` : out[0] || ''
 }
 
@@ -237,7 +239,7 @@ const lineFor = (v, source, { link = true, summary = false } = {}) => {
   return `– ${bits.join(' · ')}${link ? `\n  ${venueUrl(v.slug, source)}` : ''}`
 }
 
-// Výběr pro dlouhé seznamy: všechna Všichni dovnitř / Plná posádka, Čtyřlístek do limitu
+// Výběr pro dlouhé seznamy: všechna místa gold / silver, base („až 4 děti“) do limitu
 function pickForKraj(vs, maxPerKraj) {
   if (vs.length <= maxPerKraj) return { shown: vs, rest: 0 }
   const top = vs.filter((v) => v.tier !== 'base')
@@ -298,9 +300,9 @@ function instagram() {
   if (addedV.length) {
     const c = tierCounts(addedV)
     slides.push(['Jak čtete odznaky',
-      ...(c.gold ? [`  Všichni dovnitř · neomezeně dětí: ${pocetMist(c.gold)}`] : []),
-      ...(c.silver ? [`  Plná posádka · 5+ dětí: ${pocetMist(c.silver)}`] : []),
-      ...(c.base ? [`  Čtyřlístek · 4 děti: ${pocetMist(c.base)}`] : [])])
+      ...(c.gold ? [`  neomezeně dětí / děti zdarma: ${pocetMist(c.gold)}`] : []),
+      ...(c.silver ? [`  až 5 dětí: ${pocetMist(c.silver)}`] : []),
+      ...(c.base ? [`  až 4 děti: ${pocetMist(c.base)}`] : [])])
     // Kraje do nanejvýš 7 snímků po 10 řádcích; když se nevejdou, ubereme jména míst
     const groups = groupByKraj(addedV)
     let packed = null
@@ -369,7 +371,7 @@ function newsletter() {
       const rest = vs.length - shown.length
       lines.push(`### ${cap(krajLocative(kraj))}`, '')
       for (const v of shown) lines.push(lineFor(v, src, { summary: true }))
-      if (rest) lines.push(`– ${shown.length ? dalsich(rest) : pocetMist(rest)} s odznakem Čtyřlístek · 4 děti: ${krajUrl(kraj, src)}`)
+      if (rest) lines.push(`– ${shown.length ? dalsich(rest) : pocetMist(rest)} s odznakem „až 4 děti“: ${krajUrl(kraj, src)}`)
       lines.push('')
     }
   }

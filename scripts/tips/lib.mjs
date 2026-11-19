@@ -33,10 +33,11 @@ export const REJECT_REASONS = [
 ]
 
 // Stejné jako src/lib/constants.js (ten importovat nejde kvůli import.meta.env).
+// name = interní/kampaňový název, do textů pro veřejnost nepatří; ven jde jen label (text odznaku).
 export const TIERS = {
   gold: { name: 'Všichni dovnitř', label: 'neomezeně dětí' },
-  silver: { name: 'Plná posádka', label: '5+ dětí' },
-  base: { name: 'Čtyřlístek', label: '4 děti' },
+  silver: { name: 'Plná posádka', label: 'až 5 dětí' },
+  base: { name: 'Čtyřlístek', label: 'až 4 děti' },
 }
 
 // Stejná funkce jako v scripts/build-data.mjs (ten při importu spouští build).
