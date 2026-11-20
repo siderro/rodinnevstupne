@@ -22,6 +22,9 @@ const KRAJE = [
   'Praha', 'Středočeský', 'Jihočeský', 'Plzeňský', 'Karlovarský', 'Ústecký', 'Liberecký',
   'Královéhradecký', 'Pardubický', 'Vysočina', 'Jihomoravský', 'Olomoucký', 'Zlínský', 'Moravskoslezský',
 ]
+// Podmínky rodinného vstupného (docs/ops/investigativa.md, rozhodnutí 14. 11.): doklad_rodiny dává plnou
+// úroveň + štítek, ostatní jsou jen štítek (úroveň se počítá ze základního pravidla bez podmínky).
+const CONDITIONS = ['doklad_rodiny', 'rodinny_pas', 'jen_volna_prohlidka', 'jen_cast_arealu']
 const CATEGORIES = ['zoo', 'aquapark', 'hrad', 'muzeum', 'zabavni_park', 'science', 'priroda', 'sport', 'jine']
 
 const slugify = (s) => String(s || '').toLowerCase()
@@ -111,6 +114,7 @@ for (const f of files) {
       // Datum ceníku (YYYY nebo YYYY-MM[-DD]), když ho zdroj uvádí; liší se od verified_at
       source_date: raw.source_date ?? null,
       family_ticket_desc: raw.family_ticket_desc ?? null,
+      conditions: null,
       notes: raw.notes ?? null,
       // Krátké upozornění pro návštěvníky (dočasně zavřeno, jen v sezóně, co děti platí), zobrazí se na kartě i v detailu
       alert: raw.alert ? String(raw.alert).trim() : null,
@@ -118,6 +122,11 @@ for (const f of files) {
       verified_at: raw.verified_at ?? null,
       // Poděkování za tip (max 40 znaků, jen se souhlasem odesílatele), viz docs/ops/tipy.md
       tip_credit: raw.tip_credit ? String(raw.tip_credit).trim().slice(0, 40) : null,
+    }
+    if (Array.isArray(raw.conditions) && raw.conditions.length) {
+      for (const c of raw.conditions) if (!CONDITIONS.includes(c)) warnings.push(`${f}: „${rec.name}“ má neznámou podmínku „${c}“`)
+      const ok = [...new Set(raw.conditions.filter((c) => CONDITIONS.includes(c)))]
+      rec.conditions = ok.length ? ok : null
     }
     // „Děti zdarma do X let“ u míst, kde děti neplatí vůbec, je jen opakování kids_age_limit
     if (rec.price_child === 0) rec.kids_free_under = null

@@ -140,6 +140,16 @@ export function tierOf(v) {
   return TIERS[v?.tier] || TIERS[computeTier(v)] || null
 }
 
+// Podmínky rodinného vstupného (pole `conditions`, povolené hodnoty hlídá scripts/build-data.mjs).
+// Úroveň zvyšuje jen doklad_rodiny, ostatní jsou jen upozornění.
+export const CONDITIONS = {
+  doklad_rodiny: 'Na pokladně můžou chtít doložit, že jste jedna rodina.',
+  rodinny_pas: 'S Rodinným pasem vyjde vstupné ještě výhodněji.',
+  jen_volna_prohlidka: 'Rodinné vstupné platí jen na volnou prohlídku bez průvodce.',
+  jen_cast_arealu: 'Rodinné vstupné platí jen pro část areálu.',
+}
+export const conditionNotes = (v) => (v?.conditions || []).map((c) => CONDITIONS[c]).filter(Boolean)
+
 // Typy rodinného vstupného (používá admin)
 export const FAMILY_POLICY = {
   unlimited: { label: 'Neomezeně dětí' },

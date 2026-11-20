@@ -6,6 +6,7 @@ import ShareButton from '../components/ShareButton'
 import {
   CATEGORY_LABEL, KRAJE, BUY_ME_A_COFFEE_URL, SITE_URL, formatPrice, formatDate, dataAge, familyTicketSummary, krajFull, monthRange, sourceDate,
   familyQuote, reopensIn, conditionChips, parseKids, pluralKids, QUOTE_KIDS,
+  conditionNotes,
 } from '../lib/constants'
 import { useMonth } from '../lib/useMonth'
 import { venueMeta, krajPath, venuePath } from '../lib/seo'
@@ -76,6 +77,7 @@ export default function VenueDetail() {
               : <>Rodinné vstupné {familyTicketSummary(venue)}. Cenu najdete na webu místa.</>}
           </p>
           {reopens && !venue.alert && <p className="answer-closed">Teď je zavřeno, otevírá v {reopens}.</p>}
+          {conditionNotes(venue).map((c) => <p key={c} className="meta answer-cond">{c}</p>)}
           {/* první štítek (počet dětí) už říká odznak */}
           {conditionChips(venue).length > 1 && (
             <ul className="cond-chips" aria-label="Podmínky rodinné vstupenky">

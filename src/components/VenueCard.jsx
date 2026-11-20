@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import TierBadge from './TierBadge'
-import { CATEGORY_LABEL, formatPrice, formatDate, dataAge, familyQuote, reopensIn, pluralKids, QUOTE_KIDS } from '../lib/constants'
+import { CATEGORY_LABEL, formatPrice, formatDate, dataAge, familyQuote, reopensIn, pluralKids, QUOTE_KIDS, conditionNotes } from '../lib/constants'
 import { useMonth } from '../lib/useMonth'
 
 // kids = počet dětí z filtru „Kolik dětí jede?“ (jinak typická velká rodina 2 + 4)
@@ -23,6 +23,7 @@ export default function VenueCard({ venue, kids = null }) {
       {venue.alert
         ? <p className="card-alert">{venue.alert}</p>
         : reopens && <p className="card-alert">Teď zavřeno, otevírá v {reopens}.</p>}
+      {conditionNotes(venue).map((c) => <p key={c} className="meta card-cond">{c}</p>)}
       <div className="card-price">
         {price
           ? <span className="card-quote">

@@ -25,6 +25,8 @@ export const meta = {
 //   reverifyLimit?: number         (max. záznamů na jednoho přeověřovatele; výchozí 25)
 //   skipReverify?: boolean         (v discovery režimu vynechat přeověření)
 //   tips?: [{name, city?, kraj?, url?, note?, from?}]   (pro mode 'tipy')
+//   tipsPerAgent?: number          (mode 'tipy': max. tipů na jednoho validátora; výchozí 12)
+//   tipSource?: string             (mode 'tipy': text do notes o původu tipu)
 // }
 // ---------------------------------------------------------------------------
 
@@ -68,7 +70,7 @@ const FOCUS_TEXT = FOCUS[FOCUS_KEY] || FOCUS_KEY
 const SEASONAL = FOCUS_KEY === 'sezonni-akce'
 
 const CAND = 'scripts/candidates'
-const RECORD_FIELDS = 'name, slug, category (zoo|aquapark|hrad|muzeum|zabavni_park|science|priroda|sport|jine), kraj (přesně jeden ze 14 krajů), city, address, lat, lng, website, family_policy (unlimited|max_children|per_child|none), max_children, adults_in_family_ticket, kids_age_limit, price_adult, price_child, price_family, price_family_offseason, season_months, closed_months, min_children, extra_child_price, paid_children, kids_free_under, compare_ok, source_date, family_ticket_desc, notes, alert, source_url, verified_at'
+const RECORD_FIELDS = 'name, slug, category (zoo|aquapark|hrad|muzeum|zabavni_park|science|priroda|sport|jine), kraj (přesně jeden ze 14 krajů), city, address, lat, lng, website, family_policy (unlimited|max_children|per_child|none), max_children, adults_in_family_ticket, kids_age_limit, price_adult, price_child, price_family, price_family_offseason, season_months, closed_months, min_children, extra_child_price, paid_children, kids_free_under, compare_ok, source_date, family_ticket_desc, conditions, notes, alert, source_url, verified_at'
 
 const RULES = `PRAVIDLA OVĚŘENÍ (přísná, platí bez výjimky):
 - Do katalogu patří jen místo, kde jedna rodinná vstupenka / bezplatný vstup pokryje ASPOŇ 4 děti.
@@ -77,7 +79,14 @@ const RULES = `PRAVIDLA OVĚŘENÍ (přísná, platí bez výjimky):
 - „2+2 a každé další dítě za příplatek“ = per_child → ZAMÍTNOUT. Hrady a zámky NPÚ nemají rodinné vstupné → ZAMÍTNOUT.
 - Skupinová vstupenka „N osob (min. M dětí)“ přepočítat na 2 dospělé: 6 osob = 2+4 → max_children 4.
 - Odstupňovaná rodinná cena: max_children = nejvyšší varianta, price_family = cena největší varianty, ostatní varianty do notes.
-- Podmíněné „neomezeně“ (jen s Rodinným pasem apod.) → uložit základní pravidlo bez karty, podmínku do family_ticket_desc a notes.
+- PODMÍNKY (pole conditions, pole řetězců; podmíněné místo NEZAMÍTEJ):
+  · "doklad_rodiny" – více dětí jen po doložení, že jde o jednu rodinu → úroveň podle plného pravidla + štítek.
+  · "rodinny_pas" – lepší pravidlo jen s Rodinným pasem → ulož ZÁKLADNÍ pravidlo bez pasu (úroveň podle něj), podmínku do conditions a znění do notes.
+  · "jen_volna_prohlidka" – rodinné vstupné jen na volnou prohlídku (bez průvodce); "jen_cast_arealu" – jen pro část areálu/expozice.
+  · Jiné hodnoty nepoužívej. Bez podmínky pole vynech.
+- Prohlášení kraje/zřizovatele „děti zdarma“ neplatí pro pobočku, která nemá vlastní ceník, který to potvrzuje.
+- source_url musí vést na ceník KONKRÉTNÍHO místa/pobočky, ne na obecnou stránku provozovatele.
+- Rodinná vstupenka jen pro 2 děti (2+2) → zahodit, nezapisovat nikam (ani do rejected).
 - source_url = PŘÍMÁ URL oficiálního ceníku (stránka „Vstupné/Ceník“ nebo PDF) provozovatele. Nikdy agregátor (Kudy z nudy, finance.cz, prague.eu, Slevomat, Wikipedie, Facebook). Bez oficiálního ceníku → zamítnout s důvodem „ceník nenalezen“.
 - family_ticket_desc = doslovné nebo věrné znění z ceníku včetně věkové/výškové hranice.
 - Ceny: na pokladně, hlavní sezóna, víkend, celodenní (online, všední den a časové varianty do notes). Neznámou cenu nech null, nehádej.
@@ -171,7 +180,7 @@ const skipList = (kraje) => {
 }
 
 // --- 2.+3. Sběr → Ověření (pipeline po skupinách) ---------------------------
-const validatePrompt = (g, kraje, extra) => `Jsi PŘÍSNÝ VALIDÁTOR dat pro rodinnevstupne.cz, skupina krajů „${g}“ (${kraje.join(', ')}). Běh ${RUN}, dnes ${TODAY}.
+const validatePrompt = (g, kraje, extra, key = g) => `Jsi PŘÍSNÝ VALIDÁTOR dat pro rodinnevstupne.cz, skupina krajů „${g}“ (${kraje.join(', ')}). Běh ${RUN}, dnes ${TODAY}.
 ${extra}
 Každého kandidáta ověř NEZÁVISLE: sám najdi oficiální ceník provozovatele a přečti ho. Tvrzení sběrače nebo tipujícího je jen tip, ne důkaz. Kandidáta, který je už v katalogu (shoda slugu nebo zjevně stejné místo), vyřaď.
 ${WEB}
@@ -181,9 +190,9 @@ ${RULES}
 ${skipList(kraje)}
 
 VÝSTUP:
-- ${CAND}/verified-${TAG}-${g}.json – JSON pole jen schválených záznamů s poli: ${RECORD_FIELDS}. Souřadnice lat/lng doplň (oficiální web, mapy.cz nebo OpenStreetMap), jinak null.
-- ${CAND}/rejected-${TAG}-${g}.json – JSON pole zamítnutých: {name, slug, kraj, website, reason, family_ticket_desc?, source_url?, checked_at: "${TODAY}"}. Zamítnuté se ukládají, aby je další běhy znovu nehledaly; místa s 2+3 se hodí pro budoucí kalkulačku.
-- ${CAND}/tri-deti-${TAG}-${g}.json – JSON pole míst, kde rodinná vstupenka pokryje PRÁVĚ 3 děti (2+3, i s doplatkem za další dítě), ověřených stejně přísně jako katalog, s poli: ${RECORD_FIELDS} (max_children 3). Do katalogu NEPATŘÍ (build je nečte), do rejected je nedávej. Když žádné nejsou, zapiš [].
+- ${CAND}/verified-${TAG}-${key}.json – JSON pole jen schválených záznamů s poli: ${RECORD_FIELDS}. Souřadnice lat/lng doplň (oficiální web, mapy.cz nebo OpenStreetMap), jinak null.
+- ${CAND}/rejected-${TAG}-${key}.json – JSON pole zamítnutých: {name, slug, kraj, website, reason, family_ticket_desc?, source_url?, checked_at: "${TODAY}"}. Zamítnuté se ukládají, aby je další běhy znovu nehledaly; místa s 2+3 se hodí pro budoucí kalkulačku.
+- ${CAND}/tri-deti-${TAG}-${key}.json – JSON pole míst, kde rodinná vstupenka pokryje PRÁVĚ 3 děti (2+3, i s doplatkem za další dítě), ověřených stejně přísně jako katalog, s poli: ${RECORD_FIELDS} (max_children 3). Do katalogu NEPATŘÍ (build je nečte), do rejected je nedávej. Když žádné nejsou, zapiš [].
 - Když nic neschválíš, zapiš verified soubor jako prázdné pole [].
 - Do "manual" dej místa, kde web blokuje automat nebo ceník je jen v obrázku – ta NEPATŘÍ do verified souboru.
 Pak spusť \`node scripts/build-data.mjs\` a zkontroluj, že tvoje záznamy nevyvolaly varování (neznámý kraj, chybí source_url, duplicitní slug). Chyby oprav ve svém souboru. Jiné soubory needituj.
@@ -228,12 +237,21 @@ Vrať strukturovaný přehled (claim = jednou větou, co ceník slibuje).`,
   const krajToGroup = (k) => Object.keys(GROUPS).find((g) => GROUPS[g].includes(k)) || groupKeys[0]
   const byGroup = {}
   for (const t of tips) { const g = krajToGroup(t.kraj); (byGroup[g] = byGroup[g] || []).push(t) }
+  // Velké dávky (výstup síta) se dělí po args.tipsPerAgent tipech na validátora, každý má vlastní soubory.
+  const PER_AGENT = A.tipsPerAgent || 12
+  const SOURCE_NOTE = A.tipSource || `Tip od komunity (${RUN})`
+  const jobs = []
+  for (const g of Object.keys(byGroup)) {
+    const list = byGroup[g]
+    const n = Math.ceil(list.length / PER_AGENT)
+    for (let i = 0; i < n; i++) jobs.push({ g, key: n > 1 ? `${g}-${i + 1}` : g, tips: list.slice(i * PER_AGENT, (i + 1) * PER_AGENT) })
+  }
   groupResults = await pipeline(
-    Object.keys(byGroup),
-    (g) => agent(
-      validatePrompt(g, GROUPS[g], `Vstup: tipy od veřejnosti (z tipy@rodinnevstupne.cz nebo formuláře „Nahlas místo“). Fotka ceníku nebo tvrzení tipujícího NENÍ zdroj – vždy dohledej oficiální ceník. Do notes zapiš „Tip od komunity (${RUN})“ a jméno/přezdívku z pole "from", jen pokud je vyplněné. Tipy:\n${JSON.stringify(byGroup[g], null, 1)}`),
-      { label: `tipy: ${g}`, phase: 'Ověření', schema: VALIDATE_SCHEMA },
-    ).then((validated) => ({ group: g, collected: null, validated })),
+    jobs,
+    (j) => agent(
+      validatePrompt(j.g, GROUPS[j.g], `Vstup: tipy (z tipy@rodinnevstupne.cz, formuláře „Nahlas místo“ nebo strojového síta ceníků). Fotka ceníku, tvrzení tipujícího ani úryvek ze síta NENÍ zdroj – vždy dohledej a přečti oficiální ceník. Do notes zapiš „${SOURCE_NOTE}“ a jméno/přezdívku z pole "from", jen pokud je vyplněné. Tipy:\n${JSON.stringify(j.tips, null, 1)}`, j.key),
+      { label: `tipy: ${j.key}`, phase: 'Ověření', schema: VALIDATE_SCHEMA },
+    ).then((validated) => ({ group: j.key, collected: null, validated })),
   )
 }
 
