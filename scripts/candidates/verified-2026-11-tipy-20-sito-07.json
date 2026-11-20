@@ -1,0 +1,33 @@
+[
+ {
+  "name": "Galerie Kaple, Sýpka a Půda (Valašské Meziříčí)",
+  "slug": "galerie-kaple-sypka-puda-valasske-mezirici",
+  "category": "muzeum",
+  "kraj": "Zlínský",
+  "city": "Valašské Meziříčí",
+  "address": "Sokolská 30 (Kaple, Půda) a Komenského 169/4a (Sýpka), 757 01 Valašské Meziříčí – vstup přes design shop Zrní na II. nádvoří zámku Kinských",
+  "lat": 49.471316,
+  "lng": 17.968734,
+  "website": "https://galerie.kzvalmez.cz/",
+  "family_policy": "unlimited",
+  "max_children": null,
+  "adults_in_family_ticket": null,
+  "kids_age_limit": 19,
+  "price_adult": 50,
+  "price_child": 0,
+  "price_family": null,
+  "price_family_offseason": null,
+  "season_months": null,
+  "closed_months": null,
+  "min_children": null,
+  "extra_child_price": null,
+  "paid_children": null,
+  "kids_free_under": null,
+  "source_date": null,
+  "family_ticket_desc": "Děti (do 19 let) zdarma; volný vstup mají děti, žáci, studenti. Vstupenka platí pro vstup na aktuální výstavy v galeriích Kaple, Sýpka i Půda.",
+  "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Provozuje Kulturní zařízení města Valašského Meziříčí. Základní 50 Kč, snížené (senioři 65+) 30 Kč, ceník uvádí i „Rodinné 80 Kč“ bez upřesnění složení. Otevřeno út–pá 9–12 a 13–17, so–ne 13–17, v pondělí zavřeno. Výstavní galerie s měnícími se výstavami.",
+  "alert": null,
+  "source_url": "https://galerie.kzvalmez.cz/informace/",
+  "verified_at": "2026-11-20"
+ }
+]

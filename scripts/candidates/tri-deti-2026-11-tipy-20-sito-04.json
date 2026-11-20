@@ -1,0 +1,33 @@
+[
+ {
+  "name": "Památník Leoše Janáčka",
+  "slug": "pamatnik-leose-janacka",
+  "category": "muzeum",
+  "kraj": "Jihomoravský",
+  "city": "Brno",
+  "address": "Smetanova 14, 602 00 Brno",
+  "lat": 49.2015544,
+  "lng": 16.6023476,
+  "website": "https://www.mzm.cz/pamatnik-leose-janacka/",
+  "family_policy": "max_children",
+  "max_children": 3,
+  "adults_in_family_ticket": 2,
+  "kids_age_limit": 15,
+  "price_adult": 80,
+  "price_child": 50,
+  "price_family": 180,
+  "price_family_offseason": null,
+  "season_months": null,
+  "closed_months": null,
+  "min_children": null,
+  "extra_child_price": null,
+  "paid_children": null,
+  "kids_free_under": null,
+  "source_date": null,
+  "family_ticket_desc": "Rodinné vstupné platí pro 2 dospělé + maximálně 3 děti do 15 let; celý objekt 180 Kč.",
+  "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Pobočka Moravského zemského muzea. Rodinné: stálá expozice 110 Kč, s výkladem 150 Kč, s výkladem v angličtině 220 Kč, výstava 90 Kč, celý objekt 180 Kč (plné 80 Kč, zvýhodněné 50 Kč). Definice rodinného vstupného ze Souboru poskytovaných slev MZM (https://www.mzm.cz/mista/soubor-poskytovanych-slev/). Otevřeno st–pá 9–17, so–ne 10–15.",
+  "alert": null,
+  "source_url": "https://www.mzm.cz/pamatnik-leose-janacka/",
+  "verified_at": "2026-11-20"
+ }
+]

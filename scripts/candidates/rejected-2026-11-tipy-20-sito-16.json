@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Kolonáda na Rajstně",
+    "slug": "kolonada-na-rajstne",
+    "kraj": "Jihomoravský",
+    "website": "https://www.zamek-valtice.cz",
+    "reason": "bez rodinného vstupného – jen jednotlivé (50 Kč, děti 6–17 let 20 Kč); rodinné 2+3 ze síta patří k Bylinkové zahradě",
+    "source_url": "https://www.zamek-valtice.cz/cs/informace-pro-navstevniky/vstupne",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Rozhledna Velká Čantoryje",
+    "slug": "rozhledna-velka-cantoryje",
+    "kraj": "Moravskoslezský",
+    "website": "https://cantoryje.cz",
+    "reason": "rozhledna stojí na polské straně hranice (Ustroń); rodinné vstupné navíc jen 2+3 (190 Kč)",
+    "family_ticket_desc": "Pro 2 dospělé osoby a 3 děti od 5 let do 12 let 190 Kč",
+    "source_url": "https://cantoryje.cz/cennik/",
+    "checked_at": "2026-11-20"
+  }
+]

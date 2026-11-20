@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Akva Tera ZOO Plzeň",
+    "slug": "akva-tera-zoo-plzen",
+    "kraj": "Plzeňský",
+    "website": "http://zooplzen.cz/akva-tera/informace-o-akva-tera/",
+    "reason": "Akva Tera nemá rodinné vstupné (jen dospělý 70 Kč, dítě 50 Kč); hit ze síta patří k ceníku Zoo Plzeň (2+2/2+3), který už byl zamítnut.",
+    "source_url": "http://zooplzen.cz/akva-tera/informace-o-akva-tera/",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Kozí hrádek",
+    "slug": "kozi-hradek",
+    "kraj": "Jihočeský",
+    "website": "https://www.kozi-hradek.cz/",
+    "reason": "ceník nenalezen – hit ze síta (2+3, 370 Kč) je ceník městské sauny v Sezimově Ústí, ne Kozího hrádku; stránka „Otevírací doba a vstupné“ hradu ceník v textu neuvádí.",
+    "checked_at": "2026-11-20"
+  }
+]

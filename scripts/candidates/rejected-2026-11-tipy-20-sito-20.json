@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Zámek Valtice",
+    "slug": "zamek-valtice",
+    "kraj": "Jihomoravský",
+    "website": "https://www.zamek-valtice.cz/",
+    "reason": "NPÚ – zámecké okruhy bez rodinného vstupného; rodinné (2 dospělí + max. 3 děti do 15 let, 180 Kč) jen pro Bylinkovou zahradu Lu & Tiree Chmelar",
+    "family_ticket_desc": "Rodinné (2 dospělí + max. 3 děti do 15 let) 180 Kč – jen Bylinková zahrada",
+    "source_url": "https://www.zamek-valtice.cz/cs/informace-pro-navstevniky/vstupne",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Zámek Nový Berštejn",
+    "slug": "zamek-novy-berstejn",
+    "kraj": "Liberecký",
+    "website": "https://www.berstejn.com/",
+    "reason": "zámecký hotel – ceník je pro ubytovací balíčky (2 dospělí + 3 děti), nejde o vstupné",
+    "source_url": "https://www.berstejn.com/cenik-dovolena-s-detmi/",
+    "checked_at": "2026-11-20"
+  }
+]

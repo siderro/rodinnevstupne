@@ -26,6 +26,7 @@ export const meta = {
 //   skipReverify?: boolean         (v discovery režimu vynechat přeověření)
 //   tips?: [{name, city?, kraj?, url?, note?, from?}]   (pro mode 'tipy')
 //   tipsPerAgent?: number          (mode 'tipy': max. tipů na jednoho validátora; výchozí 12)
+//   tipsFile?, tipsCount?          (mode 'tipy': soubor s tipy v repu + jejich počet; validátoři dostanou rozsahy indexů)
 //   tipSource?: string             (mode 'tipy': text do notes o původu tipu)
 // }
 // ---------------------------------------------------------------------------
@@ -246,10 +247,19 @@ Vrať strukturovaný přehled (claim = jednou větou, co ceník slibuje).`,
     const n = Math.ceil(list.length / PER_AGENT)
     for (let i = 0; i < n; i++) jobs.push({ g, key: n > 1 ? `${g}-${i + 1}` : g, tips: list.slice(i * PER_AGENT, (i + 1) * PER_AGENT) })
   }
+  // Velký soubor tipů (výstup síta): skript nečte soubory, takže validátor dostane jen rozsah indexů
+  if (A.tipsFile && A.tipsCount) {
+    const all = Object.values(GROUPS).flat()
+    GROUPS.vse = all
+    for (let i = 0; i * PER_AGENT < A.tipsCount; i++) {
+      const a = i * PER_AGENT, b = Math.min(A.tipsCount, a + PER_AGENT)
+      jobs.push({ g: 'vse', key: `sito-${String(i + 1).padStart(2, '0')}`, fileSlice: `Přečti soubor ${A.tipsFile} (JSON pole tipů) a ověř POUZE položky s indexem ${a} až ${b - 1} včetně (počítáno od 0), tj. ${b - a} tipů: node -e 'console.log(JSON.stringify(require("./${A.tipsFile}").slice(${a},${b}),null,1))'. Kraj v tipu je jen odhad – urči ho sám.` })
+    }
+  }
   groupResults = await pipeline(
     jobs,
     (j) => agent(
-      validatePrompt(j.g, GROUPS[j.g], `Vstup: tipy (z tipy@rodinnevstupne.cz, formuláře „Nahlas místo“ nebo strojového síta ceníků). Fotka ceníku, tvrzení tipujícího ani úryvek ze síta NENÍ zdroj – vždy dohledej a přečti oficiální ceník. Do notes zapiš „${SOURCE_NOTE}“ a jméno/přezdívku z pole "from", jen pokud je vyplněné. Tipy:\n${JSON.stringify(j.tips, null, 1)}`, j.key),
+      validatePrompt(j.g, GROUPS[j.g], `Vstup: tipy (z tipy@rodinnevstupne.cz, formuláře „Nahlas místo“ nebo strojového síta ceníků). Fotka ceníku, tvrzení tipujícího ani úryvek ze síta NENÍ zdroj – vždy dohledej a přečti oficiální ceník. Do notes zapiš „${SOURCE_NOTE}“ a jméno/přezdívku z pole "from", jen pokud je vyplněné. ${j.fileSlice ? j.fileSlice : 'Tipy:\\n' + JSON.stringify(j.tips, null, 1)}`, j.key),
       { label: `tipy: ${j.key}`, phase: 'Ověření', schema: VALIDATE_SCHEMA },
     ).then((validated) => ({ group: j.key, collected: null, validated })),
   )
