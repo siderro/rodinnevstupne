@@ -76,7 +76,7 @@ export default function Calculator({ venue, initialKids = 4 }) {
         {r.closed && <><strong>V {MONTHS_LOC[month - 1]} je zavřeno.</strong> </>}
         {r.reason && <>{r.reason} </>}
         {!r.familyApplies && venue.kraj && kids > (venue.max_children || 0) &&
-          <><Link to={`/?kraj=${encodeURIComponent(venue.kraj)}&deti=${kids}`}>Místa {krajLocative(venue.kraj)}, kde vstupenka platí pro {pluralKids(kids)}</Link>. </>}
+          <><Link to={`/?kraj=${encodeURIComponent(venue.kraj)}&vstupenka=${kids <= 5 ? '5' : 'vsechny'}`}>Místa {krajLocative(venue.kraj)}, kde rodinná vstupenka pokryje {pluralKids(kids)}</Link>. </>}
         {r.best === 'family' && r.saving != null && r.saving > 0 &&
           <>Pro {pluralAdultsAcc(adults)} a {pluralKids(kids)} vychází rodinná vstupenka o {formatPrice(r.saving)} lépe než jednotlivé.</>}
         {r.best === 'family' && r.saving == null && <>Pro vaši rodinu platí {r.extraKids > 0 ? 'rodinná vstupenka s doplatkem' : 'jedna rodinná vstupenka'}.</>}

@@ -100,18 +100,24 @@ export function tierLabel(v) {
   return v.min_children > 1 ? `${v.min_children}–${pluralKids(max)}` : `až ${pluralKids(max)}`
 }
 
-// Filtr „Kolik dětí jede?“ (?deti=N): konkrétní čísla, žádné „a víc“ – každá rodina najde svoje
-// a cena se spočítá přesně (doplatky, „platí jen N dětí“). Bez výběru se ukazuje vše.
-export const KIDS_FILTERS = [3, 4, 5, 6, 7, 8, 9, 10]
-export function parseKids(s) {
+// Filtr „Rodinná vstupenka pro“ (?vstupenka=4|5|vsechny): jde o balíček, ne o počet dětí v autě.
+// Kumulativní: „2 + 5“ ukáže vstupenky aspoň pro 5 dětí včetně neomezených. Doplatek za dítě navíc
+// z vstupenky 2 + 4 vstupenku 2 + 5 nedělá. Od 6. 12. přibude „2 + 3“.
+export const TICKET_FILTERS = [
+  { value: '4', label: '2 + 4', min: 4, kids: 4, chip: 'Vstupenka 2 + 4 a víc' },
+  { value: '5', label: '2 + 5', min: 5, kids: 5, chip: 'Vstupenka 2 + 5 a víc' },
+  { value: 'vsechny', label: '2 + všechny děti', min: Infinity, kids: null, chip: 'Vstupenka pro všechny děti' },
+]
+export const parseTicket = (s) => TICKET_FILTERS.find((t) => t.value === s) || null
+export function ticketCovers(v, t) {
+  if (!t) return true
+  if (v.family_policy === 'unlimited') return true
+  return v.max_children != null && Number(v.max_children) >= t.min
+}
+export const parseKids = (s) => {
   const n = Number(s)
   return Number.isInteger(n) && n >= 1 && n <= 15 ? n : null
 }
-// „pro 5 dětí“, „pro 3 děti“
-export const kidsPhrase = (n) => `pro ${pluralKids(n)}`
-export const kidsChip = (n) => pluralKids(n)
-// Platí rodinná vstupenka (případně s doplatkem) pro 2 dospělé a N dětí?
-export const fitsKids = (v, n) => !n || calculate(v, 2, n).familyApplies
 
 // Deterministický výpočet úrovně (shodný se scripts/build-data.mjs)
 export function computeTier(v) {

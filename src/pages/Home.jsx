@@ -2,7 +2,7 @@ import { lazy, Suspense, useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { getVenues, getVenueBySlug } from '../lib/venues'
 import { getLatestRelease } from '../lib/novinky'
-import { KRAJE, CATEGORIES, CATEGORY_LABEL, KIDS_FILTERS, parseKids, pluralKids, kidsPhrase, kidsChip, fitsKids, isClosed, krajFull, krajLocative, formatDate } from '../lib/constants'
+import { KRAJE, CATEGORIES, CATEGORY_LABEL, TICKET_FILTERS, parseTicket, ticketCovers, pluralKids, isClosed, krajFull, krajLocative, formatDate } from '../lib/constants'
 import { homeMeta, krajPath, byTierThenName } from '../lib/seo'
 import { useHead } from '../lib/useHead'
 import { useMonth } from '../lib/useMonth'
@@ -20,10 +20,11 @@ export default function Home() {
   const { data: venues, demo } = getVenues()
   const [params, setParams] = useSearchParams()
 
-  // Všechny filtry žijí v URL: /?kraj=Vysočina&kat=zoo,hrad&deti=5&q=…
+  // Všechny filtry žijí v URL: /?kraj=Vysočina&kat=zoo,hrad&vstupenka=5&q=…
   const kraj = params.get('kraj') || ''
   const kats = (params.get('kat') || '').split(',').filter(Boolean)
-  const deti = parseKids(params.get('deti'))
+  const ticket = parseTicket(params.get('vstupenka'))
+  const deti = ticket?.kids || null // pro výpočet ceny na kartách
   const q = params.get('q') || ''
   const view = params.get('zobrazeni') === 'mapa' ? 'mapa' : 'seznam'
   useHead(homeMeta())
@@ -59,7 +60,7 @@ export default function Home() {
   // Shoda se všemi filtry kromě vynechaného (pro počty na čipech a tlačítka v prázdném stavu)
   const matches = (v, skip = null) => (skip === 'kraj' || !kraj || v.kraj === kraj)
     && (skip === 'kat' || !kats.length || kats.includes(v.category))
-    && (skip === 'deti' || fitsKids(v, deti))
+    && (skip === 'vstupenka' || ticketCovers(v, ticket))
     && (skip === 'q' || !nq || hay(v).includes(nq))
   const countWithout = (skip) => venues.filter((v) => matches(v, skip)).length
 
@@ -68,9 +69,9 @@ export default function Home() {
   const filtered = useMemo(() => {
     const last = (v) => (v.tier === 'three' ? 2 : 0) + (isClosed(v, month) ? 1 : 0)
     return venues.filter((v) => matches(v)).sort((a, b) => last(a) - last(b))
-  }, [venues, kraj, kats.join(','), deti, nq, month])
+  }, [venues, kraj, kats.join(','), ticket, nq, month])
   const katCounts = useMemo(() => Object.fromEntries(CATEGORIES.map((c) => [c.value,
-    venues.filter((v) => v.category === c.value && matches(v, 'kat')).length])), [venues, kraj, deti, nq])
+    venues.filter((v) => v.category === c.value && matches(v, 'kat')).length])), [venues, kraj, ticket, nq])
   // Typy, které v katalogu zatím nemají žádné místo, nenabízíme
   const shownCats = CATEGORIES.filter((c) => kats.includes(c.value) || venues.some((v) => v.category === c.value))
   // Hledané slovo, které je vlastně kraj („jihomoravsky“) → nabídneme filtr kraje
@@ -79,20 +80,21 @@ export default function Home() {
   const applied = [
     kraj && { key: 'kraj', label: `Kraj: ${kraj}`, clear: () => update({ kraj: '' }) },
     ...kats.map((k) => ({ key: `kat-${k}`, label: CATEGORY_LABEL[k] || k, clear: () => toggleKat(k) })),
-    deti && { key: 'deti', label: kidsChip(deti), clear: () => update({ deti: '' }) },
+    ticket && { key: 'vstupenka', label: ticket.chip, clear: () => update({ vstupenka: '' }) },
     q && { key: 'q', label: `„${q}“`, clear: () => update({ q: '' }) },
   ].filter(Boolean)
 
   const countLabel = (n) => (n === 1 ? '1 místo' : n >= 2 && n <= 4 ? `${n} místa` : `${n} míst`)
   // „12 míst v Praze pro 5 dětí“
-  const countLine = (n) => [countLabel(n), kraj ? krajLocative(kraj) : 'po celé ČR', deti && kidsPhrase(deti)].filter(Boolean).join(' ')
+  const countLine = (n) => [countLabel(n), kraj ? krajLocative(kraj) : 'po celé ČR',
+    ticket && (ticket.kids ? `se vstupenkou 2 + ${ticket.kids} a víc` : 'se vstupenkou pro všechny děti')].filter(Boolean).join(' ')
   // Tlačítka, která z prázdného výsledku vedou k nenulovému (nanejvýš 3, podle počtu)
   // Sousední kraje: při 0 výsledcích otevřeně, při 1–3 (bez hledání) sbaleně. Typ místa se neuvolňuje.
   const nearby = useMemo(() => {
     if (!kraj || filtered.length > 3 || (filtered.length > 0 && q)) return null
-    const n = nearbyFor(kraj, venues, (v) => (!kats.length || kats.includes(v.category)) && fitsKids(v, deti))
+    const n = nearbyFor(kraj, venues, (v) => (!kats.length || kats.includes(v.category)) && ticketCovers(v, ticket))
     return n.total ? n : null
-  }, [venues, kraj, kats.join(','), deti, nq, filtered.length])
+  }, [venues, kraj, kats.join(','), ticket, nq, filtered.length])
   const krajLink = (k) => {
     const next = new URLSearchParams(params)
     next.set('kraj', k)
@@ -102,7 +104,7 @@ export default function Home() {
   const relax = [
     kraj && { label: 'Celá ČR', n: countWithout('kraj'), patch: { kraj: '' } },
     kats.length > 0 && { label: kraj ? `Všechny typy ${krajLocative(kraj)}` : 'Všechny typy míst', n: countWithout('kat'), patch: { kat: [] } },
-    deti && { label: 'Pro jakýkoli počet dětí', n: countWithout('deti'), patch: { deti: '' } },
+    ticket && { label: 'Jakákoli rodinná vstupenka', n: countWithout('vstupenka'), patch: { vstupenka: '' } },
     q && { label: 'Zrušit hledání', n: countWithout('q'), patch: { q: '' } },
   ].filter((r) => r && r.n > 0).sort((a, b) => b.n - a.n).slice(0, 3)
 
@@ -147,16 +149,17 @@ export default function Home() {
         </div>
 
         <div className="filters-group">
-          <span className="filters-label" id="lbl-deti">Kolik dětí jede?</span>
-          <div className="segmented segmented--num" role="radiogroup" aria-labelledby="lbl-deti">
-            {KIDS_FILTERS.map((n) => (
-              <button key={n} type="button" role="radio" aria-checked={deti === n} aria-label={pluralKids(n)}
-                className={deti === n ? 'is-on' : ''} onClick={() => update({ deti: deti === n ? '' : String(n) })}>
-                {n}
+          <span className="filters-label" id="lbl-vstupenka">Rodinná vstupenka pro</span>
+          <div className="segmented" role="radiogroup" aria-labelledby="lbl-vstupenka">
+            {TICKET_FILTERS.map((t) => (
+              <button key={t.value} type="button" role="radio" aria-checked={ticket === t}
+                aria-label={t.kids ? `2 dospělé a aspoň ${pluralKids(t.kids)}` : '2 dospělé a všechny děti'}
+                className={ticket === t ? 'is-on' : ''} onClick={() => update({ vstupenka: ticket === t ? '' : t.value })}>
+                {t.label}
               </button>
             ))}
           </div>
-          {!deti && <p className="filters-hint">Vyberte a ceny přepočítáme pro vaši rodinu.</p>}
+          <p className="filters-hint">Jedna vstupenka pro celou rodinu. Místa, kde se platí za každé dítě zvlášť, v katalogu nejsou.</p>
         </div>
 
         <div className="filters-group">
@@ -201,7 +204,7 @@ export default function Home() {
             : <p>Do katalogu dáváme jen místa, kde rodinná vstupenka pokryje aspoň 4 děti, a ceníky ověřujeme postupně.</p>}
           <div className="empty-actions">
             {krajHit && <button className="btn" onClick={() => update({ kraj: krajHit, q: '' })}>
-              Výlety {krajLocative(krajHit)} ({venues.filter((v) => v.kraj === krajHit && fitsKids(v, deti)).length})</button>}
+              Výlety {krajLocative(krajHit)} ({venues.filter((v) => v.kraj === krajHit && ticketCovers(v, ticket)).length})</button>}
             {relax.map((r) => <button key={r.label} className="btn btn--ghost" onClick={() => update(r.patch)}>{r.label} ({countLabel(r.n)})</button>)}
           </div>
           {nearby && <NearbyKraje nearby={nearby} krajLink={krajLink} kids={deti} />}
