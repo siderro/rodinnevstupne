@@ -122,17 +122,20 @@ const RX = {
     new RegExp(`${KIDS}[^.\\n]{0,25}bez\\s+omezen[ií]\\s+po[čc]tu`, 'i'),
     new RegExp(`(?:rodi[čc]e|${N}\\s+dosp[ěe]l\\S*)\\s+(?:a|\\+|s)\\s+(?:sv[ýy]mi\\s+|v[šs]emi\\s+)?(?:vlastn[ií]mi\\s+)?d[ěe]tmi\\b(?!\\s*\\(?\\s*(?:max|do|a[žz])\\s*\\d)`, 'i'),
     new RegExp(`${N}\\s+dosp[ěe]l\\S*\\s*(?:a|\\+)\\s*d[ěe]ti\\b(?!\\s*\\(?\\s*(?:max|do|a[žz]|\\d))`, 'i'),
-    new RegExp(`${KIDS}\\s+do\\s+(?:1[5-9]|2\\d)\\s+let[^.\\n]{0,30}(?:zdarma|vstup\\s+zdarma|0\\s*k[čc])`, 'i'),
-    new RegExp(`(?:zdarma|voln\\S*\\s+vstup|bezplatn\\S*)[\\s\\S]{0,80}?(?:do|[–-])\\s*(?:1[5-9]|2\\d)\\s*let`, 'i'),
-    new RegExp(`(?:do|[–-])\\s*(?:1[5-9]|2\\d)\\s*let[\\s\\S]{0,60}?(?:zdarma|voln\\S*\\s+vstup|0\\s*k[čc])`, 'i'),
+    new RegExp(`(?:${KIDS}|osoby|vstup\\S*)(?:\\s+a\\s+ml[áa]de[žz]\\S*)?[^\\n\\d]{0,20}(?:do|0\\s*[–-])\\s*(?:1[5-9]|2\\d)\\s*let(?:\\s+v[čc]etn[ěe])?[^\\n\\d]{0,25}?(?:zdarma|voln\\S*\\s+vstup|0\\s*k[čc])`, 'i'),
+    new RegExp(`(?:zdarma|voln\\S*\\s+vstup\\S*)\\s*(?:maj[íi]\\s*)?[:(–-]?\\s*(?:pro\\s+)?(?:${KIDS}|osoby)(?:\\s+a\\s+ml[áa]de[žz]\\S*)?[^\\n\\d]{0,20}(?:do|0\\s*[–-])\\s*(?:1[5-9]|2\\d)\\s*let`, 'i'),
     new RegExp(`\\b(?:\\d|jedn\\S*)\\s+a\\s+v[íi]ce\\s+${KIDS}`, 'i'),
     new RegExp(`dal[šs][íi]\\s+${KIDS}\\s+(?:maj[íi]\\s+vstup\\s+)?zdarma`, 'i'),
     new RegExp(`(?:jejich|sv[ýy]mi|vlastn[íi]mi)\\s+${KIDS}`, 'i'),
   ],
+  // Obecné „vstup zdarma.“ – často jen výstava nebo akce, proto zvlášť a s nižší prioritou
+  freeAll: [
+    new RegExp(`vstup\\S*\\s+(?:do\\s+v[šs]ech\\s+\\S+\\s+)?(?:je\\s+)?(?:zcela\\s+)?zdarma\\s*[.!]`, 'i'),
+  ],
   four: [
     new RegExp(`${N}\\s*(?:dosp[ěe]l\\S*|rodi[čc]\\S*)?\\s*(?:a|\\+|&)\\s*(?:a[žz]\\s+|max(?:im[áa]ln[ěe])?\\.?\\s*|nejv[ýy]\\S*\\s*|1\\s*[–-]\\s*|2\\s*[–-]\\s*|3\\s*[–-]\\s*)?([4-9]|1\\d|čtyři|pět|šest)\\b(?!\\s*(?:Kč|,-|let|%))\\s*(?:a\\s+v[íi]ce\\s+)?${KIDS}?`, 'i'),
     new RegExp(`(?:max(?:im[áa]ln[ěe])?\\.?|a[žz])\\s*([4-9])\\s*${KIDS}`, 'i'),
-    new RegExp(`(?:rodinn\\S*|skupin\\S*)[^\\n]{0,160}\\b([6-9]|1\\d)\\s*osob`, 'i'),
+    new RegExp(`rodinn\\S*[^\\n]{0,160}\\b([6-9])\\s*osob`, 'i'),
     new RegExp(`(?:a[žz]|max\\.?|maxim[áa]ln[ěe]|[0-3]\\s*[–-])\\s*([4-9])\\s*${KIDS}`, 'i'),
   ],
   three: [
@@ -163,6 +166,7 @@ function classify(text) {
   if ((s = find(RX.unlimited, false))) return { verdict: 'HIT4', rule: 'unlimited', snippet: s }
   if ((s = find(RX.four, true))) return { verdict: 'HIT4', rule: '4+', snippet: s }
   if ((s = find(RX.three, true))) return { verdict: 'HIT3', rule: '2+3', snippet: s }
+  if ((s = find(RX.freeAll, false))) return { verdict: 'ROD', rule: 'free-all', snippet: s }
   const fam = wins.find((w) => RX.family.test(w))
   if (fam) return { verdict: 'ROD', rule: null, snippet: fam.replace(/\s+/g, ' ').trim().slice(0, 300) }
   return { verdict: 'NO', rule: null, snippet: null }
