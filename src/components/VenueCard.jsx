@@ -26,7 +26,7 @@ export default function VenueCard({ venue, kids = null }) {
       <div className="card-price">
         {price
           ? <span className="card-quote">
-              <span className="meta">2 dospělí + {pluralKids(q.kids)}{q.offseason && ' (mimo sezónu)'}{q.extraKids > 0 && ' (s doplatkem)'}</span>
+              <span className="meta">2 dospělí + {pluralKids(q.kids)}{q.offseason && ' (mimo sezónu)'}{q.extraKids > 0 && ` (vč. doplatku ${formatPrice(q.extraKids * venue.extra_child_price)})`}</span>
               <span className="price">{price}</span>
             </span>
           : <span className="price price--na">cena na webu místa</span>}

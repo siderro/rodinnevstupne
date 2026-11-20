@@ -77,32 +77,35 @@ export const CATEGORY_LABEL = Object.fromEntries(CATEGORIES.map((c) => [c.value,
 // ── Úrovně míst (klíče jsou interní; v UI jen ikona + počet dětí, názvy úrovní nepoužíváme) ──
 // name = interní/kampaňový název (brand/brand.md), na webu se neukazuje.
 export const TIERS = {
-  gold: { key: 'gold', name: 'Všichni dovnitř', label: 'neomezeně dětí', short: '∞', rank: 3 },
-  silver: { key: 'silver', name: 'Plná posádka', label: 'až 5 dětí', short: 'až 5', rank: 2 },
-  base: { key: 'base', name: 'Čtyřlístek', label: 'až 4 děti', short: 'až 4', rank: 1 },
+  gold: { key: 'gold', name: 'Všichni dovnitř', label: '2 + všechny děti', short: '∞', rank: 3 },
+  silver: { key: 'silver', name: 'Plná posádka', label: '2 + 5 dětí', short: '2 + 5', rank: 2 },
+  base: { key: 'base', name: 'Čtyřlístek', label: '2 + 4 děti', short: '2 + 4', rank: 1 },
   // Od 6. 12. 2026 (docs/plan-tri-deti.md); do té doby je build-data.mjs do dat nepustí
-  three: { key: 'three', name: 'až 3 děti', label: 'až 3 děti', short: 'až 3', rank: 0 },
+  three: { key: 'three', name: '2 + 3 děti', label: '2 + 3 děti', short: '2 + 3', rank: 0 },
 }
 
 // „Děti zdarma“: rodinná vstupenka se nekupuje, platí se jen dospělí
 export const kidsFree = (v) => v?.family_policy === 'unlimited' && v.price_family == null && v.price_child === 0
 
-// Text odznaku: horní mez počtu dětí („až 4 děti“, „neomezeně dětí do 15 let“, „děti zdarma“, „2–4 děti“)
+// Text odznaku stejným zápisem jako filtr a ceníky: „2 + 4 děti“, „2 + všechny děti do 15 let“,
+// „2 + 3–4 děti“ (od 3 dětí). Kde se rodinná vstupenka nekupuje a děti mají vstup zdarma: „děti zdarma“.
 export function tierLabel(v) {
   const t = tierOf(v)
   if (!t) return null
+  const a = v.adults_in_family_ticket || 2
   const age = v.kids_age_limit ? ` do ${v.kids_age_limit} let` : ''
   if (t.key === 'gold') {
     if (kidsFree(v)) return v.kids_age_limit ? `děti do ${v.kids_age_limit} let zdarma` : 'děti zdarma'
-    return v.min_children > 1 ? `neomezeně, od ${v.min_children} dětí` : `neomezeně dětí${age}`
+    return v.min_children > 1 ? `${a} + všechny děti, od ${v.min_children}` : `${a} + všechny děti${age}`
   }
   const max = Number(v.max_children)
-  return v.min_children > 1 ? `${v.min_children}–${pluralKids(max)}` : `až ${pluralKids(max)}`
+  return v.min_children > 1 ? `${a} + ${v.min_children}–${pluralKids(max)}` : `${a} + ${pluralKids(max)}`
 }
 
 // Filtr „Rodinná vstupenka pro“ (?vstupenka=4|5|vsechny): jde o balíček, ne o počet dětí v autě.
-// Kumulativní: „2 + 5“ ukáže vstupenky aspoň pro 5 dětí včetně neomezených. Doplatek za dítě navíc
-// z vstupenky 2 + 4 vstupenku 2 + 5 nedělá. Od 6. 12. přibude „2 + 3“.
+// Kumulativní: „2 + 5“ ukáže vstupenky aspoň pro 5 dětí včetně neomezených.
+// Výjimka: vstupenka 2 + 4 s doplatkem za další dítě se ukáže pod „2 + 5“ (cena i s doplatkem),
+// pod „2 + všechny děti“ ne. Od 6. 12. přibude „2 + 3“.
 export const TICKET_FILTERS = [
   { value: '4', label: '2 + 4', min: 4, kids: 4, chip: 'Vstupenka 2 + 4 a víc' },
   { value: '5', label: '2 + 5', min: 5, kids: 5, chip: 'Vstupenka 2 + 5 a víc' },
@@ -112,7 +115,10 @@ export const parseTicket = (s) => TICKET_FILTERS.find((t) => t.value === s) || n
 export function ticketCovers(v, t) {
   if (!t) return true
   if (v.family_policy === 'unlimited') return true
-  return v.max_children != null && Number(v.max_children) >= t.min
+  if (v.max_children == null) return false
+  // Vstupenka 2 + 4, ke které jde dokoupit páté dítě (Zoo Praha, Kroměříž…), patří i pod „2 + 5“
+  if (v.extra_child_price != null && Number(v.max_children) + 1 >= t.min) return true
+  return Number(v.max_children) >= t.min
 }
 export const parseKids = (s) => {
   const n = Number(s)

@@ -12,8 +12,8 @@ import NotFound from './NotFound'
 
 const VenueMap = lazy(() => import('../components/VenueMap'))
 
-// „12 míst až pro 4 děti“
-const TIER_COUNT = { gold: 'bez omezení počtu dětí', silver: 'až pro 5 dětí', base: 'až pro 4 děti' }
+// „12 míst se vstupenkou 2 + 4“
+const TIER_COUNT = { gold: 'se vstupenkou pro všechny děti', silver: 'se vstupenkou 2 + 5', base: 'se vstupenkou 2 + 4' }
 const countPlaces = (n) => (n === 1 ? '1 místo' : n >= 2 && n <= 4 ? `${n} místa` : `${n} míst`)
 
 export default function KrajPage() {

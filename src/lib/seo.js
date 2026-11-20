@@ -22,7 +22,7 @@ export function homeMeta() {
 export function aboutMeta() {
   return {
     title: `O projektu a jak ověřujeme – ${SITE_NAME}`,
-    description: 'Jak vybíráme místa, co znamenají odznaky „až 4 děti“, „až 5 dětí“ a „neomezeně dětí“ a jak ověřujeme ceny rodinného vstupného.',
+    description: 'Jak vybíráme místa, co znamenají odznaky „2 + 4 děti“, „2 + 5 dětí“ a „2 + všechny děti“ a jak ověřujeme ceny rodinného vstupného.',
     path: '/o-projektu/',
   }
 }

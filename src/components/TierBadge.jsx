@@ -10,7 +10,7 @@ export function TierIcon({ tier }) {
   return <span className="tier-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: ICONS[tier] }} />
 }
 
-// Odznak úrovně: ikona + horní mez počtu dětí („až 4 děti“, „neomezeně dětí“, „děti zdarma“).
+// Odznak úrovně: ikona + rodinná vstupenka zápisem z ceníků („2 + 4 děti“, „2 + všechny děti“, „děti zdarma“).
 // Názvy úrovní (Čtyřlístek…) na webu nepoužíváme, lidé je četli jako komiks.
 // condition = podmíněná úroveň (např. „s Rodinným pasem“).
 export default function TierBadge({ venue, condition = null }) {
