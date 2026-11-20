@@ -1,0 +1,69 @@
+[
+ {
+  "name": "Toboga Bongo Brno",
+  "slug": "toboga-bongo-brno",
+  "kraj": "Jihomoravský",
+  "website": "https://www.toboga.cz/brno",
+  "reason": "per_child: rodinné vstupné 2+2, každé další vlastní dítě za příplatek",
+  "family_ticket_desc": "Rodina (2+2) 699 Kč všední den / 1099 Kč víkend, prázdniny, svátky; 2 dospělí, 2 vlastní děti, každé další vlastní dítě 200 Kč (všední den) / 350 Kč (víkend, prázdniny, svátky)",
+  "source_url": "https://www.toboga.cz/brno/informace/vstupne",
+  "checked_at": "2026-11-20"
+ },
+ {
+  "name": "Svět pod hladinou",
+  "slug": "svet-pod-hladinou",
+  "kraj": "Jihočeský",
+  "website": "https://www.svetpodhladinou.cz",
+  "reason": "per_child: rodinné vstupné 2+2, každá další osoba 3–11,99 let za 199 Kč",
+  "family_ticket_desc": "Rodinné vstupné (2 dospělí + 2 děti ve věku 3 - 11,99 let): 1099 Kč; každá další osoba ve věku 3 - 11,99 let: 199 Kč",
+  "source_url": "https://www.svetpodhladinou.cz/pro-navstevniky/cenik-vstupneho",
+  "checked_at": "2026-11-20"
+ },
+ {
+  "name": "Aquacentrum Teplice",
+  "slug": "aquacentrum-teplice",
+  "kraj": "Ústecký",
+  "website": "https://www.aquacentrum-teplice.cz/",
+  "reason": "per_child: rodinné vstupné je jen zlevněná cena za každou osobu, ne jedna vstupenka",
+  "family_ticket_desc": "Rodinné vstupné – dospělý celodenní 300 Kč, děti 6–15 let 250 Kč, děti do 6 let 150 Kč (za osobu)",
+  "source_url": "https://www.aquacentrum-teplice.cz/cenik",
+  "checked_at": "2026-11-20"
+ },
+ {
+  "name": "Aquapalace Praha",
+  "slug": "aquapalace-praha",
+  "kraj": "Středočeský",
+  "website": "https://www.aquapalace.cz/",
+  "reason": "per_child: rodinná vstupenka 2+2, každé další dítě za příplatek",
+  "source_url": "https://www.aquapalace.cz/sekce/vodni_svet/cenik",
+  "checked_at": "2026-11-20"
+ },
+ {
+  "name": "Krytý bazén Valašské Meziříčí",
+  "slug": "kryty-bazen-valasske-mezirici",
+  "kraj": "Zlínský",
+  "website": "https://www.bazenvm.cz/",
+  "reason": "per_child: rodinné vstupné je zvýhodněná cena za osobu (min. 3 osoby, z toho aspoň 1 dítě), ne jedna vstupenka",
+  "family_ticket_desc": "Rodinné vstupné – uvedené ceny jsou za 1 osobu; platí minimálně pro 3 osoby z toho alespoň 1 dítě",
+  "source_url": "https://www.bazenvm.cz/informace/cenik",
+  "checked_at": "2026-11-20"
+ },
+ {
+  "name": "ZOO Park Vyškov",
+  "slug": "zoo-park-vyskov",
+  "kraj": "Jihomoravský",
+  "website": "https://www.zoo-vyskov.cz/",
+  "reason": "rodinné vstupné v ceníku 2026 není",
+  "source_url": "https://www.zoo-vyskov.cz/vstupne-a-oteviraci-doba",
+  "checked_at": "2026-11-20"
+ },
+ {
+  "name": "Mirakulum",
+  "slug": "mirakulum",
+  "kraj": "Středočeský",
+  "website": "https://mirakulum.cz/",
+  "reason": "rodinné vstupné v ceníku není (jen jednotlivé podle výšky, děti do 90 cm zdarma)",
+  "source_url": "https://mirakulum.cz/evstupenky/",
+  "checked_at": "2026-11-20"
+ }
+]

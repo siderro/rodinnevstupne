@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Šatlava – muzeum vězeňství Uničov",
+    "slug": "satlava-muzeum-vezenstvi-unicov",
+    "category": "muzeum",
+    "kraj": "Olomoucký",
+    "city": "Uničov",
+    "address": "Příční 205, 783 91 Uničov",
+    "lat": 49.769175,
+    "lng": 17.1217388,
+    "website": "https://mkzunicov.cz/satlava-muzeum-vezenstvi",
+    "family_policy": "max_children",
+    "max_children": 3,
+    "adults_in_family_ticket": 2,
+    "kids_age_limit": 15,
+    "price_adult": 60,
+    "price_child": 30,
+    "price_family": null,
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "source_date": null,
+    "family_ticket_desc": "Rodinné vstupné: 20 % (dva dospělí a maximálně tři děti do 15 let).",
+    "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Rodinné vstupné je sleva 20 % ze součtu jednotlivého vstupného (pevná cena neuvedena). Snížené 30 Kč (děti od 6 let, studenti, 65+), děti do 6 let zdarma. S Rodinným pasem sleva 30 % z celkové částky; Olomouc region Card zdarma.",
+    "alert": null,
+    "source_url": "https://mkzunicov.cz/satlava-muzeum-vezenstvi",
+    "verified_at": "2026-11-20"
+  }
+]

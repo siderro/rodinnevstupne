@@ -1,0 +1,33 @@
+[
+ {
+  "name": "Botanická zahrada Liberec",
+  "slug": "botanicka-zahrada-liberec",
+  "category": "priroda",
+  "kraj": "Liberecký",
+  "city": "Liberec",
+  "address": "Purkyňova 630/1, 460 01 Liberec",
+  "lat": 50.77875,
+  "lng": 15.0747,
+  "website": "https://www.botanickaliberec.cz/",
+  "family_policy": "max_children",
+  "max_children": 3,
+  "adults_in_family_ticket": 2,
+  "kids_age_limit": null,
+  "price_adult": 150,
+  "price_child": 80,
+  "price_family": 410,
+  "price_family_offseason": null,
+  "season_months": null,
+  "closed_months": null,
+  "min_children": null,
+  "extra_child_price": null,
+  "paid_children": null,
+  "kids_free_under": 6,
+  "source_date": null,
+  "family_ticket_desc": "Vstupné pro rodinu 2+3 410 Kč (2+2 350 Kč); děti do 6 let zdarma.",
+  "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Vstupné na pokladně: dospělí 150 Kč, žáci a studenti 80 Kč, senior 65+ 80 Kč; rodina 2+2 350 Kč, 2+3 410 Kč. Online levněji. Permanentka rodinná 2+2/3 1000 Kč.",
+  "alert": null,
+  "source_url": "https://www.botanickaliberec.cz/#vstupne",
+  "verified_at": "2026-11-20"
+ }
+]

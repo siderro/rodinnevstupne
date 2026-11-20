@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Muzeum Vyškovska",
+    "slug": "muzeum-vyskovska",
+    "kraj": "Jihomoravský",
+    "website": "https://www.muzeum-vyskovska.cz/",
+    "reason": "Cenový výměr 2026 nemá rodinné vstupné; jen 50% sleva pro děti 4–15 let (i pro Rodinné pasy), zdarma jen děti do 4 let.",
+    "source_url": "https://www.muzeum-vyskovska.cz/wp-content/uploads/cenovy-vymer-2026_komplet.pdf",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Muzeum Šumavy",
+    "slug": "muzeum-sumavy-susice",
+    "kraj": "Plzeňský",
+    "website": "https://www.muzeumsumavy.cz/",
+    "reason": "Pobočky bez rodinného vstupného pro 4+ dětí: Kašperské Hory 60/30 Kč bez rodinného, Sušice/Železná Ruda/Dobrá Voda ceny neuvádí; Horská synagoga Hartmanice rodinné max. 2+2, každé další dítě platí snížené (per_child).",
+    "family_ticket_desc": "Hartmanice: rodinné vstupné (maximálně 2 dospělí a dvě děti, každé další dítě platí snížené vstupné) 200 Kč",
+    "source_url": "https://www.muzeumsumavy.cz/muzeumsumavy/oteviracidoby.asp",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Vrbasovo muzeum Ždánice",
+    "slug": "vrbasovo-muzeum-zdanice",
+    "kraj": "Jihomoravský",
+    "website": "https://www.muzeumzdanice.cz/",
+    "reason": "Bez rodinného vstupného: základní 80 Kč, snížené 40 Kč, děti do 6 let zdarma; Rodinný pas 50% sleva. Vstup zdarma jen pro organizované skupiny MŠ/ZŠ ze Ždánic.",
+    "source_url": "https://www.muzeumzdanice.cz/oteviraci-doba-a-vstupne/",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Památník holokaustu Romů a Sintů v Čechách – Lety u Písku",
+    "slug": "pamatnik-lety-u-pisku",
+    "kraj": "Jihočeský",
+    "website": "https://letypamatnik.cz/",
+    "reason": "Už v katalogu (pamatnik-lety-u-pisku).",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Galerie Slováckého muzea",
+    "slug": "galerie-slovackeho-muzea",
+    "kraj": "Zlínský",
+    "website": "https://www.slovackemuzeum.cz/",
+    "reason": "Galerie je kvůli rekonstrukci dlouhodobě uzavřena (znovuotevření plánováno výstavou od 5. 5. 2027); rodinné vstupné max. 5 osob (≈ 2+3) – pro katalog nestačí.",
+    "family_ticket_desc": "Rodina s dětmi (3 osoby) 200 Kč, (4 osoby) 250 Kč, (5 osob) 300 Kč",
+    "source_url": "https://www.slovackemuzeum.cz/galerie-slovackeho-muzea",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Kabinet architektury",
+    "slug": "kabinet-architektury",
+    "kraj": "Moravskoslezský",
+    "website": "http://kabinetarchitektury.cz/",
+    "reason": "Spolek pořádající výstavy a přednášky na různých místech, ne stálé místo s ceníkem; úryvek ze síta je jednorázová akce z roku 2022 – ceník nenalezen.",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Galerie Ludvíka Kuby",
+    "slug": "galerie-ludvika-kuby-podebrady",
+    "kraj": "Středočeský",
+    "website": "https://www.galerieludvikakuby.cz/",
+    "reason": "Bez rodinného vstupného: základní 60 Kč, děti 6–15 let 30 Kč, předškoláci zdarma; „vstup zdarma“ ze síta platil jen pro komentovanou prohlídku (jednorázová akce).",
+    "source_url": "https://www.galerieludvikakuby.cz/navstivte-nas",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Horácká galerie v Novém Městě na Moravě",
+    "slug": "horacka-galerie-nove-mesto-na-morave",
+    "kraj": "Vysočina",
+    "website": "http://www.horackagalerie.cz/",
+    "reason": "Rodinné vstupné 240 Kč bez uvedeného složení (počet dětí neuveden) – nelze doložit 4+ dětí.",
+    "family_ticket_desc": "Rodinné vstupné 240 Kč",
+    "source_url": "http://www.horackagalerie.cz/oteviraci-doba-a-vstupne",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Hornický skanzen Mayrau",
+    "slug": "hornicky-skanzen-mayrau",
+    "kraj": "Středočeský",
+    "website": "https://dul-mayrau.cz/",
+    "reason": "Rodinné vstupné jen 2 dospělí + 3 děti (Okruh A 240 Kč, Okruh B 390 Kč); ceník „Aktualizováno 2. 1. 2024“ – starší než 2 roky, proto ani do 2+3 zásoby.",
+    "family_ticket_desc": "Rodinné vstupné (2 dospělí + 3 děti): Okruh A 240 Kč, Okruh B 390 Kč",
+    "source_url": "https://dul-mayrau.cz/vstupne/",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Skanzen Chanovice (Expozice lidové architektury)",
+    "slug": "skanzen-chanovice",
+    "kraj": "Plzeňský",
+    "website": "https://muzeum.klatovynet.cz/",
+    "reason": "Bez rodinného vstupného: plné 80 Kč, snížené 40 Kč (Vlastivědné muzeum Dr. Hostaše v Klatovech).",
+    "source_url": "https://muzeum.klatovynet.cz/muzeumkt/skanzen-vstupne.asp",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Univerzitní muzeum VŠB-TUO",
+    "slug": "univerzitni-muzeum-vsb-tuo",
+    "kraj": "Moravskoslezský",
+    "website": "https://www.vsb.cz/muzeum/",
+    "reason": "Ceník nenalezen – web nabízí jen prohlídky na objednávku, bez vstupného a rodinného pravidla.",
+    "checked_at": "2026-11-20"
+  }
+]

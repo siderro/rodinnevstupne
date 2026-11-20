@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Muzeum Litovel",
+    "slug": "muzeum-litovel",
+    "kraj": "Olomoucký",
+    "website": "https://www.muzeumlitovel.cz/",
+    "reason": "Ceník (platný od 1. 1. 2025) nemá rodinné vstupné ani volný vstup dětí: děti od 6 let 50 Kč, dospělí 100 Kč, zdarma jen děti do 5 let. Tip ze síta byl jednorázová akce (vstup zdarma pro jubilanty).",
+    "source_url": "https://www.muzeumlitovel.cz/cs/pro-navstevniky/vstupne-do-muzea.html",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Vila Stiassni",
+    "slug": "vila-stiassni-brno",
+    "kraj": "Jihomoravský",
+    "website": "https://www.vila-stiassni.cz/",
+    "reason": "Památka ve správě NPÚ – bez rodinného vstupného pro 4+ dětí (děti 6–17 let 70 Kč jednotlivě).",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Severočeská galerie výtvarného umění v Litoměřicích",
+    "slug": "sgvu-litomerice",
+    "kraj": "Ústecký",
+    "website": "https://www.galerie-ltm.cz/",
+    "reason": "Ceník s cenami nenalezen. Návštěvní řád 2026 uvádí volný vstup osob do 19 let jen do stálých expozic; dočasné výstavy placené, rodinné = max. 2 plné + 2 snížené (2+2). Web aktuálně uvádí jen dočasné výstavy bez cen, výstavní prostory zavřeny do 3. 12. 2026.",
+    "family_ticket_desc": "rodiny (max. 2 osoby za plné vstupné a 2 osoby za snížené vstupné) = rodinné vstupné",
+    "source_url": "https://www.galerie-ltm.cz/wp-content/uploads/2026/06/Vnitrni-predpis-SGVU_Navstevni-rad-2026_signed.pdf",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Muzeum Trojmezí Jablunkov / Archeopark Chotěbuz-Podobora (Muzeum Těšínska)",
+    "slug": "muzeum-trojmezi-jablunkov",
+    "kraj": "Moravskoslezský",
+    "website": "https://www.muzeumct.cz/",
+    "reason": "Ceníky Muzea Těšínska (Jablunkov 160 Kč, Archeopark 250 Kč, Český Těšín 240 Kč, ostatní pobočky 120 Kč) uvádějí rodinné vstupné bez složení – počet dětí neuveden, nelze doložit 4 děti.",
+    "source_url": "https://www.muzeumct.cz/vstupne/archeopark",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Muzeum jižního Plzeňska v Blovicích – zámek Hradiště",
+    "slug": "muzeum-jizniho-plzenska-blovice",
+    "kraj": "Plzeňský",
+    "website": "https://www.muzeum-blovice.cz/",
+    "reason": "Ceník beze změny: „Rodinné vstupné: max. dva dospělí a alespoň jedno dítě do 15 let“ – horní limit počtu dětí neuveden, pokrytí 4 dětí nelze doložit (dříve zamítnuto ze stejného důvodu).",
+    "family_ticket_desc": "Rodinné vstupné: max. dva dospělí a alespoň jedno dítě do 15 let (základní 120 Kč, rozšířené 200 Kč).",
+    "source_url": "https://www.muzeum-blovice.cz/navstivte-nas/vstupne/",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Brandýská katovna",
+    "slug": "brandyska-katovna",
+    "kraj": "Středočeský",
+    "website": "https://katovna.muzeumbrandys.cz/",
+    "reason": "Ceník neaktuální: rodinné 1–2 dospělí s max. 4 dětmi 100 Kč, ale ceny „schváleny od 5. dubna 2023“ bez potvrzení aktuálnosti; navíc otevřeno jen o víkendech červen–srpen, jinak jen pro skupiny od 6 osob na objednání.",
+    "family_ticket_desc": "Rodinné vstupné 1–2 dospělí s max. 4 dětmi 100 Kč",
+    "source_url": "https://katovna.muzeumbrandys.cz/cz/vstupne-brandyska-katovna",
+    "checked_at": "2026-11-20"
+  }
+]

@@ -1,0 +1,33 @@
+[
+ {
+  "price_family_offseason": null,
+  "season_months": null,
+  "closed_months": null,
+  "min_children": null,
+  "extra_child_price": null,
+  "paid_children": null,
+  "kids_free_under": null,
+  "source_date": null,
+  "alert": null,
+  "verified_at": "2026-11-20",
+  "name": "Národní muzeum hraček",
+  "slug": "narodni-muzeum-hracek",
+  "category": "muzeum",
+  "kraj": "Praha",
+  "city": "Praha 1 – Hradčany",
+  "address": "Jiřská 11/4, 119 00 Praha 1",
+  "lat": 50.0919491,
+  "lng": 14.4044807,
+  "website": "https://narodnimuzeumhracek.cz/",
+  "family_policy": "unlimited",
+  "max_children": null,
+  "adults_in_family_ticket": 2,
+  "kids_age_limit": 18,
+  "price_adult": 180,
+  "price_child": 70,
+  "price_family": 360,
+  "family_ticket_desc": "Rodina: 2 dospělí + děti do 18 let – 360 Kč.",
+  "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Soukromé muzeum hraček v areálu Pražského hradu (Jiřská ulice), vstup samostatný mimo okruhy Hradu. Ceník: dospělý 18–64 let 180 Kč, děti do 18 let 70 Kč, snížené (ZTP, ISIC, od 65 let) 120 Kč. Ceník neuvádí horní počet dětí v rodinném vstupném. Otevřeno denně 9–18; muzeum ve 2. patře, jen po schodech.",
+  "source_url": "https://narodnimuzeumhracek.cz/#ws-block-pricing-with-aside-cta-Zkjv9trG"
+ }
+]

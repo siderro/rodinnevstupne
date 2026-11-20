@@ -1,0 +1,33 @@
+[
+ {
+  "name": "Slovácké muzeum – hlavní budova",
+  "slug": "slovacke-muzeum-hlavni-budova-uherske-hradiste",
+  "category": "muzeum",
+  "kraj": "Zlínský",
+  "city": "Uherské Hradiště",
+  "address": "Smetanovy sady 179, 686 01 Uherské Hradiště",
+  "lat": 49.0673255,
+  "lng": 17.4678193,
+  "website": "https://www.slovackemuzeum.cz/",
+  "family_policy": "max_children",
+  "max_children": 3,
+  "adults_in_family_ticket": 2,
+  "kids_age_limit": 15,
+  "price_adult": 100,
+  "price_child": 70,
+  "price_family": 300,
+  "price_family_offseason": null,
+  "season_months": null,
+  "closed_months": null,
+  "min_children": null,
+  "extra_child_price": null,
+  "paid_children": null,
+  "kids_free_under": 6,
+  "source_date": "2026",
+  "family_ticket_desc": "Rodina s dětmi (5 osob) 300 Kč. Děti 6–15 let 70 Kč; děti do 6 let zdarma.",
+  "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Další varianty: Rodina s dětmi (3 osoby) 200 Kč, (4 osoby) 250 Kč. Ceník uvádí jen počet osob, rozdělení 2 dospělí + 3 děti je odvozené. Děti do 6 let zdarma, takže malé děti se do počtu nemusí počítat. Ceník uvádí zavírací dny do 1. 1. 2027.",
+  "alert": null,
+  "source_url": "https://www.slovackemuzeum.cz/oteviraci-doba-a-vstupne",
+  "verified_at": "2026-11-20"
+ }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Městské muzeum Týn nad Vltavou",
+    "slug": "mestske-muzeum-tyn-nad-vltavou",
+    "category": "muzeum",
+    "kraj": "Jihočeský",
+    "city": "Týn nad Vltavou",
+    "address": "Arcibiskupský zámek, náměstí Míru, 375 01 Týn nad Vltavou",
+    "lat": 49.2238,
+    "lng": 14.4212,
+    "website": "https://muzeumtnv.cz/",
+    "family_policy": "max_children",
+    "max_children": 3,
+    "adults_in_family_ticket": 2,
+    "kids_age_limit": null,
+    "price_adult": 80,
+    "price_child": 40,
+    "price_family": 160,
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 6,
+    "source_date": null,
+    "family_ticket_desc": "Rodinné vstupné (2 dospělí + nejvýše 3 děti) 160 Kč. Snížené (děti 6–15 let) 40 Kč, děti do 5 let 0 Kč.",
+    "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Krátkodobé výstavy 40 Kč.",
+    "alert": null,
+    "source_url": "https://muzeumtnv.cz/?page_id=738",
+    "verified_at": "2026-11-20"
+  }
+]
