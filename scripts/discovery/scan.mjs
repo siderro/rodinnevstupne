@@ -30,7 +30,10 @@ const CACHE = path.join(OUT, 'cache')
 const STATE = path.join(OUT, `scan-state-${DATE}.json`)
 const CONCURRENCY = 8
 const PER_DOMAIN_MS = 1100
-const MAX_PAGES = 4
+const RESCAN = argv.includes('--rescan')
+// --rescan: druhé kolo jen pro NO a nedostupné; víc stránek, záložní adresy webu a typické cesty ceníku
+const MAX_PAGES = RESCAN ? 8 : 4
+const GUESS_PATHS = ['/vstupne', '/vstupne/', '/cenik', '/cenik/', '/ceny', '/oteviraci-doba-a-vstupne', '/navsteva', '/pro-navstevniky', '/informace', '/kontakt']
 
 // --- HTTP s cache, robots.txt a rozestupem na doménu ------------------------
 const lastHit = new Map()
@@ -181,7 +184,13 @@ async function pageText(res) {
 
 const RANK = { HIT4: 3, HIT3: 2, ROD: 1, NO: 0 }
 async function scanPlace(p) {
-  const home = await politeFetch(p.website)
+  let home = await politeFetch(p.website)
+  if (!home.ok && RESCAN) {
+    // záloha: s/bez www, http, kořen domény
+    const u = new URL(p.website)
+    const alts = [`https://${u.host.startsWith('www.') ? u.host.slice(4) : 'www.' + u.host}${u.pathname}`, `http://${u.host}${u.pathname}`, `https://${u.host}/`]
+    for (const a of alts) { if (a === p.website) continue; const r = await politeFetch(a); if (r.ok) { home = r; break } }
+  }
   if (!home.ok) return { status: `home ${home.status}` }
   if (home.pdf) { const c = classify(await pageText(home)); return { status: 'ok', pages: 1, ...c, url: home.url } }
   let best = { verdict: 'NO' }, bestUrl = null, pages = 0
@@ -195,6 +204,11 @@ async function scanPlace(p) {
     let smUrl; try { smUrl = new URL('/sitemap.xml', home.url).href } catch { smUrl = null }
     const sm = smUrl ? await politeFetch(smUrl) : { ok: false }
     if (sm.ok && typeof sm.body === 'string') links = [...sm.body.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => ({ href: m[1].trim() })).filter((l) => /vstupn|cenik|ceny|vstupenk/i.test(l.href)).slice(0, MAX_PAGES)
+  }
+  if (RESCAN && links.length < MAX_PAGES) {
+    const have = new Set(links.map((l) => l.href))
+    for (const g of GUESS_PATHS) { const h = new URL(g, home.url).href; if (!have.has(h)) links.push({ href: h }) }
+    links = links.slice(0, MAX_PAGES + 4)
   }
   for (const l of links) {
     if (best.verdict === 'HIT4') break
@@ -219,6 +233,7 @@ universe = universe.slice(0, LIMIT)
 let state = {}
 try { state = JSON.parse(await readFile(STATE, 'utf8')) } catch {}
 
+if (RESCAN) for (const p of universe) { const st = state[p.website]; if (st && (st.verdict === 'NO' || /^(home|error)/.test(st.status || ''))) delete state[p.website] }
 const todo = universe.filter((p) => !state[p.website])
 console.log(`Míst ${universe.length}, hotovo dříve ${universe.length - todo.length}, zbývá ${todo.length}`)
 let done = 0, lastSave = Date.now()

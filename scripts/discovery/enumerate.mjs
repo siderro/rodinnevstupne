@@ -5,7 +5,7 @@ import { writeFile, mkdir } from 'node:fs/promises'
 import path from 'node:path'
 import { known, root, slugify, domainOf } from './known.mjs'
 
-const DATE = process.argv[2] || new Date().toISOString().slice(0, 10)
+const DATE = process.argv.find((a) => /^\d{4}-\d{2}-\d{2}$/.test(a)) || new Date().toISOString().slice(0, 10)
 const UA = 'rodinnevstupne.cz-bot (+https://rodinnevstupne.cz; tipy@rodinnevstupne.cz)'
 const OUT = path.join(root, 'scripts', 'discovery', 'out')
 
@@ -19,7 +19,9 @@ const OVERPASS_PARTS = [
 const overpassQuery = (body) => `[out:json][timeout:180];\narea["ISO3166-1"="CZ"][admin_level=2]->.cz;\n(${body});\nout center tags;`
 
 // Wikidata: instance (podtřídy) muzea, zoo, hradu, zámku, zábavního parku, aquaparku, hvězdárny, jeskyně, botanické zahrady v ČR s oficiálním webem
-const WD_TYPES = ['wd:Q33506', 'wd:Q43501', 'wd:Q23413', 'wd:Q751876', 'wd:Q194195', 'wd:Q740326', 'wd:Q1144661', 'wd:Q35509', 'wd:Q167346', 'wd:Q207694', 'wd:Q1007870', 'wd:Q2087181']
+const WD_TYPES = ['wd:Q33506', 'wd:Q43501', 'wd:Q23413', 'wd:Q751876', 'wd:Q194195', 'wd:Q740326', 'wd:Q1144661', 'wd:Q35509', 'wd:Q167346', 'wd:Q207694', 'wd:Q1007870', 'wd:Q2087181',
+  // rozšíření 23. 11.: rozhledna, hvězdárna, planetárium, akvárium, skanzen, klášter, zřícenina hradu, památník, arboretum, zpřístupněný důl/jeskyně, technické muzeum, science centrum
+  'wd:Q1440300', 'wd:Q1254933', 'wd:Q148319', 'wd:Q2281788', 'wd:Q756102', 'wd:Q44613', 'wd:Q17715832', 'wd:Q5003624', 'wd:Q216344', 'wd:Q2232001', 'wd:Q1595639', 'wd:Q1060829', 'wd:Q2516357']
 const SPARQL = `SELECT ?item ?itemLabel ?web ?coord ?typeLabel WHERE {
   VALUES ?type { TYPE }
   ?item wdt:P17 wd:Q213; wdt:P856 ?web; wdt:P31 ?t. ?t wdt:P279? ?type.
@@ -93,7 +95,11 @@ async function wikidata() {
   }
 }
 
-const osm = await overpass()
+// --wikidata-only: přeskočit Overpass; --exclude <universe.json>: vynechat místa, která už jsou v dřívějším výčtu
+const ONLY_WD = process.argv.includes('--wikidata-only')
+const exIdx = process.argv.indexOf('--exclude')
+const EXCLUDE = exIdx === -1 ? null : process.argv[exIdx + 1]
+const osm = ONLY_WD ? [] : await overpass()
 const wd = await wikidata()
 const k = await known()
 
@@ -112,9 +118,12 @@ for (const p of [...osm, ...wd]) {
   byUrl.set(key, { ...p, website: url, src: [p.src] })
 }
 
-const universe = [], skipped = { known_name: 0, known_domain: 0 }
+const prevWebs = new Set()
+if (EXCLUDE) { const { readFile } = await import('node:fs/promises'); for (const p of JSON.parse(await readFile(EXCLUDE, 'utf8'))) prevWebs.add(p.website) }
+const universe = [], skipped = { known_name: 0, known_domain: 0, in_previous: 0 }
 for (const p of byUrl.values()) {
   const d = domainOf(p.website)
+  if (prevWebs.has(p.website)) { skipped.in_previous++; continue }
   if (k.names.has(slugify(p.name)) || k.slugs.has(slugify(p.name))) { skipped.known_name++; continue }
   // Sdílená doména provozovatele (nm.cz, ntm.cz…) = možná nová pobočka → ponechat, ale označit
   p.known_domain = k.domains.has(d)
@@ -128,5 +137,5 @@ const file = path.join(OUT, `universe-${DATE}.json`)
 await writeFile(file, JSON.stringify(universe, null, 1) + '\n')
 const cats = universe.reduce((m, p) => ((m[p.category] = (m[p.category] || 0) + 1), m), {})
 console.log(`Celkem OSM ${osm.length} + Wikidata ${wd.length}; bez webu ${noWeb}; unikátních webů ${byUrl.size}; ` +
-  `známé podle názvu ${skipped.known_name}; zbývá ${universe.length} (z toho na známé doméně ${skipped.known_domain})`)
+  `známé podle názvu ${skipped.known_name}; v dřívějším výčtu ${skipped.in_previous}; zbývá ${universe.length} (z toho na známé doméně ${skipped.known_domain})`)
 console.log('Kategorie:', cats, '→', path.relative(root, file))
