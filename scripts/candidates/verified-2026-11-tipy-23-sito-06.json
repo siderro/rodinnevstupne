@@ -1,0 +1,33 @@
+[
+ {
+  "name": "Trabant muzeum Praha Motol",
+  "slug": "trabant-muzeum-praha-motol",
+  "category": "muzeum",
+  "kraj": "Praha",
+  "city": "Praha 5 – Motol",
+  "address": "Plzeňská 215b, 150 00 Praha 5 – Motol (budova STK Motol)",
+  "lat": 50.06793,
+  "lng": 14.34896,
+  "website": "https://www.trabantmuzeum.cz/",
+  "family_policy": "unlimited",
+  "max_children": null,
+  "adults_in_family_ticket": 2,
+  "kids_age_limit": 15,
+  "price_adult": 139,
+  "price_child": 65,
+  "price_family": 299,
+  "price_family_offseason": null,
+  "season_months": null,
+  "closed_months": null,
+  "min_children": null,
+  "extra_child_price": null,
+  "paid_children": null,
+  "kids_free_under": null,
+  "source_date": null,
+  "family_ticket_desc": "rodina (2 dospělí + děti do 15 let) 299 Kč",
+  "notes": "Síto ceníků 23. 11. 2026 (Vytěžování 2.0, 3. kolo). Aktuální ceník vstupného: dospělý 139 Kč, dítě (do 15 let) 65 Kč, rodina (2 dospělí + děti do 15 let) 299 Kč, senior 99 Kč. Počet dětí v rodinné vstupence ceník neomezuje. Otevřeno denně 1. 10.–30. 4. 9–17 h, 1. 5.–30. 9. 9–18 h; o vánočních svátcích zavřeno. Parkování v areálu zdarma.",
+  "alert": null,
+  "source_url": "https://www.trabantmuzeum.cz/cenik/",
+  "verified_at": "2026-11-23"
+ }
+]

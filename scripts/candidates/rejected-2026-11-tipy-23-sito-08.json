@@ -1,0 +1,101 @@
+[
+ {
+  "name": "Hrad Žebrák",
+  "slug": "hrad-zebrak",
+  "kraj": "Středočeský",
+  "website": "https://www.hrad-zebrak.cz/",
+  "reason": "Památka NPÚ – nemá rodinné vstupné (ceník jen plné/snížené; „rodinní příslušníci“ jen u průkazu zaměstnance NPÚ); úryvek ze síta se týkal návštěvního řádu/slev.",
+  "source_url": "https://www.hrad-zebrak.cz/cs/informace-pro-navstevniky/vstupne",
+  "checked_at": "2026-11-23"
+ },
+ {
+  "name": "Zámek Konopiště",
+  "slug": "zamek-konopiste",
+  "kraj": "Středočeský",
+  "website": "https://www.zamek-konopiste.cz/",
+  "reason": "Památka NPÚ – nemá rodinné vstupné (ceník jen plné/snížené; „rodinní příslušníci“ jen u průkazu zaměstnance NPÚ); úryvek ze síta se týkal návštěvního řádu/slev.",
+  "source_url": "https://www.zamek-konopiste.cz/cs/informace-pro-navstevniky/vstupne",
+  "checked_at": "2026-11-23"
+ },
+ {
+  "name": "Zámek Mníšek pod Brdy",
+  "slug": "zamek-mnisek-pod-brdy",
+  "kraj": "Středočeský",
+  "website": "https://www.zamek-mnisek.cz/",
+  "reason": "Památka NPÚ – nemá rodinné vstupné (ceník jen plné/snížené; „rodinní příslušníci“ jen u průkazu zaměstnance NPÚ); úryvek ze síta se týkal návštěvního řádu/slev.",
+  "source_url": "https://www.zamek-mnisek.cz/cs/informace-pro-navstevniky/vstupne",
+  "checked_at": "2026-11-23"
+ },
+ {
+  "name": "Hrad Křivoklát",
+  "slug": "hrad-krivoklat",
+  "kraj": "Středočeský",
+  "website": "https://www.hrad-krivoklat.cz/",
+  "reason": "Památka NPÚ – nemá rodinné vstupné (ceník jen plné/snížené; „rodinní příslušníci“ jen u průkazu zaměstnance NPÚ); úryvek ze síta se týkal návštěvního řádu/slev.",
+  "source_url": "https://www.hrad-krivoklat.cz/cs/informace-pro-navstevniky/vstupne",
+  "checked_at": "2026-11-23"
+ },
+ {
+  "name": "Hrad Karlštejn",
+  "slug": "hrad-karlstejn",
+  "kraj": "Středočeský",
+  "website": "https://www.hrad-karlstejn.cz/",
+  "reason": "Památka NPÚ – nemá rodinné vstupné (ceník jen plné/snížené; „rodinní příslušníci“ jen u průkazu zaměstnance NPÚ); úryvek ze síta se týkal návštěvního řádu/slev.",
+  "source_url": "https://www.hrad-karlstejn.cz/cs/informace-pro-navstevniky/vstupne",
+  "checked_at": "2026-11-23"
+ },
+ {
+  "name": "Zámek Manětín",
+  "slug": "zamek-manetin",
+  "kraj": "Plzeňský",
+  "website": "https://www.zamek-manetin.cz/",
+  "reason": "Památka NPÚ – nemá rodinné vstupné (ceník jen plné/snížené; „rodinní příslušníci“ jen u průkazu zaměstnance NPÚ); úryvek ze síta se týkal návštěvního řádu/slev.",
+  "source_url": "https://www.zamek-manetin.cz/cs/informace-pro-navstevniky/vstupne",
+  "checked_at": "2026-11-23"
+ },
+ {
+  "name": "Sázavský klášter (NPÚ okruhy)",
+  "slug": "sazavsky-klaster",
+  "kraj": "Středočeský",
+  "website": "https://www.klaster-sazava.cz/",
+  "reason": "Památka NPÚ – nemá rodinné vstupné (ceník jen plné/snížené; „rodinní příslušníci“ jen u průkazu zaměstnance NPÚ); úryvek ze síta se týkal návštěvního řádu/slev. Farní okruh už v katalogu (sazavsky-klaster-farni-okruh).",
+  "source_url": "https://www.klaster-sazava.cz/cs/informace-pro-navstevniky/vstupne",
+  "checked_at": "2026-11-23"
+ },
+ {
+  "name": "Zámek Český Krumlov – Hradní muzeum a zámecká věž",
+  "slug": "zamek-cesky-krumlov-zamecka-vez",
+  "kraj": "Jihočeský",
+  "website": "https://www.zamek-ceskykrumlov.cz/",
+  "reason": "Památka NPÚ – nemá rodinné vstupné (ceník jen plné/snížené; „rodinní příslušníci“ jen u průkazu zaměstnance NPÚ); úryvek ze síta se týkal návštěvního řádu/slev.",
+  "source_url": "https://www.zamek-ceskykrumlov.cz/cs/informace-pro-navstevniky/vstupne",
+  "checked_at": "2026-11-23"
+ },
+ {
+  "name": "Peklo Čertovina",
+  "slug": "peklo-certovina",
+  "kraj": "Pardubický",
+  "website": "https://www.peklocertovina.cz/",
+  "reason": "Bez rodinného vstupného – jen dospělý 490 Kč / dítě do 150 cm 390 Kč (na místě), děti do 3 let zdarma; sleva s Rodinným pasem.",
+  "source_url": "https://www.peklocertovina.cz/produkt/prohlidky/",
+  "checked_at": "2026-11-23"
+ },
+ {
+  "name": "Radniční věž Frenštát pod Radhoštěm",
+  "slug": "radnicni-vez-frenstat-pod-radhostem",
+  "kraj": "Moravskoslezský",
+  "website": "https://www.frenstat.info/",
+  "reason": "ceník nenalezen – úryvek „děti do 6 let zdarma“ se týkal aquaparku, ne věže.",
+  "source_url": null,
+  "checked_at": "2026-11-23"
+ },
+ {
+  "name": "Mendelovo muzeum Masarykovy univerzity",
+  "slug": "mendelovo-muzeum-brno",
+  "kraj": "Jihomoravský",
+  "website": "https://mendelmuseum.muni.cz/",
+  "reason": "Bez rodinného vstupného – základní 130 Kč, snížené 100 Kč (6–18 let), děti do 6 let zdarma; úryvek ze síta byl o hře pro skupiny.",
+  "source_url": "https://mendelmuseum.muni.cz/pro-navstevniky/oteviraci-doba-a-vstupne",
+  "checked_at": "2026-11-23"
+ }
+]

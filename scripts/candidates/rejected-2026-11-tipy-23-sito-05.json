@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Archeologické muzeum v přírodě Villa Nova Uhřínov",
+    "slug": "villa-nova-uhrinov",
+    "kraj": "Královéhradecký",
+    "website": "https://www.villanova.cz/",
+    "reason": "Rodinné vstupné 200 Kč bez uvedení počtu dětí; nelze doložit 4+ děti. (Tvrzení 2+3 ze síta patří k Muzeu zimních sportů v Deštném: rodinné 2 rodiče + 3 děti 210 Kč.) Zavřeno listopad–duben.",
+    "family_ticket_desc": "rodinné 200,- Kč",
+    "source_url": "https://www.villanova.cz/pro-navstevniky",
+    "checked_at": "2026-11-23"
+  },
+  {
+    "name": "Galerie Špalíček (Muzeum a galerie v Prostějově)",
+    "slug": "galerie-spalicek-prostejov",
+    "kraj": "Olomoucký",
+    "website": "https://muzeumpv.cz/",
+    "reason": "Rodinné vstupné 200 Kč bez uvedení počtu dětí; muzeum již dříve zamítnuto, ceník se nezměnil k lepšímu.",
+    "family_ticket_desc": "Rodinné vstupné 200 Kč",
+    "source_url": "https://muzeumpv.cz/muzeum/oteviraci-doba-a-vstupne/",
+    "checked_at": "2026-11-23"
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "name": "Klášter Chotěšov",
+    "slug": "klaster-chotesov",
+    "kraj": "Plzeňský",
+    "website": "https://www.chotesovskyklaster.cz",
+    "reason": "Rodinné vstupné nenabízí (plné 150 Kč, snížené 100 Kč na osobu); tip vycházel z jednorázové akce Večer pro klášter.",
+    "source_url": "https://www.chotesovskyklaster.cz/sprava-klastera/pro-navstevniky/vstupne-a-prohlidky/",
+    "checked_at": "2026-11-23"
+  },
+  {
+    "name": "Domek Prokopa Diviše",
+    "slug": "domek-prokopa-divise-zamberk",
+    "kraj": "Pardubický",
+    "website": "https://www.muzeumzamberk.cz/",
+    "reason": "Rodinné 120 Kč bez uvedeného počtu dětí; citát 2+1–3 patří Městskému muzeu Žamberk (to je v 2+3 zásobě).",
+    "source_url": "https://www.muzeumzamberk.cz/web/cs/navstevni-mista/domek-prokopa-divise-2-8.html?tab_id=web",
+    "checked_at": "2026-11-23"
+  },
+  {
+    "name": "Zvonkohra (Brno)",
+    "slug": "zvonkohra-brno",
+    "kraj": "Jihomoravský",
+    "website": "https://www.spilberk.cz/",
+    "reason": "Nemá vlastní vstupné; tip převzal ceník hradu Špilberk (rodinné 1–2 dospělí + 1–3 děti).",
+    "source_url": "https://www.spilberk.cz/vstupenky/t1461",
+    "checked_at": "2026-11-23"
+  },
+  {
+    "name": "Areál československého opevnění Šatov",
+    "slug": "areal-cs-opevneni-satov",
+    "kraj": "Jihomoravský",
+    "website": "http://www.technicalmuseum.cz/",
+    "reason": "Ceník nenalezen – odkaz tipu vede na ceník hlavní budovy Technického muzea v Brně (2 + 1–3 děti), ne na Šatov; už dříve zamítnuto.",
+    "family_ticket_desc": "rodinné vstupné (2 dospělí + 1 až 3 děti), každé další dítě zlevněné vstupné – hlavní budova TMB",
+    "source_url": "https://www.tmbrno.cz/navstivte-nas/oteviraci-doba-vstupne/",
+    "checked_at": "2026-11-23"
+  }
+]
