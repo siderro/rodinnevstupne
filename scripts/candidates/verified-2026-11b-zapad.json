@@ -41,7 +41,13 @@
     "family_ticket_desc": "Vstupné do areálu (venkovní expozice „Stezka paměti“, pietní kruh, nouzové pohřebiště) je ZDARMA. Vnitřní stálá expozice: zdarma děti do 12 let; zlevněné vstupné 50 Kč děti 13–18 let včetně.",
     "notes": "Pietní místo, spravuje Muzeum romské kultury. Venkovní areál přístupný celoročně; návštěvnické centrum s vnitřní expozicí „Paměť místa a místo paměti“ jen v hlavní sezóně duben–říjen, čt–ne 10–17 h (mimo sezónu po domluvě). Vnitřní expozice: plné 100 Kč, zlevněné 50 Kč, rodinné 180 Kč (složení neuvedeno), s Rodinným pasem sleva 15 % z rodinného.",
     "source_url": "https://letypamatnik.cz/vstupne-a-oteviraci-doba/",
-    "verified_at": "2026-11-14"
+    "verified_at": "2026-11-14",
+    "conditions": [
+      {
+        "code": "jen_cast_arealu",
+        "note": "Zdarma je venkovní areál. Ve vnitřní expozici platí děti od 13 let 50 Kč."
+      }
+    ]
   },
   {
     "name": "Muzeum loutek Plzeň",

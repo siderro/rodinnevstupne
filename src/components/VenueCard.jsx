@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import TierBadge from './TierBadge'
-import { CATEGORY_LABEL, formatPrice, formatDate, dataAge, familyQuote, reopensIn, pluralKids, QUOTE_KIDS } from '../lib/constants'
+import { CATEGORY_LABEL, formatPrice, formatDate, dataAge, familyQuote, reopensIn, pluralKids, QUOTE_KIDS, caveats } from '../lib/constants'
 import { useMonth } from '../lib/useMonth'
 
 // kids = počet dětí z filtru „Kolik dětí jede?“ (jinak typická velká rodina 2 + 4)
@@ -23,6 +23,12 @@ export default function VenueCard({ venue, kids = null }) {
       {venue.alert
         ? <p className="card-alert">{venue.alert}</p>
         : reopens && <p className="card-alert">Teď zavřeno, otevírá v {reopens}.</p>}
+      {caveats(venue).length > 0 && (
+        <ul className="caveat-chips" aria-label="Na co si dát pozor">
+          {caveats(venue).slice(0, 2).map((c) => <li key={c.code}>{c.label}</li>)}
+          {caveats(venue).length > 2 && <li>+{caveats(venue).length - 2}</li>}
+        </ul>
+      )}
       <div className="card-price">
         {price
           ? <span className="card-quote">
