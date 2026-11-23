@@ -83,7 +83,10 @@ const RULES = `PRAVIDLA OVĚŘENÍ (přísná, platí bez výjimky):
 - PODMÍNKY (pole conditions, pole řetězců; podmíněné místo NEZAMÍTEJ):
   · "doklad_rodiny" – více dětí jen po doložení, že jde o jednu rodinu → úroveň podle plného pravidla + štítek.
   · "rodinny_pas" – lepší pravidlo jen s Rodinným pasem → ulož ZÁKLADNÍ pravidlo bez pasu (úroveň podle něj), podmínku do conditions a znění do notes.
-  · "jen_volna_prohlidka" – rodinné vstupné jen na volnou prohlídku (bez průvodce); "jen_cast_arealu" – jen pro část areálu/expozice.
+  · "jen_volna_prohlidka" – rodinné vstupné jen na volnou prohlídku (bez průvodce); "jen_cast_arealu" – jen pro část areálu/expozice; "jen_nektere_dny" – jen v některé dny/časy.
+  · "jine" – jiná zvláštnost, která může rodinu u pokladny překvapit; VŽDY jako objekt s poznámkou.
+  · Položka je kód ("rodinny_pas") nebo objekt {"code": "...", "note": "jedna poctivá věta pro návštěvníka, co přesně platí"}. Poznámku přidej, kdykoli obecný text nestačí.
+  · „Děti do X let zdarma“ s X < 15 a minimum dětí (min_children) se upozorní automaticky – do conditions je nepiš, jen do jine, pokud je potřeba víc vysvětlit (např. jaká rodinná vstupenka platí pro starší děti).
   · Jiné hodnoty nepoužívej. Bez podmínky pole vynech.
 - Prohlášení kraje/zřizovatele „děti zdarma“ neplatí pro pobočku, která nemá vlastní ceník, který to potvrzuje.
 - source_url musí vést na ceník KONKRÉTNÍHO místa/pobočky, ne na obecnou stránku provozovatele.

@@ -24,7 +24,8 @@ const KRAJE = [
 ]
 // Podmínky rodinného vstupného (docs/ops/investigativa.md, rozhodnutí 14. 11.): doklad_rodiny dává plnou
 // úroveň + štítek, ostatní jsou jen štítek (úroveň se počítá ze základního pravidla bez podmínky).
-const CONDITIONS = ['doklad_rodiny', 'rodinny_pas', 'jen_volna_prohlidka', 'jen_cast_arealu']
+// Záznam: kód nebo {code, note}; „jine“ musí mít note. Texty a štítky jsou v src/lib/constants.js (CONDITIONS).
+const CONDITIONS = ['doklad_rodiny', 'rodinny_pas', 'jen_volna_prohlidka', 'jen_cast_arealu', 'jen_nektere_dny', 'jine']
 const CATEGORIES = ['zoo', 'aquapark', 'hrad', 'muzeum', 'zabavni_park', 'science', 'priroda', 'sport', 'jine']
 
 const slugify = (s) => String(s || '').toLowerCase()
@@ -124,8 +125,14 @@ for (const f of files) {
       tip_credit: raw.tip_credit ? String(raw.tip_credit).trim().slice(0, 40) : null,
     }
     if (Array.isArray(raw.conditions) && raw.conditions.length) {
-      for (const c of raw.conditions) if (!CONDITIONS.includes(c)) warnings.push(`${f}: „${rec.name}“ má neznámou podmínku „${c}“`)
-      const ok = [...new Set(raw.conditions.filter((c) => CONDITIONS.includes(c)))]
+      const ok = []
+      for (const c of raw.conditions) {
+        const code = typeof c === 'string' ? c : c?.code
+        const note = typeof c === 'object' && c?.note ? String(c.note).trim() : null
+        if (!CONDITIONS.includes(code)) { warnings.push(`${f}: „${rec.name}“ má neznámou podmínku „${code}“`); continue }
+        if (code === 'jine' && !note) { warnings.push(`${f}: „${rec.name}“: podmínka „jine“ bez note`); continue }
+        if (!ok.some((x) => (x.code || x) === code)) ok.push(note ? { code, note } : code)
+      }
       rec.conditions = ok.length ? ok : null
     }
     // „Děti zdarma do X let“ u míst, kde děti neplatí vůbec, je jen opakování kids_age_limit

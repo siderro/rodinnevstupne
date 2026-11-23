@@ -91,7 +91,11 @@
     "source_date": "2026-09",
     "family_ticket_desc": "Rodinné vstupné (1–2 dospělí + 1–4 děti) 170 Kč; dítě 7–15 let.",
     "conditions": [
-      "rodinny_pas"
+      "rodinny_pas",
+      {
+        "code": "jen_nektere_dny",
+        "note": "Rodinné pro až 4 děti platí út–pá při provozu s pokladnou, o víkendu jen 2 dospělí + 2 děti."
+      }
     ],
     "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Ceny při provozu s pokladnou (út–pá 9–12 a 12:30–16): dospělí 80 Kč, důchodci/studenti/dítě 7–15 let 50 Kč, děti do 6 let zdarma. O víkendu samoobslužný provoz: dospělí 60 Kč, děti 30 Kč, rodinné jen 2 dospělí + 2 děti do 15 let za 120 Kč. Dítě do 18 let držitele Rodinného pasu zdarma. V pondělí zavřeno. Ceny od 1. září 2026.",
     "alert": "O víkendu je památník v samoobslužném provozu a rodinné vstupné tam platí jen pro 2 dospělé a 2 děti.",

@@ -16,6 +16,14 @@ const OVERPASS_PARTS = [
   'nwr["tourism"="attraction"]["website"](area.cz);',
   'nwr["man_made"="observatory"]["website"](area.cz); nwr["tourism"="viewpoint"]["fee"="yes"](area.cz); nwr["natural"="cave_entrance"]["fee"="yes"](area.cz); nwr["leisure"="garden"]["garden:type"="botanical"](area.cz);',
 ]
+// --set volny-cas (23. 11.): typy, kde je rodinné vstupné 2 + 3 nejčastější – koupaliště a bazény, lanová centra,
+// bobové dráhy, dětské herny, kluziště, minigolf, lezecké stěny
+const EXTRA_PARTS = [
+  'nwr["leisure"="sports_centre"]["sport"~"swimming"]["website"](area.cz); nwr["amenity"="public_bath"]["website"](area.cz); nwr["leisure"="swimming_area"]["website"](area.cz);',
+  'nwr["leisure"="swimming_pool"]["access"!~"private|customers|no"]["website"](area.cz);',
+  'nwr["leisure"~"^(high_ropes_course|indoor_play|miniature_golf|ice_rink)$"]["website"](area.cz); nwr["attraction"~"^(summer_toboggan|alpine_coaster)$"](area.cz); nwr["playground"="indoor"]["website"](area.cz);',
+  'nwr["leisure"="sports_centre"]["sport"~"climbing|bowling"]["website"](area.cz); nwr["leisure"="playground"]["fee"="yes"]["website"](area.cz);',
+]
 const overpassQuery = (body) => `[out:json][timeout:180];\narea["ISO3166-1"="CZ"][admin_level=2]->.cz;\n(${body});\nout center tags;`
 
 // Wikidata: instance (podtřídy) muzea, zoo, hradu, zámku, zábavního parku, aquaparku, hvězdárny, jeskyně, botanické zahrady v ČR s oficiálním webem
@@ -30,6 +38,9 @@ const SPARQL = `SELECT ?item ?itemLabel ?web ?coord ?typeLabel WHERE {
 }`
 
 function osmCategory(t) {
+  if (/swimming/.test(t.sport || '') || t.amenity === 'public_bath' || t.leisure === 'swimming_pool' || t.leisure === 'swimming_area') return 'aquapark'
+  if (['high_ropes_course', 'indoor_play', 'playground'].includes(t.leisure) || t.attraction === 'summer_toboggan' || t.attraction === 'alpine_coaster') return 'zabavni_park'
+  if (['miniature_golf', 'ice_rink'].includes(t.leisure) || /climbing|bowling/.test(t.sport || '')) return 'sport'
   if (t.tourism === 'zoo' || t.tourism === 'aquarium') return 'zoo'
   if (t.leisure === 'water_park') return 'aquapark'
   if (t.tourism === 'theme_park' || t.leisure === 'amusement_arcade' || t.leisure === 'trampoline_park') return 'zabavni_park'
@@ -51,7 +62,8 @@ async function fetchRetry(label, fn, tries = 4) {
 async function overpass() {
   const EPS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://overpass.kumi.systems/api/interpreter']
   const out = []
-  for (const [n, part] of OVERPASS_PARTS.entries()) {
+  const PARTS = process.argv.includes('--set') && process.argv[process.argv.indexOf('--set') + 1] === 'volny-cas' ? EXTRA_PARTS : OVERPASS_PARTS
+  for (const [n, part] of PARTS.entries()) {
     const els = await fetchRetry(`Overpass část ${n + 1}`, async () => {
       for (const ep of EPS) {
         const r = await fetch(ep, { method: 'POST', headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded' }, body: 'data=' + encodeURIComponent(overpassQuery(part)) })
@@ -100,7 +112,7 @@ const ONLY_WD = process.argv.includes('--wikidata-only')
 const exIdx = process.argv.indexOf('--exclude')
 const EXCLUDE = exIdx === -1 ? null : process.argv[exIdx + 1]
 const osm = ONLY_WD ? [] : await overpass()
-const wd = await wikidata()
+const wd = process.argv.includes('--set') ? [] : await wikidata()
 const k = await known()
 
 // Sloučit podle webu (doména + cesta); místa bez webu nebo s webem na sociální síti vynechat

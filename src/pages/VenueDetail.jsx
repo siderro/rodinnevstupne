@@ -6,7 +6,7 @@ import ShareButton from '../components/ShareButton'
 import {
   CATEGORY_LABEL, KRAJE, BUY_ME_A_COFFEE_URL, SITE_URL, formatPrice, formatDate, dataAge, familyTicketSummary, krajFull, monthRange, sourceDate,
   familyQuote, reopensIn, conditionChips, parseKids, pluralKids, QUOTE_KIDS,
-  conditionNotes,
+  caveats,
 } from '../lib/constants'
 import { useMonth } from '../lib/useMonth'
 import { venueMeta, krajPath, venuePath } from '../lib/seo'
@@ -38,7 +38,8 @@ export default function VenueDetail() {
   const q = familyQuote(venue, month, kids)
   const reopens = reopensIn(venue, month)
   const priceOrFree = (n) => (n === 0 ? 'zdarma' : formatPrice(n))
-  const mapsUrl = venue.lat != null && venue.lng != null
+  const hasPoint = venue.lat != null && venue.lng != null
+  const mapsUrl = hasPoint
     ? `https://mapy.com/fnc/v1/route?end=${venue.lng},${venue.lat}`
     : venue.address ? `https://mapy.com/fnc/v1/search?query=${encodeURIComponent(venue.address)}` : null
 
@@ -77,7 +78,14 @@ export default function VenueDetail() {
               : <>Rodinné vstupné {familyTicketSummary(venue)}. Cenu najdete na webu místa.</>}
           </p>
           {reopens && !venue.alert && <p className="answer-closed">Teď je zavřeno, otevírá v {reopens}.</p>}
-          {conditionNotes(venue).map((c) => <p key={c} className="meta answer-cond">{c}</p>)}
+          {caveats(venue).length > 0 && (
+            <div className="caveats">
+              <h2 className="h-sm">Na co si dát pozor</h2>
+              <ul>
+                {caveats(venue).map((c) => <li key={c.code}><strong>{c.label[0].toUpperCase() + c.label.slice(1)}.</strong> {c.text}</li>)}
+              </ul>
+            </div>
+          )}
           {/* první štítek (počet dětí) už říká odznak */}
           {conditionChips(venue).length > 1 && (
             <ul className="cond-chips" aria-label="Podmínky rodinné vstupenky">
@@ -139,9 +147,15 @@ export default function VenueDetail() {
         </div>
 
         <aside className="detail-side">
-          {venue.address && <section className="side-box">
+          {(venue.address || hasPoint) && <section className="side-box">
             <h2 className="h-sm">Kde to je</h2>
-            <p>{venue.address}</p>
+            {venue.address && <p>{venue.address}</p>}
+            {hasPoint && <>
+              {/* Malá mapa OpenStreetMap (bez skriptů a cookies), načte se až při scrollu; odkaz vede na Mapy.cz */}
+              <iframe className="mini-map" title={`Mapa: ${venue.name}`} loading="lazy" referrerPolicy="no-referrer"
+                src={`https://www.openstreetmap.org/export/embed.html?bbox=${(venue.lng - 0.006).toFixed(4)},${(venue.lat - 0.0035).toFixed(4)},${(venue.lng + 0.006).toFixed(4)},${(venue.lat + 0.0035).toFixed(4)}&layer=mapnik&marker=${venue.lat},${venue.lng}`} />
+              <a className="mini-map-link" href={`https://mapy.cz/zakladni?source=coor&id=${venue.lng}%2C${venue.lat}&x=${venue.lng}&y=${venue.lat}&z=16`} target="_blank" rel="noreferrer">Otevřít v Mapy.cz<span className="sr-only"> (nové okno)</span> ↗</a>
+            </>}
           </section>}
           <section className="side-box side-box--support">
             <p>Pomohlo vám to? Provoz drží komunita.</p>

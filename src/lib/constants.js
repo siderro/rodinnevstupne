@@ -140,15 +140,39 @@ export function tierOf(v) {
   return TIERS[v?.tier] || TIERS[computeTier(v)] || null
 }
 
-// Podmínky rodinného vstupného (pole `conditions`, povolené hodnoty hlídá scripts/build-data.mjs).
-// Úroveň zvyšuje jen doklad_rodiny, ostatní jsou jen upozornění.
+// Výhrady („na co si dát pozor“). Pole `conditions` v datech je seznam kódů nebo objektů {code, note}:
+//   "rodinny_pas"  nebo  { "code": "jine", "note": "Rodinná vstupenka (660 Kč) je jen pro 1–3 děti do 18 let." }
+// Povolené kódy hlídá scripts/build-data.mjs. Úroveň zvyšuje jen doklad_rodiny, ostatní jsou jen upozornění.
+// K nim se dopočítávají výhrady z ostatních polí (nízký věk dětí zdarma, minimum dětí), aby nešly zapomenout.
+// label = krátký štítek na kartu (do ~25 znaků), text = poctivá věta do detailu.
 export const CONDITIONS = {
-  doklad_rodiny: 'Na pokladně můžou chtít doložit, že jste jedna rodina.',
-  rodinny_pas: 'S Rodinným pasem vyjde vstupné ještě výhodněji.',
-  jen_volna_prohlidka: 'Rodinné vstupné platí jen na volnou prohlídku bez průvodce.',
-  jen_cast_arealu: 'Rodinné vstupné platí jen pro část areálu.',
+  doklad_rodiny: { label: 'jen pro jednu rodinu', text: 'Na pokladně můžou chtít doložit, že jste jedna rodina.' },
+  rodinny_pas: { label: 's Rodinným pasem levněji', text: 'S Rodinným pasem vyjde vstupné ještě výhodněji.' },
+  jen_volna_prohlidka: { label: 'jen volná prohlídka', text: 'Rodinné vstupné platí jen na volnou prohlídku bez průvodce.' },
+  jen_cast_arealu: { label: 'jen část areálu', text: 'Rodinné vstupné nebo vstup zdarma platí jen pro část areálu.' },
+  jen_nektere_dny: { label: 'jen v některé dny', text: 'Rodinné vstupné platí jen v některé dny nebo časy.' },
+  jine: { label: 'zvláštní podmínky', text: '' },
 }
-export const conditionNotes = (v) => (v?.conditions || []).map((c) => CONDITIONS[c]).filter(Boolean)
+// Seřazeno od nejdůležitější: kvůli čemu může rodina u pokladny platit víc, než čeká
+export function caveats(v) {
+  if (!v) return []
+  const out = []
+  if (v.family_policy === 'unlimited' && v.kids_age_limit != null && v.kids_age_limit < 15) {
+    out.push({ code: 'vek', label: `zdarma jen do ${v.kids_age_limit} let`,
+      text: `Bez omezení počtu platí jen pro děti do ${v.kids_age_limit} let. Starší děti platí běžné vstupné.` })
+  }
+  if (v.min_children > 1) out.push({ code: 'min_deti', label: `až od ${v.min_children} dětí`, text: `Rodinná vstupenka platí, až když jedou aspoň ${pluralKids(v.min_children)}.` })
+  for (const c of v.conditions || []) {
+    const code = typeof c === 'string' ? c : c?.code
+    const def = CONDITIONS[code]
+    if (!def) continue
+    const note = typeof c === 'object' && c.note ? c.note : ''
+    const text = [def.text, note].filter(Boolean).join(' ')
+    if (text) out.push({ code, label: def.label, text })
+  }
+  return out
+}
+export const conditionNotes = (v) => caveats(v).map((c) => c.text)
 
 // Typy rodinného vstupného (používá admin)
 export const FAMILY_POLICY = {
