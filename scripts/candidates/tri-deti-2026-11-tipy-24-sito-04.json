@@ -1,0 +1,33 @@
+[
+ {
+  "name": "Minigolf na Lesné",
+  "slug": "minigolf-na-lesne-brno",
+  "category": "sport",
+  "kraj": "Jihomoravský",
+  "city": "Brno",
+  "address": "Areál TJ Start Lesná, Loosova 1b, 638 00 Brno",
+  "lat": 49.230546,
+  "lng": 16.623217,
+  "website": "https://www.minigolfvbrne.cz/",
+  "family_policy": "max_children",
+  "max_children": 3,
+  "adults_in_family_ticket": 2,
+  "kids_age_limit": 14,
+  "price_adult": 150,
+  "price_child": 100,
+  "price_family": 400,
+  "price_family_offseason": null,
+  "season_months": null,
+  "closed_months": null,
+  "min_children": 2,
+  "extra_child_price": null,
+  "paid_children": null,
+  "kids_free_under": 5,
+  "source_date": null,
+  "family_ticket_desc": "Rodinná vstupenka (dva dospělí, dvě až tři děti do 14-ti let včetně) 400 Kč",
+  "notes": "Síto ceníků 24. 11. 2026 (volnočasová místa, kolo 2+3). Ceník: dospělí 150 Kč, děti 6–14 let 100 Kč, senioři 65+ a ZTP 100 Kč, děti do 5 let zdarma, 1. dítě v doprovodu platícího dospělého 0 Kč, nepřenosná permanentka 12 vstupů 1200 Kč. Web uvádí: zazimováno, plánované otevření březen 2027.",
+  "alert": "Minigolf je přes zimu zavřený, otevření plánuje na březen 2027.",
+  "source_url": "https://www.minigolfvbrne.cz/",
+  "verified_at": "2026-11-24"
+ }
+]
