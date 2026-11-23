@@ -43,6 +43,16 @@ Rodinná vstupenka musí pokrýt **aspoň 4 děti**. Úrovně (počítá `script
 - Design: jednoduchý, veselý, ale ne dětský; přehledný, mobile-first.
 - Žádné osobní příběhy ani osobní e-maily v obsahu webu.
 
+## Sociální sítě (instrukce majitele, závazné)
+- Témata: co vylepšujeme na webu, radost z dětí a čas spolu, podpora rodin (i když to ekonomicky někdy nejde, jdeme naproti),
+  občas demografie. Tipy na jednotlivá místa jen výjimečně (nemáme k nim fotky).
+- Tón: nikdy si nestěžujeme; vždy optimisticky, s nadějí a výzvou k akci. Ne akademicky, ne výčitka, ne poučky.
+  Lehkost a humor („s velkou rodinou to někdy může být trochu náročné :)“), vždy laskavě.
+- Čísla jen občas jako zajímavost („Věděli jste, že…?“), max. jedno na post; zdroj `docs/research/vicedetne-rodiny-statistika.md`.
+- Ústřední výzva: „Zkuste všichni vyrazit někam na rodinné vstupné.“
+- Každý post s odkazem na web (FB: URL s `utm_source=facebook&utm_campaign=<téma>`, IG: adresa + „odkaz je i v biu“).
+- Neshazovat menší rodiny ani bezdětné, nepolitické, bez osobních příběhů. Novinky na webu zapisovat do `marketing/log-inovaci.md`.
+
 ## Bezpečnost
 - Secrets nikdy do repa. Service-role klíč jen lokálně ve `scripts/.env`.
 - Pokud se Supabase zapojí: anon klíč je veřejný, bezpečnost stojí na RLS
