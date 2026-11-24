@@ -113,7 +113,7 @@ export default function Home() {
       <section className="hero hero--home">
         <div className="hero-text">
           <h1>Kam na výlet, když je dětí spousta</h1>
-          <p className="hero-sub">Rodinné vstupné aspoň pro 4 děti, s ověřenou cenou. Máte tři? Platí i pro vás.</p>
+          <p className="hero-sub">Rodinné vstupné aspoň pro 3 děti, s ověřenou cenou.</p>
           <p className="lead">
             Místa po celé ČR. U každého uvádíme cenu pro celou rodinu, odkud ji máme a kdy jsme
             ji ověřili.
@@ -201,7 +201,7 @@ export default function Home() {
           <h2 className="h-sm">Pro tenhle výběr zatím nemáme žádné místo</h2>
           {q
             ? <p>Na „{q}“ jsme nic nenašli. Hledáme v názvech míst a obcí. Zkuste základní tvar slova nebo vyberte kraj.</p>
-            : <p>Do katalogu dáváme jen místa, kde rodinná vstupenka pokryje aspoň 4 děti, a ceníky ověřujeme postupně.</p>}
+            : <p>Do katalogu dáváme jen místa, kde rodinná vstupenka pokryje aspoň 3 děti, a ceníky ověřujeme postupně.</p>}
           <div className="empty-actions">
             {krajHit && <button className="btn" onClick={() => update({ kraj: krajHit, q: '' })}>
               Výlety {krajLocative(krajHit)} ({venues.filter((v) => v.kraj === krajHit && ticketCovers(v, ticket)).length})</button>}
@@ -209,7 +209,7 @@ export default function Home() {
           </div>
           {nearby && <NearbyKraje nearby={nearby} krajLink={krajLink} kids={deti} />}
           <p className="tip-nudge">
-            Znáte {kraj ? krajLocative(kraj) : 'nějaké'} místo, kde rodinná vstupenka pokryje aspoň 4 děti? <Link to="/tip/">Pošlete tip</Link>
+            Znáte {kraj ? krajLocative(kraj) : 'nějaké'} místo, kde rodinná vstupenka pokryje aspoň 3 děti? <Link to="/tip/">Pošlete tip</Link>
           </p>
         </div>
       ) : view === 'mapa' ? (
@@ -249,7 +249,7 @@ export default function Home() {
       <section className="tip-cta" aria-labelledby="tip-cta-h">
         <div>
           <h2 id="tip-cta-h" className="h-sm">Znáte místo s férovým vstupným?</h2>
-          <p className="meta">Kde rodinná vstupenka platí pro 4 a více dětí. Ověříme to na ceníku a přidáme.</p>
+          <p className="meta">Kde rodinná vstupenka platí pro 3 a více dětí. Ověříme to na ceníku a přidáme.</p>
         </div>
         <Link className="btn" to="/tip/">Pošlete tip</Link>
       </section>

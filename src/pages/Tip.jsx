@@ -202,7 +202,7 @@ function TipForm({ oprava }) {
       <section className="hero">
         <h1>Znáte místo, kam se vejdete všichni?</h1>
         <p className="lead">
-          Napište nám, kde rodinná vstupenka platí pro 4 a více dětí. Ověříme to a přidáme.
+          Napište nám, kde rodinná vstupenka platí pro 3 a více dětí. Ověříme to a přidáme.
           Stačí odkaz na ceník nebo fotka od pokladny.
         </p>
       </section>
