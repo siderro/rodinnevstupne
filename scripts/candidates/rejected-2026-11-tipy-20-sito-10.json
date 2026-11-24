@@ -1,0 +1,21 @@
+[
+ {
+  "name": "Malé muzeum kovářství",
+  "slug": "male-muzeum-kovarstvi-holesov",
+  "kraj": "Zlínský",
+  "website": "https://www.holesov.info/misto/8-male-muzeum-kovarstvi",
+  "reason": "Muzeum nemá vlastní rodinné vstupné (základní 200 Kč, snížené 120 Kč vč. prohlídky zámku); rodinné 2+3 za 900 Kč platí jen pro 24h Okruh všemi památkami Holešova.",
+  "family_ticket_desc": "Okruh všemi památkami Holešova: Rodinné (2+3): 900 Kč",
+  "source_url": "https://www.holesov.info/misto/4-zamek",
+  "checked_at": "2026-11-20"
+ },
+ {
+  "name": "Zámek Valtice – Tajuplný svět",
+  "slug": "zamek-valtice-tajuplny-svet",
+  "kraj": "Jihomoravský",
+  "website": "https://www.zamek-valtice.cz/",
+  "reason": "NPÚ, okruh Tajuplný svět nemá rodinné vstupné (dospělí 100 Kč, děti 6–17 let 30 Kč); rodinné 2+3 za 180 Kč platí jen pro Bylinkovou zahradu.",
+  "source_url": "https://www.zamek-valtice.cz/cs/informace-pro-navstevniky/vstupne",
+  "checked_at": "2026-11-20"
+ }
+]

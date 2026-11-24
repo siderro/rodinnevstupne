@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Moravské zemské muzeum – Pavilon Anthropos",
+    "slug": "mzm-pavilon-anthropos",
+    "kraj": "Jihomoravský",
+    "website": "https://www.mzm.cz/pavilon-anthropos/",
+    "reason": "Volný vstup pro děti do 15 let jen jednorázově 11. prosince (Světový den dětství); trvalé rodinné pravidlo pro 4+ děti nenalezeno.",
+    "source_url": "https://www.mzm.cz/mista/oteviraci-doba-a-vstupne/soubor-poskytovanych-slev-statni-svatky-a-vyznamne-dny/",
+    "checked_at": "2026-11-23"
+  },
+  {
+    "name": "Safari Park Dvůr Králové",
+    "slug": "safari-park-dvur-kralove",
+    "kraj": "Královéhradecký",
+    "website": "https://safaripark.cz/",
+    "reason": "per_child: rodinné vstupné 2 dospělí + 1–9 dětí se platí za každé dítě zvlášť (2 dospělí 590 Kč + dítě 235 Kč v hlavní sezóně), nejde o jednu vstupenku.",
+    "family_ticket_desc": "Rodinné vstupné: 2 dospělí + 1–9 dětí do 15 let – 2 dospělí 590 Kč, dítě 235 Kč (zima 470 Kč + 155 Kč).",
+    "source_url": "https://safaripark.cz/cz/naplanuj-si-navstevu/vstupne-a-oteviraci-doba",
+    "checked_at": "2026-11-23"
+  }
+]

@@ -43,7 +43,7 @@ const toMonths = (v) => {
 
 // Rozšíření na 3 děti (docs/plan-tri-deti.md): zapnout 6. 12. 2026 → build čte i tri-deti-*.json
 // a místa s max_children = 3 dostanou úroveň „three“ (odznak „až 3 děti“).
-const INCLUDE_THREE = false
+const INCLUDE_THREE = true
 
 export function computeTier(v) {
   if (v.family_policy === 'unlimited') return 'gold'
@@ -140,7 +140,9 @@ for (const f of files) {
     if (!KRAJE.includes(rec.kraj)) warnings.push(`${f}: „${rec.name}“ má neznámý kraj „${rec.kraj}“`)
     if (!rec.source_url) warnings.push(`${f}: „${rec.name}“ nemá source_url`)
     const tier = computeTier(rec)
-    if (!tier) { warnings.push(`${f}: „${rec.name}“ vyřazeno (nesplňuje kritérium 4+ dětí)`); continue }
+    if (!tier) { warnings.push(`${f}: „${rec.name}“ vyřazeno (nesplňuje kritérium 3+ dětí)`); continue }
+    // Místa 2 + 3 (tri-deti-*) jen ověřená: zdroj ceny i datum ověření
+    if (tier === 'three' && (!rec.source_url || !rec.verified_at)) { warnings.push(`${f}: „${rec.name}“ vyřazeno (2 + 3 bez zdroje nebo data ověření)`); continue }
     rec.tier = tier
     // Při stejném slugu vyhrává novější ověření (při shodě pozdější soubor)
     const prev = bySlug.get(slug)
@@ -162,4 +164,4 @@ await writeFile(outFile, JSON.stringify(out, null, 2) + '\n', 'utf8')
 for (const w of warnings) console.warn('  ! ' + w)
 const counts = out.reduce((m, v) => ((m[v.tier] = (m[v.tier] || 0) + 1), m), {})
 console.log(`Soubory: ${files.length}, záznamy: ${total}, do webu: ${out.length} ` +
-  `(gold ${counts.gold || 0}, silver ${counts.silver || 0}, base ${counts.base || 0}) → ${path.relative(root, outFile)}`)
+  `(three ${counts.three || 0}, gold ${counts.gold || 0}, silver ${counts.silver || 0}, base ${counts.base || 0}) → ${path.relative(root, outFile)}`)

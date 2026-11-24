@@ -1,0 +1,64 @@
+[
+  {
+    "name": "GASK – Galerie Středočeského kraje",
+    "slug": "gask-kutna-hora",
+    "kraj": "Středočeský",
+    "website": "http://www.gask.cz/",
+    "reason": "Již dříve zamítnuto; úryvek ze síta je jednorázová akce (GASK mini 16. 12. 2026), ne trvalé rodinné vstupné.",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Pamětní síň Jindřicha Mošny",
+    "slug": "pametni-sin-jindricha-mosny-dobriv",
+    "kraj": "Plzeňský",
+    "website": "https://www.zcm.cz/",
+    "reason": "Bez rodinného vstupného (plné 10 Kč, snížené 5 Kč). Obecné rodinné vstupné ZČM je jen 2+2; 2+4 platí jen pro Muzeum loutek Plzeň (už v katalogu).",
+    "source_url": "https://www.zcm.cz/pro-navstevniky/vstupne",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Dům fotografie (GHMP)",
+    "slug": "ghmp-dum-fotografie",
+    "kraj": "Praha",
+    "website": "https://www.ghmp.cz/budovy/ghmp-dum-fotografie/",
+    "reason": "Už v katalogu (ghmp-dum-fotografie).",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Muzeum betlémů Karlštejn",
+    "slug": "muzeum-betlemu-karlstejn",
+    "kraj": "Středočeský",
+    "website": "https://muzeumbetlemu.cz/",
+    "reason": "Bez rodinného vstupného: dospělí 120 Kč, děti od 5 let 60 Kč, děti do 5 let zdarma.",
+    "source_url": "https://muzeumbetlemu.cz/o-muzeu/vstupne/",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Dětské muzeum MZM Brno",
+    "slug": "detske-muzeum-mzm-brno",
+    "kraj": "Jihomoravský",
+    "website": "https://www.mzm.cz/mista/detske-muzeum/",
+    "reason": "Úryvek ze síta je jednorázová akce (11. 12. volný vstup pro děti do 15 let); trvalé rodinné vstupné pro 4+ děti na webu MZM nenalezeno.",
+    "source_url": "https://www.mzm.cz/mista/oteviraci-doba-a-vstupne/soubor-poskytovanych-slev-statni-svatky-a-vyznamne-dny/",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Památník Terezín – Modlitebna z doby ghetta a replika mansardy",
+    "slug": "pamatnik-terezin-modlitebna",
+    "kraj": "Ústecký",
+    "website": "https://www.pamatnik-terezin.cz/modlitebna-z-doby-terezinskeho-ghetta-a-replika-mansardy",
+    "reason": "Součást Památníku Terezín (dříve zamítnuto, ceník beze změny): rodinné vstupné jen 2 dospělí + 3 děti (630 Kč); neomezený počet dětí jen s Rodinným pasem.",
+    "family_ticket_desc": "Rodinné vstupné (max. 2 dospělí + 3 děti) 630,- Kč. Rodinný pas: Rodinné vstupné po předložení pasu (2 dospělí + děti [neomezený počet]) 630,- Kč.",
+    "source_url": "https://www.pamatnik-terezin.cz/vstupne",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Muzeum Českého krasu v Berouně",
+    "slug": "muzeum-ceskeho-krasu-beroun",
+    "kraj": "Středočeský",
+    "website": "http://www.muzeum-beroun.cz",
+    "reason": "Duplicita: stejné místo už ověřeno v souběžném běhu (verified-2026-11-tipy-20-sito-05.json).",
+    "source_url": "http://muzeum-beroun.cz/info/",
+    "checked_at": "2026-11-20"
+  }
+]

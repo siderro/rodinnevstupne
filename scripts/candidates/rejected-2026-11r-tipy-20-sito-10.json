@@ -1,0 +1,60 @@
+[
+  {
+    "name": "Aquapark Špindlerův Mlýn",
+    "slug": "aquapark-spindleruv-mlyn",
+    "kraj": "Královéhradecký",
+    "website": "https://www.resortspindl.cz/",
+    "reason": "Rodinné vstupné nenabízí („Jednotné rodinné vstupné nenabízíme“); jen zvýhodněné dětské vstupné do 15 let a děti do 100 cm zdarma.",
+    "source_url": "https://www.resortspindl.cz/cz/aquapark/prakticke-informace/",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Koupaliště Flošna",
+    "slug": "koupaliste-flosna",
+    "kraj": "Královéhradecký",
+    "website": "http://www.snhk.cz/flosna",
+    "reason": "Rodinné vstupné je jen 10% sleva z jednotlivých vstupenek (min. 2 dosp. + 1 dítě), každá osoba platí → per_child.",
+    "family_ticket_desc": "Rodinné vstupné 10% sleva (min. 2 dosp. + min. 1 dítě od 120 cm do 15 let); děti do 120 cm zdarma.",
+    "source_url": "http://www.snhk.cz/storage/flosna/cenik/cenik-LKF-2026.pdf",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Zážitkový park Zeměráj",
+    "slug": "zazitkovy-park-zemeraj",
+    "kraj": "Jihočeský",
+    "website": "https://www.zemeraj.cz/",
+    "reason": "Rodinné vstupné v ceníku 2026 není; dospělí 190 Kč, děti od 2 let 170 Kč.",
+    "source_url": "https://www.zemeraj.cz/vstupne/",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Vodní svět Sareza Ostrava",
+    "slug": "vodni-svet-sareza-ostrava",
+    "kraj": "Moravskoslezský",
+    "website": "https://www.sareza.cz/vodni-svet/",
+    "reason": "Rodinné vstupné 2 dospělí + 1 dítě 500 Kč, každé další dítě 120 Kč → per_child.",
+    "family_ticket_desc": "Rodinné vstupné 2 dospělí + 1 dítě 2 hod. 500 Kč; každé další dítě k rodinnému vstupnému 120 Kč; děti do 5 let 0 Kč.",
+    "source_url": "https://www.sareza.cz/vodni-svet/",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Městské koupaliště Krnov",
+    "slug": "mestske-koupaliste-krnov",
+    "kraj": "Moravskoslezský",
+    "website": "https://tskrnov.cz/provozovny/koupaliste/",
+    "reason": "Rodinné vstupné 2 dospělí + 1 dítě 200 Kč, každé další dítě 45 Kč (max. 4) → per_child.",
+    "family_ticket_desc": "Rodinné vstupné /2 dospělí + 1 dítě 4–15 let/ 200 Kč, každé další dítě 4–15 let 45 Kč /max. 4/; děti do 4 let zdarma.",
+    "source_url": "https://tskrnov.cz/wp-content/uploads/2026/05/cenik-koupaliste-od-2026.pdf",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Heroland",
+    "slug": "heroland-umonin",
+    "kraj": "Středočeský",
+    "website": "https://www.heroland.cz/",
+    "reason": "„Rodinné vstupné“ 3–6 osob je jen součet osobních vstupenek (215 Kč/os., 6 osob 1260 Kč), žádná rodinná vstupenka → per_child.",
+    "family_ticket_desc": "Víkendy, svátky, prázdniny: osoba 2–65 let 215 Kč; Rodinné vstupné 3 osoby 630 Kč, 4 osoby 840 Kč, 5 osob 1050 Kč, 6 osob 1260 Kč.",
+    "source_url": "https://www.heroland.cz/vstupne",
+    "checked_at": "2026-11-20"
+  }
+]

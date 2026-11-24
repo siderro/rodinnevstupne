@@ -1,0 +1,47 @@
+[
+ {
+  "name": "Dětská tramvaj v Zoo Praha",
+  "slug": "zoo-praha",
+  "kraj": "Praha",
+  "website": "https://www.zoopraha.cz/",
+  "reason": "Součást Zoo Praha – už v katalogu (zoo-praha); tramvaj není samostatné místo.",
+  "checked_at": "2026-11-20"
+ },
+ {
+  "name": "Růžová zahrada v Děčíně",
+  "slug": "ruzova-zahrada-decin",
+  "kraj": "Ústecký",
+  "website": "https://www.zamekdecin.cz/",
+  "reason": "Rodinné vstupné na zahrady není: Růžová zahrada 40 Kč pro všechny kategorie (děti 6–15 let platí), děti do 6 let zdarma. Rodinné 2+2/3 platí jen na prohlídky zámku (už v zásobě 2+3).",
+  "source_url": "https://www.zamekdecin.cz/info/cenik-a-oteviraci-doba",
+  "checked_at": "2026-11-20"
+ },
+ {
+  "name": "Galerie buddhistického umění ve vodárenské věži",
+  "slug": "galerie-buddhistickeho-umeni-trebon",
+  "kraj": "Jihočeský",
+  "website": "https://www.itrebon.cz/",
+  "reason": "Rodinné vstupné 420 Kč bez uvedení počtu dětí (plné 150, snížené 120 Kč); dětské zdarma ceník neuvádí.",
+  "family_ticket_desc": "Vstupné (platné od 1.2.2026): plné 150 Kč, snížené 120 Kč, rodinné 420 Kč.",
+  "source_url": "https://www.itrebon.cz/vylety/galerie-buddhistickeho-umeni-ve-vodarenske-vezi_300.html",
+  "checked_at": "2026-11-20"
+ },
+ {
+  "name": "Galerie Draka",
+  "slug": "galerie-draka-trutnov",
+  "kraj": "Královéhradecký",
+  "website": "https://www.galeriedraka.cz/",
+  "reason": "Rodinné vstupné není: dospělí 50 Kč, děti od 3 let 25 Kč, do 3 let zdarma; vstup zdarma jen první středu v měsíci.",
+  "source_url": "https://www.galeriedraka.cz/",
+  "checked_at": "2026-11-20"
+ },
+ {
+  "name": "Steel Art Museum (Galerie ocelových figurín)",
+  "slug": "steel-art-museum-praha",
+  "kraj": "Praha",
+  "website": "https://steelartmuseum.eu/",
+  "reason": "Rodinné vstupné není: děti 3–15 let platí, do 3 let zdarma; „každá druhá vstupenka zdarma“ je jednorázová akce Black Friday do 30. 11. 2026.",
+  "source_url": "https://steelartmuseum.eu/",
+  "checked_at": "2026-11-20"
+ }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Safari Park Dvůr Králové",
+    "slug": "safari-park-dvur-kralove",
+    "kraj": "Královéhradecký",
+    "website": "https://safaripark.cz",
+    "reason": "Už dříve zamítnuto, ceník beze změny: „rodinné vstupné“ je jen cena za 2 dospělé (590 Kč) + každé dítě zvlášť (235 Kč) – fakticky per_child, ne jedna vstupenka.",
+    "family_ticket_desc": "Rodinné vstupné: 2 dospělí + 1–9 dětí do 15 let – 2 dospělí 590 Kč, dítě 235 Kč (mimo sezónu 470 / 155 Kč).",
+    "source_url": "https://safaripark.cz/cz/naplanuj-si-navstevu/vstupne-a-oteviraci-doba",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Skalní hrad Frýdštejn",
+    "slug": "hrad-frydstejn",
+    "kraj": "Liberecký",
+    "website": "http://www.frydstejn.cz/",
+    "reason": "Rodinné vstupné neexistuje; zdarma jen děti do 6 let, děti do 15 let platí 30 Kč (dospělí 70 Kč).",
+    "family_ticket_desc": "Děti do 6 let zdarma, děti do 15 let 30 Kč.",
+    "source_url": "http://www.frydstejn.cz/pro-navstevniky/vstupne/",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Hrad Sovinec",
+    "slug": "hrad-sovinec",
+    "kraj": "Moravskoslezský",
+    "website": "https://www.hrad-sovinec.cz/",
+    "reason": "Duplicita – už v katalogu (hrad-sovinec).",
+    "family_ticket_desc": "Rodinné vstupné 2 dospělí + 2 až 4 děti do 14 let 360 Kč.",
+    "source_url": "https://www.hrad-sovinec.cz/vstupne/",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Hrad Kašperk",
+    "slug": "hrad-kasperk",
+    "kraj": "Plzeňský",
+    "website": "https://www.kasperk.cz/",
+    "reason": "Už dříve zamítnuto (raw-zapad, nezařazeno), ceník se nezměnil: „Rodinné vstupné platí pro 2 dospělé + 2 a více dětí“ bez horní hranice; prohlídka rodinné 470 Kč, vyhlídka 400 Kč, děti do 6 let 40 Kč. Pokud admin uzná „2 a více dětí“ jako neomezeně (jako u Tachovského zámku), šlo by o zlatou úroveň.",
+    "family_ticket_desc": "Rodinné vstupné platí pro 2 dospělé + 2 a více dětí; prohlídka 470 Kč, vyhlídka 400 Kč.",
+    "source_url": "https://www.kasperk.cz/pro-navstevniky/vstupne-a-prohlidky/prohlidka",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Zámek Liteň",
+    "slug": "zamek-liten",
+    "kraj": "Středočeský",
+    "website": "https://www.zamekliten.cz/",
+    "reason": "Ceník nenalezen – web nabízí jen vstupenky na jednotlivé koncerty a akce (např. koncert 390 Kč, děti do 15 let zdarma), žádné pravidelné prohlídky s ceníkem.",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Lovecký zámek Ohrada (NZM)",
+    "slug": "narodni-zemedelske-muzeum-ohrada",
+    "kraj": "Jihočeský",
+    "website": "https://www.nzm.cz/",
+    "reason": "Duplicita – už v katalogu (narodni-zemedelske-muzeum-ohrada).",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Moravská galerie – Místodržitelský palác",
+    "slug": "moravska-galerie-mistodrzitelsky-palac",
+    "kraj": "Jihomoravský",
+    "website": "https://moravska-galerie.cz/",
+    "reason": "Duplicita – pobočka už řešená v záznamech Moravské galerie (katalog i dřívější zamítnutí); rodinné vstupné jen 1–2 dospělí + max. 3 děti do 15 let.",
+    "family_ticket_desc": "Rodinné vstupné: pro 1 až 2 dospělé osoby s max. 3 dětmi do věku 15 let.",
+    "source_url": "https://moravska-galerie.cz/vstupne/",
+    "checked_at": "2026-11-20"
+  }
+]

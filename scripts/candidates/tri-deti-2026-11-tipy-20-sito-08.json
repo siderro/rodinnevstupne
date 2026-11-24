@@ -1,0 +1,39 @@
+[
+  {
+    "name": "Železniční muzeum Výtopna Jaroměř",
+    "slug": "vytopna-jaromer",
+    "category": "muzeum",
+    "kraj": "Královéhradecký",
+    "city": "Jaroměř",
+    "address": "Nádražní 227, 551 01 Jaroměř",
+    "lat": 50.3415,
+    "lng": 15.9061,
+    "website": "https://www.vytopnajaromer.cz/",
+    "family_policy": "max_children",
+    "max_children": 3,
+    "adults_in_family_ticket": 2,
+    "kids_age_limit": 15,
+    "price_adult": 120,
+    "price_child": 80,
+    "price_family": 320,
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": 3,
+    "source_date": null,
+    "family_ticket_desc": "Rodinné vstupné (2 dospělí + až 3 děti do 15 let) 320 Kč.",
+    "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Základní 120 Kč, zlevněné (děti 6–15, studenti do 26, důchodci, ZTP) 80 Kč, poloviční (děti 3–6 let) 60 Kč, děti do 3 let zdarma. Duben–červen a září–říjen so, ne a svátky 9–16 h, červenec–srpen denně; listopad–březen zavřeno (prohlídky lze objednat).",
+    "alert": "Mimo sezónu (listopad–březen) zavřeno, prohlídku lze jen objednat.",
+    "source_url": "https://www.vytopnajaromer.cz/",
+    "verified_at": "2026-11-20"
+  }
+]

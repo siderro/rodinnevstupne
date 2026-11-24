@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Stěna Ruzyně",
+    "slug": "stena-ruzyne",
+    "kraj": "Praha",
+    "website": "https://www.stena-ruzyne.com/",
+    "reason": "per_child: rodina = 2 dospělí + každé dítě 60 Kč (jen víkendy a svátky), žádná pevná rodinná vstupenka",
+    "family_ticket_desc": "Rodina (2 dospělí a děti): 2 dospělí + každé dítě 60 Kč",
+    "source_url": "https://www.stena-ruzyne.com/",
+    "checked_at": "2026-11-24"
+  },
+  {
+    "name": "Vertikon",
+    "slug": "vertikon-zlin",
+    "kraj": "Zlínský",
+    "website": "https://www.vertikon.cz/",
+    "reason": "rodinné vstupné jen 2 rodiče + 2 děti nebo 1 rodič + 3 děti (630 Kč o víkendu) – méně než 4 děti, 2+3 nepokryje",
+    "family_ticket_desc": "Rodinné vstupné platí pro rodiče s vlastními dětmi do 15 let (2 rodiče + 2 děti, nebo 1 rodič + 3 děti)",
+    "source_url": "https://www.vertikon.cz/cenik/",
+    "checked_at": "2026-11-24"
+  },
+  {
+    "name": "Plavecký areál Podolí",
+    "slug": "plavecky-areal-podoli",
+    "kraj": "Praha",
+    "website": "https://pspodoli.cz/",
+    "reason": "per_child: dva dospělí a jedno dítě 530 Kč + každé další dítě 95 Kč (ceník od 1. 1. 2023)",
+    "family_ticket_desc": "Zvýhodněné rodinné vstupné na 2 hodiny: dva dospělí a jedno dítě do 15 let 530,- a každé další dítě 95,-",
+    "source_url": "https://files.pspodoli.cz/of1bebxqw423/Celoro%C4%8Dn%C3%AD%20cen%C3%ADk%20od%201.1.2023Podol%C3%AD_zmena%2010min.pdf?download",
+    "checked_at": "2026-11-24"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Městská galerie Týn nad Vltavou",
+    "slug": "mestska-galerie-tyn-nad-vltavou",
+    "category": "muzeum",
+    "kraj": "Jihočeský",
+    "city": "Týn nad Vltavou",
+    "address": "nám. Míru 37, 375 01 Týn nad Vltavou",
+    "lat": 49.223692,
+    "lng": 14.4216658,
+    "website": "https://galerietnv.cz/",
+    "family_policy": "unlimited",
+    "max_children": null,
+    "adults_in_family_ticket": null,
+    "kids_age_limit": null,
+    "price_adult": 0,
+    "price_child": 0,
+    "price_family": 0,
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": null,
+    "source_date": null,
+    "family_ticket_desc": "Vstupné je zdarma. (Vstup zdarma vyjma vybraných součástí doprovodného programu.)",
+    "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Galerie Městského centra kultury a vzdělávání; vstup do galerie zdarma pro všechny, placené mohou být jen vybrané součásti doprovodného programu (dílny). Otevřeno út–ne 13–17 h, červenec–srpen út–ne 10–17 h. Mezi výstavami bývá zavřeno (v listopadu 2026 zavřeno do vernisáže 27. 11.).",
+    "alert": "Mezi výstavami je galerie zavřená – před cestou zkontrolujte web.",
+    "source_url": "https://galerietnv.cz/kontakt-a-oteviraci-doba/",
+    "verified_at": "2026-11-20"
+  }
+]

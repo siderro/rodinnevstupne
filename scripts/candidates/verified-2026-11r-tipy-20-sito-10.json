@@ -1,0 +1,33 @@
+[
+  {
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": null,
+    "paid_children": null,
+    "kids_free_under": null,
+    "source_date": null,
+    "alert": null,
+    "verified_at": "2026-11-20",
+    "name": "Naše zvířátka Putim",
+    "slug": "nase-zviratka-putim",
+    "category": "zoo",
+    "kraj": "Jihočeský",
+    "city": "Putim",
+    "address": "Putim 125, 397 01 Putim",
+    "lat": 49.2639109,
+    "lng": 14.1166765,
+    "website": "https://www.nasezviratkaputim.cz",
+    "family_policy": "unlimited",
+    "max_children": null,
+    "adults_in_family_ticket": null,
+    "kids_age_limit": null,
+    "price_adult": 0,
+    "price_child": 0,
+    "price_family": 0,
+    "family_ticket_desc": "Vstup do našeho areálu je ZDARMA, neplatí se žádné vstupné. Vstupné je dobrovolné.",
+    "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Rodinná farma se zvířaty (klokani, dravci, sovy, surikaty, kozy…) a retro dětským hřištěm; otevřeno denně 9:00–19:00. Dobrovolný příspěvek na krmení vítán. Web nemá samostatný ceník – údaj o volném vstupu je přímo na oficiálním webu farmy.",
+    "source_url": "https://www.nasezviratkaputim.cz"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Muzeum Lega Praha (Museum of Bricks)",
+    "slug": "muzeum-lega-praha",
+    "category": "muzeum",
+    "kraj": "Praha",
+    "city": "Praha",
+    "address": "Národní 362/31, 110 00 Praha 1",
+    "lat": 50.0825926,
+    "lng": 14.4194187,
+    "website": "https://muzeumlega.cz/",
+    "family_policy": "max_children",
+    "max_children": 3,
+    "adults_in_family_ticket": 2,
+    "kids_age_limit": 18,
+    "price_adult": 350,
+    "price_child": 250,
+    "price_family": 1050,
+    "price_family_offseason": null,
+    "season_months": null,
+    "closed_months": null,
+    "min_children": null,
+    "extra_child_price": 250,
+    "paid_children": null,
+    "kids_free_under": 3,
+    "source_date": null,
+    "family_ticket_desc": "Rodina 2+3 (5 osob) 1 050 Kč; dítě 3–18 let; vstupenka navíc lze přidat k balíčku.",
+    "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Další varianty: Rodina 2+1 850 Kč, Rodina 2+2 950 Kč. Dítě do 3 let zdarma. Ke kterémukoli balíčku lze přidat samostatnou vstupenku (dítě 250 Kč). Vstupenka platí 6 měsíců od zakoupení. Otevřeno denně 10–20 h. Ceník z prodejní stránky pobočky.",
+    "alert": null,
+    "source_url": "https://muzeumlega.cz/muzeum/praha",
+    "verified_at": "2026-11-20"
+  }
+]

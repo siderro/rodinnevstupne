@@ -1,0 +1,4 @@
+[
+ {"name": "Plavecký stadion Olomouc", "slug": "plavecky-stadion-olomouc", "kraj": "Olomoucký", "website": "https://www.bazen-olomouc.cz", "reason": "Tarif „Rodina“ je jen snížená sazba za každou vstupující osobu (2 dospělí + min. 2 děti do 15 let), ne jedna rodinná vstupenka – per_child.", "family_ticket_desc": "Tarif „Rodina“: Rodinou se rozumí 2 dospělé osoby a min. 2 děti do 15 let. Sazba se uplatňuje jednotně za každou vstupující osobu v rámci rodiny.", "source_url": "https://www.bazen-olomouc.cz/cenik", "checked_at": "2026-11-24"},
+ {"name": "Koupaliště Zeletice", "slug": "koupaliste-zeletice", "kraj": "Jihomoravský", "website": "https://www.obeczeletice.cz/jsem-obcan/koupaliste/", "reason": "Bez rodinného vstupného – jen děti 20 Kč, dospělí 50 Kč (síto zachytilo slovo „rodina“ v historii obce).", "source_url": "https://www.obeczeletice.cz/jsem-obcan/koupaliste/", "checked_at": "2026-11-24"}
+]

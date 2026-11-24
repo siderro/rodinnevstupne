@@ -8,7 +8,7 @@ import {
 export const SITE_NAME = 'Rodinné vstupné'
 export const DEFAULT_TITLE = 'Rodinné vstupné – kam na výlet, když je dětí spousta'
 export const DEFAULT_DESCRIPTION =
-  'Katalog výletů po celé ČR, kde rodinné vstupné platí aspoň pro 4 děti (a tedy i pro 3). U každého místa ověřená cena pro celou rodinu, zdroj a datum ověření. Zdarma a bez registrace.'
+  'Katalog výletů po celé ČR, kde rodinné vstupné platí aspoň pro 3 děti. U každého místa ověřená cena pro celou rodinu, zdroj a datum ověření. Zdarma a bez registrace.'
 
 export const venuePath = (v) => `/misto/${v.slug}/`
 export const krajPath = (k) => `/kraj/${krajSlug(k)}/`
@@ -30,7 +30,7 @@ export function aboutMeta() {
 export function tipMeta() {
   return {
     title: `Nahlásit místo · ${SITE_NAME}`,
-    description: 'Znáte místo, kde rodinná vstupenka platí pro 4 a více dětí? Pošlete nám tip, ověříme ho a přidáme.',
+    description: 'Znáte místo, kde rodinná vstupenka platí pro 3 a více dětí? Pošlete nám tip, ověříme ho a přidáme.',
     path: '/tip/',
   }
 }
@@ -71,8 +71,8 @@ export function krajMeta(kraj, venues) {
   return {
     title: `Výlety pro velké rodiny ${loc} – ${SITE_NAME}`,
     description: clip(n
-      ? `${n === 1 ? '1 místo' : n <= 4 ? `${n} místa` : `${n} míst`} ${loc}, kde rodinné vstupné platí aspoň pro 4 děti (i pro 3). Ověřené ceny pro celou rodinu se zdrojem a datem ověření.`
-      : `Výlety ${loc}, kde rodinné vstupné platí aspoň pro 4 děti (i pro 3). Katalog pro tento kraj právě plníme.`),
+      ? `${n === 1 ? '1 místo' : n <= 4 ? `${n} místa` : `${n} míst`} ${loc}, kde rodinné vstupné platí aspoň pro 3 děti. Ověřené ceny pro celou rodinu se zdrojem a datem ověření.`
+      : `Výlety ${loc}, kde rodinné vstupné platí aspoň pro 3 děti. Katalog pro tento kraj právě plníme.`),
     path: krajPath(kraj),
     // Prázdné krajské stránky neindexujeme (tenký obsah); zaindexují se samy, až budou mít místa.
     noindex: n === 0,

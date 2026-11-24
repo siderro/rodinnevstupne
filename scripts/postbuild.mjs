@@ -145,7 +145,7 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
     <title>${esc(`Novinky – ${SITE_NAME}`)}</title>
     <link>${esc(SITE_URL + '/novinky/')}</link>
     <atom:link href="${esc(SITE_URL + '/rss.xml')}" rel="self" type="application/rss+xml" />
-    <description>Nová místa a opravy v katalogu výletů, kde rodinné vstupné platí aspoň pro 4 děti.</description>
+    <description>Nová místa a opravy v katalogu výletů, kde rodinné vstupné platí aspoň pro 3 děti.</description>
     <language>cs</language>
 ${releases[0] ? `    <lastBuildDate>${rfc822(releases[0].date)}</lastBuildDate>\n` : ''}${rssItems.join('\n')}
   </channel>

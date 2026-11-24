@@ -1,0 +1,31 @@
+[
+ {
+  "name": "Regionální muzeum a galerie v Jičíně",
+  "slug": "regionalni-muzeum-a-galerie-jicin",
+  "kraj": "Královéhradecký",
+  "website": "http://www.muzeumhry.cz/",
+  "reason": "Zavřeno: výstavní prostory muzea i galerie uzavřeny (rekonstrukce, stálá expozice od 15. 10. 2023). Ceník pro galerii: Rodina 2+2–3 za 150 Kč, děti do 10 let zdarma – ověřit po znovuotevření.",
+  "family_ticket_desc": "Galerie Rodina (2 dospělí + 2–3 děti) 150 Kč; děti do 10 let zdarma",
+  "source_url": "http://www.muzeumhry.cz/vstupne",
+  "checked_at": "2026-11-20"
+ },
+ {
+  "name": "Muzeum Krupka",
+  "slug": "muzeum-krupka",
+  "kraj": "Ústecký",
+  "website": "https://www.muzeum-teplice.cz/muzeum-krupka-1/",
+  "reason": "Zavřeno od února 2019 (rekonstrukce, nové hornické muzeum); vlastní ceník chybí – rodinná vstupenka „do 5 osob“ na stránce patří zámku Teplice.",
+  "source_url": "https://www.muzeum-teplice.cz/muzeum-krupka-1/",
+  "checked_at": "2026-11-20"
+ },
+ {
+  "name": "Městské muzeum a galerie Holešov",
+  "slug": "mestske-muzeum-a-galerie-holesov",
+  "kraj": "Zlínský",
+  "website": "https://www.holesov.info/misto/13-mestske-muzeum-a-galerie",
+  "reason": "Rodinné vstupné jen 2+3 (900 Kč) a jen pro 24h Okruh všemi památkami Holešova; zámek/muzeum bez vlastní rodinné vstupenky.",
+  "family_ticket_desc": "Okruh všemi památkami Holešova: Rodinné (2+3): 900 Kč",
+  "source_url": "https://www.holesov.info/misto/4-zamek",
+  "checked_at": "2026-11-20"
+ }
+]

@@ -1,0 +1,38 @@
+[
+ {
+  "name": "Pamětní síň Oty Pavla",
+  "slug": "pametni-sin-oty-pavla",
+  "kraj": "Středočeský",
+  "website": "https://otapavel.cz/",
+  "reason": "ceník nenalezen – web uvádí jen návštěvní dobu (Luh pod Branovem), rodinné vstupné neuvádí; úryvek síta zachytil slovo „rodina“ v rozpisu služeb",
+  "source_url": "https://otapavel.cz/2014/06/26/oteviraci-doba/",
+  "checked_at": "2026-11-20"
+ },
+ {
+  "name": "Hornické muzeum Příbram",
+  "slug": "hornicke-muzeum-pribram",
+  "kraj": "Středočeský",
+  "website": "https://www.muzeum-pribram.cz",
+  "reason": "už v katalogu jako Hornický skanzen Březové Hory (hornicky-skanzen-brezove-hory)",
+  "checked_at": "2026-11-20"
+ },
+ {
+  "name": "Muzeum a galerie v Prostějově (Muzeum Prostějovska)",
+  "slug": "muzeum-a-galerie-prostejov",
+  "kraj": "Olomoucký",
+  "website": "https://www.muzeumpv.cz/",
+  "reason": "dříve zamítnuto; ceník nadále uvádí jen „Rodinné vstupné hlavní budova MGP, Špalíček 200 Kč“ bez počtu dětí, Rodinný pas jen sleva 20 % – bez důkazu pro 4+ dětí",
+  "family_ticket_desc": "Rodinné vstupné hlavní budova MGP, Špalíček ….. 200 Kč",
+  "source_url": "https://muzeumpv.cz/muzeum/oteviraci-doba-a-vstupne/",
+  "checked_at": "2026-11-20"
+ },
+ {
+  "name": "Muzeum Šumavy Železná Ruda",
+  "slug": "muzeum-sumavy-zelezna-ruda",
+  "kraj": "Plzeňský",
+  "website": "https://www.muzeumsumavy.cz/",
+  "reason": "bez rodinného vstupného – dospělí 40 Kč, snížené 20 Kč (děti 3–15 let), děti do 3 let zdarma",
+  "source_url": "https://www.muzeumsumavy.cz/muzeumsumavy/zeleznaruda-oteviracidoba.asp",
+  "checked_at": "2026-11-20"
+ }
+]

@@ -80,7 +80,6 @@ export const TIERS = {
   gold: { key: 'gold', name: 'Všichni dovnitř', label: '2 + všechny děti', short: '∞', rank: 3 },
   silver: { key: 'silver', name: 'Plná posádka', label: '2 + 5 dětí', short: '2 + 5', rank: 2 },
   base: { key: 'base', name: 'Čtyřlístek', label: '2 + 4 děti', short: '2 + 4', rank: 1 },
-  // Od 6. 12. 2026 (docs/plan-tri-deti.md); do té doby je build-data.mjs do dat nepustí
   three: { key: 'three', name: '2 + 3 děti', label: '2 + 3 děti', short: '2 + 3', rank: 0 },
 }
 
@@ -99,14 +98,15 @@ export function tierLabel(v) {
     return v.min_children > 1 ? `${a} + všechny děti, od ${v.min_children}` : `${a} + všechny děti${age}`
   }
   const max = Number(v.max_children)
-  return v.min_children > 1 ? `${a} + ${v.min_children}–${pluralKids(max)}` : `${a} + ${pluralKids(max)}`
+  return v.min_children > 1 && v.min_children < max ? `${a} + ${v.min_children}–${pluralKids(max)}` : `${a} + ${pluralKids(max)}`
 }
 
 // Filtr „Rodinná vstupenka pro“ (?vstupenka=4|5|vsechny): jde o balíček, ne o počet dětí v autě.
 // Kumulativní: „2 + 5“ ukáže vstupenky aspoň pro 5 dětí včetně neomezených.
 // Výjimka: vstupenka 2 + 4 s doplatkem za další dítě se ukáže pod „2 + 5“ (cena i s doplatkem),
-// pod „2 + všechny děti“ ne. Od 6. 12. přibude „2 + 3“.
+// pod „2 + všechny děti“ ne.
 export const TICKET_FILTERS = [
+  { value: '3', label: '2 + 3', min: 3, kids: 3, chip: 'Vstupenka 2 + 3 a víc' },
   { value: '4', label: '2 + 4', min: 4, kids: 4, chip: 'Vstupenka 2 + 4 a víc' },
   { value: '5', label: '2 + 5', min: 5, kids: 5, chip: 'Vstupenka 2 + 5 a víc' },
   { value: 'vsechny', label: '2 + všechny děti', min: Infinity, kids: null, chip: 'Vstupenka pro všechny děti' },

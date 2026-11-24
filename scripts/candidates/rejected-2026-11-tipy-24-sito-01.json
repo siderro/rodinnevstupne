@@ -1,0 +1,101 @@
+[
+  {
+    "name": "Riviéra",
+    "slug": "aqualand-moravia-riviera",
+    "kraj": "Jihomoravský",
+    "website": "https://www.aqualand-moravia.cz/",
+    "reason": "Součást aquaparku Aqualand Moravia (Pasohlávky), který je už zamítnutý; nejde o samostatné místo. Ceník (Rodinné dny: dospělý + 1 dítě do 15 let zdarma) nepokrývá 4 děti.",
+    "source_url": "https://www.aqualand-moravia.cz/cenik",
+    "checked_at": "2026-11-24"
+  },
+  {
+    "name": "Baby Lake",
+    "slug": "aqualand-moravia-baby-lake",
+    "kraj": "Jihomoravský",
+    "website": "https://www.aqualand-moravia.cz/",
+    "reason": "Součást aquaparku Aqualand Moravia (Pasohlávky), který je už zamítnutý; nejde o samostatné místo. Ceník (Rodinné dny: dospělý + 1 dítě do 15 let zdarma) nepokrývá 4 děti.",
+    "source_url": "https://www.aqualand-moravia.cz/cenik",
+    "checked_at": "2026-11-24"
+  },
+  {
+    "name": "Lavatio",
+    "slug": "aqualand-moravia-lavatio",
+    "kraj": "Jihomoravský",
+    "website": "https://www.aqualand-moravia.cz/",
+    "reason": "Součást aquaparku Aqualand Moravia (Pasohlávky), který je už zamítnutý; nejde o samostatné místo. Ceník (Rodinné dny: dospělý + 1 dítě do 15 let zdarma) nepokrývá 4 děti.",
+    "source_url": "https://www.aqualand-moravia.cz/cenik",
+    "checked_at": "2026-11-24"
+  },
+  {
+    "name": "Fun & Swim",
+    "slug": "aqualand-moravia-fun-swim",
+    "kraj": "Jihomoravský",
+    "website": "https://www.aqualand-moravia.cz/",
+    "reason": "Součást aquaparku Aqualand Moravia (Pasohlávky), který je už zamítnutý; nejde o samostatné místo. Ceník (Rodinné dny: dospělý + 1 dítě do 15 let zdarma) nepokrývá 4 děti.",
+    "source_url": "https://www.aqualand-moravia.cz/cenik",
+    "checked_at": "2026-11-24"
+  },
+  {
+    "name": "Wave Pool",
+    "slug": "aqualand-moravia-wave-pool",
+    "kraj": "Jihomoravský",
+    "website": "https://www.aqualand-moravia.cz/",
+    "reason": "Součást aquaparku Aqualand Moravia (Pasohlávky), který je už zamítnutý; nejde o samostatné místo. Ceník (Rodinné dny: dospělý + 1 dítě do 15 let zdarma) nepokrývá 4 děti.",
+    "source_url": "https://www.aqualand-moravia.cz/cenik",
+    "checked_at": "2026-11-24"
+  },
+  {
+    "name": "Romulus",
+    "slug": "aqualand-moravia-romulus",
+    "kraj": "Jihomoravský",
+    "website": "https://www.aqualand-moravia.cz/",
+    "reason": "Součást aquaparku Aqualand Moravia (Pasohlávky), který je už zamítnutý; nejde o samostatné místo. Ceník (Rodinné dny: dospělý + 1 dítě do 15 let zdarma) nepokrývá 4 děti.",
+    "source_url": "https://www.aqualand-moravia.cz/cenik",
+    "checked_at": "2026-11-24"
+  },
+  {
+    "name": "Remus",
+    "slug": "aqualand-moravia-remus",
+    "kraj": "Jihomoravský",
+    "website": "https://www.aqualand-moravia.cz/",
+    "reason": "Součást aquaparku Aqualand Moravia (Pasohlávky), který je už zamítnutý; nejde o samostatné místo. Ceník (Rodinné dny: dospělý + 1 dítě do 15 let zdarma) nepokrývá 4 děti.",
+    "source_url": "https://www.aqualand-moravia.cz/cenik",
+    "checked_at": "2026-11-24"
+  },
+  {
+    "name": "Whirlpool Morava",
+    "slug": "aqualand-moravia-whirlpool-morava",
+    "kraj": "Jihomoravský",
+    "website": "https://www.aqualand-moravia.cz/",
+    "reason": "Součást aquaparku Aqualand Moravia (Pasohlávky), který je už zamítnutý; nejde o samostatné místo. Ceník (Rodinné dny: dospělý + 1 dítě do 15 let zdarma) nepokrývá 4 děti.",
+    "source_url": "https://www.aqualand-moravia.cz/cenik",
+    "checked_at": "2026-11-24"
+  },
+  {
+    "name": "Minigolf STARS Třinec",
+    "slug": "minigolf-stars-trinec",
+    "kraj": "Moravskoslezský",
+    "website": "https://www.starstrinec.cz/minigolf",
+    "reason": "Rodinné vstupné nemá; platí se za každou osobu (dospělý 80 Kč, děti do 18 let 60 Kč, děti do 6 let zdarma) – per_child.",
+    "source_url": "https://www.starstrinec.cz/minigolf",
+    "checked_at": "2026-11-24"
+  },
+  {
+    "name": "Jungle Holešovice",
+    "slug": "jungle-holesovice",
+    "kraj": "Praha",
+    "website": "https://holesovice.jungle.cz/",
+    "reason": "Rodinné vstupné v ceníku není (dospělí 180 Kč, děti 130 Kč); „max 6 dětí na 1 dospělého“ je bezpečnostní pravidlo, ne rodinná vstupenka.",
+    "source_url": "https://holesovice.jungle.cz/cenik-s158",
+    "checked_at": "2026-11-24"
+  },
+  {
+    "name": "Jungle Výstaviště",
+    "slug": "jungle-vystaviste",
+    "kraj": "Praha",
+    "website": "https://vystaviste.jungle.cz/",
+    "reason": "Rodinné vstupné v ceníku není; „max 6 dětí na 1 dospělého“ je bezpečnostní pravidlo. Stěna je zavřená do dubna 2027.",
+    "source_url": "https://vystaviste.jungle.cz/cenik-s158",
+    "checked_at": "2026-11-24"
+  }
+]

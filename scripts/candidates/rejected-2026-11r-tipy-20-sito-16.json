@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Muzeum Šumavy Kašperské Hory",
+    "slug": "muzeum-sumavy-kasperske-hory",
+    "kraj": "Plzeňský",
+    "website": "https://www.muzeumsumavy.cz/muzeumsumavy/kasperskehory.asp",
+    "reason": "Rodinné vstupné v ceníku pobočky není (plné 120 Kč, snížené 80 Kč); úryvek ze síta patřil Muzeu Dr. Šimona Adlera (2+2, každé další dítě platí snížené = per_child). Od 11/2023 kvůli rekonstrukci otevřena jen expozice skla.",
+    "source_url": "https://www.muzeumsumavy.cz/muzeumsumavy/kasperskehory-oteviracidoba.asp",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Muzeum Dr. Šimona Adlera (Muzeum Šumavy, Dobrá Voda)",
+    "slug": "muzeum-dr-simona-adlera-dobra-voda",
+    "kraj": "Plzeňský",
+    "website": "https://www.muzeumsumavy.cz/",
+    "reason": "per_child: rodinné vstupné max. 2 dospělí a 2 děti, každé další dítě platí snížené vstupné.",
+    "family_ticket_desc": "rodinné vstupné (maximálně 2 dospělí a dvě děti, každé další dítě platí snížené vstupné): 120 Kč",
+    "source_url": "https://www.muzeumsumavy.cz/muzeumsumavy/dobravoda-oteviracidoba.asp",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Vlastivědné muzeum Dr. Hostaše v Klatovech",
+    "slug": "vlastivedne-muzeum-klatovy",
+    "kraj": "Plzeňský",
+    "website": "https://www.muzeumklatovy.cz/",
+    "reason": "Ceník uvádí rodinné vstupné 250 Kč bez určení počtu dětí (jen dítě do 3 let v rámci rodinného zdarma) – nelze doložit 4+ děti.",
+    "family_ticket_desc": "rodinné vstupné 250,- Kč; dítě do 3 let (pouze v rámci rodinného vstupného) má vstup zdarma",
+    "source_url": "http://www.klatovynet.cz/muzeumkt/muzeum-vstupne.asp",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Uhříněveské muzeum",
+    "slug": "uhrineveske-muzeum",
+    "kraj": "Praha",
+    "website": "https://www.praha22.cz/volny-cas/muzeum-uhrineves/",
+    "reason": "Stálá expozice dočasně uzavřena (inventarizace, nová expozice); ceník ani rodinné vstupné nenalezeno.",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Muzeum Podblanicka – Zámek Růžkovy Lhotice",
+    "slug": "muzeum-podblanicka-ruzkovy-lhotice",
+    "kraj": "Středočeský",
+    "website": "https://www.muzeumpodblanicka.cz/",
+    "reason": "Rodinné vstupné 130 Kč (Lhotice) / 250 Kč (zámek Vlašim) bez určení počtu dětí – nelze doložit 4+ děti.",
+    "source_url": "https://www.muzeumpodblanicka.cz/objekt/zamek-ruzkovy-lhotice/",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Muzeum bratří Čapků",
+    "slug": "muzeum-bratri-capku-male-svatonovice",
+    "kraj": "Královéhradecký",
+    "website": "https://www.malesvatonovice.cz/muzeum/",
+    "reason": "Ceník rodinné vstupné neuvádí (dospělí 50 Kč, děti od 6 let 30 Kč).",
+    "source_url": "https://www.malesvatonovice.cz/muzeum/vstupne",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Vlastivědné muzeum Kyjov",
+    "slug": "vlastivedne-muzeum-kyjov",
+    "kraj": "Jihomoravský",
+    "website": "https://www.masaryk.info/vlastivedne-muzeum-kyjov/",
+    "reason": "Rodinné vstupné 220 Kč bez určení složení (počtu dětí) – nelze doložit 4+ děti.",
+    "family_ticket_desc": "rodinné vstupné // 220 Kč",
+    "source_url": "https://www.masaryk.info/vlastivedne-muzeum-kyjov/34/",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Muzeum Moravských bratří",
+    "slug": "muzeum-moravskych-bratri-suchdol",
+    "kraj": "Moravskoslezský",
+    "website": "https://www.moravian.cz/Muzeum.aspx",
+    "reason": "Rodinné vstupné není – jednotné vstupné 50 Kč, děti do 6 let zdarma.",
+    "source_url": "https://www.moravian.cz/Muzeum.aspx",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "Muzeum břidlice v Budišově nad Budišovkou",
+    "slug": "muzeum-bridlice-budisov",
+    "kraj": "Moravskoslezský",
+    "website": "https://www.budisov.eu/kultura-a-volny-cas/muzeum-bridlice/",
+    "reason": "Rodinné vstupné 130 Kč bez určení počtu dětí – nelze doložit 4+ děti.",
+    "family_ticket_desc": "Rodinné vstupné: 130 Kč",
+    "source_url": "https://www.budisov.eu/kultura-a-volny-cas/muzeum-bridlice/informace-k-prohlidce/",
+    "checked_at": "2026-11-20"
+  }
+]

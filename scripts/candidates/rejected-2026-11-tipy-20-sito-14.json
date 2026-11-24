@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Zoologická zahrada Děčín – Pastýřská stěna",
+    "slug": "zoo-decin",
+    "kraj": "Ústecký",
+    "website": "https://www.zoodecin.cz/",
+    "reason": "Bez rodinné vstupenky: jen sleva 10 % pro rodinu (min. 2 dospělí + 2 děti); 2+3 jen jako roční permanentka (2 700 Kč). Už dříve zamítnuto, beze změny.",
+    "family_ticket_desc": "rodinné vstupné (min. 2 dospělí a 2 děti) 10 %; Rodinná permanentka (2 dospělí + 3 děti) 2700,-",
+    "source_url": "https://www.zoodecin.cz/?p=clanky/vstupne_1",
+    "checked_at": "2026-11-20"
+  },
+  {
+    "name": "FarmaPark Soběhrdy",
+    "slug": "farmapark-sobehrdy",
+    "kraj": "Středočeský",
+    "website": "https://www.farmapark.eu/",
+    "reason": "Jednodenní vstupné jen pro jednotlivce (390 Kč, léto 490 Kč); rodinná je jen VIP permanentka 2 dospělí a až 3 děti (12 800 Kč).",
+    "family_ticket_desc": "Rodinná VIP permanentka 2 dospělí a až 3 děti, 1. 11. 2026 – 31. 10. 2027, 12 800 Kč",
+    "source_url": "https://farmapark.eu/vstupenky/",
+    "checked_at": "2026-11-20"
+  }
+]

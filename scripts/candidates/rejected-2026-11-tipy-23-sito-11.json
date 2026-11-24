@@ -1,0 +1,5 @@
+[
+ {"name":"Zoologická zahrada Zlín","slug":"zoo-zlin","kraj":"Zlínský","website":"https://www.zoozlin.eu/","reason":"Ceník pokladny (dynamické ceny podle kalendáře) rodinné vstupné neuvádí; úryvek ze síta se týkal pedagogického doprovodu školních skupin.","source_url":"https://www.zoozlin.eu/vstupne-zoo","checked_at":"2026-11-23"},
+ {"name":"Zámek Konopiště","slug":"zamek-konopiste","kraj":"Středočeský","website":"https://www.zamek-konopiste.cz/","reason":"Památka NPÚ – bez rodinného vstupného; úryvek ze síta se týkal slev pro členy organizací.","source_url":"https://www.zamek-konopiste.cz/cs/informace-pro-navstevniky/vstupne/slevy","checked_at":"2026-11-23"},
+ {"name":"Zámek Ploskovice","slug":"zamek-ploskovice","kraj":"Ústecký","website":"http://www.zamek-ploskovice.cz/","reason":"Památka NPÚ – bez rodinného vstupného; úryvek ze síta nesouvisel se vstupným.","checked_at":"2026-11-23"}
+]

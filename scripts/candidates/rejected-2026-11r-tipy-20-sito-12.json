@@ -1,0 +1,10 @@
+[
+ {"name":"Zámek Telč","slug":"zamek-telc","kraj":"Vysočina","website":"https://www.zamek-telc.cz/","reason":"Státní zámek NPÚ – bez rodinného vstupného; tipovaný web zamek-telc.eu je neoficiální informační stránka, ne ceník provozovatele.","checked_at":"2026-11-20"},
+ {"name":"Hrad Velhartice","slug":"hrad-velhartice","kraj":"Plzeňský","website":"https://www.hrad-velhartice.cz/","reason":"Státní hrad NPÚ – ceník bez rodinného vstupného (děti 6–18 let 50 Kč, do 6 let zdarma).","source_url":"https://www.hrad-velhartice.cz/cs/informace-pro-navstevniky/vstupne","checked_at":"2026-11-20"},
+ {"name":"Zámek Červená Lhota","slug":"zamek-cervena-lhota","kraj":"Jihočeský","website":"https://www.zamek-cervenalhota.cz/","reason":"Státní zámek NPÚ – ceník bez rodinného vstupného (děti 6–17 let 70 Kč, do 5 let zdarma).","source_url":"https://www.zamek-cervenalhota.cz/cs/informace-pro-navstevniky/vstupne","checked_at":"2026-11-20"},
+ {"name":"Pivovarská flošna (Hradec Králové)","slug":"pivovarska-flosna-hradec-kralove","kraj":"Královéhradecký","website":null,"reason":"Ceník nenalezen – pozůstatek pevnosti bez provozovatele a vstupného, tip vedl na agregátor turistika.cz.","checked_at":"2026-11-20"},
+ {"name":"Zámecké jízdárny Lednice","slug":"zamecke-jizdarny-lednice","kraj":"Jihomoravský","website":null,"reason":"Ceník nenalezen – tipovaný web mczl.cz je divadlo, oficiální ceník expozic v jízdárnách jsme nedohledali.","checked_at":"2026-11-20"},
+ {"name":"Zámek Miroslavské Knínice","slug":"zamek-miroslavske-kninice","kraj":"Jihomoravský","website":"http://miroslavske-kninice.cz/","reason":"Ceník nenalezen – obecní stránka jen s historií zámku, bez vstupného.","checked_at":"2026-11-20"},
+ {"name":"Zámek Spálené Poříčí","slug":"zamek-spalene-porici","kraj":"Plzeňský","website":"https://www.zamekspaleneporici.cz/","reason":"Ceník nenalezen – web nabízí ubytování a svatby, žádné vstupné na prohlídky.","checked_at":"2026-11-20"},
+ {"name":"Zámek Koryčany","slug":"zamek-korycany","kraj":"Zlínský","website":null,"reason":"Ceník nenalezen – zámek není běžně zpřístupněn, tip vedl na agregátor turistika.cz.","checked_at":"2026-11-20"}
+]

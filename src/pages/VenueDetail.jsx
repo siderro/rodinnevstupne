@@ -25,7 +25,7 @@ export default function VenueDetail() {
   if (!venue) return (
     <div className="empty-state">
       <h1>Tohle místo už v katalogu není</h1>
-      <p>Možná se změnila adresa, nebo jsme ho vyřadili, protože rodinná vstupenka už nepokryje 4 děti.</p>
+      <p>Možná se změnila adresa, nebo jsme ho vyřadili, protože rodinná vstupenka už nepokryje 3 děti.</p>
       <Link className="btn" to="/">Všechny výlety</Link>
       <nav className="kraj-links" aria-label="Výlety podle krajů">
         <h2 className="h-sm">Výlety podle krajů</h2>
