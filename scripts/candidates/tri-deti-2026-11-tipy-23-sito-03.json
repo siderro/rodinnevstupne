@@ -68,8 +68,8 @@
     "kraj": "Pardubický",
     "city": "Žamberk",
     "address": "Čs. armády, 564 01 Žamberk",
-    "lat": 50.08682,
-    "lng": 16.46045,
+    "lat": 50.0868,
+    "lng": 16.4604,
     "website": "https://www.muzeumzamberk.cz/",
     "family_policy": "max_children",
     "max_children": 3,
@@ -90,7 +90,7 @@
     "notes": "Síto ceníků 23. 11. 2026 (Vytěžování 2.0, 3. kolo). Celé muzeum: dospělí 60 Kč, snížené 40 Kč; mimo konání výstav 40/30 Kč. Otevřeno duben–červen, září–říjen (říjen jen při výstavách) a vánoční výstava; mimo výstavy jen po domluvě. Domek Prokopa Diviše má vlastní rodinné vstupné 120 Kč bez uvedeného složení.",
     "alert": "Mimo konání výstav je muzeum otevřeno jen po domluvě.",
     "source_url": "https://www.muzeumzamberk.cz/web/cs/navstevni-mista/mestske-muzeum-zamberk-2-7.html?tab_id=web",
-    "verified_at": "2026-11-23"
+    "verified_at": "2026-11-24"
   },
   {
     "name": "Jizerskohorské technické muzeum",
@@ -161,8 +161,8 @@
     "kraj": "Liberecký",
     "city": "Česká Lípa",
     "address": "U Vodního hradu, 470 01 Česká Lípa",
-    "lat": 50.68386,
-    "lng": 14.53931,
+    "lat": 50.6839,
+    "lng": 14.5393,
     "website": "https://www.cl-kultura.cz/vodni-hrad-lipy/",
     "family_policy": "max_children",
     "max_children": 3,
@@ -183,7 +183,7 @@
     "notes": "Síto ceníků 23. 11. 2026 (Vytěžování 2.0, 3. kolo). Samoprohlídka: rodinné 250 Kč (dospělí 100, děti 50 Kč). Kombinované vstupné Vodní hrad Lipý + Centrum textilního tisku: rodinné 630 Kč (dospělí 250, děti 120 Kč).",
     "alert": null,
     "source_url": "https://www.cl-kultura.cz/vodni-hrad-lipy/",
-    "verified_at": "2026-11-23"
+    "verified_at": "2026-11-24"
   },
   {
     "name": "Podještědské muzeum",

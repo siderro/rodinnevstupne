@@ -164,7 +164,13 @@
     "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Dítě 6–15 let 80 Kč. V zimě prohlídka jen po domluvě předem.",
     "alert": null,
     "source_url": "https://www.bartkuvmlyn.cz/navstevni-informace/",
-    "verified_at": "2026-11-20"
+    "verified_at": "2026-11-24",
+    "conditions": [
+      {
+        "code": "jine",
+        "note": "Jen s průvodcem (asi 90 min); v zimě jen po předchozí domluvě."
+      }
+    ]
   },
   {
     "name": "Bylinková zahrada Lu & Tiree Chmelar (zámek Valtice)",
@@ -216,7 +222,16 @@
     "price_family": 130,
     "price_family_offseason": null,
     "season_months": null,
-    "closed_months": null,
+    "closed_months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      10,
+      11,
+      12
+    ],
     "min_children": 1,
     "extra_child_price": null,
     "paid_children": null,
@@ -226,7 +241,7 @@
     "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Prohlídka interiéru, výstav a židovského hřbitova. Zlevněné vstupné při speciálních akcích (rodinné 100 Kč). Otevřeno červen–září, jinak po domluvě.",
     "alert": "Otevřeno jen od června do září, jinak po telefonické domluvě s příplatkem.",
     "source_url": "https://muzeum-straznice.webnode.cz/synagoga/",
-    "verified_at": "2026-11-20"
+    "verified_at": "2026-11-24"
   },
   {
     "name": "Zelená brána Pardubice",

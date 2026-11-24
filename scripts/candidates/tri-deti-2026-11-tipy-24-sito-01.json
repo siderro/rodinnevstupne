@@ -68,6 +68,12 @@
     "notes": "Síto ceníků 24. 11. 2026 (volnočasová místa, kolo 2+3). Ceny za 2 hodiny (celodenní vstupné ceník neuvádí); za 1 hodinu: dospělí 85 Kč, děti 65 Kč, rodinné 220 Kč. Věkovou hranici dítěte ceník neuvádí. Krytý bazén se skluzavkou, tobogánem a vířivkou.",
     "alert": null,
     "source_url": "https://www.bazenprimda.cz/cenik/",
-    "verified_at": "2026-11-24"
+    "verified_at": "2026-11-24",
+    "conditions": [
+      {
+        "code": "jine",
+        "note": "Časové vstupné: rodinné 220 Kč na hodinu, 400 Kč na 2 hodiny."
+      }
+    ]
   }
 ]

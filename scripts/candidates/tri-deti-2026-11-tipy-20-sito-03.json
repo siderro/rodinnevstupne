@@ -9,7 +9,7 @@
     "kids_free_under": null,
     "source_date": null,
     "alert": null,
-    "verified_at": "2026-11-20",
+    "verified_at": "2026-11-24",
     "name": "Muzeum fantastických iluzí",
     "slug": "muzeum-fantastickych-iluzi-praha",
     "category": "muzeum",
@@ -21,14 +21,20 @@
     "website": "https://muzeumfantastickychiluzi.cz/",
     "family_policy": "max_children",
     "max_children": 3,
-    "adults_in_family_ticket": 2,
+    "adults_in_family_ticket": 1,
     "kids_age_limit": 15,
     "price_adult": 349,
     "price_child": 249,
     "price_family": 999,
-    "family_ticket_desc": "Rodina – 2 dospělí a max. 3 děti do 15 let: 999 Kč.",
+    "family_ticket_desc": "Rodina: 2 dospělí a nejvýš 2 děti do 15 let, nebo 1 dospělý a nejvýš 3 děti do 15 let: 999 Kč.",
     "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Další varianty: 1 dospělý + max. 2 děti 799 Kč; 2 dospělí + max. 2 děti nebo 1 dospělý + max. 3 děti 899 Kč. Dítě do 1 metru zdarma.",
-    "source_url": "https://muzeumfantastickychiluzi.cz/vstupenky/"
+    "source_url": "https://muzeumfantastickychiluzi.cz/vstupenky/",
+    "conditions": [
+      {
+        "code": "jine",
+        "note": "Se 3 dětmi platí rodinné vstupné jen pro 1 dospělého."
+      }
+    ]
   },
   {
     "price_family_offseason": null,
@@ -47,7 +53,7 @@
     "kids_free_under": 6,
     "source_date": null,
     "alert": "Otevřeno jen od dubna do září, čtvrtek až neděle.",
-    "verified_at": "2026-11-20",
+    "verified_at": "2026-11-24",
     "name": "Maroldovo panoráma",
     "slug": "maroldovo-panorama",
     "category": "muzeum",
@@ -66,6 +72,12 @@
     "price_family": 100,
     "family_ticket_desc": "Rodinné 100 Kč (max. 5 osob v různých kombinacích, min. 1 dospělý, max. 4 děti); děti do 6 let zdarma.",
     "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Pro 2 dospělé tedy max. 3 děti; 1 dospělý + 4 děti. Snížené 25 Kč pro děti 6–15 let. Otevřeno duben–září čt–ne a svátky.",
-    "source_url": "https://navystavisti.cz/areal/maroldovo-panorama/"
+    "source_url": "https://navystavisti.cz/areal/maroldovo-panorama/",
+    "conditions": [
+      {
+        "code": "jine",
+        "note": "Rodinné je pro nejvýš 5 osob: 2 dospělí + 3 děti, nebo 1 dospělý + 4 děti."
+      }
+    ]
   }
 ]

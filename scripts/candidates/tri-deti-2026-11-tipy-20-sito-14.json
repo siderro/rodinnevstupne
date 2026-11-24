@@ -74,13 +74,19 @@
     "family_policy": "max_children",
     "max_children": 3,
     "adults_in_family_ticket": 2,
-    "kids_age_limit": 15,
+    "kids_age_limit": 14,
     "price_adult": 320,
     "price_child": 280,
     "price_family": 1290,
     "price_family_offseason": null,
     "season_months": null,
-    "closed_months": null,
+    "closed_months": [
+      1,
+      2,
+      3,
+      11,
+      12
+    ],
     "min_children": null,
     "extra_child_price": null,
     "paid_children": null,
@@ -90,7 +96,7 @@
     "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Rodina 2+2 1 050 Kč. Sezonní permanentka Rodina MAX 3 000 Kč. Děti do 3 let zdarma.",
     "alert": null,
     "source_url": "https://www.dinopark.cz/cz/ostrava/cenik",
-    "verified_at": "2026-11-20"
+    "verified_at": "2026-11-24"
   },
   {
     "name": "Wellness Kuřim – aquapark",
@@ -225,8 +231,8 @@
     "verified_at": "2026-11-20"
   },
   {
-    "name": "Aquaprak Rakovník",
-    "slug": "aquaprak-rakovnik",
+    "name": "Aquapark Rakovník",
+    "slug": "aquapark-rakovnik",
     "category": "aquapark",
     "kraj": "Středočeský",
     "city": "Rakovník",
@@ -253,6 +259,6 @@
     "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Ceník platný od 2. 1. 2026. Bazén a atrakce 2+3: 60 min 415, 90 min 530, 120 min 655 Kč; jen bazén 2+3 60 min 330, 90 min 410 Kč; venkovní areál 2+3 390 Kč (od 16 h 355 Kč). Děti do 3 let zdarma.",
     "alert": null,
     "source_url": "https://aquaprak.cz/8-cenik",
-    "verified_at": "2026-11-20"
+    "verified_at": "2026-11-24"
   }
 ]

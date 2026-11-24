@@ -46,7 +46,7 @@
     "kids_free_under": null,
     "source_date": "2026",
     "alert": "Otevřeno jen od dubna do října (duben, květen a říjen jen o víkendech a svátcích).",
-    "verified_at": "2026-11-20",
+    "verified_at": "2026-11-24",
     "name": "Svět Škodovek",
     "slug": "svet-skodovek-cercany",
     "category": "muzeum",
@@ -65,7 +65,10 @@
     "price_family": 550,
     "family_ticket_desc": "Rodinné vstupné – platí pro 2 dospělé a až 5 dětí do 15 let: 550 Kč.",
     "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Děti do 120 cm zdarma. Otevřeno duben, květen, říjen jen o víkendech a svátcích, červen–září denně 10–17 h (výjimky 2026 včetně podzimních prázdnin 28. 10.–1. 11.). Držitelé Rodinných pasů sleva 10 %.",
-    "source_url": "https://www.svet-skodovek.cz/pro-navstevniky/"
+    "source_url": "https://www.svet-skodovek.cz/pro-navstevniky/",
+    "conditions": [
+      "rodinny_pas"
+    ]
   },
   {
     "price_family_offseason": null,

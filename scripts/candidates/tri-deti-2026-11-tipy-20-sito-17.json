@@ -114,14 +114,20 @@
     "kids_free_under": 6,
     "source_date": "2026-05",
     "alert": null,
-    "verified_at": "2026-11-20",
+    "verified_at": "2026-11-24",
     "kids_age_limit": 15,
     "price_adult": 80,
     "price_child": 50,
     "price_family": 210,
     "family_ticket_desc": "Rodinné vstupné 210 Kč – max. 5 osob (2 dospělí + 3 děti / 1 dospělý + 4 děti ve věku 6–15 let), při větším počtu se připočítává vstupné za další osoby podle jejich věku",
     "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Ceník účinný od 1. 5. 2026, platí pro okruhy 1–3 (Hlavní budova, Křížova vila, Stará papírna). Okruh 4 – expozice Žatecký poklad: rodinné 420 Kč, základní 160 Kč, zlevněné 100 Kč. Děti do 6 let zdarma.",
-    "source_url": "https://www.muzeumzatec.cz/files/dokumenty/cenik-sluzeb-a-ukonu-rmz-2-od-1-kvetna-2026.pdf"
+    "source_url": "https://www.muzeumzatec.cz/files/dokumenty/cenik-sluzeb-a-ukonu-rmz-2-od-1-kvetna-2026.pdf",
+    "conditions": [
+      {
+        "code": "jine",
+        "note": "Cena za jeden prohlídkový okruh; platba jen v hotovosti."
+      }
+    ]
   },
   {
     "name": "Alternátor – Ekotechnické centrum Třebíč",

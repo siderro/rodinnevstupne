@@ -19,7 +19,7 @@
     "price_family_offseason": null,
     "season_months": null,
     "closed_months": null,
-    "min_children": null,
+    "min_children": 2,
     "extra_child_price": null,
     "paid_children": null,
     "kids_free_under": 6,
@@ -28,7 +28,7 @@
     "notes": "Síto ceníků 23. 11. 2026 (Vytěžování 2.0, 3. kolo). Prohlídka s výkladem. Trasa II (Závišův kříž + expozice v gotických sklepení, jen 1. 7.–30. 9.): plné 100 Kč, snížené 80 Kč, rodinné 250 Kč. S cizojazyčným výkladem trasa I: plné 230 Kč, snížené 190 Kč, rodinné 520 Kč. Zimní sezóna 1. 10.–30. 4.: zimní trasa bez Závišova kříže, menší skupiny se připojí k nejbližší prohlídce, pokladna mimo sezónu zavřená – doporučeno volat 724 184 145.",
     "alert": "Od října do dubna jen zimní trasa a pokladna je zavřená – před návštěvou zavolejte.",
     "source_url": "https://www.klastervyssibrod.cz/Prohlidky/Vstupne",
-    "verified_at": "2026-11-23"
+    "verified_at": "2026-11-24"
   },
   {
     "name": "Klášter Milevsko",

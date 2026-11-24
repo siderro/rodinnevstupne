@@ -121,7 +121,13 @@
     "price_family": 1370,
     "family_ticket_desc": "Rodina – 5 osob (1–2 dospělí + 1–3 dítě do dovršení 18 let), celodenní 1 370 Kč",
     "notes": "Rodina 5 osob: 1 h 545 Kč, 1,5 h 720 Kč, 2 h 900 Kč, 3 h 1 160 Kč; rodina 4 osoby celodenní 1 220 Kč, 3 osoby 1 100 Kč. Děti 3–6 let 50 Kč, do 3 let zdarma. Online až 5% sleva. Ceny platné od 1. 1. 2026. Síto ceníků 24. 11. 2026 (volnočasová místa, kolo 2+3).",
-    "source_url": "https://plovarnaluhacovice.cz/cenik/"
+    "source_url": "https://plovarnaluhacovice.cz/cenik/",
+    "conditions": [
+      {
+        "code": "jine",
+        "note": "Rodinné vstupné jen s aspoň jedním dítětem ve věku 6–17 let; nejvýš 2 dospělí."
+      }
+    ]
   },
   {
     "family_policy": "max_children",

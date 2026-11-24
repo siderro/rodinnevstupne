@@ -198,15 +198,15 @@
     "kids_free_under": 6,
     "source_date": null,
     "alert": null,
-    "verified_at": "2026-11-20",
+    "verified_at": "2026-11-24",
     "name": "Zámek Hošťálkovy",
     "slug": "zamek-hostalkovy",
     "category": "hrad",
     "kraj": "Moravskoslezský",
     "city": "Hošťálkovy",
     "address": "Hošťálkovy, 793 81",
-    "lat": 50.1239,
-    "lng": 17.5413,
+    "lat": 50.1129,
+    "lng": 17.5967,
     "website": "https://www.zamekhostalkovy.cz/",
     "kids_age_limit": null,
     "price_adult": 150,
@@ -214,7 +214,13 @@
     "price_family": 450,
     "family_ticket_desc": "Rodinné vstupné (2 dospělí + 2–3 děti) 450 Kč",
     "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Dospělí 150 Kč, ZTP/studenti/senioři 100 Kč, děti do 6 let v doprovodu rodičů zdarma. Komentované prohlídky, celoročně po dohodě. Souřadnice obce.",
-    "source_url": "https://www.zamekhostalkovy.cz/prohlidky"
+    "source_url": "https://www.zamekhostalkovy.cz/prohlidky",
+    "conditions": [
+      {
+        "code": "jine",
+        "note": "Prohlídky celoročně jen po předchozí domluvě s kastelánkou."
+      }
+    ]
   },
   {
     "family_policy": "max_children",

@@ -139,7 +139,13 @@
     "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Prohlídky jen s průvodcem, min. 5 osob. Květen–září út–ne 9–12 a 13–17; duben a říjen so, ne a svátky 9–12 a 13–16.",
     "alert": "Hrad je otevřený jen od dubna do října, v dubnu a říjnu pouze o víkendech.",
     "source_url": "https://potstejn.cz/hrad-potstejn/",
-    "verified_at": "2026-11-20"
+    "verified_at": "2026-11-24",
+    "conditions": [
+      {
+        "code": "jine",
+        "note": "Prohlídky se konají až od 5 osob."
+      }
+    ]
   },
   {
     "name": "Zámek Orlík",

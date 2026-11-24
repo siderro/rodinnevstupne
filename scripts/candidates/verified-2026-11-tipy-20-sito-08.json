@@ -56,7 +56,7 @@
     "price_family_offseason": null,
     "season_months": null,
     "closed_months": null,
-    "min_children": null,
+    "min_children": 2,
     "extra_child_price": null,
     "paid_children": null,
     "kids_free_under": 6,
@@ -65,7 +65,7 @@
     "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). Komentovaná prohlídka zámeckého okruhu (55–60 min): dospělí do 64 let 150 Kč, senioři 65+ a studenti 130 Kč, ZTP 130 Kč. Krátkodobé výstavy dle aktuálního ceníku. Horní hranice počtu dětí není uvedena („2 a více dětí“) – vedeno jako neomezeně. Od 1. 11. 2026 je zámek pro veřejnost uzavřen (konec sezóny), termín otevření další sezóny web zatím neuvádí. Nejde o Muzeum Českého lesa (samostatný ceník).",
     "alert": "Mimo sezónu (od 1. 11. 2026) je zámek zavřený; otevření nové sezóny si ověřte na webu.",
     "source_url": "https://www.tachovskyzamek.cz/pro-navstevniky/vstupne/",
-    "verified_at": "2026-11-20"
+    "verified_at": "2026-11-24"
   },
   {
     "name": "Sázavský klášter – farní okruh Český patron svatý Prokop",

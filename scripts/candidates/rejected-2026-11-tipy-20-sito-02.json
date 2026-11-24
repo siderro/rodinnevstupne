@@ -5,7 +5,9 @@
     "kraj": "Středočeský",
     "website": "http://www.gask.cz/",
     "reason": "Již dříve zamítnuto; úryvek ze síta je jednorázová akce (GASK mini 16. 12. 2026), ne trvalé rodinné vstupné.",
-    "checked_at": "2026-11-20"
+    "checked_at": "2026-11-20",
+    "kids_age_limit": 15,
+    "verified_at": "2026-11-24"
   },
   {
     "name": "Pamětní síň Jindřicha Mošny",

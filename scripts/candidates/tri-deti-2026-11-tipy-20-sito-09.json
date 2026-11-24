@@ -18,7 +18,9 @@
     "price_family": 600,
     "price_family_offseason": null,
     "season_months": null,
-    "closed_months": null,
+    "closed_months": [
+      2
+    ],
     "min_children": 2,
     "extra_child_price": null,
     "paid_children": null,
@@ -28,7 +30,7 @@
     "notes": "Síto ceníků 20. 11. 2026 (Vytěžování 2.0). 2+3. Otevřeno úterý–neděle, pondělí zavřeno. Důchodci nad 65 let 200 Kč.",
     "alert": null,
     "source_url": "https://www.vanocnidum.cz/vstupne-a-provozni-doba/",
-    "verified_at": "2026-11-20"
+    "verified_at": "2026-11-24"
   },
   {
     "name": "Vojenské muzeum Králíky",
