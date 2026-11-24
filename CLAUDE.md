@@ -7,10 +7,11 @@ Zdarma, bez registrace, pořadí výsledků nejde koupit. Příjem: Buy Me a Cof
 až později a nenásilně. Doména `rodinnevstupne.cz` patří majiteli (zatím míří na původní hosting).
 
 ## Kritérium zařazení
-Rodinná vstupenka musí pokrýt **aspoň 4 děti**. Úrovně (počítá `scripts/build-data.mjs`):
+Rodinná vstupenka musí pokrýt **aspoň 3 děti** (od 24. 11. 2026; místa 2 + 3 jsou v `scripts/candidates/tri-deti-*.json`). Úrovně (počítá `scripts/build-data.mjs`):
 - `gold` — `family_policy = "unlimited"` (neomezeně dětí)
 - `silver` — `max_children >= 5`
 - `base` — `max_children == 4`
+- `three` — `max_children == 3` (jen se `source_url` a `verified_at`, v seznamu řazeno na konec)
 - cokoli jiného se do dat nedostane.
 
 ## Stack
